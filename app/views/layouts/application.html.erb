@@ -1,14 +1,49 @@
-<!DOCTYPE html>
-<html>
+<!doctype html> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt-ie9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>MsaarchCom</title>
+	<meta name="author" content="Ample, http://helloample.com" />
+	<%= stylesheet_link_tag "blueprint/screen", :media => "screen, projection" %>
+	<%= stylesheet_link_tag "blueprint/print", :media => "print" %>
+	<!--[if lt IE 8]><%= stylesheet_link_tag "blueprint/ie", :media => "screen, projection" %><![endif]-->
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body<%= body_classes %>>
 
-<%= yield %>
+<section id="header" class="clearfix">
+	<header class="container">
+		<%= image_tag '/assets/elements/msa-architects.png', :id => 'logo' %>
+		<nav>
+			<ul>
+				<li><%= link_to 'Home', root_path %></li>
+				<li class="drop"><%= link_to 'Portfolio' %></li>
+				<li><%= link_to 'Team', '#' %></li>
+				<li><%= link_to 'News', '#' %></li>
+				<li><%= link_to 'Contact', '#' %></li>
+			</ul>
+		</nav>
+	</header>
+</section>
+
+<section id="main">
+	<div class="container">
+		<%= yield %>
+	</div>
+</section>
+
+<section id="footer">
+	<footer class="container">
+		footer.
+	</footer>
+</section>
 
 </body>
 </html>

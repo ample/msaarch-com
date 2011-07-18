@@ -1,0 +1,77 @@
+// Place all the styles related to the public controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	color: #FFF;
+	background: #1f1f1f; 
+}
+
+body.homepage {
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+a, a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+	color: #707070;
+	margin: 0;
+	padding: 0;
+}
+
+section#header {
+	background: #0a0a0a url(/assets/elements/nav-bgx.png) repeat-x bottom left;
+	ul {
+		margin: 0; 
+		padding: 0; 
+	}
+	li {
+		float: right; 
+		list-style-type: none;
+	}
+	li a {
+		font-size: 13px;
+		display: block; 
+		padding: 30px 15px 10px;
+		border-left: 1px solid #222121;
+		border-right: 1px solid #000;
+	}
+	img#logo {
+		float: left;
+		margin: 30px 15px 10px;
+	}
+	nav {
+		float: right; 
+		width: 750px; 
+	}
+}
+
+body.homepage section#main {
+	min-width: 950px; 
+	background: url(/assets/pages/homepage/government-square.jpg) no-repeat center center;
+	background-size: 100%;
+	background-origin: padding-box;
+}
+
+body.homepage section#main div.container {
+	padding: 40px 0;
+}
+
+body.homepage h1 {
+	font-size: 76px;
+	line-height: 70px;
+	text-transform: uppercase;
+	color: #FFF;
+	background: rgba(0,0,0,0.75);
+	width: 350px;
+	padding: 25px;
+	text-align: right;
+}
+
+body.homepage h1 strong {
+	display: block;
+}
