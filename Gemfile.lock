@@ -1,5 +1,5 @@
 PATH
-  remote: ../ample_admin
+  remote: vendor/gems/ample_admin
   specs:
     ample_admin (0.1.4)
       acts_as_indexed
