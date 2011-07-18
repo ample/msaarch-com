@@ -20,7 +20,7 @@
 
 <section id="header" class="clearfix">
 	<header class="container">
-		<%= image_tag '/assets/elements/msa-architects.png', :id => 'logo' %>
+		<%= image_tag '/assets/elements/msa-architects.png', :id => 'logo', :size => '140x25' %>
 		<nav>
 			<ul>
 				<li><%= link_to 'Home', root_path %></li>
@@ -33,15 +33,33 @@
 	</header>
 </section>
 
-<section id="main">
-	<div class="container">
-		<%= yield %>
-	</div>
-</section>
+<% if is_homepage? %>
+	<%= yield %>
+<% else %>
+	<section id="main">
+		<%= content_tag :div, yield, :class => 'container' %>
+	</section>
+<% end %>
 
 <section id="footer">
 	<footer class="container">
-		footer.
+		<div id="segments" class="span-13">
+			<ul class="clearfix">
+				<li><strong>MSA</strong></li>
+				<li><a href="#" class="msa-sport">Sport (78)</a></li>
+				<li><a href="#" class="msa-corporate">Corporate (15)</a></li>
+				<li><a href="#" class="msa-government">Government (16)</a></li>
+				<li><a href="#" class="msa-education">Education (19)</a></li>
+				<li><a href="#" class="msa-lifestyle">Lifestyle (23)</a></li>
+				<li><a href="#" class="msa-religious">Religious (7)</a></li>
+			</ul>
+			<p>&copy; 2011 MSA Architects. All rights reserved.</p>
+		</div>
+		<div id="social" class="span-2 last">
+			<%= link_to 'Facebook', '#', :class => 'facebook' %>
+			<%= link_to 'LinkedIn', '#', :class => 'linkedin' %>
+			<%= link_to 'ShareThis', '#', :class => 'sharethis' %>
+		</div>
 	</footer>
 </section>
 

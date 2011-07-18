@@ -2,14 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$sport: #f5b83c;
+$corporate: #3186c7;
+$government: #578f76;
+$education: #8b8f25;
+$lifestyle: #c93939;
+$religious: #7c629a;
+
 body {
-	color: #FFF;
-	background: #1f1f1f; 
+	color: #a1a1a1; 
+	background: #171717;
 }
 
-body.homepage {
-	background-repeat: no-repeat;
-	background-position: top center;
+ul, ol {
+	margin: 0; 
+	padding: 0; 
 }
 
 a, a:hover {
@@ -21,6 +28,25 @@ h1, h2, h3, h4 {
 	color: #707070;
 	margin: 0;
 	padding: 0;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 36px;
+	margin-bottom: 20px;
+}
+
+.frame {
+	border: 3px solid #FFF;
+	margin: 0 10px 0 0;
+}
+
+.left {
+	float: left; 
+}
+
+.right {
+	float: right; 
 }
 
 section#header {
@@ -39,6 +65,7 @@ section#header {
 		padding: 30px 15px 10px;
 		border-left: 1px solid #222121;
 		border-right: 1px solid #000;
+		color: #7D7D7D;
 	}
 	img#logo {
 		float: left;
@@ -50,28 +77,148 @@ section#header {
 	}
 }
 
-body.homepage section#main {
-	min-width: 950px; 
-	background: url(/assets/pages/homepage/government-square.jpg) no-repeat center center;
-	background-size: 100%;
-	background-origin: padding-box;
+.msa-sport {
+	border-style: solid; 
+	border-color: $sport;
 }
 
-body.homepage section#main div.container {
-	padding: 40px 0;
+.msa-corporate {
+	border-style: solid; 
+	border-color: $corporate;
 }
 
-body.homepage h1 {
-	font-size: 76px;
-	line-height: 70px;
-	text-transform: uppercase;
-	color: #FFF;
-	background: rgba(0,0,0,0.75);
-	width: 350px;
-	padding: 25px;
-	text-align: right;
+.msa-government {
+	border-style: solid; 
+	border-color: $government;
 }
 
-body.homepage h1 strong {
-	display: block;
+.msa-education {
+	border-style: solid; 
+	border-color: $education;
 }
+
+.msa-lifestyle {
+	border-style: solid; 
+	border-color: $lifestyle;
+}
+
+.msa-religious {
+	border-style: solid; 
+	border-color: $religious;
+}
+
+
+section#footer {
+	font-size: 11px; 
+	padding: 20px 0 40px;
+	a {
+		color: #a1a1a1;
+	}
+	div#segments {
+		a {
+			font-weight: bold;
+			border-bottom-width: 2px;
+		}
+		li {
+			margin-right: 20px;
+			list-style-type: none;
+			float: left; 
+			strong {
+				font-size: 14px;
+				color: #FFF;
+			}
+		}
+		p {
+			margin-top: 15px;
+			clear: left; 
+		}
+	}
+	div#social {
+		text-align: right;
+		a {
+			padding-right: 24px;
+			margin-bottom: 2px;
+			background: url(/assets/elements/social-icons.gif) no-repeat top right;
+			display: block; 
+			height: 18px;
+		}
+		a.linkedin {
+			background-position: 100% -20px;
+		}
+		a.sharethis {
+			background-position: 100% -40px;
+		}
+	}
+}
+
+body.homepage {
+	section#main {
+		min-width: 950px; 
+		background: url(/assets/pages/homepage/government-square.jpg) no-repeat center center;
+		background-size: 100%;
+		background-origin: padding-box;
+		div.span-6, 
+		div.span-5 {
+			margin: 20px 0;
+		}
+	}
+	.dark {
+		color: #FFF;
+		background: rgba(0,0,0,0.75);
+		margin-bottom: 20px;
+		padding: 20px;
+		font-size: 14px;
+		line-height: 20px;
+		span {
+			color: #959595; 
+		}
+		p {
+			margin-bottom: 0;
+		}
+		li {
+			list-style-type: none;
+		}
+		p.valign {
+			padding-top: 10px;
+		}
+	}
+	.caption {
+		padding: 10px 0; 
+		margin-bottom: 0;
+	}
+	h1 {
+		text-transform: uppercase;
+		text-align: right;
+		strong {
+			display: block; 
+		}
+	}
+	h1.dark {
+		padding: 30px 20px;
+		font-size: 70px;
+		line-height: 70px;
+	}
+}
+
+section#secondary {
+	background: #1f1f1f url(/assets/elements/bgxy.png) repeat top left; 
+	border: 1px solid #373737;	
+	border-width: 1px 0; 
+	padding: 20px 0;
+	h2 {
+		margin-bottom: 10px;
+		text-shadow: -1px -1px 1px #000000;
+		filter: dropshadow(color=#000000, offx=-1, offy=-1);
+	}
+	h3 {
+		font-size: 14px;
+		line-height: 18px;
+		color: #FFF;
+		margin: 7px 0 9px;
+	}
+	p {
+		font-size: 12px; 
+		line-height: 15px;
+	}
+}
+

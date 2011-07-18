@@ -10,4 +10,8 @@ module PublicHelper
     " style=\"background-image: url(/assets/pages/homepage/government-square.jpg)\"".html_safe
   end
 
+  def is_homepage?
+    params[:controller] == 'public' && params[:action] == 'home'
+  end
+
 end
