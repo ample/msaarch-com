@@ -33,6 +33,25 @@ ActiveRecord::Schema.define(:version => 20110718183245) do
     t.text    "textarea"
   end
 
+  create_table "features", :force => true do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "link"
+    t.string   "feature_type"
+    t.text     "body"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.integer  "asset_id"
+    t.integer  "sort_order",   :default => 0
+    t.boolean  "active",       :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "subtitle"

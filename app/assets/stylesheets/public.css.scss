@@ -67,9 +67,13 @@ section#header {
 		border-right: 1px solid #000;
 		color: #7D7D7D;
 	}
+	li.on a {
+		color: #FFF; 
+		background: #090909;
+	}
 	img#logo {
 		float: left;
-		margin: 30px 15px 10px;
+		margin: 20px 15px 0;
 	}
 	nav {
 		float: right; 
@@ -177,6 +181,10 @@ body.homepage {
 		}
 		li {
 			list-style-type: none;
+			a {
+				padding-left: 12px;
+				background: url(/assets/elements/li-arrow.gif) no-repeat top left;
+			}
 		}
 		p.valign {
 			padding-top: 10px;

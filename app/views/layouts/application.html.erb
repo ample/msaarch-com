@@ -22,13 +22,7 @@
 	<header class="container">
 		<%= link_to image_tag('/assets/elements/msa-architects.png', :id => 'logo', :size => '140x25'), root_path %>
 		<nav>
-			<ul>
-				<li><%= link_to 'Home', root_path %></li>
-				<li class="drop"><%= link_to 'Portfolio' %></li>
-				<li><%= link_to 'Team', '#' %></li>
-				<li><%= link_to 'News', '#' %></li>
-				<li><%= link_to 'Contact', '#' %></li>
-			</ul>
+			<%= site_nav('header') %>
 		</nav>
 	</header>
 </section>

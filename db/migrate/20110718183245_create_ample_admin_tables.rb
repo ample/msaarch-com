@@ -39,5 +39,19 @@ class CreateAmpleAdminTables < ActiveRecord::Migration
       t.timestamps
     end
     add_index :pages, [:permalink], :name => "index_pages_on_permalink"
+    create_table :features do |t|
+      t.string :title
+      t.string :subtitle
+      t.string :link
+      t.string :feature_type
+      t.text :body
+      t.references :owner, :polymorphic => true
+      t.references :asset
+      t.integer :sort_order, :default => 0
+      t.boolean :active, :default => false
+      t.datetime :active_at, :inactive_at
+      t.integer :created_by, :updated_by
+      t.timestamps
+    end    
   end
 end
