@@ -1,7 +1,7 @@
 require 'permalink_fu'
 require 'acts_as_markup'
 
-class Category < ActiveRecord::Base
+class Segment < ActiveRecord::Base
 
   ###---------------------------------------------------- Augmentations
 
@@ -10,11 +10,13 @@ class Category < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
-  has_and_belongs_to_many :projects, :include => :asset
+  has_many :projects
+  belongs_to :asset
 
   ###---------------------------------------------------- Plugins
 
   acts_as_textile :body
+  has_permalink :nav_name
 
   ###---------------------------------------------------- Validations
 

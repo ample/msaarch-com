@@ -2,14 +2,8 @@
 
 <fieldset>
 <% unless f.object.new_record? %>
-	<p><%= f.label :permalink %><br />
-		<%= f.text_field(:permalink, :class => 'text') %></p>
-
 	<p><%= f.check_box(:active) %><%= f.label :active %></p>
 <% end %>
-
-	<p><%= f.label :nav_name %><br />
-	<%= f.text_field(:nav_name, :class => 'text') %></p>
 
 	<p><%= f.label :title %><br />
 	<%= f.text_field(:title, :class => 'text') %></p>
@@ -18,15 +12,11 @@
 <% unless f.object.new_record? %>
 	<p><%= f.label :body %><br />
 	<%= f.text_area(:body, :class => 'textile') %></p>
-
-	<%= f.hidden_field(:asset_id, :value => current_category.asset_id, :class => next_asset_drop_class) %>
-	<p><%= f.label :asset_id, 'Category Logo' %></p>
-	<%= asset_drop(current_category, :asset) %>
 <% end %>
 
 </fieldset>
 
-<button type="submit" name="continue" class="positive">Create Category</button>
+<button type="submit" name="continue" class="positive"><%= f.object.new_record? ? 'Create' : 'Update' %> Category</button>
 <%= link_to 'Cancel', categories_path, :class => 'button' %>
 
 <% end %>

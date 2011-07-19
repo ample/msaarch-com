@@ -14,8 +14,14 @@ MsaarchCom::Application.routes.draw do
         post :update_sort_order
       end
     end
+    resources :segments, :controller => 'admin/segments' do
+      collection do
+        post :update_sort_order
+      end
+    end
   end
 
+  match 'index', :to => 'public#home'
   match '*permalink.:format', :to =>  'public/pages#show', :as => 'public_page', :constraints => { :path => /.+?/, :permalink => /(?!.*?(admin)).*/ }
   match ':permalink', :to =>  'public/pages#show', :as => 'public_page', :constraints => { :permalink => /(?!.*?(admin)).*/ }
 

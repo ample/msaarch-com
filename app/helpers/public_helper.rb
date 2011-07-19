@@ -16,8 +16,6 @@ module PublicHelper
 
   def site_nav(position)
     html = ''
-    
-    # link to navigable pages for current position
     pages = position == 'header' ? Page.in_header : Page.in_footer.reverse!    
     path = request.path.split('/')
     pages.each do |page|
@@ -26,10 +24,22 @@ module PublicHelper
       rescue
         state = ''
       end
-      html += content_tag :li, link_to(page.nav_name, page.hierarchy_permalink), :class => state
+      if page.permalink == 'portfolio'
+        state += ' drop'
+        html += content_tag :li, link_to(page.nav_name, '#') + segments_nav, :class => state
+      else
+        html += content_tag :li, link_to(page.nav_name, page.hierarchy_permalink), :class => state
+      end
     end
+    content_tag :ul, html.html_safe, :class => 'clearfix'
+  end
 
-    content_tag :ul, html.html_safe, :class => 'group'
+  def segments_nav
+    children = ''
+    Segment.live.each do |segment|
+      children += content_tag :li, link_to(segment.title, segment.permalink)
+    end
+    content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
   end
 
 end

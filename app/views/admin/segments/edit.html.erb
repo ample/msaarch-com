@@ -1,0 +1,23 @@
+<div id="left" class="column span-16 append-1">
+	<%= content_tag :h2, title("Editing Segment: #{current_segment.title}"), :class => 'object_title' %>
+	<%= render 'form' %>
+</div>
+<div id="right" class="column span-7 last">
+	<%= render 'admin/error_messages', :object => current_segment %>
+	<hr />
+	<h4>Associated Projects</h4>
+	<ul>
+	<% current_segment.projects.each do |p| %>
+		<%= content_tag :li, link_to(p.title, edit_project_path(p)) %>
+	<% end %>
+	</ul>
+</div>
+
+<% stylesheet 'admin/farbtastic' %>
+<% javascript 'admin/farbtastic' %>
+<script>
+AA['assets']=true;
+$(document).ready(function() {
+	$('#colorpicker').farbtastic('#color');
+});
+</script>

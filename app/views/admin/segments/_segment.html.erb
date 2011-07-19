@@ -1,0 +1,4 @@
+<li id="segment_<%= segment.id %>" class="<%= segment.admin_status_class %>">
+	<%= manage_object segment, :sortable => true %>
+	<%= link_to segment.title, edit_segment_path(segment) %>
+</li>

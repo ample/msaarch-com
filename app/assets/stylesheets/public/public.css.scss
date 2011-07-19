@@ -67,9 +67,27 @@ section#header {
 		border-right: 1px solid #000;
 		color: #7D7D7D;
 	}
+	li a:hover {
+		color: #FFF;
+	}
 	li.on a {
 		color: #FFF; 
 		background: #090909;
+	}
+	li.drop div.subnav {
+		position: absolute;
+		display: none;
+		background: #1B1B1B;
+		width: 100px;
+		padding: 10px 15px; 
+		li {
+			float: none;
+			text-align: left;
+		}
+		a {
+			border: none;
+			padding: 0;
+		}
 	}
 	img#logo {
 		float: left;

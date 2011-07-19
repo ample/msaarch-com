@@ -2,16 +2,15 @@
 	<div class="index_header clearfix">
 		<div class="column span-11">
 			<% title('Projects') %>
-			<%= content_tag :h2, 'Select a Project' %>
+			<%= content_tag :h2, 'Select a Segment' %>
 		</div>
 		<div class="column span-5 last">
-			<%= link_to_new :project, new_project_path %>
+			<%= link_to_new :segment, new_segment_path %>
 		</div>
 	</div>
 	<ul class="index_list sortable clear">
-		<%= render :partial => 'admin/projects/project', :collection => current_projects %>
+		<%= render :partial => 'admin/segments/segment', :collection => current_segments %>
 	</ul>
-	<%= will_paginate current_projects %>
 	<%= render 'admin/legend' %>
 </div>
 <div id="right" class="column span-7 last"></div>

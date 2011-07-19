@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110719144000) do
+ActiveRecord::Schema.define(:version => 20110719153054) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -35,11 +35,6 @@ ActiveRecord::Schema.define(:version => 20110719144000) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
-    t.string   "permalink"
-    t.string   "nav_name"
-    t.text     "body"
-    t.integer  "asset_id"
-    t.integer  "parent_id"
     t.integer  "sort_order",  :default => 0
     t.boolean  "active",      :default => false
     t.datetime "active_at"
@@ -49,8 +44,6 @@ ActiveRecord::Schema.define(:version => 20110719144000) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "categories", ["permalink"], :name => "index_categories_on_permalink"
 
   create_table "categories_projects", :id => false, :force => true do |t|
     t.integer "category_id"
@@ -113,9 +106,27 @@ ActiveRecord::Schema.define(:version => 20110719144000) do
     t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "segment_id"
   end
 
   add_index "projects", ["permalink"], :name => "index_projects_on_permalink"
+
+  create_table "segments", :force => true do |t|
+    t.string   "title"
+    t.string   "permalink"
+    t.string   "nav_name"
+    t.string   "color"
+    t.text     "body"
+    t.integer  "asset_id"
+    t.integer  "sort_order",  :default => 0
+    t.boolean  "active",      :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
