@@ -8,6 +8,7 @@ class CreateSegments < ActiveRecord::Migration
       t.text :body
       t.references :asset
       t.integer :sort_order,        :default => 0
+      t.integer :projects_count,    :default => 0
       t.boolean :active,            :default => false
       t.datetime :active_at
       t.datetime :inactive_at

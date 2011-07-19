@@ -118,8 +118,9 @@ ActiveRecord::Schema.define(:version => 20110719153054) do
     t.string   "color"
     t.text     "body"
     t.integer  "asset_id"
-    t.integer  "sort_order",  :default => 0
-    t.boolean  "active",      :default => false
+    t.integer  "sort_order",     :default => 0
+    t.integer  "projects_count", :default => 0
+    t.boolean  "active",         :default => false
     t.datetime "active_at"
     t.datetime "inactive_at"
     t.integer  "created_by"

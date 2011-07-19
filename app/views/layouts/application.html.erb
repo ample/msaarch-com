@@ -40,12 +40,9 @@
 		<div id="segments" class="span-13">
 			<ul class="clearfix">
 				<li><strong>MSA</strong></li>
-				<li><a href="#" class="msa-sport">Sport (78)</a></li>
-				<li><a href="#" class="msa-corporate">Corporate (15)</a></li>
-				<li><a href="#" class="msa-government">Government (16)</a></li>
-				<li><a href="#" class="msa-education">Education (19)</a></li>
-				<li><a href="#" class="msa-lifestyle">Lifestyle (23)</a></li>
-				<li><a href="#" class="msa-religious">Religious (7)</a></li>
+			<% Segment.live.each do |segment| %>
+				<%= content_tag :li, link_to("#{segment.title} (#{segment.projects_count})", portfolio_path(segment.permalink), :class => segment.permalink) %>
+			<% end %>
 			</ul>
 			<p>&copy; 2011 MSA Architects. All rights reserved.</p>
 		</div>

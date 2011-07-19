@@ -37,7 +37,7 @@ module PublicHelper
   def segments_nav
     children = ''
     Segment.live.each do |segment|
-      children += content_tag :li, link_to(segment.title, segment.permalink)
+      children += content_tag :li, link_to(segment.nav_name, portfolio_path(segment.permalink))
     end
     content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
   end
