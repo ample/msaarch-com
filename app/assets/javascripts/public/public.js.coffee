@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-
 $ ->
 	$('li.drop').hover (-> $(this).find('div.subnav').show()), (-> $(this).find('div.subnav').hide());
 		

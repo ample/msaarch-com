@@ -6,4 +6,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require public/jquery.fullbg.min
+//= require public/modernizr-2.0.6
+//= require public/public

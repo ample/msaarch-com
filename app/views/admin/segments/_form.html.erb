@@ -24,7 +24,7 @@
 	<%= asset_drop(current_segment, :asset) %>
 
 	<p><%= f.label :color %><br />
-	<%= f.text_field :color, :id => 'color' %></p>
+	<%= f.text_field :color, :value => (current_segment.color.blank? ? '#000000' : current_segment.color), :class => 'text' %></p>
 	<div id="colorpicker"></div>
 
 <% end %>

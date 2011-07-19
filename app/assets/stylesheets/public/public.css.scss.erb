@@ -2,12 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$sport: #f5b83c;
-$corporate: #3186c7;
-$government: #578f76;
-$education: #8b8f25;
-$lifestyle: #c93939;
-$religious: #7c629a;
+<% Segment.live.each do |segment| %>
+.<%= segment.permalink %> {
+	border-color: <%= segment.color %>; 
+	border-style: solid;
+}
+<% end %>
 
 body {
 	color: #a1a1a1; 
@@ -98,37 +98,6 @@ section#header {
 		width: 750px; 
 	}
 }
-
-.msa-sport {
-	border-style: solid; 
-	border-color: $sport;
-}
-
-.msa-corporate {
-	border-style: solid; 
-	border-color: $corporate;
-}
-
-.msa-government {
-	border-style: solid; 
-	border-color: $government;
-}
-
-.msa-education {
-	border-style: solid; 
-	border-color: $education;
-}
-
-.msa-lifestyle {
-	border-style: solid; 
-	border-color: $lifestyle;
-}
-
-.msa-religious {
-	border-style: solid; 
-	border-color: $religious;
-}
-
 
 section#footer {
 	font-size: 11px; 
