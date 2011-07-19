@@ -1,0 +1,4 @@
+<li id="category_<%= category.id %>" class="<%= category.admin_status_class %>">
+	<%= manage_object category, :sortable => true %>
+	<%= link_to category.title, edit_category_path(category) %>
+</li>

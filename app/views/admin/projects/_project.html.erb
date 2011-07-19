@@ -1,0 +1,4 @@
+<li id="project_<%= project.id %>" class="<%= project.admin_status_class %>">
+	<%= manage_object project, :sortable => true %>
+	<%= link_to project.title, edit_project_path(project) %>
+</li>

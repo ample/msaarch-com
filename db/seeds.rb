@@ -12,6 +12,6 @@ users = User.create([
   { name: 'Ryan Merrill', email: 'ryan@helloample.com', password: 'ample2011', password_confirmation: 'ample2011', :admin => true }
 ])
 
-homepage = Page.create :title => 'Home', :active => true, :permalink => 'index', :nav_name => 'Home'
-contact = Page.create :title => 'Contact', :active => true, :permalink => 'contact', :nav_name => 'Contact'
-team = Page.create :title => 'Team', :active => true, :permalink => 'team', :nav_name => 'Team'
+homepage = Page.create :title => 'Home', :active => true, :permalink => 'index', :nav_name => 'Home', :nav_position => 'header'
+contact = Page.create :title => 'Contact', :active => true, :permalink => 'contact', :nav_name => 'Contact', :nav_position => 'header'
+team = Page.create :title => 'Team', :active => true, :permalink => 'team', :nav_name => 'Team', :nav_position => 'header'

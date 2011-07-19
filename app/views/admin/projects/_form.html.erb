@@ -1,0 +1,28 @@
+<%= form_for(current_project, :html => { :multipart => true }) do |f| %>
+
+<fieldset>
+<% unless f.object.new_record? %>
+	<p><%= f.label :permalink %><br />
+		<%= f.text_field(:permalink, :class => 'text') %></p>
+
+	<p><%= f.check_box(:active) %><%= f.label :active %></p>
+<% end %>
+
+	<p><%= f.label :nav_name %><br />
+	<%= f.text_field(:nav_name, :class => 'text') %></p>
+
+	<p><%= f.label :title %><br />
+	<%= f.text_field(:title, :class => 'text') %></p>
+
+
+<% unless f.object.new_record? %>
+	<p><%= f.label :body %><br />
+	<%= f.text_area(:body, :class => 'textile') %></p>
+<% end %>
+
+</fieldset>
+
+<button type="submit" name="continue" class="positive">Create Project</button>
+<%= link_to 'Cancel', categories_path, :class => 'button' %>
+
+<% end %>
