@@ -36,13 +36,14 @@ end
 	<%= content_tag :p, "#{link_to File.basename(current_asset.attachment_uid), current_asset.attachment.url} #{clippy current_asset.attachment.url}<br />#{dimensions}#{filetype}Uploaded #{time_ago_in_words(current_asset.created_at)} ago".html_safe %>
 	<hr />
 	<%= show_flashes %>
+
 	<div id="colorpicker"></div>
 	<%= form_for current_asset, :url => update_color_thing_path(current_asset), :method => :post, :remote => true do |f| %>
 		<p><%= f.label :color, 'Border Color' %><br />
-		<%= f.text_field :color, :value => (current_asset.color.blank? ? '#000000' : current_asset.color), :class => 'text' %></p>
+		<%= f.text_field :color, :value => (current_asset.color.blank? ? '#FFFFFF' : current_asset.color), :class => 'text' %></p>
 		<p><%= f.submit 'Update Asset' %></p>
 	<% end %>
-	
+
 	<script>
 	$(document).ready(function() {
 		$('#colorpicker').farbtastic('#asset_color');
