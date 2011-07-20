@@ -70,6 +70,25 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.datetime "updated_at"
   end
 
+  create_table "markets", :force => true do |t|
+    t.string   "title"
+    t.string   "permalink"
+    t.string   "nav_name"
+    t.string   "color"
+    t.text     "body"
+    t.integer  "banner_id"
+    t.integer  "logo_id"
+    t.integer  "sort_order",     :default => 0
+    t.integer  "projects_count", :default => 0
+    t.boolean  "active",         :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "subtitle"
@@ -107,29 +126,10 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "segment_id"
+    t.integer  "market_id"
   end
 
   add_index "projects", ["permalink"], :name => "index_projects_on_permalink"
-
-  create_table "segments", :force => true do |t|
-    t.string   "title"
-    t.string   "permalink"
-    t.string   "nav_name"
-    t.string   "color"
-    t.text     "body"
-    t.integer  "banner_id"
-    t.integer  "logo_id"
-    t.integer  "sort_order",     :default => 0
-    t.integer  "projects_count", :default => 0
-    t.boolean  "active",         :default => false
-    t.datetime "active_at"
-    t.datetime "inactive_at"
-    t.integer  "created_by"
-    t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

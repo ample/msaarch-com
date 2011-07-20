@@ -1,7 +1,7 @@
 require 'permalink_fu'
 require 'acts_as_markup'
 
-class Segment < ActiveRecord::Base
+class Market < ActiveRecord::Base
 
   ###---------------------------------------------------- Augmentations
 

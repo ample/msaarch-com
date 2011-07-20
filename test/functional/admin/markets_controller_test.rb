@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SegmentTest < ActiveSupport::TestCase
+class Admin::MarketsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

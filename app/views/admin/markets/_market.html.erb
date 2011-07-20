@@ -1,0 +1,4 @@
+<li id="market_<%= market.id %>" class="<%= market.admin_status_class %>">
+	<%= manage_object market, :sortable => true %>
+	<%= link_to market.title, edit_market_path(market) %>
+</li>

@@ -3,7 +3,7 @@ module PublicHelper
   def body_classes
     classes = ''
     classes += ' homepage' if params[:controller] == 'public' && params[:action] == 'home'
-    classes += ' portfolio segment' if params[:controller] == 'public/segments'
+    classes += ' portfolio market' if params[:controller] == 'public/markets'
     " class=\"#{classes.lstrip}\"".html_safe unless classes.empty?
   end
 
@@ -11,8 +11,8 @@ module PublicHelper
     params[:controller] == 'public' && params[:action] == 'home'
   end
 
-  def is_segment?
-    params[:controller] == 'public/segments'
+  def is_market?
+    params[:controller] == 'public/markets'
   end
 
   def site_nav(position)
@@ -27,7 +27,7 @@ module PublicHelper
       end
       if page.permalink == 'portfolio'
         state += ' drop'
-        html += content_tag :li, link_to(page.nav_name, '#') + segments_nav, :class => state
+        html += content_tag :li, link_to(page.nav_name, '#') + markets_nav, :class => state
       else
         html += content_tag :li, link_to(page.nav_name, page.hierarchy_permalink), :class => state
       end
@@ -35,10 +35,10 @@ module PublicHelper
     content_tag :ul, html.html_safe, :class => 'clearfix'
   end
 
-  def segments_nav
+  def markets_nav
     children = ''
-    Segment.live.each do |segment|
-      children += content_tag :li, link_to(segment.nav_name, portfolio_path(segment.permalink))
+    Market.live.each do |market|
+      children += content_tag :li, link_to(market.nav_name, portfolio_path(market.permalink))
     end
     content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
   end

@@ -11,7 +11,7 @@ class Project < ActiveRecord::Base
   ###---------------------------------------------------- Associations
 
   has_and_belongs_to_many :categories
-  belongs_to :segment, :counter_cache => true
+  belongs_to :market, :counter_cache => true
 
   ###---------------------------------------------------- Plugins
 

@@ -30,7 +30,7 @@
 <% if is_homepage? %>
 	<%= yield %>
 <% else %>
-	<%= render 'public/segments/header' if is_segment? %>
+	<%= render 'public/markets/header' if is_market? %>
 	<section id="beta">
 		<%= content_tag :div, yield, :class => 'container' %>
 	</section>
@@ -38,11 +38,11 @@
 
 <section id="footer">
 	<footer class="container">
-		<div id="segments" class="span-13">
+		<div id="markets" class="span-13">
 			<ul class="clearfix">
 				<li><strong>MSA</strong></li>
-			<% Segment.live.each do |segment| %>
-				<%= content_tag :li, link_to("#{segment.title} (#{segment.projects_count})", portfolio_path(segment.permalink), :class => segment.permalink) %>
+			<% Market.live.each do |market| %>
+				<%= content_tag :li, link_to("#{market.title} (#{market.projects_count})", portfolio_path(market.permalink), :class => market.permalink) %>
 			<% end %>
 			</ul>
 			<p>&copy; 2011 MSA Architects. All rights reserved.</p>

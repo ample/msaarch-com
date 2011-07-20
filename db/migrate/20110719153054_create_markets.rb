@@ -1,6 +1,6 @@
-class CreateSegments < ActiveRecord::Migration
+class CreateMarkets < ActiveRecord::Migration
   def change
-    create_table :segments do |t|
+    create_table :markets do |t|
       t.string :title
       t.string :permalink
       t.string :nav_name
@@ -16,6 +16,6 @@ class CreateSegments < ActiveRecord::Migration
       t.integer :updated_by
       t.timestamps
     end
-    add_column :projects, :segment_id, :integer
+    add_column :projects, :market_id, :integer
   end
 end

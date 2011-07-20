@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-<% Segment.live.each do |segment| %>
-.<%= segment.permalink %> {
-	border-color: <%= segment.color %>; 
+<% Market.live.each do |market| %>
+.<%= market.permalink %> {
+	border-color: <%= market.color %>; 
 	border-style: solid;
 }
 <% end %>
@@ -105,7 +105,7 @@ section#footer {
 	a {
 		color: #a1a1a1;
 	}
-	div#segments {
+	div#markets {
 		a {
 			font-weight: bold;
 			border-bottom-width: 2px;
@@ -201,9 +201,9 @@ body.homepage {
 	}
 }
 
-body.segment {
+body.market {
 	section#alpha {
-		img.segment-logo {
+		img.market-logo {
 			margin-bottom: 20px;
 		}
 		.container {
