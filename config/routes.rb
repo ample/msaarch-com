@@ -23,6 +23,14 @@ MsaarchCom::Application.routes.draw do
         post :update_sort_order
       end
     end
+    resources :assets, :as => 'things', :controller => 'admin/assets' do 
+      member do 
+        post :update_color
+      end
+      collection do 
+        post :search
+      end
+    end
   end
 
   match 'portfolio/:permalink', :to => 'public/segments#show', :as => :portfolio

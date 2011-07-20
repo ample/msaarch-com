@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110719153054) do
+ActiveRecord::Schema.define(:version => 20110720133129) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20110719153054) do
     t.integer  "attachment_height"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "color"
   end
 
   create_table "blocks", :force => true do |t|
