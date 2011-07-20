@@ -142,12 +142,18 @@ section#footer {
 	}
 }
 
-body.homepage {
-	section#main {
+body {
+	section#alpha {
+		color: #FFF; 
 		min-width: 950px; 
-		background: url(/assets/pages/homepage/government-square.jpg) no-repeat center center;
 		background-size: 100%;
 		background-origin: padding-box;
+	}
+}
+
+body.homepage {
+	section#alpha {
+		background: url(/assets/pages/homepage/government-square.jpg) no-repeat center center;
 		div.span-6, 
 		div.span-5 {
 			margin: 20px 0;
@@ -195,7 +201,23 @@ body.homepage {
 	}
 }
 
-section#secondary {
+body.segment {
+	section#alpha {
+		img.segment-logo {
+			margin-bottom: 20px;
+		}
+		.container {
+			padding: 40px 0;
+		}
+		.intro {
+			font-size: 16px;
+			text-shadow: -1px -1px 1px #5b3d00;
+			filter: dropshadow(color=#5b3d00, offx=-1, offy=-1);
+		}
+	}
+}
+
+section#beta {
 	background: #1f1f1f url(/assets/elements/bgxy.png) repeat top left; 
 	border: 1px solid #373737;	
 	border-width: 1px 0; 

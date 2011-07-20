@@ -30,7 +30,8 @@
 <% if is_homepage? %>
 	<%= yield %>
 <% else %>
-	<section id="secondary">
+	<%= render 'public/segments/header' if is_segment? %>
+	<section id="beta">
 		<%= content_tag :div, yield, :class => 'container' %>
 	</section>
 <% end %>

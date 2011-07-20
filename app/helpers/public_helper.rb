@@ -2,16 +2,17 @@ module PublicHelper
 
   def body_classes
     classes = ''
-    classes += 'homepage' if params[:controller] == 'public' && params[:action] == 'home'
-    " class=\"#{classes}\"".html_safe unless classes.empty?
-  end
-
-  def background_image
-    " style=\"background-image: url(/assets/pages/homepage/government-square.jpg)\"".html_safe
+    classes += ' homepage' if params[:controller] == 'public' && params[:action] == 'home'
+    classes += ' portfolio segment' if params[:controller] == 'public/segments'
+    " class=\"#{classes.lstrip}\"".html_safe unless classes.empty?
   end
 
   def is_homepage?
     params[:controller] == 'public' && params[:action] == 'home'
+  end
+
+  def is_segment?
+    params[:controller] == 'public/segments'
   end
 
   def site_nav(position)

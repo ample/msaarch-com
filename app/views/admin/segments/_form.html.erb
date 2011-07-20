@@ -19,9 +19,13 @@
 	<p><%= f.label :body %><br />
 	<%= f.text_area(:body, :class => 'textile') %></p>
 
-	<%= f.hidden_field(:asset_id, :value => current_segment.asset_id, :class => next_asset_drop_class) %>
-	<p><%= f.label :asset_id, 'Segment Logo' %></p>
-	<%= asset_drop(current_segment, :asset) %>
+	<%= f.hidden_field(:logo_id, :value => current_segment.logo_id, :class => next_asset_drop_class) %>
+	<p><%= f.label :logo_id, 'Segment Logo' %></p>
+	<%= asset_drop(current_segment, :logo) %>
+
+	<%= f.hidden_field(:banner_id, :value => current_segment.banner_id, :class => next_asset_drop_class) %>
+	<p><%= f.label :banner_id, 'Segment Banner' %></p>
+	<%= asset_drop(current_segment, :banner) %>
 
 	<p><%= f.label :color %><br />
 	<%= f.text_field :color, :value => (current_segment.color.blank? ? '#000000' : current_segment.color), :class => 'text' %></p>

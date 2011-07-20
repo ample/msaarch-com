@@ -6,7 +6,7 @@ class CreateSegments < ActiveRecord::Migration
       t.string :nav_name
       t.string :color
       t.text :body
-      t.references :asset
+      t.references :banner, :logo
       t.integer :sort_order,        :default => 0
       t.integer :projects_count,    :default => 0
       t.boolean :active,            :default => false

@@ -118,7 +118,8 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.string   "nav_name"
     t.string   "color"
     t.text     "body"
-    t.integer  "asset_id"
+    t.integer  "banner_id"
+    t.integer  "logo_id"
     t.integer  "sort_order",     :default => 0
     t.integer  "projects_count", :default => 0
     t.boolean  "active",         :default => false

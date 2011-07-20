@@ -11,7 +11,8 @@ class Segment < ActiveRecord::Base
   ###---------------------------------------------------- Associations
 
   has_many :projects
-  belongs_to :asset
+  belongs_to :banner, :class_name => 'Asset'
+  belongs_to :logo, :class_name => 'Asset'
 
   ###---------------------------------------------------- Plugins
 
@@ -21,5 +22,13 @@ class Segment < ActiveRecord::Base
   ###---------------------------------------------------- Validations
 
   validates_presence_of :title
+
+  ###---------------------------------------------------- Instance Methods
+
+  def background
+    unless banner.blank?
+      " style=\"background-image: url(#{banner.attachment.url}); \"".html_safe
+    end
+  end
 
 end
