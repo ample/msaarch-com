@@ -1,4 +1,5 @@
 <li id="category_<%= category.id %>" class="<%= category.admin_status_class %>">
 	<%= manage_object category, :sortable => true %>
-	<%= link_to category.title, edit_category_path(category) %>
+	<%= link_to "#{category.title} (#{category.projectships_count})", edit_category_path(category) %>
+	<%= content_tag :ul, render(:partial => 'category', :collection => category.children), :id => "children_#{category.id}", :class => 'sortable' if category.children %>
 </li>

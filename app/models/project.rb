@@ -27,13 +27,6 @@ class Project < ActiveRecord::Base
 
   ###---------------------------------------------------- Class Methods
 
-  def market_categories
-    #raise markets.collect{ |market| market.categories }.to_yaml
-    markets.collect{ |market| market.categories }.flatten.uniq.compact
-  end
-
-  ###---------------------------------------------------- Class Methods
-
   def self.feature_types
     feature_types = [ 'image' ]
     Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact

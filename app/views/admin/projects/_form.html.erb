@@ -17,18 +17,21 @@
 
 	<p><%= f.label :markets %><br />
 	<%= f.collection_select :market_ids, Market.all, :id, :title, {}, :multiple => true %></p>
+
+<% unless f.object.new_record? %>
 	
-<% unless f.object.new_record? %>
-
-  <% current_project.markets.each do |market| %>
-    <%= label_tag market.title %>
+  <div class="clearfix">
+	<p><%= f.label :categories %><br />
+  <% Category.root_level.each do |category| %>
+  <div class="opts">
+    <%= label_tag category.title %>
+    <% category.children.each do |subcategory| %>
+      <label><%= check_box_tag "project[category_ids][]", subcategory.id, current_project.categories.include?(subcategory) %> <%= subcategory.title %></label>
+    <% end %>
+  </div>
   <% end %>
-
-  <%= debug current_project.market_categories.collect{ |c| c.title } %>
-
-<% end %>
-
-<% unless f.object.new_record? %>
+  </p></div>
+	
 	<p><%= f.label :body %><br />
 	<%= f.text_area(:body, :class => 'textile') %></p>
 	

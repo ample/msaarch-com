@@ -42,7 +42,7 @@
 			<ul class="clearfix">
 				<li><strong>MSA</strong></li>
 			<% Market.live.each do |market| %>
-				<%= content_tag :li, link_to("#{market.title} (#{market.projects_count})", portfolio_path(market.permalink), :class => market.permalink) %>
+				<%= content_tag :li, link_to("#{market.title} (#{market.projectships_count})", portfolio_path(market.permalink), :class => market.permalink) %>
 			<% end %>
 			</ul>
 			<p>&copy; 2011 MSA Architects. All rights reserved.</p>

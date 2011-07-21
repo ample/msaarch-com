@@ -9,3 +9,5 @@
 #asset-detail #asset_color 			{width: 250px; }
 #asset-detail #notifications		{margin-right: 7px; }	
 #asset-list img.asset_thumb			{border-width: 3px; border-style: solid; }
+div.opts                        {float: left; }
+div.opts label                  {display: block; }

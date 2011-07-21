@@ -6,15 +6,13 @@ class Category < ActiveRecord::Base
   ###---------------------------------------------------- Augmentations
 
   augment Publishing
+  augment Nesting
   augment Sorting
 
   ###---------------------------------------------------- Associations
 
   has_many :projectships, :as => :owner, :dependent => :destroy
   has_many :projects, :through => :projectships
-
-  has_and_belongs_to_many :groups
-  has_and_belongs_to_many :markets
 
   ###---------------------------------------------------- Plugins
 

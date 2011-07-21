@@ -7,9 +7,6 @@
 
 	<p><%= f.check_box(:active) %><%= f.label :active %></p>
 
-	<p><%= f.label :category, "Categories" %><br />
-		 <%= f.collection_select :category_ids, Category.all, :id, :title, {}, :multiple => true %></p>
-
 <% end %>
 
 	<p><%= f.label :nav_name %><br />

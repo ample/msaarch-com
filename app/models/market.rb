@@ -12,9 +12,7 @@ class Market < ActiveRecord::Base
 
   has_many :projectships, :as => :owner, :dependent => :destroy
   has_many :projects, :through => :projectships
-  
   has_many :features, :as => :owner, :include => [ :asset ]
-  has_and_belongs_to_many :categories
   belongs_to :banner, :class_name => 'Asset'
   belongs_to :logo, :class_name => 'Asset'
 
