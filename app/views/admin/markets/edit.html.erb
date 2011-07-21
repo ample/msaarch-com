@@ -6,18 +6,10 @@
 	<%= render 'admin/error_messages', :object => current_market %>
 	<div id="tabs">
 		<ul class="clearfix">
-			<li><a href="#tabs-0">Market Information</a></li>
-			<li><a href="#tabs-1">Features</a></li>
+			<li><a href="#tabs-0">Features</a></li>
+			<li><a href="#tabs-1">Projects</a></li>
 		</ul>
-		<div id="tabs-0">
-			<h4>Associated Projects</h4>
-			<ul>
-			<% current_market.projects.each do |p| %>
-				<%= content_tag :li, link_to(p.title, edit_project_path(p)) %>
-			<% end %>
-			</ul>
-		</div>
-		<div id="tabs-1">
+		<div id="tabs-0"> 
 			<ul>
 			<% Market.feature_types.each do |feature_type| %>
 				<li><%= feature_type[0] %> <small>(<%= link_to 'Add New', new_market_feature_path(current_market, :feature_type => feature_type[0].downcase) %>)</small>
@@ -25,6 +17,13 @@
 						<%= render current_market.features.of_type(feature_type[1]) %>
 					</ul>
 				</li>
+			<% end %>
+			</ul>
+		</div>
+		<div id="tabs-1">
+			<ul>
+			<% current_market.projects.each do |p| %>
+				<%= content_tag :li, link_to(p.title, edit_project_path(p)) %>
 			<% end %>
 			</ul>
 		</div>

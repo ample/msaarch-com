@@ -11,7 +11,7 @@ class Project < ActiveRecord::Base
   ###---------------------------------------------------- Associations
 
   has_many :features, :as => :owner, :include => [ :asset ]
-  has_many :projectships, :dependent => :destroy
+  has_many :projectships
   has_many :categories, :through => :projectships, :source => :owner, :source_type => 'Category'
   has_many :markets, :through => :projectships, :source => :owner, :source_type => 'Market'
   belongs_to :thumbnail, :class_name => 'Asset'
@@ -24,6 +24,13 @@ class Project < ActiveRecord::Base
   ###---------------------------------------------------- Validations
 
   validates_presence_of :title
+
+  ###---------------------------------------------------- Class Methods
+
+  def market_categories
+    #raise markets.collect{ |market| market.categories }.to_yaml
+    markets.collect{ |market| market.categories }.flatten.uniq.compact
+  end
 
   ###---------------------------------------------------- Class Methods
 

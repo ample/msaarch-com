@@ -6,6 +6,10 @@
 		<%= f.text_field(:permalink, :class => 'text') %></p>
 
 	<p><%= f.check_box(:active) %><%= f.label :active %></p>
+
+	<p><%= f.label :category, "Categories" %><br />
+		 <%= f.collection_select :category_ids, Category.all, :id, :title, {}, :multiple => true %></p>
+
 <% end %>
 
 	<p><%= f.label :nav_name %><br />
@@ -13,7 +17,6 @@
 
 	<p><%= f.label :title %><br />
 	<%= f.text_field(:title, :class => 'text') %></p>
-
 
 <% unless f.object.new_record? %>
 	<p><%= f.label :body %><br />

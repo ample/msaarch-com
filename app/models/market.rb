@@ -10,8 +10,9 @@ class Market < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
-  has_many :projectships, :dependent => :destroy
-  has_many :projects, :through => :projectships,:source => :owner, :source_type => 'Project', :include => :asset
+  has_many :projectships, :as => :owner, :dependent => :destroy
+  has_many :projects, :through => :projectships
+  
   has_many :features, :as => :owner, :include => [ :asset ]
   has_and_belongs_to_many :categories
   belongs_to :banner, :class_name => 'Asset'
@@ -38,9 +39,9 @@ class Market < ActiveRecord::Base
     features.live.collect { |feature| feature if feature.feature_type == 'video' }.compact
   end
 
-  def categories
-    cat = projects.live.collect{ |project| project.categories }.flatten.uniq.compact
-  end
+  #def categories
+  #  cat = projects.live.collect{ |project| project.categories }.flatten.uniq.compact
+  #end
 
   ###---------------------------------------------------- Class Methods
 

@@ -7,9 +7,6 @@
 
 	<p><%= f.check_box(:active) %><%= f.label :active %></p>
 	
-	<p><%= f.label :category %><br />
-		 <%= f.collection_select :category_ids, Category.all, :id, :title, {}, :multiple => true %></p>
-	
 <% end %>
 
 	<p><%= f.label :nav_name %><br />
@@ -18,6 +15,18 @@
 	<p><%= f.label :title %><br />
 	<%= f.text_field(:title, :class => 'text') %></p>
 
+	<p><%= f.label :markets %><br />
+	<%= f.collection_select :market_ids, Market.all, :id, :title, {}, :multiple => true %></p>
+	
+<% unless f.object.new_record? %>
+
+  <% current_project.markets.each do |market| %>
+    <%= label_tag market.title %>
+  <% end %>
+
+  <%= debug current_project.market_categories.collect{ |c| c.title } %>
+
+<% end %>
 
 <% unless f.object.new_record? %>
 	<p><%= f.label :body %><br />

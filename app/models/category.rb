@@ -10,8 +10,8 @@ class Category < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
-  has_many :projectships, :dependent => :destroy
-  has_many :projects, :through => :projectships,:source => :owner, :source_type => 'Project', :include => :asset
+  has_many :projectships, :as => :owner, :dependent => :destroy
+  has_many :projects, :through => :projectships
 
   has_and_belongs_to_many :groups
   has_and_belongs_to_many :markets
