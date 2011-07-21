@@ -2,6 +2,7 @@ class Projectship < ActiveRecord::Base
   
   ###---------------------------------------------------- Associations
 
-  belongs_to :category, :counter_cache => true
-  
+  belongs_to :project
+  belongs_to :owner, :polymorphic => true
+
 end

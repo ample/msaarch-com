@@ -12,8 +12,8 @@ class Project < ActiveRecord::Base
 
   has_many :features, :as => :owner, :include => [ :asset ]
   has_many :projectships, :dependent => :destroy
-  has_many :categories, :through => :projectships
-  belongs_to :market, :counter_cache => true
+  has_many :categories, :through => :projectships, :source => :owner, :source_type => 'Category'
+  has_many :markets, :through => :projectships, :source => :owner, :source_type => 'Market'
   belongs_to :thumbnail, :class_name => 'Asset'
 
   ###---------------------------------------------------- Plugins

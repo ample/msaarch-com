@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.datetime "updated_at"
   end
 
+  create_table "categories_groups", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "group_id"
+  end
+
+  create_table "categories_markets", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "market_id"
+  end
+
   create_table "features", :force => true do |t|
     t.string   "title"
     t.string   "subtitle"
@@ -62,6 +72,15 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "title"
+    t.boolean  "active",           :default => false
+    t.integer  "sort_order",       :default => 0
+    t.integer  "categories_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -123,14 +142,14 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "market_id"
   end
 
   add_index "projects", ["permalink"], :name => "index_projects_on_permalink"
 
   create_table "projectships", :force => true do |t|
-    t.integer  "category_id"
     t.integer  "project_id"
+    t.integer  "owner_id"
+    t.string   "owner_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -16,8 +16,8 @@ class CreateProjects < ActiveRecord::Migration
     end
     add_index :projects, :permalink
     create_table :projectships do |t|
-      t.references :category
       t.references :project
+      t.references :owner, :polymorphic => true
       t.timestamps
     end
   end
