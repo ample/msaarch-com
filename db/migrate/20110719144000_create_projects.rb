@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :permalink
       t.string :nav_name
       t.text :body
+      t.references :thumbnail
       t.integer :sort_order,        :default => 0
       t.boolean :active,            :default => false
       t.datetime :active_at
@@ -14,9 +15,10 @@ class CreateProjects < ActiveRecord::Migration
       t.timestamps
     end
     add_index :projects, :permalink
-    create_table :categories_projects, :id => false do |t|
+    create_table :projectships do |t|
       t.references :category
       t.references :project
+      t.timestamps
     end
   end
 end

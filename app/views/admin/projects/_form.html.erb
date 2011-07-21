@@ -22,6 +22,11 @@
 <% unless f.object.new_record? %>
 	<p><%= f.label :body %><br />
 	<%= f.text_area(:body, :class => 'textile') %></p>
+	
+	<%= f.hidden_field(:thumbnail_id, :value => current_project.thumbnail_id, :class => next_asset_drop_class) %>
+	<p><%= f.label :thumbnail_id, 'Project Thumbnail' %></p>
+	<%= asset_drop(current_project, :thumbnail) %>
+
 <% end %>
 
 </fieldset>

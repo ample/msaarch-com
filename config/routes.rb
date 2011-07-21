@@ -10,11 +10,13 @@ MsaarchCom::Application.routes.draw do
       end
     end
     resources :projects, :controller => 'admin/projects' do
+      resources :features, :controller => 'admin/features'
       collection do
         post :update_sort_order
       end
     end
     resources :markets, :controller => 'admin/markets' do
+      resources :features, :controller => 'admin/features'
       collection do
         post :update_sort_order
       end

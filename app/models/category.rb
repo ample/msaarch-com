@@ -10,7 +10,8 @@ class Category < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
-  has_and_belongs_to_many :projects, :include => :asset
+  has_many :projectships, :dependent => :destroy
+  has_many :projects, :through => :projectships, :include => :asset
 
   ###---------------------------------------------------- Plugins
 
@@ -19,5 +20,12 @@ class Category < ActiveRecord::Base
   ###---------------------------------------------------- Validations
 
   validates_presence_of :title
+
+  ###---------------------------------------------------- Instance Methods
+
+  def projects_count
+    projectships_count
+  end
+  
 
 end

@@ -10,8 +10,11 @@ class Project < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
-  has_and_belongs_to_many :categories
+  has_many :features, :as => :owner, :include => [ :asset ]
+  has_many :projectships, :dependent => :destroy
+  has_many :categories, :through => :projectships
   belongs_to :market, :counter_cache => true
+  belongs_to :thumbnail, :class_name => 'Asset'
 
   ###---------------------------------------------------- Plugins
 
@@ -21,5 +24,12 @@ class Project < ActiveRecord::Base
   ###---------------------------------------------------- Validations
 
   validates_presence_of :title
+
+  ###---------------------------------------------------- Class Methods
+
+  def self.feature_types
+    feature_types = [ 'image' ]
+    Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
+  end
 
 end

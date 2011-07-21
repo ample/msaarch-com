@@ -36,19 +36,15 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
-    t.integer  "sort_order",  :default => 0
-    t.boolean  "active",      :default => false
+    t.integer  "sort_order",         :default => 0
+    t.boolean  "active",             :default => false
+    t.integer  "projectships_count", :default => 0
     t.datetime "active_at"
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "categories_projects", :id => false, :force => true do |t|
-    t.integer "category_id"
-    t.integer "project_id"
   end
 
   create_table "features", :force => true do |t|
@@ -118,8 +114,9 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.string   "permalink"
     t.string   "nav_name"
     t.text     "body"
-    t.integer  "sort_order",  :default => 0
-    t.boolean  "active",      :default => false
+    t.integer  "thumbnail_id"
+    t.integer  "sort_order",   :default => 0
+    t.boolean  "active",       :default => false
     t.datetime "active_at"
     t.datetime "inactive_at"
     t.integer  "created_by"
@@ -130,6 +127,13 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
   end
 
   add_index "projects", ["permalink"], :name => "index_projects_on_permalink"
+
+  create_table "projectships", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

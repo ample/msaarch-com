@@ -4,11 +4,34 @@
 </div>
 <div id="right" class="column span-7 last">
 	<%= render 'admin/error_messages', :object => current_project %>
-	<hr />
-	<h4>Associated Categories</h4>
-	<ul>
-	<% current_project.categories.each do |p| %>
-		<%= content_tag :li, link_to(p.title, edit_project_path(p)) %>
-	<% end %>
-	</ul>
+	<div id="tabs">
+		<ul class="clearfix">
+			<li><a href="#tabs-0">Project Information</a></li>
+			<li><a href="#tabs-1">Features</a></li>
+		</ul>
+		<div id="tabs-0">
+    	<hr />
+    	<h4>Associated Categories</h4>
+    	<ul>
+    	<% current_project.categories.each do |p| %>
+    		<%= content_tag :li, link_to(p.title, edit_project_path(p)) %>
+    	<% end %>
+    	</ul>
+		</div>
+		<div id="tabs-1">
+			<ul>
+			<% Project.feature_types.each do |feature_type| %>
+				<li><%= feature_type[0] %> <small>(<%= link_to 'Add New', new_project_feature_path(current_project, :feature_type => feature_type[0].downcase) %>)</small>
+					<ul class="sortable association_list" rel="/admin/features/update_sort_order">
+						<%= render current_project.features.of_type(feature_type[1]) %>
+					</ul>
+				</li>
+			<% end %>
+			</ul>
+		</div>
+	</div>
 </div>
+
+<script>
+AA['assets']=true;
+</script>

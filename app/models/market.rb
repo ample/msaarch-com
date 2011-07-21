@@ -10,6 +10,7 @@ class Market < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
+  has_many :features, :as => :owner, :include => [ :asset ]
   has_many :projects
   belongs_to :banner, :class_name => 'Asset'
   belongs_to :logo, :class_name => 'Asset'
@@ -29,6 +30,21 @@ class Market < ActiveRecord::Base
     unless banner.blank?
       " style=\"background-image: url(#{banner.attachment.url}); \"".html_safe
     end
+  end
+
+  def videos
+    features.live.collect { |feature| feature if feature.feature_type == 'video' }.compact
+  end
+
+  def categories
+    cat = projects.live.collect{ |project| project.categories }.flatten.uniq.compact
+  end
+
+  ###---------------------------------------------------- Class Methods
+
+  def self.feature_types
+    feature_types = [ 'testimonial', 'video' ]
+    Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
   end
 
 end

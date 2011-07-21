@@ -1,0 +1,10 @@
+<% unless video.asset.nil? || video.subtitle.blank? %>
+  <% 
+  youtube_url = "http://www.youtube.com/watch?v=#{video.subtitle}"
+  youtube_embed = "http://www.youtube.com/embed/#{video.subtitle}"
+  %>
+  <%= content_tag :div, :class => 'feature' + (video.asset.nil? ? '' : ' with-image') do %>
+  		<div class="asset"><%= image_asset video, :dimension => '284x>', :class => 'frame' %><a href="<%= youtube_url %>" class="overlay"></a></div>
+  	<%= video.body.to_html.html_safe %>
+  <% end %>
+<% end %>
