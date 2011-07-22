@@ -21,7 +21,8 @@
         orientation: 'horizontal',
         active_class: 'on',
         per_page : 1, 
-        keyboard_nav : false 
+        keyboard_nav : false, 
+        paged_nav : false
     }; 
 
     $.amplePanels = function(e, o) {
@@ -96,13 +97,18 @@
           if(this.width_percentage()) {
             width = $(this.children).first().width(); 
           }
-          var distance = "-" + (width + this.options.distance) +"px"; 
-          $.each($(this.options.children), function(i,el){
+          $.each($(this.options.el).find(this.options.children), function(i,el){
             $(el).attr('data-slide-item',i); 
           }); 
-          $(this.options.el).prepend($(this.options.children + ":last-child", this.options.el).clone().css(( this.options.orientation=='horizontal' ? 'margin-left' : 'margin-top' ), distance));
-          for(var i = 1; i < ( this.options.continuous ? this.options.total : 2 ); i++) {
-            $(this.options.el).append($(this.options.children + ":eq(" + i + ")", this.options.el).clone()); 
+
+          if(this.options.continuous && this.options.per_page > 1) {
+            
+          } else {
+            var distance = "-" + ((width + this.options.distance) * this.options.per_page) +"px"; 
+            $(this.options.el).prepend($(this.options.children + ":last-child", this.options.el).clone().css(( this.options.orientation=='horizontal' ? 'margin-left' : 'margin-top' ), distance));
+            for(var i = 1; i < ( this.options.continuous ? this.options.total : 2 ); i++) {
+              $(this.options.el).append($(this.options.children + ":eq(" + i + ")", this.options.el).clone()); 
+            }
           }
           this.set_width(); 
         }
@@ -132,8 +138,8 @@
        * build navigation 
        */
       nav: function( ) {
-        if(this.options.nav && this.options.total > 1) {
-          if(this.options.continuous) {
+        if(this.options.nav && this.options.total > this.options.per_page) {
+          if(this.options.continuous || this.options.paged_nav) {
             this.paged_nav(); 
           } else {
             this.itemized_nav(); 
@@ -147,25 +153,21 @@
       paged_nav: function() {
         this.log('paged_nav()')
         var ref = this; 
+        var total = Math.ceil(this.options.total / this.options.per_page);
         var previous = $('<a href="#"></a>')
-            .addClass('previous')
-            .text('Previous')
             .click(function() {
               ref.stop(); 
               ref.previous(); 
             }); 
         var next = $('<a href="#"></a>')
-            .addClass('next')
-            .text('Next')
             .click(function() {
               ref.stop(); 
               ref.next(); 
             }); 
-        var nav = $('<div></div>')
-            .append( previous )
-            .append( '<span data-role="current-slide">' + 1 + '</span> of ' )
-            .append( '<span data-role="total-slides">' + this.options.total + '</span>' )
-            .append( next ); 
+        var nav = $('<ul></ul>')
+            .append( $('<li class="previous"></li>').append( previous ))
+            .append( '<li><span data-role="current-slide">' + 1 + '</span> of <span data-role="total-slides">' + total + '</span></li>' )
+            .append( $('<li class="next"></li>').append( next ))
         $(this.options.nav).append(nav); 
         this.activate();
       },
@@ -397,7 +399,7 @@
 
       current: function(counter) {
         var i = $(this.options.el).find(this.options.children + ':eq(' + (counter+1) +  ')').attr('data-slide-item'); 
-        this.active = parseInt(i) + 1
+        this.active = this.options.continuous ? parseInt(i) + 1 : i
       },
 
       /** 

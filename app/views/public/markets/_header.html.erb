@@ -6,8 +6,8 @@
 		</div>
 		<div class="span-5 last">
 		<% unless current_market.videos.empty? %>
-			<%= content_tag :h3, 'Video' %>
-			<div id="videos-controls"></div>  
+			<%= content_tag :h3, 'Video', :class => "#{current_market.permalink} span-3" %>
+			<div id="videos-controls" class="span-2 last <%= current_market.permalink %>"></div>  
 			<div id="videos">
 				<%= render :partial => 'public/markets/video', :collection => current_market.videos %>
 			</div>

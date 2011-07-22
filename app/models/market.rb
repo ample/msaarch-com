@@ -13,6 +13,7 @@ class Market < ActiveRecord::Base
   has_many :projectships, :as => :owner, :dependent => :destroy
   has_many :projects, :through => :projectships
   has_many :features, :as => :owner, :include => [ :asset ]
+  has_and_belongs_to_many :categories
   belongs_to :banner, :class_name => 'Asset'
   belongs_to :logo, :class_name => 'Asset'
 
@@ -37,9 +38,13 @@ class Market < ActiveRecord::Base
     features.live.collect { |feature| feature if feature.feature_type == 'video' }.compact
   end
 
-  #def categories
-  #  cat = projects.live.collect{ |project| project.categories }.flatten.uniq.compact
-  #end
+  def project_categories
+    projects.live.includes( :categories ).collect( &:categories ).flatten.uniq.sort_by{ |category| category.parent.sort_order }
+  end
+
+  def featured_projects
+    projects.collect{ |p| p if p.featured? }.compact
+  end
 
   ###---------------------------------------------------- Class Methods
 

@@ -48,6 +48,11 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.datetime "updated_at"
   end
 
+  create_table "categories_markets", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "market_id"
+  end
+
   create_table "features", :force => true do |t|
     t.string   "title"
     t.string   "subtitle"
@@ -117,6 +122,7 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.text     "body"
     t.integer  "thumbnail_id"
     t.integer  "sort_order",   :default => 0
+    t.boolean  "featured",     :default => false
     t.boolean  "active",       :default => false
     t.datetime "active_at"
     t.datetime "inactive_at"

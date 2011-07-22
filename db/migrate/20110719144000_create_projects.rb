@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :body
       t.references :thumbnail
       t.integer :sort_order,        :default => 0
+      t.boolean :featured,          :default => false
       t.boolean :active,            :default => false
       t.datetime :active_at
       t.datetime :inactive_at

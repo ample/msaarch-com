@@ -57,6 +57,6 @@ markets = Market.create([
   { :title => 'Religious', :nav_name => 'MSA Religious', :active => true, :color => '#7c629a', :body => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non orci id ipsum viverra pharetra a at nisi. Sed eu enim nulla, ac tristique nunc. Nunc dolor urna, interdum sed hendrerit ac, ullamcorper a ligula. Aenean tempus hendrerit eros, sed aliquet odio pellentesque a. Proin congue viverra enim, interdum accumsan velit condimentum in. Donec suscipit bibendum rutrum. Nullam justo tortor, aliquet a convallis id, vehicula placerat est. In porttitor pharetra nisi in tempus. Integer lacinia nunc risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam id nisi sem, vitae tempus diam. Morbi velit arcu, fringilla egestas aliquet in, suscipit eu tortor. Maecenas odio magna, vehicula vel pharetra non, ultrices eget ligula. Cras id purus metus, sed gravida nibh. Aliquam molestie, orci sed ultricies sodales, velit mi pulvinar tellus, eget eleifend tortor dolor quis lorem. Aliquam orci urna, blandit eget tincidunt quis, venenatis at leo. Maecenas pharetra bibendum metus vel auctor.' },
 ])
 
-(1..12).each do |i|
-  projects = Project.create :title => "Test Project #{i}", :nav_name => "Test Project #{i}", :active => true, :markets => [ markets.first, markets.last ], :categories => [ categories.first,  categories[rand(categories.size)] ]
+(1..24).each do |i|
+  projects = Project.create :title => "Test Project #{i}", :nav_name => "Test Project #{i}", :active => true, :markets => [ markets[rand(markets.size)] ], :categories => [ categories[rand(categories.size)] ], :featured => true
 end

@@ -5,9 +5,9 @@
 $ ->
   $('li.drop').hover (-> $(this).find('div.subnav').show()), (-> $(this).find('div.subnav').hide())
 
-$ ->
   $('.portfolio #alpha #videos').amplePanels
-    interval: 5000
+    interval: 10000
+    auto: false
     width: 290
     height: 'auto'
     distance: 10
@@ -17,3 +17,16 @@ $ ->
     children: "div.feature"
     continuous: true
     keyboard_nav: true
+
+  $("#case-studies .panels").amplePanels 
+    width: 325
+    height: 'auto'
+    distance: 35
+    per_page: 3
+    nav: '#case-studies-controls',
+    paged_nav: true
+    auto: false
+    parent: "div"
+    children: "div"
+    keyboard_nav: true
+    rewind: true

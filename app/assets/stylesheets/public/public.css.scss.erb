@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 <% Market.live.each do |market| %>
-.<%= market.permalink %> {
+.<%= market.permalink %>, 
+.<%= market.permalink %> a {
+	color: <%= market.color %>; 
 	border-color: <%= market.color %>; 
 	border-style: solid;
 }
@@ -15,9 +17,9 @@ body {
 }
 
 hr {
-  background: #343434; 
-  border: none; 
-  border-top: 1px solid #0A0A0A; 
+	background: #343434; 
+	border: none; 
+	border-top: 1px solid #0A0A0A; 
 }
 
 ul, ol {
@@ -39,6 +41,12 @@ h1, h2, h3, h4 {
 h2 {
 	font-size: 32px;
 	line-height: 36px;
+	margin-bottom: 20px;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 32px;
 	margin-bottom: 20px;
 }
 
@@ -154,6 +162,55 @@ body {
 		min-width: 950px; 
 		background-size: 100%;
 		background-origin: padding-box;
+		h3 {
+			font-size: 20px; 
+			line-height: 30px; 
+			margin: 0; 
+		}
+		h4 {
+			font-size: 14px; 
+			line-height: 20px;
+		}
+		h3, #videos, #videos-controls {
+			text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+			filter: dropshadow(color=rgba(0,0,0,0.8), offx=-1, offy=-1);
+		}
+		#videos {
+			margin-top: 10px; 
+			h4 {
+				margin: 10px 0 4px; 
+			}
+			p {
+				font-size: 12px;
+			}
+		}
+		#videos-controls {
+			float: right; 
+			ul {
+				position: relative; 
+				top: 10px;
+				left: 25px;
+				list-style-type: none; 
+			}
+			li {
+				display: block;
+				float: left; 
+				a {
+					display: block; 
+					width: 14px; 
+					height: 12px;
+					margin-top: 2px;
+				}
+			}
+			.previous a {
+				background: url(/assets/elements/panels-pager.gif) no-repeat center left; 
+				margin-right: 5px;
+			}
+			.next a {
+				background: url(/assets/elements/panels-pager.gif) no-repeat center right; 
+				margin-left: 4px;
+			}
+		}
 	}
 }
 
@@ -221,7 +278,7 @@ body.market {
 			filter: dropshadow(color=#5b3d00, offx=-1, offy=-1);
 		}
 		.feature {
-		  width: 290px;
+			width: 290px;
 		}
 	}
 }
@@ -231,20 +288,62 @@ section#beta {
 	border: 1px solid #373737;	
 	border-width: 1px 0; 
 	padding: 20px 0;
+	#projects {
+		margin: 40px 0;
+		ul {
+			list-style-type: none;
+		}
+		li {
+			line-height: 24px; 
+		}
+		hr {
+			margin: 12px 0;
+			padding: 0; 
+		}
+		h3 {
+			font-size: 32px;
+			color: #FFF; 
+		}
+		h4 {
+			font-size: 12px;
+			margin-bottom: 3px;
+		}
+	}
 	h2 {
 		margin-bottom: 10px;
 		text-shadow: -1px -1px 1px #000000;
 		filter: dropshadow(color=#000000, offx=-1, offy=-1);
 	}
-	h3 {
-		font-size: 14px;
-		line-height: 18px;
-		color: #FFF;
-		margin: 7px 0 9px;
+	.feature {
+		 h3 {
+			font-size: 14px;
+			line-height: 18px;
+			color: #FFF;
+			margin: 7px 0 9px;
+		}
 	}
 	p {
 		font-size: 12px; 
 		line-height: 15px;
+	}
+	#case-studies {
+		margin-bottom: 40px;
+		.case-study {
+			p {
+				margin: 0; 
+			}
+			p.categories {
+				margin: 10px 0 3px;
+			}
+			h3 {
+				margin: 0 0 5px 0;
+				font-size: 16px; 
+				line-height: 20px;
+				a {
+					color: #FFF;
+				}
+			}
+		}
 	}
 }
 

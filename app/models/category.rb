@@ -27,6 +27,5 @@ class Category < ActiveRecord::Base
   def projects_count
     projectships_count
   end
-  
 
 end

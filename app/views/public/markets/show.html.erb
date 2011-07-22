@@ -1,23 +1,19 @@
-<h1>Public::Markets#show</h1>
-<p>Find me in app/views/public/markets/show.html.erb</p>
+<h2>Case Studies</h2>
+<div id="case-studies-controls"></div>
+
+<div id="case-studies" class="span-15 last">
+	<div id="case-study-slides" class="panels">
+	<% current_market.featured_projects.each do |project| %>
+		<div class="case-study span-5">
+			<%= image_asset project, :object => project.thumbnail, :dimensions => '284x179', :class => 'frame', :style => "border-color: #{project.thumbnail.color}", :link => '#' unless project.thumbnail.nil? %>
+			<%= content_tag :p, project.categories.collect(&:title).join(','), :class => "#{current_market.permalink} categories" %>
+			<%= content_tag :h3, link_to(project.title, '#') %>
+			<%= project.body.to_html.html_safe %>
+		</div>
+	<% end %>
+	</div>
+</div>
 
 <hr />
 
-<div id="projects">
-  <div class="span-3">
-    <% unless current_market.categories.empty? %>
-      <ul>
-      <% current_market.categories.each do |category| %>
-        <%= content_tag :li, "#{category.title} (#{category.projects_count})" %>
-      <% end %>
-      </ul>
-    <% end %>
-  </div>
-  <div class="span-12 last">
-    <% current_market.projects.each_with_index do |project, idx| %>
-      <div class="span-3<%= ' last' if idx % 4 == 3 %>">
-        <%= image_asset project, :object => project.thumbnail, :dimensions => '154x96', :class => 'frame', :style => "border-color: #{project.thumbnail.hex};" unless project.thumbnail.nil? %>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render 'projects' unless current_market.projects.empty? %>

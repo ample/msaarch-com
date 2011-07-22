@@ -32,4 +32,6 @@ class Project < ActiveRecord::Base
     Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
   end
 
+  ###---------------------------------------------------- Instance Methods
+
 end
