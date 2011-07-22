@@ -8,7 +8,9 @@ MsaarchCom::Application.routes.draw do
   root :to => 'public#home'
 
   scope '/admin' do
-    resources :users, :controller => 'admin/users'
+    resources :users, :controller => 'admin/users' do 
+      resources :features, :controller => 'admin/features'
+    end
     resources :categories, :controller => 'admin/categories' do
       collection do
         post :update_sort_order

@@ -1,0 +1,7 @@
+<div class="team block">
+	<%= content_tag :h2, 'Team' %>
+	<% current_project.users.each do |user| %>
+		<%= image_asset user, :dimensions => '59x36#', :class => 'frame', :link => team_path(user) %>
+	<% end %>
+</div>
+

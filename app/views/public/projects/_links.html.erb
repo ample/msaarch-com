@@ -1,0 +1,7 @@
+<div class="links block">
+	<%= content_tag :h2, 'Links' %>
+	<% current_project.links.each do |link| %>
+		<%= link_to link.title, link.link, :target => '_blank' %>
+	<% end %>
+</div>
+

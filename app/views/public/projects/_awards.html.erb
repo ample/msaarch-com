@@ -1,0 +1,7 @@
+<div class="awards block">
+	<%= content_tag :h2, 'Awards' %>
+	<% current_project.awards.each do |award| %>
+		<%= "#{award.name} &mdash; #{award.source}".html_safe %>
+	<% end %>
+</div>
+

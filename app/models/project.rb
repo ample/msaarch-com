@@ -10,6 +10,7 @@ class Project < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
+  has_many :awards
   has_many :features, :as => :owner, :include => [ :asset ]
   has_many :projectships
   has_many :categories, :through => :projectships, :source => :owner, :source_type => 'Category'
@@ -30,14 +31,19 @@ class Project < ActiveRecord::Base
   ###---------------------------------------------------- Class Methods
 
   def self.feature_types
-    feature_types = [ 'image' ]
+    feature_types = [ 'image', 'link' ]
     Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
   end
 
   ###---------------------------------------------------- Instance Methods
 
   def images
-    self.features.live.where :feature_type => 'image'
+    features.live.where :feature_type => 'image'
   end
+
+  def links
+    features.live.where :feature_type => 'link'
+  end
+
   
 end

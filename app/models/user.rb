@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
+  has_many :features, :as => :owner, :include => [ :asset ]
   has_many :projectships, :as => :owner, :dependent => :destroy
   has_many :projects, :through => :projectships
   has_and_belongs_to_many :favorites, :class_name => 'Project'
@@ -34,10 +35,21 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :email
 
+  ###---------------------------------------------------- Class Methods
+
+  def self.feature_types
+    feature_types = [ 'link' ]
+    Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
+  end
+
   ###---------------------------------------------------- Instance Methods
 
   def to_param
     "#{id}-#{permalink}"
+  end
+
+  def links
+    features.live.where :feature_type => 'link'
   end
 
 end

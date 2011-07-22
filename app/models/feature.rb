@@ -9,6 +9,7 @@ class Feature < ActiveRecord::Base
       ['Product Header', 'product_header'],
       ['Video', 'video'],
       ['File Download', 'download'],
+      ['Link', 'link'],
     ]
   end
 

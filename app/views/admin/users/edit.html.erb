@@ -8,6 +8,22 @@
 </div>
 <div id="right" class="column span-7 last">
 	<%= render 'admin/error_messages', :object => current_object %>
+	<div id="tabs">
+		<ul class="clearfix">
+			<li><a href="#tabs-0">Features</a></li>
+		</ul>
+		<div id="tabs-0">
+			<ul>
+			<% User.feature_types.each do |feature_type| %>
+				<li><%= feature_type[0] %> <small>(<%= link_to 'Add New', new_user_feature_path(current_user, :feature_type => feature_type[0].downcase) %>)</small>
+					<ul class="sortable association_list" rel="/admin/features/update_sort_order">
+						<%= render current_user.features.of_type(feature_type[1]) %>
+					</ul>
+				</li>
+			<% end %>
+			</ul>
+		</div>
+	</div>
 </div>
 
 <script>AA['assets']=true;</script>

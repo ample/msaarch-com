@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110720133129) do
+ActiveRecord::Schema.define(:version => 20110722204540) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.datetime "updated_at"
     t.string   "color"
   end
+
+  create_table "awards", :force => true do |t|
+    t.string   "name"
+    t.string   "source"
+    t.string   "project_name"
+    t.integer  "project_id"
+    t.datetime "awarded_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "awards", ["project_id"], :name => "index_awards_on_project_id"
 
   create_table "blocks", :force => true do |t|
     t.string  "name"

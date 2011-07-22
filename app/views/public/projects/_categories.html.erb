@@ -1,0 +1,5 @@
+<div class="categories block">
+	<%= content_tag :h2, 'Categories' %>
+	<%= current_project.categories.collect(&:title).flatten.join(', ') %>
+</div>
+
