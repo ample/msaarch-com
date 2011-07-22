@@ -17,6 +17,9 @@ MsaarchCom::Application.routes.draw do
     end
     resources :markets, :controller => 'admin/markets' do
       resources :features, :controller => 'admin/features'
+      member do 
+        post :update_featured
+      end
       collection do
         post :update_sort_order
       end

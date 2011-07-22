@@ -17,6 +17,7 @@ class Category < ActiveRecord::Base
   ###---------------------------------------------------- Plugins
 
   acts_as_textile :body
+  has_permalink :title
 
   ###---------------------------------------------------- Validations
 
@@ -26,6 +27,10 @@ class Category < ActiveRecord::Base
 
   def projects_count
     projectships_count
+  end
+
+  def market_projects_count(market)
+    market.projects.collect{ |project| project if project.categories.include?(self) }.compact.uniq.size
   end
 
 end

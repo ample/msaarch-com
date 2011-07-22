@@ -9,6 +9,9 @@
 	border-color: <%= market.color %>; 
 	border-style: solid;
 }
+section.<%= market.permalink %> {
+	background-color: <%= market.color %>; 
+}
 <% end %>
 
 body {
@@ -87,6 +90,9 @@ section#header {
 	li.on a {
 		color: #FFF; 
 		background: #090909;
+	}
+	li.on li a {
+		background: transparent;
 	}
 	li.drop div.subnav {
 		position: absolute;
@@ -222,6 +228,9 @@ body.homepage {
 			margin: 20px 0;
 		}
 	}
+	section#beta {
+		padding: 20px 0; 
+	}
 	.dark {
 		color: #FFF;
 		background: rgba(0,0,0,0.75);
@@ -287,9 +296,12 @@ section#beta {
 	background: #1f1f1f url(/assets/elements/bgxy.png) repeat top left; 
 	border: 1px solid #373737;	
 	border-width: 1px 0; 
-	padding: 20px 0;
+	padding: 40px 0;
 	#projects {
-		margin: 40px 0;
+		.project {
+			width: 184px; 
+			height: 125px;
+		}
 		ul {
 			list-style-type: none;
 		}
@@ -327,7 +339,10 @@ section#beta {
 		line-height: 15px;
 	}
 	#case-studies {
-		margin-bottom: 40px;
+		margin-bottom: 40px; 
+		hr {
+			margin-top: 40px;
+		}
 		.case-study {
 			p {
 				margin: 0; 
@@ -347,3 +362,39 @@ section#beta {
 	}
 }
 
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}

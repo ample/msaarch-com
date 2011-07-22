@@ -19,6 +19,7 @@ class Project < ActiveRecord::Base
   ###---------------------------------------------------- Plugins
 
   acts_as_textile :body
+  acts_as_textile :teaser
   has_permalink :nav_name
 
   ###---------------------------------------------------- Validations

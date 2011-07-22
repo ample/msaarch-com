@@ -43,7 +43,7 @@ class Market < ActiveRecord::Base
   end
 
   def featured_projects
-    projects.collect{ |p| p if p.featured? }.compact
+    projectships.collect{ |projectship| projectship.project if projectship.featured? }.compact
   end
 
   ###---------------------------------------------------- Class Methods

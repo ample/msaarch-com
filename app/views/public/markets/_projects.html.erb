@@ -2,23 +2,30 @@
   <div class="span-3">
     <%= content_tag :h4, current_market.title, :class => current_market.permalink %>
     <%= content_tag :h3, 'Projects' %>
-    
+		<div id="projects-filters">
     <% prev_parent = nil %>
     <% current_market.project_categories.each do |category| %>
       <%= content_tag :hr if prev_parent != category.parent %>
       <% prev_parent = category.parent %>
       <ul>
-        <%= content_tag :li, "#{category.title} (#{category.projects.size})" %>
+        <%= content_tag :li, "#{link_to( category.title, '#', 'data-filter' => ".#{category.permalink.downcase}")} (#{category.market_projects_count(current_market)})".html_safe %>
       </ul>
     <% end %>
+		</div>
     <%= content_tag :hr %>
 
   </div>
   <div class="span-12 last">
+		<div id="projects-filtered">
     <% current_market.projects.each_with_index do |project, idx| %>
-      <div class="span-3<%= ' last' if idx % 4 == 3 %>">
-        <%= image_asset project, :object => project.thumbnail, :dimensions => '154x96', :class => 'frame', :style => "border-color: #{project.thumbnail.hex};" unless project.thumbnail.nil? %>
+      <div id="<%= project.permalink %>" class="project <%= project.categories.collect(&:permalink).join(' ').downcase %>">
+				<% if project.thumbnail.nil? %>
+					<%= image_tag '/assets/pages/project/project-placeholder.jpg', :class => 'frame' %>
+				<% else %>
+					<%= image_asset project, :object => project.thumbnail, :dimensions => '154x96', :class => 'frame', :style => "border-color: #{project.thumbnail.hex};" %>
+				<% end %>
       </div>
     <% end %>
+		</div>
   </div>
 </div>

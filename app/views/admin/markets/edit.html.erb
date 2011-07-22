@@ -7,7 +7,7 @@
 	<div id="tabs">
 		<ul class="clearfix">
 			<li><a href="#tabs-0">Features</a></li>
-			<li><a href="#tabs-1">Projects</a></li>
+			<li><a href="#tabs-1">Case Studies</a></li>
 		</ul>
 		<div id="tabs-0"> 
 			<ul>
@@ -21,10 +21,13 @@
 			</ul>
 		</div>
 		<div id="tabs-1">
-			<ul>
-			<% current_market.projects.each do |p| %>
-				<%= content_tag :li, link_to(p.title, edit_project_path(p)) %>
-			<% end %>
+			<ul id="projectships" class="association_list">
+				<% current_market.projectships.each do |projectship| %>
+					<li><label>
+						<%= check_box_tag "featured_projectship_ids[#{projectship.id}]", '1', projectship.featured? %> 
+						<%= projectship.project.title %>
+					</label></li>
+				<% end %>
 			</ul>
 		</div>
 	</div>

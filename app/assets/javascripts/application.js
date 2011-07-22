@@ -8,4 +8,5 @@
 //= require jquery_ujs
 //= require public/modernizr-2.0.6
 //= require public/jquery.ample-panels
+//= require public/jquery.isotope
 //= require public/public

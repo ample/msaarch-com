@@ -2,6 +2,7 @@ class CreateCategories < ActiveRecord::Migration
   def change
     create_table :categories do |t|
       t.string :title
+      t.string :permalink
       t.integer :sort_order,         :default => 0
       t.boolean :active,             :default => false
       t.integer :projectships_count, :default => 0

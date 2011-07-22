@@ -30,3 +30,20 @@ $ ->
     children: "div"
     keyboard_nav: true
     rewind: true
+
+  $("#projects-filtered").isotope 
+    itemSelector: ".project"
+    layoutMode: "fitRows"
+    animationOptions: 
+      duration: 350
+      easing: 'linear'
+      queue: false
+    cellsByRow: 
+      columnWidth: 184
+      rowHeight: 360
+
+  $("#projects-filters a").click ->
+    selector = $(this).attr("data-filter")
+    $("#projects-filtered").isotope filter: selector
+    false
+

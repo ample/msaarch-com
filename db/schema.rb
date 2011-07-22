@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
+    t.string   "permalink"
     t.integer  "sort_order",         :default => 0
     t.boolean  "active",             :default => false
     t.integer  "projectships_count", :default => 0
@@ -119,10 +120,10 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.string   "title"
     t.string   "permalink"
     t.string   "nav_name"
+    t.text     "teaser"
     t.text     "body"
     t.integer  "thumbnail_id"
     t.integer  "sort_order",   :default => 0
-    t.boolean  "featured",     :default => false
     t.boolean  "active",       :default => false
     t.datetime "active_at"
     t.datetime "inactive_at"
@@ -138,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
     t.integer  "project_id"
     t.integer  "owner_id"
     t.string   "owner_type"
+    t.boolean  "featured",   :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
