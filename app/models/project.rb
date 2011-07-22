@@ -14,6 +14,7 @@ class Project < ActiveRecord::Base
   has_many :projectships
   has_many :categories, :through => :projectships, :source => :owner, :source_type => 'Category'
   has_many :markets, :through => :projectships, :source => :owner, :source_type => 'Market'
+  has_many :users, :through => :projectships, :source => :owner, :source_type => 'User'
   belongs_to :thumbnail, :class_name => 'Asset'
 
   ###---------------------------------------------------- Plugins
@@ -35,4 +36,8 @@ class Project < ActiveRecord::Base
 
   ###---------------------------------------------------- Instance Methods
 
+  def images
+    self.features.live.where :feature_type => 'image'
+  end
+  
 end

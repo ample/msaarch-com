@@ -7,18 +7,14 @@
 
 		<div class="span-5 last">
 			<div class="dark">
-				<p>We have six core markets, each with its own dedicated architects living and breathing their genre. But our culture is collaborative. Which means that the latest sports trends leak into our newest retail construction and that a technological advancement in education can make a new restaurant design better.</p>
+				<%= current_page.body.to_html.html_safe %>
 			</div>
 			<div class="dark">
 				<p>View the collaboration:</p>
 				<ul>
-					<li><a href="#">Sport</a></li>
-					<li><a href="#">Corporate</a></li>
-					<li><a href="#">Government</a></li>
-					<li><a href="#">Education</a></li>
-					<li><a href="#">Lifestyle</a></li>
-					<li><a href="#">Religious</a></li>
-					<li><a href="#">Branded Environments</a></li>
+				<% Market.live.each do |market| %>
+					<%= content_tag :li, link_to(market.title, portfolio_path(market.permalink)) %>
+				<% end %>
 				</ul>
 			</div>
 			<div class="dark clearfix">

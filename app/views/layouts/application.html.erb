@@ -31,6 +31,7 @@
 	<%= yield %>
 <% else %>
 	<%= render 'public/markets/header' if is_market? %>
+	<%= render 'public/projects/header' if is_project? %>
 	<section id="beta">
 		<%= content_tag :div, yield, :class => 'container' %>
 	</section>

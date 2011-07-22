@@ -39,7 +39,7 @@ class Market < ActiveRecord::Base
   end
 
   def project_categories
-    projects.live.includes( :categories ).collect( &:categories ).flatten.uniq.sort_by{ |category| category.parent.sort_order }
+    projects.live.includes( :categories ).collect( &:categories ).flatten.uniq.sort_by( &:parent_id )
   end
 
   def featured_projects

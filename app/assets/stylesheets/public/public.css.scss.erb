@@ -14,6 +14,11 @@ section.<%= market.permalink %> {
 }
 <% end %>
 
+@mixin frame {
+	border: 3px solid #FFF;
+	margin: 0 10px 0 0;
+}
+
 body {
 	color: #a1a1a1; 
 	background: #171717;
@@ -54,8 +59,7 @@ h3 {
 }
 
 .frame {
-	border: 3px solid #FFF;
-	margin: 0 10px 0 0;
+	@include frame; 
 }
 
 .left {
@@ -64,6 +68,18 @@ h3 {
 
 .right {
 	float: right; 
+}
+
+.block {
+	background: rgba(66,66,66,.20); 
+	padding: 20px;
+	font-size: 12px; 
+	line-height: 16px;
+	color: #FFF;
+	h2 {
+		font-size: 20px; 
+		line-height: 26px;
+	}
 }
 
 section#header {
@@ -221,6 +237,18 @@ body {
 			}
 		}
 	}
+	section#beta {
+		.block {
+			border-top: 1px solid #343434; 
+			border-bottom: 1px solid #212121; 
+		}
+		.top {
+			border-top: none; 
+		}
+		.bottom {
+			border-bottom: none; 
+		}
+	}
 }
 
 body.homepage {
@@ -295,6 +323,39 @@ body.market {
 	}
 }
 
+body.project {
+	section#alpha {
+		padding: 30px 0;
+	}
+	section#tango {
+		li img {
+			@include frame; 
+			border-right: none; 
+			margin: 0; 
+		}
+		border-bottom: 3px solid #FFF;
+	}
+	section#beta {
+		h1 {
+			color: #FFF; 
+			font-size: 32px; 
+			line-height: 38px;
+		}
+		h3 {
+			font-size: 13px; 
+			line-height: 16px; 
+			margin: 0 0 10px; 
+		}
+		div.body {
+			margin-top: 12px;
+		}
+		div.body, div.body p {
+			font-size: 14px; 
+			line-height: 20px;
+		}
+	}
+}
+
 section#beta {
 	background: #1f1f1f url(/assets/elements/bgxy.png) repeat top left; 
 	border: 1px solid #373737;	
@@ -324,10 +385,12 @@ section#beta {
 			margin-bottom: 3px;
 		}
 	}
-	h2 {
-		margin-bottom: 10px;
+	h1, h2 {
 		text-shadow: -1px -1px 1px #000000;
 		filter: dropshadow(color=#000000, offx=-1, offy=-1);
+	}
+	h2 {
+		margin-bottom: 10px;
 	}
 	.feature {
 		 h3 {

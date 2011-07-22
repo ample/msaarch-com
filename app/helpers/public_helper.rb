@@ -4,6 +4,7 @@ module PublicHelper
     classes = ''
     classes += ' homepage' if params[:controller] == 'public' && params[:action] == 'home'
     classes += ' portfolio market' if params[:controller] == 'public/markets'
+    classes += ' portfolio project' if params[:controller] == 'public/projects'
     " class=\"#{classes.lstrip}\"".html_safe unless classes.empty?
   end
 
@@ -13,6 +14,10 @@ module PublicHelper
 
   def is_market?
     params[:controller] == 'public/markets'
+  end
+
+  def is_project?
+    params[:controller] == 'public/projects'
   end
 
   def site_nav(position)

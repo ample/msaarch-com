@@ -1,0 +1,17 @@
+<section id="alpha"<%= current_market.background %> class="clearfix <%= current_market.permalink %>">
+	<div class="container">
+		<div class="span-15 last intro">
+			<%= image_asset current_market, :object => current_market.logo, :dimensions => '247x>', :class => 'market-logo' unless current_market.logo.blank? %>
+		</div>
+	</div>
+</section>
+
+<% unless current_project.images.empty? %>
+<section id="tango">
+	<ul id="project-imagery">
+	<% current_project.images.each do |image| %>
+		<%= content_tag :li, image_asset(image, :dimensions => 'x449>') %>
+	<% end %>
+	</ul>
+</section>
+<% end %>

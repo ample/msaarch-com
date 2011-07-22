@@ -1,9 +1,14 @@
 MsaarchCom::Application.routes.draw do
 
+  get "users/index"
+
+  get "users/show"
+
   devise_for :users, :class_name => 'User', :path_prefix => '/admin'
   root :to => 'public#home'
 
   scope '/admin' do
+    resources :users, :controller => 'admin/users'
     resources :categories, :controller => 'admin/categories' do
       collection do
         post :update_sort_order
@@ -33,8 +38,10 @@ MsaarchCom::Application.routes.draw do
       end
     end
   end
-
-  match 'portfolio/:permalink', :to => 'public/markets#show', :as => :portfolio
+  
+  resources :users, :only => [:index, :show], :path => 'team', :as => :team, :controller => 'public/users'
+  match 'portfolio/:market_permalink', :to => 'public/markets#show', :as => :portfolio
+  match 'portfolio/:market_permalink/:permalink', :to => 'public/projects#show', :as => :portfolio_project
   match 'index', :to => 'public#home'
   match '*permalink.:format', :to =>  'public/pages#show', :as => 'public_page', :constraints => { :path => /.+?/, :permalink => /(?!.*?(admin)).*/ }
   match ':permalink', :to =>  'public/pages#show', :as => 'public_page', :constraints => { :permalink => /(?!.*?(admin)).*/ }

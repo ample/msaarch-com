@@ -31,6 +31,17 @@ $ ->
     keyboard_nav: true
     rewind: true
 
+  $('#project-imagery').amplePanels
+    debug: true
+    interval: 10000
+    width: '100%'
+    height: 449
+    keyboard_nav: true
+    continuous: true
+    auto: true
+    orientation: 'horizontal'
+    clone_adjust: 2
+
   $("#projects-filtered").isotope 
     itemSelector: ".project"
     layoutMode: "fitRows"
@@ -46,4 +57,10 @@ $ ->
     selector = $(this).attr("data-filter")
     $("#projects-filtered").isotope filter: selector
     false
+
+  $('#sidebar .block').first().addClass('top')
+  $('#sidebar .block').last().addClass('bottom')  
+
+
+
 

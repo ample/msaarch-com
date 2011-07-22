@@ -2,6 +2,8 @@ class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
       t.string :title
+      t.string :subtitle
+      t.string :location
       t.string :permalink
       t.string :nav_name
       t.text :teaser
@@ -20,6 +22,11 @@ class CreateProjects < ActiveRecord::Migration
       t.references :project
       t.references :owner, :polymorphic => true
       t.boolean :featured, :default => false
+      t.timestamps
+    end
+    create_table :projects_users, :id => false do |t|
+      t.references :project
+      t.references :user
       t.timestamps
     end
   end

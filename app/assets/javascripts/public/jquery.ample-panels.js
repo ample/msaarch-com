@@ -22,7 +22,8 @@
         active_class: 'on',
         per_page : 1, 
         keyboard_nav : false, 
-        paged_nav : false
+        paged_nav : false,
+        clone_adjust: 1 
     }; 
 
     $.amplePanels = function(e, o) {
@@ -106,8 +107,10 @@
           } else {
             var distance = "-" + ((width + this.options.distance) * this.options.per_page) +"px"; 
             $(this.options.el).prepend($(this.options.children + ":last-child", this.options.el).clone().css(( this.options.orientation=='horizontal' ? 'margin-left' : 'margin-top' ), distance));
-            for(var i = 1; i < ( this.options.continuous ? this.options.total : 2 ); i++) {
-              $(this.options.el).append($(this.options.children + ":eq(" + i + ")", this.options.el).clone()); 
+            for(var j = 0; j < this.options.clone_adjust; j++) {
+              for(var i = 1; i < ( this.options.continuous ? this.options.total : 2 ); i++) {
+                $(this.options.el).append($(this.options.children + ":eq(" + i + ")", this.options.el).clone()); 
+              }
             }
           }
           this.set_width(); 

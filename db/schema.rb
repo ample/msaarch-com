@@ -118,6 +118,8 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
 
   create_table "projects", :force => true do |t|
     t.string   "title"
+    t.string   "subtitle"
+    t.string   "location"
     t.string   "permalink"
     t.string   "nav_name"
     t.text     "teaser"
@@ -135,6 +137,13 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
 
   add_index "projects", ["permalink"], :name => "index_projects_on_permalink"
 
+  create_table "projects_users", :id => false, :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projectships", :force => true do |t|
     t.integer  "project_id"
     t.integer  "owner_id"
@@ -145,8 +154,19 @@ ActiveRecord::Schema.define(:version => 20110720133129) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "name"
+    t.string   "credentials"
+    t.string   "permalink"
+    t.text     "education"
+    t.text     "bio"
+    t.boolean  "admin",                                 :default => false
+    t.boolean  "active",                                :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.integer  "projectships_count"
+    t.integer  "asset_id"
+    t.string   "email",                                 :default => "",    :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

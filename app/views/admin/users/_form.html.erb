@@ -1,0 +1,50 @@
+<fieldset>
+	<legend>Properties</legend>
+
+<% unless f.object.new_record? %>
+
+	<p><%= f.label :permalink %><br />
+	<%= f.text_field(:permalink, :class => 'text') %></p>
+
+	<p><%= f.check_box(:active) %><%= f.label :active %></p>
+
+<% end %>
+
+	<p><%= f.label :name %><br />
+	<%= f.text_field(:name, :class => 'text') %></p>
+
+	<p><%= f.label :email %><br />
+	<%= f.text_field(:email, :class => 'text') %></p>
+
+<% unless f.object.new_record? %>
+
+	<p><%= f.label :password %><br />
+	<%= f.password_field(:password, :class => 'text') %></p>
+
+	<p><%= f.label :password_confirmation %><br />
+	<%= f.password_field(:password_confirmation, :class => 'text') %></p>
+
+	<p><%= f.check_box(:admin) %> <%= f.label :admin %></p>
+
+	<p><%= f.label :projects %><br />
+	<%= f.collection_select :project_ids, Project.all, :id, :title, {}, :multiple => true %></p>
+
+	<p><%= f.label :favorites %><br />
+	<%= f.collection_select :favorite_ids, Project.all, :id, :title, {}, :multiple => true %></p>
+
+	<p><%= f.label :credentials %><br />
+	<%= f.text_field(:credentials, :class => 'text') %></p>
+
+	<p><%= f.label :education %><br />
+	<%= f.text_area(:education, :class => 'textile') %></p>
+
+	<p><%= f.label :bio %><br />
+	<%= f.text_area(:bio, :class => 'textile') %></p>
+
+	<%= f.hidden_field(:asset_id, :value => current_user.asset_id, :class => next_asset_drop_class) %>
+	<p><%= f.label :asset_id, 'Image' %></p>
+	<%= asset_drop(current_user, :asset) %>
+
+<% end %>
+
+</fieldset>

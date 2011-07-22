@@ -15,8 +15,17 @@
 	<p><%= f.label :title %><br />
 	<%= f.text_field(:title, :class => 'text') %></p>
 
+	<p><%= f.label :subtitle %><br />
+	<%= f.text_field(:subtitle, :class => 'text') %></p>
+
+	<p><%= f.label :location %><br />
+	<%= f.text_field(:location, :class => 'text') %></p>
+
 	<p><%= f.label :markets %><br />
 	<%= f.collection_select :market_ids, Market.all, :id, :title, {}, :multiple => true %></p>
+
+	<p><%= f.label :users, 'Team Members' %><br />
+	<%= f.collection_select :user_ids, User.all, :id, :name, {}, :multiple => true %></p>
 
 <% unless f.object.new_record? %>
 	
