@@ -1,0 +1,31 @@
+<%= form_for(current_award, :html => { :multipart => true }) do |f| %>
+
+<fieldset>
+<% unless f.object.new_record? %>
+	<p><%= f.check_box(:active) %><%= f.label :active %></p>
+
+<% end %>
+
+  <p><%= f.label :project %><br />
+	<%= f.collection_select :project_id, Project.all, :id, :title, :include_blank => true %></p>
+
+  <p><%= f.label :title %><br />
+  <%= f.text_field(:title, :class => 'text') %></p>
+
+  <p><%= f.label :source %><br />
+  <%= f.text_field(:source, :class => 'text') %></p>
+
+	<p><%= f.label :awarded_date %><br /><%= f.datetime_select(:awarded_date, :prompt => true) %></p>
+
+<% unless f.object.new_record? %>
+  <%= f.hidden_field(:asset_id, :value => current_award.asset_id, :class => next_asset_drop_class) %>
+  <p><%= f.label :asset_id, 'Award Thumbnail' %></p>
+  <%= asset_drop(current_award, :asset) %>
+<% end %>
+
+</fieldset>
+
+<button type="submit" name="continue" class="positive"><%= f.object.new_record? ? 'Create' : 'Update' %> Award</button>
+<%= link_to 'Cancel', awards_path, :class => 'button' %>
+
+<% end %>

@@ -1,13 +1,14 @@
 MsaarchCom::Application.routes.draw do
 
-  get "users/index"
-
-  get "users/show"
-
   devise_for :users, :class_name => 'User', :path_prefix => '/admin'
   root :to => 'public#home'
 
   scope '/admin' do
+    resources :awards, :controller => 'admin/awards' do
+      collection do
+        post :update_sort_order
+      end
+    end
     resources :users, :controller => 'admin/users' do 
       resources :features, :controller => 'admin/features'
     end

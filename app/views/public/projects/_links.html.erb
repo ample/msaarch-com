@@ -1,6 +1,7 @@
-<div class="links block">
+<div class="links block clearfix">
 	<%= content_tag :h2, 'Links' %>
 	<% current_project.links.each do |link| %>
+	  <%= image_asset link, :dimensions => '59x36#', :class => 'frame left', :style => "border-color: #{link.asset.color}", :link => user_path(link) unless link.asset.nil? %>
 		<%= link_to link.title, link.link, :target => '_blank' %>
 	<% end %>
 </div>

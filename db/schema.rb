@@ -26,11 +26,16 @@ ActiveRecord::Schema.define(:version => 20110722204540) do
   end
 
   create_table "awards", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.string   "source"
     t.string   "project_name"
     t.integer  "project_id"
+    t.integer  "asset_id"
     t.datetime "awarded_date"
+    t.integer  "sort_order",   :default => 0
+    t.boolean  "active",       :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

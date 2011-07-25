@@ -1,0 +1,9 @@
+<div id="left" class="column span-16 append-1">
+	<%= content_tag :h2, title("Editing Award: #{current_award.title}"), :class => 'object_title' %>
+	<%= render 'form' %>
+</div>
+<div id="right" class="column span-7 last">
+	<%= render 'admin/error_messages', :object => current_award %>
+</div>
+
+<script>AA['assets']=true;</script>
