@@ -1,6 +1,8 @@
 class Public::ProjectsController < PublicController
 
   def show
+    raise ActiveRecord::RecordNotFound if current_project.nil?
+    
   end
 
   private

@@ -17,7 +17,6 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'will_paginate', :path => File.join(File.dirname(__FILE__), '/vendor/gems/will_paginate')
 gem 'ample_admin', :path => File.join(File.dirname(__FILE__), '/vendor/gems/ample_admin')
-#gem 'ample_admin', :path => '../ample_admin'
 
 group :test do
   gem 'turn', :require => false

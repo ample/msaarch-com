@@ -27,10 +27,13 @@
 	<p><%= f.label :users, 'Team Members' %><br />
 	<%= f.collection_select :user_ids, User.all, :id, :name, {}, :multiple => true %></p>
 
+	<p><%= f.label :similar_projects %><br />
+	<%= f.collection_select :similar_project_ids, Project.all.reject{ |p| p == current_project }, :id, :title, {}, :multiple => true %></p>
+
 <% unless f.object.new_record? %>
 	
-  <div class="clearfix">
-	<p><%= f.label :categories %><br />
+  <fieldset class="clearfix">
+	  <legend><%= f.label :categories %></legend>
   <% Category.root_level.each do |category| %>
   <div class="opts">
     <%= label_tag category.title %>
@@ -39,7 +42,7 @@
     <% end %>
   </div>
   <% end %>
-  </p></div>
+  </fieldset>
 	
 	<p><%= f.label :teaser %><br />
 	<%= f.text_area(:teaser, :class => 'textile') %></p>

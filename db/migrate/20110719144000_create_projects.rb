@@ -9,6 +9,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :teaser
       t.text :body
       t.references :thumbnail
+      t.integer :projectships_count, :default => 0
       t.integer :sort_order, :default => 0
       t.boolean :active, :default => false
       t.datetime :active_at

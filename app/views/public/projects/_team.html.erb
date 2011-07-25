@@ -1,0 +1,9 @@
+<div class="team block">
+	<% current_project.team.each do |user| %>
+	  <% unless user.asset.nil? %>
+		  <%= content_tag :h2, 'Team' if user == current_project.users.first %>
+		  <%= image_asset user, :dimensions => '59x36#', :class => 'frame', :link => team_path(user) %>
+	  <% end %>
+	<% end %>
+</div>
+

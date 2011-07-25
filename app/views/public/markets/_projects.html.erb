@@ -8,7 +8,10 @@
 			<%= content_tag :hr if prev_parent != category.parent %>
 			<% prev_parent = category.parent %>
 			<ul>
-				<%= content_tag :li, "#{link_to( category.title, '#', 'data-filter' => ".#{category.permalink.downcase}")} (#{category.market_projects_count(current_market)})".html_safe %>
+			  <%= content_tag :li do %>
+		      <%= check_box("projects", category.permalink, 'data-filter' => ".#{category.permalink.downcase}") %>
+		      <%= link_to( category.title, '#', 'data-filter' => ".#{category.permalink.downcase}") %> (<%= category.market_projects_count(current_market) %>)
+        <% end %>
 			</ul>
 		<% end %>
 		</div>

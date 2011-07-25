@@ -10,3 +10,5 @@
 //= require public/jquery.ample-panels
 //= require public/jquery.isotope
 //= require public/public
+//= require public/markets
+//= require public/projects
