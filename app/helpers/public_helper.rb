@@ -5,6 +5,8 @@ module PublicHelper
     classes += ' homepage' if params[:controller] == 'public' && params[:action] == 'home'
     classes += ' portfolio market' if params[:controller] == 'public/markets'
     classes += ' portfolio project' if params[:controller] == 'public/projects'
+    classes += ' team' if params[:controller] == 'public/users'
+    classes += ' member' if params[:controller] == 'public/users' && params[:action] == 'show'
     " class=\"#{classes.lstrip}\"".html_safe unless classes.empty?
   end
 
@@ -18,6 +20,10 @@ module PublicHelper
 
   def is_project?
     params[:controller] == 'public/projects'
+  end
+
+  def is_user?
+    params[:controller] == 'public/users'
   end
 
   def site_nav(position)
@@ -46,6 +52,20 @@ module PublicHelper
       children += content_tag :li, link_to(market.nav_name, portfolio_path(market.permalink), :class => market.permalink)
     end
     content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
+  end
+
+  def project_thumbnail(project, dimensions = '154x96', market = nil)
+    unless current_market.nil?
+      market = current_market
+    else 
+      market = project.markets.first if market.nil?
+    end
+
+    if project.thumbnail.nil?
+      link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink)
+    else
+      link_to image_asset(project, :object => project.thumbnail, :dimensions => dimensions, :class => 'frame', :style => "border-color: #{project.thumbnail.hex};"), portfolio_project_path(market.permalink, project.permalink)
+    end
   end
 
 end

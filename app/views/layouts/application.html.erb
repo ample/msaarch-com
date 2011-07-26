@@ -32,6 +32,7 @@
 <% else %>
 	<%= render 'public/markets/header' if is_market? %>
 	<%= render 'public/projects/header' if is_project? %>
+	<%= render 'public/users/header' if is_user? && params[:action] == 'index' %>
 	<section id="beta">
 		<%= content_tag :div, yield, :class => 'container' %>
 	</section>

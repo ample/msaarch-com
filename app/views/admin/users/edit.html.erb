@@ -1,5 +1,5 @@
 <div id="left" class="column span-16 append-1">
-	<%= content_tag :h2, title("Editing User: #{current_object.name}"), :class => 'object_title' %>
+	<%= content_tag :h2, title("Editing User: #{current_object.full_name}"), :class => 'object_title' %>
 	<%= form_for(current_object, :html => { :multipart => true }) do |f| %>
 		<%= render :partial => f, :locals => { :f => f } %>
 		<button type="submit" name="continue" class="positive">Save Changes</button>

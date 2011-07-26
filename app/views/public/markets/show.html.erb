@@ -5,8 +5,12 @@
 	<div id="case-study-slides" class="panels">
 	<% current_market.featured_projects.each do |project| %>
 		<div class="case-study span-5">
-			<%= image_asset project, :object => project.thumbnail, :dimensions => '284x179', :class => 'frame', :style => "border-color: #{project.thumbnail.color}", :link => '#' unless project.thumbnail.nil? %>
-			<%= content_tag :p, project.categories.collect(&:title).join(','), :class => "#{current_market.permalink} categories" %>
+		  <% if project.thumbnail.nil? %>
+			  <%= link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => '284x179'), portfolio_project_path(current_market.permalink, project.permalink) %>
+		  <% else %>
+			  <%= image_asset project, :object => project.thumbnail, :dimensions => '284x179', :class => 'frame', :style => "border-color: #{project.thumbnail.color}", :link => portfolio_project_path(current_market.permalink, project.permalink) %>
+			<% end %>
+			<%= content_tag :p, project.categories.collect(&:title).join(', '), :class => "#{current_market.permalink} categories" %>
 			<%= content_tag :h3, link_to(project.title, '#') %>
 			<%= project.teaser.to_html.html_safe %>
 		</div>

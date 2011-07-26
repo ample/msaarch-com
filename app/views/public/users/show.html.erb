@@ -1,2 +1,16 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class="span-9 append-1">
+  <%= content_tag :h1, 'Team'  %>
+  <%= image_asset current_team_member, :dimensions => '544x>', :class => 'frame' unless current_team_member.asset.nil? %>
+  <%= content_tag :h2, current_team_member.credentials.blank? ? current_team_member.full_name : "#{current_team_member.full_name}, #{current_team_member.credentials}", :class => :name %>
+  <%= content_tag :div, current_team_member.education.to_html.html_safe, :class => :education %>
+  <%= current_team_member.bio.to_html.html_safe %>
+</div>
+<div id="sidebar" class="span-5 last">
+
+  <%= render 'public/users/favorites' unless current_team_member.favorites.empty? %>
+  <%= render 'public/users/links' unless current_team_member.links.empty? %>
+  <%= content_tag :div, :class => [:block, :clearfix] do %>
+    <%= link_to 'View All Team Members', team_index_path %>
+  <% end %>
+
+</div>

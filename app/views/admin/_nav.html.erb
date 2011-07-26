@@ -8,6 +8,7 @@
 		<%= content_tag :li, link_to_section('categories', 'Categories', categories_path) %>
 		<%= content_tag :li, link_to_section('projects', 'Projects', projects_path) %>
 		<%= content_tag :li, link_to_section('awards', 'Awards', awards_path) %>
+		<%# content_tag :li, link_to_section('news', 'News', news_path) %>
 		<%= content_tag :li, link_to_section('users', 'Users', users_path) %>
 	</ul>
 	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'right' %>

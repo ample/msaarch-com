@@ -10,8 +10,11 @@
 
 <% end %>
 
-	<p><%= f.label :name %><br />
-	<%= f.text_field(:name, :class => 'text') %></p>
+  <p><%= f.label :first_name %><br />
+  <%= f.text_field(:first_name, :class => 'text') %></p>
+
+  <p><%= f.label :last_name %><br />
+  <%= f.text_field(:last_name, :class => 'text') %></p>
 
 	<p><%= f.label :email %><br />
 	<%= f.text_field(:email, :class => 'text') %></p>
@@ -41,9 +44,9 @@
 	<p><%= f.label :bio %><br />
 	<%= f.text_area(:bio, :class => 'textile') %></p>
 
-	<%= f.hidden_field(:asset_id, :value => current_user.asset_id, :class => next_asset_drop_class) %>
+	<%= f.hidden_field(:asset_id, :value => current_object.asset_id, :class => next_asset_drop_class) %>
 	<p><%= f.label :asset_id, 'Image' %></p>
-	<%= asset_drop(current_user, :asset) %>
+	<%= asset_drop(current_object, :asset) %>
 
 <% end %>
 

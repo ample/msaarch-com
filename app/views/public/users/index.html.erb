@@ -1,2 +1,15 @@
-<h1>Public::Users#index</h1>
-<p>Find me in app/views/public/users/index.html.erb</p>
+<hr />
+<div id="team-members">
+  <%= select("team", "member", User.live.collect{ |u| [u.full_name, u.id] }, { :include_blank => true }, :class => 'right', :title => 'Select By Member\'s Name') %>
+  <%= content_tag :h2, 'Team Members' %>
+  <% User.live.each_with_index do |user, idx| %>
+		<div id="member-<%= user.id %>" class="team-member span-3<%= ' last' if idx % 5 == 4 %>" data-permalink="<%= "#{user.id}-#{user.permalink}" %>">
+			<% if user.asset.nil? %>
+				<%= link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame'), team_path(user) %>
+			<% else %>
+				<%= link_to image_asset(user, :dimensions => '154x96', :class => 'frame'), team_path(user) %>
+			<% end %>
+		</div>
+	<% end %>
+</div>
+

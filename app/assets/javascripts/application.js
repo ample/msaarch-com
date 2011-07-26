@@ -4,11 +4,13 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+//= require public/modernizr-2.0.6
 //= require jquery
 //= require jquery_ujs
-//= require public/modernizr-2.0.6
-//= require public/jquery.ample-panels
-//= require public/jquery.isotope
+//= require public/plugins/jquery.ample-panels
+//= require public/plugins/jquery.isotope
+//= require public/plugins/jquery.chosen
 //= require public/public
 //= require public/markets
 //= require public/projects
+//= require public/users
