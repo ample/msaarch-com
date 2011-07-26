@@ -13,5 +13,6 @@ class CreateCategories < ActiveRecord::Migration
       t.integer :updated_by
       t.timestamps
     end
+    add_index :categories, :permalink
   end
 end

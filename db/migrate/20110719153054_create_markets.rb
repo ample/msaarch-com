@@ -16,6 +16,7 @@ class CreateMarkets < ActiveRecord::Migration
       t.integer :updated_by
       t.timestamps
     end
+    add_index :markets, :permalink
     create_table :categories_markets, :id => false do |t|
       t.references :category
       t.references :market

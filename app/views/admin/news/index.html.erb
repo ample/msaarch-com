@@ -1,0 +1,38 @@
+<div id="left" class="column span-11 append-1">
+
+	<div class="index_header clearfix">
+		<div class="column span-6">
+			<% title('Posts') %>
+			<%= content_tag :h2, 'Select a Post' %>
+		</div>
+		<div class="column span-5 last">
+			<%= link_to_new :post, new_post_path %>
+		</div>
+	</div>
+	<ul class="index_list sortable clear">
+		<%= render :partial => 'admin/posts/post', :collection => current_posts %>
+	</ul>
+	<%= will_paginate current_posts %>
+	<%= render 'admin/legend' %>
+
+
+</div>
+<div id="right" class="column span-11 append-1 last">
+
+	<div class="index_header clearfix">
+		<div class="column span-6">
+			<% title('Updates') %>
+			<%= content_tag :h2, 'Select an Update' %>
+		</div>
+		<div class="column span-5 last">
+			<%= link_to_new :update, new_update_path %>
+		</div>
+	</div>
+	<ul class="index_list sortable clear">
+		<%= render :partial => 'admin/updates/update', :collection => current_updates %>
+	</ul>
+	<%= will_paginate current_updates %>
+	<%= render 'admin/legend' %>
+
+
+</div>

@@ -4,6 +4,9 @@ MsaarchCom::Application.routes.draw do
   root :to => 'public#home'
 
   scope '/admin' do
+    match 'news', :to => 'admin/news#index'
+    resources :posts, :controller => 'admin/posts', :path => 'news/posts'
+    resources :updates, :controller => 'admin/updates', :path => 'news/updates'
     resources :awards, :controller => 'admin/awards' do
       collection do
         post :update_sort_order

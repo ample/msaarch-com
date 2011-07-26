@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722204540) do
+ActiveRecord::Schema.define(:version => 20110726184302) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -133,6 +133,23 @@ ActiveRecord::Schema.define(:version => 20110722204540) do
 
   add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
 
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.string   "permalink"
+    t.text     "body"
+    t.integer  "asset_id"
+    t.integer  "sort_order",  :default => 0
+    t.boolean  "active",      :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["permalink"], :name => "index_posts_on_permalink"
+
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.string   "subtitle"
@@ -170,6 +187,23 @@ ActiveRecord::Schema.define(:version => 20110722204540) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "updates", :force => true do |t|
+    t.string   "title"
+    t.string   "permalink"
+    t.text     "body"
+    t.integer  "asset_id"
+    t.integer  "sort_order",  :default => 0
+    t.boolean  "active",      :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "updates", ["permalink"], :name => "index_updates_on_permalink"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
