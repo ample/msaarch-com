@@ -1,4 +1,10 @@
+<% unless current_features.empty? %>
+<div id="features" class="clearfix">
+  <%= render 'public/features' %>
+</div>
 <hr />
+<% end %>
+
 <div id="team-members">
   <%= select("team", "member", User.live.collect{ |u| [u.full_name, u.id] }, { :include_blank => true }, :class => 'right', :title => 'Select By Member\'s Name') %>
   <%= content_tag :h2, 'Team Members' %>
@@ -12,4 +18,3 @@
 		</div>
 	<% end %>
 </div>
-

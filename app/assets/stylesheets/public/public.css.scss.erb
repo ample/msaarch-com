@@ -312,8 +312,13 @@ body.homepage {
 		}
 	}
 	.caption {
+	  font-size: 12px;
+	  color: #7d7d7d; 
 		padding: 10px 0; 
 		margin-bottom: 0;
+		strong {
+		  color: #FFF; 
+		}
 	}
 	h1 {
 		font-size: 70px;
@@ -407,7 +412,10 @@ body.team {
 			padding-right: 20px;
 		} 
 	}
-	#team-members {
+	div#features {
+	  margin-bottom: 30px; 
+	}
+	div#team-members {
     margin-top: 40px;
 	  h2 {
 	    margin-bottom: 20px;
@@ -475,7 +483,10 @@ section#beta {
 	background: #1f1f1f url(/assets/elements/bgxy.png) repeat top left; 
 	border: 1px solid #373737;
 	border-width: 1px 0; 
-	padding: 40px 0;
+	.bgx {
+  	background: transparent url(/assets/elements/bgx.png) repeat-x top left; 
+  	padding: 40px 0;
+	}
 	#projects {
 		.project {
 			width: 184px; 
@@ -507,7 +518,7 @@ section#beta {
 	h2 {
 		margin-bottom: 10px;
 	}
-	.feature {
+	#features {
 		 h3 {
 			font-size: 14px;
 			line-height: 18px;

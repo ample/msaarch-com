@@ -1,8 +1,7 @@
-<section id="alpha">
+<section id="alpha"<%= current_page.background %>>
 	<div class="container">
-
 		<div class="span-6 append-4">
-			<h1 class="dark"><strong>Design<br>is<br>life</strong> and we<br>have a<br>passion<br>for<br>living</h1>
+			<%= content_tag :h1, current_page.subtitle.html_safe, :class => :dark %>
 		</div>
 
 		<div class="span-5 last">
@@ -17,51 +16,38 @@
 				<% end %>
 				</ul>
 			</div>
-			<div class="dark clearfix">
-				<%= link_to image_tag('/assets/elements/urban-design.jpg', :class => 'left frame'), '#' %>
-				<p class="valign"><a href="#">See the new face of urban design <span>(0:43)</span></a></p>
-			</div>
+			
+			<% unless current_page.videos.empty? %>
+			  <% current_page.videos.each do |video| %>
+			  <div class="dark clearfix">
+				  <% if video.link.blank? %>
+			      <%= image_asset video, :dimensions => '91x59', :class => [:left, :frame, :video] unless video.asset.nil? %>
+			      <%= content_tag :p, video.title, :class => :valign %>
+				  <% else %>
+				    <%= image_asset video, :dimensions => '91x59', :class => [:left, :frame, :video], :link => video.link unless video.asset.nil? %>
+				    <%= content_tag :p, link_to(video.title, video.link), :class => :valign %>
+				  <% end %>
+			  </div>
+			  <% end %>
+			<% end %>
 		</div>
 
 	</div>
 </section>
+
+<% unless current_page.background_caption.blank? %>
 <div class="caption dark">
-	<div class="container"><p>Government Square <span>Cincinnati, Ohio</span></p></div>
-</div>
-<section id="beta">
-	<div id="features" class="container">
-
-		<h2>Featured</h2>
-
-		<div class="span-3 feature">
-			<%= image_tag '/assets/pages/homepage/feature01.jpg', :class => 'frame', :size => '154x96' %>
-			<%= content_tag :h3, 'MSA petitions for Opening Day' %>
-			<p>The doors at MSA Architecture are closed on Opening Day. And they have been for the last 25 Opening Days.</p>
-		</div>
-
-		<div class="span-3 feature">
-			<%= image_tag '/assets/pages/homepage/feature02.jpg', :class => 'frame', :size => '154x96' %>
-			<%= content_tag :h3, 'MSA petitions for Opening Day' %>
-			<p>The doors at MSA Architecture are closed on Opening Day. And they have been for the last 25 Opening Days.</p>
-		</div>
-
-		<div class="span-3 feature">
-			<%= image_tag '/assets/pages/homepage/feature03.jpg', :class => 'frame', :size => '154x96' %>
-			<%= content_tag :h3, 'MSA petitions for Opening Day' %>
-			<p>The doors at MSA Architecture are closed on Opening Day. And they have been for the last 25 Opening Days.</p>
-		</div>
-
-		<div class="span-3 feature">
-			<%= image_tag '/assets/pages/homepage/feature04.jpg', :class => 'frame', :size => '154x96' %>
-			<%= content_tag :h3, 'MSA petitions for Opening Day' %>
-			<p>The doors at MSA Architecture are closed on Opening Day. And they have been for the last 25 Opening Days.</p>
-		</div>
-
-		<div class="span-3 feature last">
-			<%= image_tag '/assets/pages/homepage/feature05.jpg', :class => 'frame', :size => '154x96' %>
-			<%= content_tag :h3, 'MSA petitions for Opening Day' %>
-			<p>The doors at MSA Architecture are closed on Opening Day. And they have been for the last 25 Opening Days.</p>
-		</div>
-
+	<div class="container">
+	  <%= current_page.background_caption %>
 	</div>
+</div>
+<% end %>
+
+<section id="beta">
+<% unless current_features.empty? %>
+	<div id="features" class="container">
+		<h2>Featured</h2>
+		<%= render 'public/features' %>
+	</div>
+<% end %>
 </section>

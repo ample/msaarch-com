@@ -1,4 +1,4 @@
 <li id="post_<%= post.id %>" class="<%= post.admin_status_class %>">
-	<%= manage_object post, :sortable => true %>
+	<%= manage_object post, :sortable => false %>
 	<%= link_to post.title, edit_post_path(post) %>
 </li>

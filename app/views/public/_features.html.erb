@@ -1,0 +1,13 @@
+<% current_features.each_with_index do |feature, idx| %>
+  <div class="<%= feature.feature_type %> span-3<%= ' last' if idx % 5 == 4 %>">
+    <% unless feature.asset.nil? %>
+      <% if feature.link.blank? %>
+        <%= image_asset feature, :dimensions => '154x96', :class => :frame, :style => "border-color: #{feature.asset.color}" %>
+      <% else %>
+        <%= image_asset feature, :dimensions => '154x96', :class => :frame, :style => "border-color: #{feature.asset.color}", :link => feature.link %>
+      <% end %>
+    <% end %>
+    <%= content_tag :h3, feature.link.blank? ? feature.title : link_to(feature.title, feature.link) %>
+    <%= feature.body.to_html.html_safe %>
+  </div>
+<% end %>

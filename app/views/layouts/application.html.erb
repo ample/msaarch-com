@@ -33,9 +33,9 @@
 	<%= render 'public/markets/header' if is_market? %>
 	<%= render 'public/projects/header' if is_project? %>
 	<%= render 'public/users/header' if is_user? && params[:action] == 'index' %>
-	<section id="beta">
+	<section id="beta"><div class="bgx">
 		<%= content_tag :div, yield, :class => 'container' %>
-	</section>
+	</div></section>
 <% end %>
 
 <section id="footer">

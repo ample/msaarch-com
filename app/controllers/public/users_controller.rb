@@ -1,4 +1,5 @@
 class Public::UsersController < PublicController
+
   def index
     params[:permalink] = 'team'
   end

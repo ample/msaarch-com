@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20110726184302) do
     t.datetime "updated_at"
   end
 
+  add_index "categories", ["permalink"], :name => "index_categories_on_permalink"
+
   create_table "categories_markets", :id => false, :force => true do |t|
     t.integer "category_id"
     t.integer "market_id"
@@ -108,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20110726184302) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "markets", ["permalink"], :name => "index_markets_on_permalink"
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -233,6 +237,7 @@ ActiveRecord::Schema.define(:version => 20110726184302) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["permalink"], :name => "index_users_on_permalink"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

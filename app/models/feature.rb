@@ -10,6 +10,7 @@ class Feature < ActiveRecord::Base
       ['Video', 'video'],
       ['File Download', 'download'],
       ['Link', 'link'],
+      ['Feature', 'feature'],
     ]
   end
 
