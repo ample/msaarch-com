@@ -14,6 +14,7 @@ class Post < ActiveRecord::Base
 
   ###---------------------------------------------------- Plugins
 
+  acts_as_textile :teaser
   acts_as_textile :body
   has_permalink :title
 

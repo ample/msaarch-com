@@ -7,6 +7,8 @@ module PublicHelper
     classes += ' portfolio project' if params[:controller] == 'public/projects'
     classes += ' team' if params[:controller] == 'public/users'
     classes += ' member' if params[:controller] == 'public/users' && params[:action] == 'show'
+    classes += ' news' if params[:controller] == 'public/news'
+    classes += ' archive' if params[:controller] == 'public/news' && params[:action] == 'archive'
     " class=\"#{classes.lstrip}\"".html_safe unless classes.empty?
   end
 

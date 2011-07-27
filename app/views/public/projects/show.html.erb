@@ -6,13 +6,13 @@
 	<%= content_tag :div, current_project.body.to_html.html_safe, :class => 'body' %>
 
 </div>
-<div id="sidebar" class="prepend-2 span-5 last">
-
-	<%= render :partial => 'public/projects/categories' unless current_project.categories.live.empty? %>
-	<%= render :partial => 'public/projects/team' unless current_project.team.live.empty? %>
-	<%= render :partial => 'public/projects/awards' unless current_project.awards.live.empty? %>
-	<%= render :partial => 'public/projects/links' unless current_project.links.live.empty? %>
-
+<div id="sidebar" class="prepend-1 span-6 last">
+  <div class="offset">
+  	<%= render :partial => 'public/projects/categories' unless current_project.categories.live.empty? %>
+  	<%= render :partial => 'public/projects/team' unless current_project.team.live.empty? %>
+  	<%= render :partial => 'public/projects/awards' unless current_project.awards.live.empty? %>
+  	<%= render :partial => 'public/links', :object => current_project.links unless current_project.links.live.empty? %>
+  </div>
 </div>
 <% unless current_project.similar_projects.empty? %>
 <div id="similar" class="span-15 last">

@@ -51,6 +51,7 @@ h1, h2, h3, h4 {
 	padding: 0;
 }
 
+h2.section-title, 
 h1 {
   font-size: 52px;
   line-height: 50px;
@@ -79,6 +80,14 @@ h3 {
 
 .right {
 	float: right; 
+}
+
+.cj {
+  text-align: center; 
+}
+
+.rj {
+  text-align: right; 
 }
 
 .block {
@@ -280,6 +289,14 @@ body {
 			margin-bottom: 20px;
 		}
 	}
+	div#sidebar {
+	  div.link {
+	    margin-bottom: 7px;
+	    img {
+	      margin-bottom: 3px;
+	    }
+	  }
+	}
 }
 
 body.homepage {
@@ -384,6 +401,15 @@ body.project {
 			ul {
 				list-style-type: none;
 			}
+  	  div.team {
+  	    img.frame {
+  	      border: 2px solid #878787; 
+  	      margin: 0 3px 3px 0; 
+  	    }
+  	  }
+  	  div.offset {
+  	    padding-left: 40px;
+  	  }
 		}
 		div#similar {
 			margin-top: 24px;
@@ -417,7 +443,7 @@ body.team {
 	}
 	div#team-members {
     margin-top: 40px;
-	  h2 {
+	  h1 {
 	    margin-bottom: 20px;
 	  }
 		select#team_member {
@@ -441,7 +467,7 @@ body.member {
     border-color: #888a8a; 
     margin-bottom: 25px;
   }
-  h2.name {
+  h1.page-title {
     font-size: 32px; 
     color: #FFF; 
   }
@@ -474,6 +500,45 @@ body.member {
       li {
         clear: both; 
         margin-top: 13px; 
+      }
+    }
+  }
+}
+
+body.news {
+  div.post {
+    h2 {
+      font-size: 14px;
+      line-height: 16px; 
+    }
+    margin-bottom: 40px; 
+  }
+  section#beta {
+    div#sidebar {
+      margin-top: 74px;
+      div.updates {
+        color: #A1A1A1; 
+      }
+    }
+    h2.section-title {
+      margin-bottom: 24px;
+    }
+    #latest-posts {
+      .view-all {
+        font-weight: bold;
+      }
+      hr {
+				margin: 10px 0; 
+			}
+    }
+    #archive {
+      div.post {
+        background: rgba(66,66,66,.20); 
+        margin-bottom: 35px;
+        padding: 15px; 
+        width: 130px;
+        height: 70px; 
+        overflow: hidden;
       }
     }
   }

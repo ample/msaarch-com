@@ -1,0 +1,11 @@
+<%# ---
+name: News
+description: This template is reserved for the news landing page.
+fields: {}
+help: {}
+features: 
+  - link
+--- %>
+
+<%= content_tag :h1, current_page.title, :class => 'page-title' %>
+<%= current_page.body.to_html.html_safe %>

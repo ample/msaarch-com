@@ -1,0 +1,12 @@
+<div class="updates block">
+	<div class="va">
+	<h2>Updates</h2>
+  <ul class="clearfix">
+  <% latest_updates.each do |update| %>
+    <%= content_tag :li, :class => :clearfix do %>
+      <%= update.link.blank? ? update.body : link_to(update.body, update.link) %>
+      <%= content_tag :p, "#{time_ago_in_words(update.created_at)} ago" %>
+    <% end %>
+  <% end %>
+  </ul></div>
+</div>

@@ -4,3 +4,7 @@
 
 $ ->
   $('li.drop').hover (-> $(this).find('div.subnav').show()), (-> $(this).find('div.subnav').hide())
+
+  $('#sidebar .block').first().addClass('top')
+  $('#sidebar .block').last().addClass('bottom')  
+

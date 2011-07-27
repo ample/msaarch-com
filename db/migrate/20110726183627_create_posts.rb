@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :permalink
+      t.text :teaser
       t.text :body
       t.references :asset
       t.integer  :sort_order,        :default => 0

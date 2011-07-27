@@ -27,6 +27,10 @@ class Page < ActiveRecord::Base
     features.live.where :feature_type => 'video'
   end
   
+  def links
+    features.live.where :feature_type => 'link'
+  end
+  
   def background_caption
     unless self.template_filename != 'home'
       block = self.get_block(:background_image_caption)

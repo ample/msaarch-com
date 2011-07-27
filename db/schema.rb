@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(:version => 20110726184302) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.string   "permalink"
+    t.text     "teaser"
     t.text     "body"
     t.integer  "asset_id"
     t.integer  "sort_order",  :default => 0
@@ -193,10 +194,8 @@ ActiveRecord::Schema.define(:version => 20110726184302) do
   end
 
   create_table "updates", :force => true do |t|
-    t.string   "title"
-    t.string   "permalink"
     t.text     "body"
-    t.integer  "asset_id"
+    t.string   "link"
     t.integer  "sort_order",  :default => 0
     t.boolean  "active",      :default => false
     t.datetime "active_at"
@@ -206,8 +205,6 @@ ActiveRecord::Schema.define(:version => 20110726184302) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "updates", ["permalink"], :name => "index_updates_on_permalink"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

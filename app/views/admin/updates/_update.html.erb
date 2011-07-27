@@ -1,4 +1,4 @@
 <li id="update_<%= update.id %>" class="<%= update.admin_status_class %>">
 	<%= manage_object update, :sortable => false %>
-	<%= link_to update.title, edit_update_path(update) %>
+	<%= link_to truncate(update.body), edit_update_path(update) %>
 </li>

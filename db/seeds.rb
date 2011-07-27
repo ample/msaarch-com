@@ -5,12 +5,17 @@ users = User.create([
 homepage = Page.create :title => 'Home', :subtitle => '<strong>Design<br>is<br>life</strong> and we<br>have a<br>passion<br>for<br>living', :active => true, :permalink => 'index', :nav_name => 'Home', :nav_position => 'header', :body => 'We have six core markets, each with its own dedicated architects living and breathing their genre. But our culture is collaborative. Which means that the latest sports trends leak into our newest retail construction and that a technological advancement in education can make a new restaurant design better.', :sort_order => 1
 portfolio = Page.create :title => 'Portfolio', :active => true, :permalink => 'portfolio', :nav_name => 'Portfolio', :nav_position => 'header', :sort_order => 2
 team = Page.create :title => 'Team', :subtitle => '<strong>Our Culture</strong><br>Is Built On Collaboration', :active => true, :permalink => 'team', :nav_name => 'Team', :nav_position => 'header', :template_filename => 'team', :body => "As architects, we believe in solid foundations. Our's consists of the people we work with every day. They're talented, creative, intense, funny and interesting &mdash; the kind of people that inspire others to think bigger and do more. We believe that putting a pencil to paper is as important as computer skills. And that an architects job is as much about building relationships as it is about buildings. \n\nScroll down to meet the people that are taking us to a beautifully designed future.", :sort_order => 3
-contact = Page.create :title => 'Contact', :active => true, :permalink => 'contact', :nav_name => 'Contact', :nav_position => 'header', :sort_order => 4
+news = Page.create :title => 'News', :active => true, :permalink => 'news', :nav_name => 'News', :nav_position => 'header', :sort_order => 4, :template_filename => 'news'
+contact = Page.create :title => 'Contact', :active => true, :permalink => 'contact', :nav_name => 'Contact', :nav_position => 'header', :sort_order => 5
 
 [homepage, team].each do |page|
   (1..5).each do |i|
-    Feature.create owner: page, title: "#{i}: MSA petitions for Opening Day", active: true, feature_type: 'feature', body: "The doors at MSA Architecture are closed on Opening Day. And they have been for the last 25 Opening Days." 
+    Feature.create :owner => page, :title => "#{i}: MSA petitions for Opening Day", :active => true, :feature_type => 'feature', :body => "The doors at MSA Architecture are closed on Opening Day. And they have been for the last 25 Opening Days." 
   end
+end
+
+(1..5).each do |i|
+  Feature.create :owner => news, :title => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ", :active => true, :feature_type => 'link', :link => "http://google.com" 
 end
 
 parent_categories = Category.create([
@@ -62,6 +67,9 @@ end
 end
 
 (1..20).each do |i|
-  Post.create :title => i.to_s + ': Proin rhoncus felis ac dui rutrum imperdiet auctor felis molestie.', :body => 'Donec tincidunt nisi vel metus rhoncus fermentum. Vivamus pretium cursus libero, in blandit sem accumsan et. Proin urna lectus, ultricies eget luctus cursus, pellentesque nec est. Suspendisse suscipit metus quis tellus elementum blandit. Donec porta aliquam risus nec lobortis. In nec congue sem. Quisque eget purus ut tortor ultrices auctor quis fringilla lectus. Maecenas rutrum laoreet leo. Sed posuere pretium ornare. Nullam consequat convallis purus, quis laoreet eros sagittis vitae. In lacinia tellus in turpis volutpat ac condimentum odio consequat.', :active => true
-  Update.create :title => i.to_s + ': Praesent ultricies iaculis quam, sit amet tincidunt diam malesuada quis.', :body => 'Mauris dignissim porta aliquam. Donec condimentum tempus tellus ut pretium. Nullam vitae arcu porta diam consectetur dictum eget nec enim. Ut in elementum nisl. Sed molestie vestibulum ante quis scelerisque. Curabitur fermentum vestibulum orci. Maecenas ipsum mi, vehicula sit amet pellentesque vel, euismod eu libero. Nullam suscipit felis ut magna porttitor ut dignissim sapien rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu urna, porttitor sit amet tincidunt vehicula, elementum et velit. Cras aliquam elit eget leo iaculis lobortis. Sed blandit iaculis scelerisque. Praesent quis purus ac nulla rutrum ullamcorper eu at risus. Nullam ultrices lorem ornare sem dictum sit amet ultrices nisl rutrum.', :active => true
+  Post.create :created_at => "2010-" + rand(12).to_s + "-01", :title => i.to_s + ': Proin rhoncus felis ac dui rutrum imperdiet auctor felis molestie.', :teaser => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. ', :body => 'Donec tincidunt nisi vel metus rhoncus fermentum. Vivamus pretium cursus libero, in blandit sem accumsan et. Proin urna lectus, ultricies eget luctus cursus, pellentesque nec est. Suspendisse suscipit metus quis tellus elementum blandit. Donec porta aliquam risus nec lobortis. In nec congue sem. Quisque eget purus ut tortor ultrices auctor quis fringilla lectus. Maecenas rutrum laoreet leo. Sed posuere pretium ornare. Nullam consequat convallis purus, quis laoreet eros sagittis vitae. In lacinia tellus in turpis volutpat ac condimentum odio consequat.', :active => true
+end
+
+(1..10).each do |i|
+  Update.create :body => i.to_s + ': Praesent ultricies iaculis quam, sit amet tincidunt diam malesuada quis.', :link => 'http://google.com', :active => true
 end
