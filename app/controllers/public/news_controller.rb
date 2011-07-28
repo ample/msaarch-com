@@ -26,7 +26,7 @@ class Public::NewsController < ApplicationController
     end
 
     def latest_posts
-      if current_post.nil?.to_yaml
+      if current_post.nil?
         @latest_posts ||= Post.live.limit(6).order('created_at DESC')
       else 
         @latest_posts ||= Post.live.limit(6).order('created_at DESC').reject{ |post| post==current_post }

@@ -5,7 +5,9 @@ MsaarchCom::Application.routes.draw do
 
   scope '/admin' do
     match 'news', :to => 'admin/news#index'
-    resources :posts, :controller => 'admin/posts', :path => 'news/posts'
+    resources :posts, :controller => 'admin/posts', :path => 'news/posts' do 
+      resources :features, :controller => 'admin/features'
+    end
     resources :updates, :controller => 'admin/updates', :path => 'news/updates'
     resources :awards, :controller => 'admin/awards' do
       collection do

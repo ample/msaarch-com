@@ -11,6 +11,7 @@ class Post < ActiveRecord::Base
   ###---------------------------------------------------- Associations
 
   belongs_to :asset
+  has_many :features, :as => :owner, :include => [ :asset ]
 
   ###---------------------------------------------------- Plugins
 
@@ -21,5 +22,18 @@ class Post < ActiveRecord::Base
   ###---------------------------------------------------- Validations
 
   validates_presence_of :title
+
+  ###---------------------------------------------------- Class Methods
+
+  def self.feature_types
+    feature_types = [ 'video' ]
+    Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
+  end
+
+  ###---------------------------------------------------- Instance Methods
+
+  def videos
+    features.live.where :feature_type => 'video'
+  end
 
 end
