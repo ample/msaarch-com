@@ -47,6 +47,7 @@ MsaarchCom::Application.routes.draw do
   
   resources :users, :only => [:index, :show], :path => 'team', :as => :team, :controller => 'public/users'
   match 'news', :to => 'public/news#index', :as => :public_news
+  match 'news/awards', :to => 'public/news#awards', :as => :public_awards
   match 'news/archive', :to => 'public/news#archive', :as => :public_news_archive
   match 'news/:permalink', :to => 'public/news#show', :as => :public_post
   match 'portfolio/:market_permalink', :to => 'public/markets#show', :as => :portfolio

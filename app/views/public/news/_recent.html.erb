@@ -1,0 +1,9 @@
+<div class="block">
+  <%= content_tag :h2, 'Most Recent News' %>
+  <% latest_posts.each do |post| %>
+    <div class="post clearfix">
+  	  <%= image_asset post, :dimensions => '59x36#', :class => 'frame left', :style => "border-color: #{post.asset.color}", :link => public_post_path(post.permalink) unless post.asset.nil? %>
+  		<%= link_to post.title, public_post_path(post.permalink) %>
+  	</div>
+  <% end %>
+</div>

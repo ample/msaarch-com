@@ -70,6 +70,10 @@ end
   Post.create :created_at => "2010-" + rand(12).to_s + "-01", :title => i.to_s + ': Proin rhoncus felis ac dui rutrum imperdiet auctor felis molestie.', :teaser => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. ', :body => 'Donec tincidunt nisi vel metus rhoncus fermentum. Vivamus pretium cursus libero, in blandit sem accumsan et. Proin urna lectus, ultricies eget luctus cursus, pellentesque nec est. Suspendisse suscipit metus quis tellus elementum blandit. Donec porta aliquam risus nec lobortis. In nec congue sem. Quisque eget purus ut tortor ultrices auctor quis fringilla lectus. Maecenas rutrum laoreet leo. Sed posuere pretium ornare. Nullam consequat convallis purus, quis laoreet eros sagittis vitae. In lacinia tellus in turpis volutpat ac condimentum odio consequat.', :active => true
 end
 
+(1..20).each do |i|
+  Award.create :awarded_date => "20" + rand(11).to_s.rjust(2, '0') + "-01-01", :title => 'Proin rhoncus felis ac dui rutrum.', :source => 'Morbi leo risus', :active => true, :project_id => rand(48)
+end
+
 (1..10).each do |i|
   Update.create :body => i.to_s + ': Praesent ultricies iaculis quam, sit amet tincidunt diam malesuada quis.', :link => 'http://google.com', :active => true
 end

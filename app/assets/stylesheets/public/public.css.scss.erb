@@ -102,6 +102,23 @@ h3 {
 	}
 }
 
+div.big {
+  background: rgb(32,32,32);
+  background: -moz-linear-gradient(top, rgba(32,32,32,1) 0%, rgba(52,52,52,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(32,32,32,1)), color-stop(100%,rgba(52,52,52,1)));
+  background: -webkit-linear-gradient(top, rgba(32,32,32,1) 0%,rgba(52,52,52,1) 100%);
+  background: -o-linear-gradient(top, rgba(32,32,32,1) 0%,rgba(52,52,52,1) 100%);
+  background: -ms-linear-gradient(top, rgba(32,32,32,1) 0%,rgba(52,52,52,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202020', endColorstr='#343434',GradientType=0 );
+  background: linear-gradient(top, rgba(32,32,32,1) 0%,rgba(52,52,52,1) 100%);
+  padding-bottom: 15px;
+}
+
+.big {
+  font-size: 15px;
+}
+
+
 section#header {
 	background: #0a0a0a url(/assets/elements/nav-bgx.png) repeat-x bottom left;
 	ul {
@@ -512,8 +529,49 @@ body.news {
       line-height: 16px; 
     }
     margin-bottom: 40px; 
+    img.frame {
+      margin-bottom: 10px;
+    }
+  }
+  div#awards {
+    hr {
+      clear: both;
+      margin: 40px 0 30px; 
+    }
+  }
+  div#post {
+    h1 {
+      color: #FFF; 
+      font-size: 32px;
+      line-height: 34px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    h3.date {
+      font-size: 13px; 
+      margin: 0 0 10px 0;
+    }
+    img.frame {
+      margin-bottom: 24px;
+    }
+    p {
+      font-size: 14px; 
+      line-height: 20px;
+    }
   }
   section#beta {
+    div.award {
+      h2 {
+        font-size: 14px; 
+        line-height: 18px; 
+        margin: 0 0 8px; 
+      }
+      h3 {
+        font-size: 12px;
+        line-height: 14px;
+        margin: 0 0 15px; 
+      }
+    }
     div#sidebar {
       margin-top: 74px;
       div.updates {
@@ -539,6 +597,14 @@ body.news {
         width: 130px;
         height: 70px; 
         overflow: hidden;
+      }
+    }
+    #sidebar {
+      div.post {
+        margin-bottom: 10px; 
+        img {
+          border-width: 2px; 
+        }
       }
     }
   }

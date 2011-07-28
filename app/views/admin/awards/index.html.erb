@@ -8,9 +8,12 @@
 			<%= link_to_new :award, new_award_path %>
 		</div>
 	</div>
-	<ul class="index_list sortable clear">
-		<%= render :partial => 'admin/awards/award', :collection => current_awards %>
-	</ul>
+	<% current_awards.each do |group| %>
+		<%= content_tag :h2, group[0].strftime('%Y') %>
+		<ul class="index_list sortable clear">
+			<%= render :partial => 'admin/awards/award', :collection => group[1] %>
+		</ul>
+	<% end %>
 	<%= render 'admin/legend' %>
 </div>
 <div id="right" class="column span-7 last"></div>

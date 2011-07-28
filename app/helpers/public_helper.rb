@@ -9,6 +9,7 @@ module PublicHelper
     classes += ' member' if params[:controller] == 'public/users' && params[:action] == 'show'
     classes += ' news' if params[:controller] == 'public/news'
     classes += ' archive' if params[:controller] == 'public/news' && params[:action] == 'archive'
+    classes += ' awards' if params[:controller] == 'public/news' && params[:action] == 'awards'
     " class=\"#{classes.lstrip}\"".html_safe unless classes.empty?
   end
 
@@ -57,17 +58,23 @@ module PublicHelper
   end
 
   def project_thumbnail(project, dimensions = '154x96', market = nil)
-    unless current_market.nil?
-      market = current_market
-    else 
-      market = project.markets.first if market.nil?
+    if market.nil?
+      unless current_market.nil? 
+        market = current_market
+      else 
+        market = project.markets.first
+      end 
     end
 
     if project.thumbnail.nil?
       link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink)
     else
       link_to image_asset(project, :object => project.thumbnail, :dimensions => dimensions, :class => 'frame', :style => "border-color: #{project.thumbnail.hex};"), portfolio_project_path(market.permalink, project.permalink)
-    end
+    end 
+  end
+
+  def path_to_project(project)
+    portfolio_project_path(project.markets.first.permalink, project.permalink)
   end
 
 end
