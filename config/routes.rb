@@ -1,10 +1,21 @@
 MsaarchCom::Application.routes.draw do
 
+  get "careers/index"
+
+  get "careers/show"
+
+  get "careers/new"
+
   devise_for :users, :class_name => 'User', :path_prefix => '/admin'
   root :to => 'public#home'
 
   scope '/admin' do
     match 'news', :to => 'admin/news#index'
+    resources :careers, :controller => 'admin/careers' do
+      collection do
+        post :update_sort_order
+      end
+    end
     resources :posts, :controller => 'admin/posts', :path => 'news/posts' do 
       resources :features, :controller => 'admin/features'
     end
@@ -48,6 +59,9 @@ MsaarchCom::Application.routes.draw do
   end
   
   resources :users, :only => [:index, :show], :path => 'team', :as => :team, :controller => 'public/users'
+  match 'contact', :to => 'public/careers#index', :as => :contact
+  match 'contact/email(/:id)', :to => 'public/careers#new', :as => :contact_form
+  match 'contact/:permalink', :to => 'public/careers#show', :as => :public_career
   match 'news', :to => 'public/news#index', :as => :public_news
   match 'news/awards', :to => 'public/news#awards', :as => :public_awards
   match 'news/archive', :to => 'public/news#archive', :as => :public_news_archive

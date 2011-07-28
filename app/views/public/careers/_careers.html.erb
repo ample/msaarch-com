@@ -1,0 +1,5 @@
+<%= content_tag :ul do %>
+  <% current_careers.each do |career| %>
+    <%= content_tag :li, link_to(career.title, public_career_path(career.permalink)) + (career.now_hiring? ? ' (Now Hiring)' : ''), :class => :arrow  %>
+  <% end %>
+<% end %>

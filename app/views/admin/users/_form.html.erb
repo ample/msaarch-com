@@ -35,6 +35,9 @@
 	<p><%= f.label :favorites %><br />
 	<%= f.collection_select :favorite_ids, Project.all, :id, :title, {}, :multiple => true %></p>
 
+	<p><%= f.label :expertise, 'Expertise Markets' %><br />
+	<%= f.collection_select :expertise_ids, Market.all, :id, :title, {}, :multiple => true %></p>
+
 	<p><%= f.label :credentials %><br />
 	<%= f.text_field(:credentials, :class => 'text') %></p>
 

@@ -1,0 +1,23 @@
+<%= content_tag :h2, 'Contact / Careers', :class => 'section-title' %>
+<div class="career span-9">
+  
+  <%= content_tag :h1, current_career.title, :class => 'page-title' %>
+  <%= current_career.body.to_html.html_safe %>
+  
+  <div class="contact-us">
+    <hr />
+    <%= link_to "Contact #{current_career.user.full_name} about this position", contact_form_path %>
+    <hr />
+  </div>
+  
+</div>
+<div id="sidebar" class="prepend-1 span-5 last">
+  <div id="careers" class="block">
+    <%= content_tag :h2, 'Careers' %>
+    <%= content_tag :p, 'MSA requires a special blend of technical know-how and passionate creativity. See what it takes to be a part of the team.', :class => :small %>
+    <%= render :partial => 'public/careers/careers' %>
+  </div>
+  <div class="block">
+    <%= link_to 'View General Contact Information', contact_path %>
+  </div>
+</div>

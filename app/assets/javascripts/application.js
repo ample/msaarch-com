@@ -14,3 +14,4 @@
 //= require public/markets
 //= require public/projects
 //= require public/users
+//= require public/careers

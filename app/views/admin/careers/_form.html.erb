@@ -1,0 +1,31 @@
+<%= form_for(current_career, :html => { :multipart => true }) do |f| %>
+
+<fieldset>
+<% unless f.object.new_record? %>
+	<p><%= f.label :permalink %><br />
+		<%= f.text_field(:permalink, :class => 'text') %></p>
+
+	<p><%= f.check_box(:active) %><%= f.label :active %></p>
+
+<% end %>
+
+	<p><%= f.label :title %><br />
+	<%= f.text_field(:title, :class => 'text') %></p>
+
+	<p><%= f.label :user, 'Contact' %><br />
+	<%= f.collection_select :user_id, User.all, :id, :full_name, :include_blank => true %></p>
+
+<% unless f.object.new_record? %>
+	<p><%= f.label :body %><br />
+	<%= f.text_area(:body, :class => 'textile') %></p>
+
+	<p><%= f.check_box(:now_hiring) %><%= f.label :now_hiring %></p>
+
+<% end %>
+
+</fieldset>
+
+<button type="submit" name="continue" class="positive"><%= f.object.new_record? ? 'Create' : 'Update' %> Career</button>
+<%= link_to 'Cancel', careers_path, :class => 'button' %>
+
+<% end %>

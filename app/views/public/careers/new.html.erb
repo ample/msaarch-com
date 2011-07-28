@@ -1,0 +1,64 @@
+<div id="email" class="span-8 append-2">
+  <%= content_tag :h1, 'Contact / Email Us' %>
+  <%= form_for(@message, :url => contact_form_path, :html => { :multipart => true }) do |f| %>
+  
+    <div class="span-2">
+      <%= f.label :to %>
+    </div><div class="span-6 last">
+      <%= f.collection_select :to_id, User.all, :id, :full_name %>
+    </div>
+  
+    <div class="span-2">
+      <%= f.label :from %>
+    </div><div class="span-6 last">
+      <%= f.text_field(:from, :class => 'text', :placeholder => 'Name*') %>
+      <%= f.text_field(:email, :class => 'text', :placeholder => 'Email*') %>
+      <%= f.text_field(:organization, :class => 'text', :placeholder => 'Business, Organization or Municipality*') %>
+    </div>
+
+    <div class="span-2">
+      <%= f.label :subject %>
+    </div><div class="span-6 last">
+      <%= f.text_field(:subject, :class => 'text', :value => 'Website Inquiry') %>
+    </div>
+
+    <div class="span-2">
+      <%= f.label :body %>
+    </div><div class="span-6 last">
+      <%= f.text_area(:body, :class => 'text') %>
+    </div>
+
+    <div class="prepend-2 span-6 last">
+      <%= f.submit 'Send', :class => :button %>
+      <%= link_to 'Cancel', :class => :button %>
+    </div>
+
+
+  <% end %>
+</div>
+<div id="sidebar" class="span-5 last">
+  
+  <div class="locations block">
+    <%= content_tag :h2, 'Locations' %>
+    
+    <%= content_tag :p do %>
+      Cincinnati<br />
+      316 West Fourth Street<br />
+      Cincinnati, Ohio 45202<br />
+      513.241.5666<br />
+      <%= link_to 'Get Directions', '#' %>
+    <% end %>
+    
+    <%= content_tag :p do %>
+      Columbus<br />
+      580 North Fourth Street<br />
+      Suite 120<br />
+      Columbus, Ohio 43215<br />
+      <%= link_to 'Get Directions', '#' %>
+    <% end %>
+  </div>
+  <div class="block">
+    <%= link_to 'View General Contact Information', contact_path %>
+  </div>
+  
+</div>

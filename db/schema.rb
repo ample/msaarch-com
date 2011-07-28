@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110726184302) do
+ActiveRecord::Schema.define(:version => 20110728205147) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -50,6 +50,25 @@ ActiveRecord::Schema.define(:version => 20110726184302) do
     t.integer "asset_id"
     t.text    "textarea"
   end
+
+  create_table "careers", :force => true do |t|
+    t.string   "title"
+    t.string   "permalink"
+    t.text     "body"
+    t.integer  "user_id"
+    t.boolean  "now_hiring"
+    t.integer  "sort_order",  :default => 0
+    t.boolean  "active",      :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "careers", ["permalink"], :name => "index_careers_on_permalink"
+  add_index "careers", ["user_id"], :name => "index_careers_on_user_id"
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -112,6 +131,26 @@ ActiveRecord::Schema.define(:version => 20110726184302) do
   end
 
   add_index "markets", ["permalink"], :name => "index_markets_on_permalink"
+
+  create_table "markets_users", :id => false, :force => true do |t|
+    t.integer  "market_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "to_id"
+    t.string   "from"
+    t.string   "email"
+    t.string   "organization"
+    t.string   "subject"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["to_id"], :name => "index_messages_on_to_id"
 
   create_table "pages", :force => true do |t|
     t.string   "title"

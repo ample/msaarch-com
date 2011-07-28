@@ -1,0 +1,4 @@
+<li id="career_<%= career.id %>" class="<%= career.admin_status_class %>">
+	<%= manage_object career, :sortable => true %>
+	<%= link_to career.title, edit_career_path(career) %>
+</li>

@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, 
-                  :credentials, :education, :bio, :favorite_ids, :project_ids, :admin, :active,
+                  :credentials, :education, :bio, :favorite_ids, :project_ids, :expertise_ids, :admin, :active,
                   :permalink, :bio, :projectships_count, :asset_id, :active_at, :inactive_at
 
   acts_as_textile :bio
@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   has_many :features, :as => :owner, :include => [ :asset ]
   has_many :projectships, :as => :owner, :dependent => :destroy
   has_many :projects, :through => :projectships
+  has_many :careers
+  has_and_belongs_to_many :expertise, :class_name => 'Market'
   has_and_belongs_to_many :favorites, :class_name => 'Project'
   belongs_to :asset
 
