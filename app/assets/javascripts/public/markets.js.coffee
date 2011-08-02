@@ -44,9 +44,19 @@ $ ->
     if this.nodeName == 'A'
       check = (if $(this).prev().attr("checked") then false else true)
       $(this).prev().attr("checked", check);
+      $(this).prev().prev().toggleClass('on');
     filters = []
     $.each $("#projects-filters input:checked"), (i, el) ->
       filters.push $(el).attr("data-filter")
     $("#projects-filtered").isotope filter: filters.join(',')
     false unless this.nodeName == 'INPUT'
+
+  # stylized checkboxes
+  $('#projects-filters input[type=checkbox]').each ->
+    $(this).hide();
+    link = $('<a href="#" class="checkbox off"></a>').click ->
+      $(this).next().next().trigger('click')
+      $(this).toggleClass('on')
+      false
+    $(this).before(link); 
 
