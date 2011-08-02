@@ -1,5 +1,7 @@
 class Feature < ActiveRecord::Base
 
+  ###---------------------------------------------------- Class Methods
+
   def self.feature_types
     [
       ['Interior Page Copy', 'copy'], 
@@ -12,6 +14,15 @@ class Feature < ActiveRecord::Base
       ['Link', 'link'],
       ['Feature', 'feature'],
     ]
+  end
+
+  ###---------------------------------------------------- Instance Methods
+
+  def video_id
+    if self.feature_type == 'video' && !self.link.blank?
+      params = Rack::Utils.parse_nested_query(self.link.gsub(/^[^?]*\?/, ''))
+      params['v'] if params.has_key?('v')
+    end
   end
 
 end

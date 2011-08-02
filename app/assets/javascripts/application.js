@@ -10,6 +10,7 @@
 //= require public/plugins/jquery.ample-panels
 //= require public/plugins/jquery.isotope
 //= require public/plugins/jquery.chosen
+//= require public/plugins/jquery.colorbox
 //= require public/public
 //= require public/markets
 //= require public/projects
