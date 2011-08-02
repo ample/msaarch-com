@@ -2,7 +2,7 @@
   <%= content_tag :div, :class => 'feature video' + (video.asset.nil? ? '' : ' with-image') do %>
   	<div class="asset"><%= link_to image_asset(video, :dimensions => '284x>', :class => 'frame video'), video.link, 'data-video-id' => video.video_id %></div>
 		<div class="<%= current_market.permalink %>">
-			<%= content_tag :h4, link_to(video.title, video.link, 'data-video-id' => video.video_id), :class => current_market.permalink %>
+			<%= content_tag :h4, link_to(video.title, video.link, 'data-video-id' => video.video_id, 'data-video-id' => video.video_id), :class => current_market.permalink %>
 			<%= video.body.to_html.html_safe %>
 		</div>
   <% end %>

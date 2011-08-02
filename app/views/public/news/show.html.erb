@@ -9,8 +9,8 @@
 </div>
 <div id="sidebar" class="span-5 last">
 
-  <%= render :partial => 'public/news/videos' %>
-  <%= render :partial => 'public/news/recent' %>
+  <%= render :partial => 'public/news/videos' unless current_post.videos.empty? %>
+  <%= render :partial => 'public/news/recent' unless latest_posts.empty? %>
   <%= content_tag :div, link_to('View All News', public_news_path), :class => 'block' %>
   
 </div>
