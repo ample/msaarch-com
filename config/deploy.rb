@@ -1,5 +1,5 @@
 require './config/boot'
-require 'hoptoad_notifier/capistrano'
+#require 'hoptoad_notifier/capistrano'
 require 'bundler/capistrano'
 
 set :application, 'msaarch'
@@ -32,3 +32,10 @@ end
 role :app, host
 role :web, host
 role :db,  host, :primary => true
+
+namespace :deploy do
+  desc "Restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+end
