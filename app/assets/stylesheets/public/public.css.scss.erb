@@ -288,11 +288,11 @@ body {
 				}
 			}
 			.previous a {
-				background: url(/assets/elements/panels-pager.gif) no-repeat center left; 
+				background: url(/assets/elements/panels-pager.png) no-repeat top left; 
 				margin-right: 5px;
 			}
 			.next a {
-				background: url(/assets/elements/panels-pager.gif) no-repeat center right; 
+				background: url(/assets/elements/panels-pager.png) no-repeat top right; 
 				margin-left: 4px;
 			}
 		}
@@ -350,6 +350,9 @@ body.homepage {
 	}
 	section#beta {
 		padding: 20px 0; 
+    h2 {
+  		margin-bottom: 10px;
+    }
 	}
 	.dark {
 		span {
@@ -403,6 +406,34 @@ body.market {
 		}
 		.feature {
 			width: 290px;
+		}
+	}
+	section#beta {
+	  #case-studies-controls {
+			float: right; 
+			margin-top: -30px;
+			ul {
+				position: relative; 
+				list-style-type: none; 
+			}
+			li {
+				display: block;
+				float: left; 
+				a {
+					display: block; 
+					width: 14px; 
+					height: 12px;
+					margin-top: 2px;
+				}
+			}
+			.previous a {
+				background: url(/assets/elements/panels-pager.png) no-repeat bottom left; 
+				margin-right: 5px;
+			}
+			.next a {
+				background: url(/assets/elements/panels-pager.png) no-repeat bottom right; 
+				margin-left: 4px;
+			}
 		}
 	}
 }
@@ -817,7 +848,7 @@ section#beta {
 		filter: dropshadow(color=#000000, offx=-1, offy=-1);
 	}
 	h2 {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 	#features {
 		 h3 {
@@ -832,6 +863,8 @@ section#beta {
 		line-height: 15px;
 	}
 	#case-studies {
+	  width: 940px; 
+	  overflow: hidden;
 		margin-bottom: 40px; 
 		hr {
 			margin-top: 40px;

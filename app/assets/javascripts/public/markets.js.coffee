@@ -13,11 +13,11 @@ $ ->
     parent: "div"
     children: "div.feature"
     continuous: true
-    keyboard_nav: true
+    keyboard_nav: false
 
   $("#case-studies .panels").amplePanels 
     auto: false
-    width: 325
+    width: 290
     height: 'auto'
     distance: 35
     per_page: 3

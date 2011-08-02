@@ -35,4 +35,4 @@ $ ->
       width: w
       height: h
     ).prependTo($(this).parent()).wrap(img)
-    
+
