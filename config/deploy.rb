@@ -28,6 +28,8 @@ elsif dest == 'dev'
   set :rails_env,    'staging'
 end
 
+after 'deploy:update_code', 'deploy:update_shared'
+
 # Deploy options  
 role :app, host
 role :web, host
@@ -38,4 +40,15 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
   end
+
+  desc 'Hook up all of the shared content to the current release'
+  task :update_shared, :roles => :app do
+    # Dragonfly Rack::Cache files
+    run "mkdir -p #{shared_path}/tmp/dragonfly && ln -nfs #{shared_path}/tmp/dragonfly #{release_path}/tmp/dragonfly"
+    # Search Index files
+    run "mkdir -p #{shared_path}/tmp/index && ln -nfs #{shared_path}/tmp/index #{release_path}/tmp/index"
+    # Copy in db config
+    run "cp #{shared_path}/config/database.yml #{release_path}/config/"
+  end
+
 end
