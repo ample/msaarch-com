@@ -46,7 +46,6 @@ a, a:hover {
 }
 
 h1, h2, h3, h4 {
-  font-family:'HelveticaNeueW01-45Ligh', Arial, sans-serif;
 	color: #707070;
 	margin: 0;
 	padding: 0;
@@ -60,11 +59,14 @@ h1 {
 }
 
 h1.page-title {
+  font-family:'HelveticaNeueW01-45Ligh', Arial, sans-serif;
   font-size: 32px; 
+  line-height: 38px;
   color: #FFF; 
 }
 
 h2 {
+  font-family:'HelveticaNeueW01-45Ligh', Arial, sans-serif;
 	font-size: 32px;
 	line-height: 36px;
 	margin-bottom: 20px;
@@ -396,6 +398,8 @@ body.project {
 		border-bottom: 1px solid #000;
 	}
 	section#tango {
+	  height: 449px; 
+	  overflow: hidden;
 		li img {
 			@include frame; 
 			border-right: none; 
@@ -413,6 +417,9 @@ body.project {
 			font-size: 13px; 
 			line-height: 16px; 
 			margin: 0 0 10px; 
+		}
+		img.project {
+		  margin-bottom: 20px;
 		}
 		div.body {
 			margin-top: 12px;
@@ -452,6 +459,35 @@ body.project {
 			}
 		}
 	}
+  section#controls {
+    position: absolute;
+    width: 100%; 
+  	a#project-imagery-previous, 
+  	a#project-imagery-next {
+  	  float: left; 
+  	  display: block;
+  	  width: 40%; 
+  	  height: 449px; 
+  	  span {
+  	    display: block;
+  	    margin-top: 25%;
+  	    margin-left: 10%; 
+  	    height: 449px;
+  	    width: 130px; 
+  	    text-indent: -9999em;
+  	    background: url(/assets/elements/arrows.png) no-repeat top left; 
+  	  }
+  	}
+  	a#project-imagery-next {
+  	  float: right; 
+  	  span {
+  	    margin-right: 10%; 
+  	    margin-left: 0; 
+  	    background-position: top right; 
+  	    float: right;
+  	  }
+  	}
+  }
 }
 
 body.team {
