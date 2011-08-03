@@ -40,23 +40,14 @@
   
   <div class="locations block">
     <%= content_tag :h2, 'Locations' %>
-    
-    <%= content_tag :p do %>
-      Cincinnati<br />
-      316 West Fourth Street<br />
-      Cincinnati, Ohio 45202<br />
-      513.241.5666<br />
-      <%= link_to 'Get Directions', '#' %>
-    <% end %>
-    
-    <%= content_tag :p do %>
-      Columbus<br />
-      580 North Fourth Street<br />
-      Suite 120<br />
-      Columbus, Ohio 43215<br />
-      <%= link_to 'Get Directions', '#' %>
+    <% current_page.locations.each do |location| %>
+      <%= content_tag :p do %>
+        <%= location.title %><br />
+        <%= sanitize location.body.to_html.html_safe, :tags => ['a', 'br'] %>
+      <% end %>
     <% end %>
   </div>
+
   <div class="block">
     <%= link_to 'View General Contact Information', contact_path %>
   </div>
