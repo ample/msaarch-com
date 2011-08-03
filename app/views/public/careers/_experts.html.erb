@@ -1,0 +1,18 @@
+<div class="block email">
+  <%= content_tag :h2, 'Email a Market Expert' %>
+</div>
+<div class="block choice clearfix">
+  <%= label_tag :market_expert, 'Choose a Market' %>
+  <%= select("market", "expert", Market.live.collect{ |u| [u.title, u.permalink] }) %>
+</div>
+<div class="block experts">
+<% Market.live.each do |market| %>
+  <%= content_tag :div, 'data-role' => market.permalink, :style => 'display: ' + (market == Market.live.first ? 'block' : 'none') do %>
+    <%= content_tag :ul do %>
+    <% market.experts.each do |expert| %>
+      <%= content_tag :li, link_to(expert.full_name, "/contact/email/#{expert.id}") + ' &nbsp;|&nbsp; '.html_safe + expert.credentials %>
+    <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>

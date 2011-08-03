@@ -13,6 +13,7 @@ class Feature < ActiveRecord::Base
       ['File Download', 'download'],
       ['Link', 'link'],
       ['Feature', 'feature'],
+      ['Location', 'location'],
     ]
   end
 

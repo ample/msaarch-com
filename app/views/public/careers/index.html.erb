@@ -1,56 +1,30 @@
 <%= content_tag :h2, 'Contact', :class => 'section-title' %>
-<div class="location span-4">
-  <%= image_tag '/assets/pages/contact/cincinnati-office.jpg', :size => '219x137', :class => 'frame', :style => 'border-color: #dc6c0f;' %>
-  <%= content_tag :h3, 'Cincinnati' %>
-  <%= content_tag :p do %>
-    316 West Fourth Street<br />
-    Cincinnati, Ohio 45202<br />
-    513.241.5666
+<div class="span-8 append-1 clearfix">
+
+  <% current_page.locations.each_with_index do |location, i| %>
+  <div class="location span-4<%= ' last' if i%2 == 1 %>">
+    <%= image_asset location, :dimensions => '219x137#', :class => 'frame', :style => "border-color: #{location.asset.hex}" unless location.asset.nil? %>
+    <%= content_tag :h3, location.title %>
+    <%= location.body.to_html.html_safe %>
+  </div>
   <% end %>
-  <%= content_tag :p, link_to('Get Directions', '#') %>
-</div>
-<div class="location span-4 append-1">
-  <%= image_tag '/assets/pages/contact/columbus-office.jpg', :size => '219x137', :class => 'frame', :style => 'border-color: #886c4e;' %>
-  <%= content_tag :h3, 'Columbus' %>
-  <%= content_tag :p do %>
-    316 West Fourth Street<br />
-    Cincinnati, Ohio 45202<br />
-    513.241.5666
-  <% end %>
-  <%= content_tag :p, link_to('Get Directions', '#') %>
+  
 </div>
 <div id="sidebar" class="span-5 prepend-1 last">
-  <div class="block email">
-    <%= content_tag :h2, 'Email a Market Expert' %>
-  </div>
-  <div class="block choice clearfix">
-    <%= label_tag :market_expert, 'Choose a Market' %>
-    <%= select("market", "expert", Market.live.collect{ |u| [u.title, u.permalink] }) %>
-  </div>
-  <div class="block experts">
-  <% Market.live.each do |market| %>
-    <%= content_tag :div, 'data-role' => market.permalink, :style => 'display: ' + (market == Market.live.first ? 'block' : 'none') do %>
-      <%= content_tag :ul do %>
-      <% market.experts.each do |expert| %>
-        <%= content_tag :li, link_to(expert.full_name, "/contact/email/#{expert.id}") + ' &nbsp;|&nbsp; '.html_safe + expert.credentials %>
-      <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
-  </div>
+  <%= render 'experts' %>
 </div>
 
-<hr />
-
-<%= content_tag :h2, 'Careers' %>
-
-<div id="careers" class="span-8 append-1">
-  <%= content_tag :p, 'MSA requires a special blend of technical know-how and passionate creativity. See what it takes to be a part of the team.' %>
-  <%= content_tag :h3, 'Role Description' %>
-  <%= render :partial => 'public/careers/careers' %>
-</div>
-<div class="sidebar span-5 prepend-1 last">
-  <div class="block big">
-    <%= link_to 'Learn about the MSA Team', team_index_path %>
+<% unless current_careers.empty? %>
+  <hr />
+  <%= content_tag :h2, 'Careers' %>
+  <div id="careers" class="span-8 append-1">
+    <%= current_page.body.to_html.html_safe %>
+    <%= content_tag :h3, 'Role Description' %>
+    <%= render :partial => 'public/careers/careers' %>
   </div>
-</div>
+  <div class="sidebar span-5 prepend-1 last">
+    <div class="block big">
+      <%= link_to 'Learn about the MSA Team', team_index_path %>
+    </div>
+  </div>
+<% end %>

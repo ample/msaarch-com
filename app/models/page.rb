@@ -30,6 +30,10 @@ class Page < ActiveRecord::Base
   def links
     features.live.where :feature_type => 'link'
   end
+
+  def locations
+    features.live.where :feature_type => 'location'
+  end
   
   def background_caption
     unless self.template_filename != 'home'

@@ -1,11 +1,12 @@
 class Public::CareersController < PublicController
 
   def index
-    params[:permalink] = 'careers'
+    params[:permalink] = 'contact'
   end
 
   def show
     raise ActiveRecord::RecordNotFound if current_career.nil?
+    params[:permalink] = 'contact'
   end
 
   def new
