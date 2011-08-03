@@ -23,10 +23,12 @@ $ ->
   # video overlay
   $("a[data-video-id] img").each ->
     path = $(this).attr('src')
+    c = $(this).first('img').css('border-top-color')
     w = $(this).width()
     h = $(this).height()
     $(this).hide();
     img = $("<span></span>").addClass("video").css(
+      'border-color': c
       width: w
       height: h
       background: 'url(' + path + ')'
