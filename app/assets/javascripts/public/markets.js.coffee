@@ -54,9 +54,8 @@ $ ->
   # stylized checkboxes
   $('#projects-filters input[type=checkbox]').each ->
     $(this).hide();
-    link = $('<a href="#" class="checkbox off"></a>').click ->
+    link = $('<a href="#" class="checkbox"></a>').click ->
       $(this).next().next().trigger('click')
-      $(this).toggleClass('on')
       false
     $(this).before(link); 
 
