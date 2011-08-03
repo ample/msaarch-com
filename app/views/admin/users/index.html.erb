@@ -11,6 +11,7 @@
 	<ul class="index_list clear sortable">
 		<%= render :partial => 'admin/users/user', :collection => current_objects %>
 	</ul>
+	<%= will_paginate current_objects %>
 	<%= render 'admin/legend' %>
 </div>
 <div id="right" class="column span-7 last">
