@@ -8,11 +8,8 @@
 	<p><%= f.label :title %><br />
 	<%= f.text_field(:title, :class => 'text') %></p>
 
-
-<% unless f.object.new_record? %>
-	<p><%= f.label :body %><br />
-	<%= f.text_area(:body, :class => 'textile') %></p>
-<% end %>
+	<p><%= f.label :parent %><br />
+	<%= f.select(:parent_id, Category.parent_select.reject { |p| p[1] == f.object.id }, :include_blank => 'None') %></p>
 
 </fieldset>
 
