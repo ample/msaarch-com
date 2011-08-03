@@ -1,7 +1,7 @@
 <%= content_tag :h1, 'Contact / Email Us' %>
 <div id="email" class="span-9 append-1">
   <%= form_for(@message, :url => contact_form_path, :method => :post, :html => { :multipart => true }) do |f| %>
-    <%= show_flashes %>
+    <%= message_flashes %>
 
     <div class="span-2">
       <%= f.label :to %>

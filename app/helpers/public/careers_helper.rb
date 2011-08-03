@@ -1,6 +1,6 @@
 module Public::CareersHelper
 
-  def show_flashes
+  def message_flashes
     messages = ''.html_safe 
     flash.collect { |k,v| 
       messages << "<div class='flash #{k}'> <strong>#{v.html_safe}</strong>".html_safe
