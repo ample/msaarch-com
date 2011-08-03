@@ -11,7 +11,7 @@
   <% User.live.each_with_index do |user, idx| %>
 		<div id="member-<%= user.id %>" class="team-member span-3<%= ' last' if idx % 5 == 4 %>" data-permalink="<%= "#{user.id}-#{user.permalink}" %>">
 			<% if user.asset.nil? %>
-				<%= link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame'), team_path(user) %>
+				<%= link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => '154x96'), team_path(user) %>
 			<% else %>
 				<%= link_to image_asset(user, :dimensions => '154x96', :class => 'frame'), team_path(user) %>
 			<% end %>
