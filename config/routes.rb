@@ -59,6 +59,7 @@ MsaarchCom::Application.routes.draw do
   end
   
   resources :users, :only => [:index, :show], :path => 'team', :as => :team, :controller => 'public/users'
+  resources :careers, :only => [:create], :path => 'contact/email', :controller => 'public/careers'
   match 'contact', :to => 'public/careers#index', :as => :contact
   match 'contact/email(/:id)', :to => 'public/careers#new', :as => :contact_form
   match 'contact/:permalink', :to => 'public/careers#show', :as => :public_career

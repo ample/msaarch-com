@@ -1,0 +1,22 @@
+<table border="0" cellpadding="0" cellspacing="5">
+	<tr>
+		<th>From:</th>
+		<td><%= @message.from %></td>
+	</tr>
+	<tr>
+		<th>To:</th>
+		<td><%= @message.to.full_name %></td>
+	</tr>
+	<tr>
+		<th>Email:</th>
+		<td><%= @message.email %></td>
+	</tr>
+	<tr>
+		<th>Organization:</th>
+		<td><%= @message.organization %></td>
+	</tr>
+	<tr>
+		<th valign="top">Message:</th>
+		<td><%= simple_format @message.body %></td>
+	</tr>
+</table>

@@ -1,7 +1,8 @@
+<%= content_tag :h1, 'Contact / Email Us' %>
 <div id="email" class="span-8 append-2">
-  <%= content_tag :h1, 'Contact / Email Us' %>
-  <%= form_for(@message, :url => contact_form_path, :html => { :multipart => true }) do |f| %>
-  
+  <%= form_for(@message, :url => contact_form_path, :method => :post, :html => { :multipart => true }) do |f| %>
+    <%= show_flashes %>
+
     <div class="span-2">
       <%= f.label :to %>
     </div><div class="span-6 last">
@@ -32,7 +33,6 @@
       <%= f.submit 'Send', :class => :button %>
       <%= link_to 'Cancel', :class => :button %>
     </div>
-
 
   <% end %>
 </div>
