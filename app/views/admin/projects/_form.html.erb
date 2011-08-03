@@ -34,8 +34,8 @@
 	
   <fieldset class="clearfix">
 	  <legend><%= f.label :categories %></legend>
-  <% Category.root_level.each do |category| %>
-  <div class="opts">
+  <% Category.root_level.each_with_index do |category, index| %>
+  <div class="opts<%= ' clear' if index%4 == 3 %>">
     <%= label_tag category.title %>
     <% category.children.each do |subcategory| %>
       <label><%= check_box_tag "project[category_ids][]", subcategory.id, current_project.categories.include?(subcategory) %> <%= subcategory.title %></label>
