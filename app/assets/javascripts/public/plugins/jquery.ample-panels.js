@@ -124,15 +124,15 @@
         var ref = this;
         this.key_down(); 
         if(this.options.previous) {
-          $(this.options.previous).bind('click',function(){
+          $(this.options.previous).bind('click',function(event){
             ref.stop(); 
-            ref.previous(); 
+            return ref.previous(); 
           });
         }
         if(this.options.next) {
-          $(this.options.next).bind('click',function(){
+          $(this.options.next).bind('click',function(event){
             ref.stop(); 
-            ref.next(); 
+            return ref.next(); 
           });
         }
       },
@@ -160,12 +160,12 @@
         var previous = $('<a href="#"></a>')
             .click(function() {
               ref.stop(); 
-              ref.previous(); 
+              return ref.previous(); 
             }); 
         var next = $('<a href="#"></a>')
             .click(function() {
               ref.stop(); 
-              ref.next(); 
+              return ref.next(); 
             }); 
         var nav = $('<ul></ul>')
             .append( $('<li class="previous"></li>').append( previous ))
