@@ -30,7 +30,7 @@ class Public::CareersController < PublicController
 
   protected 
 
-    helper_method :current_careers, :current_career, :market_experts
+    helper_method :current_careers, :current_career, :market_experts, :contact_page
 
     def current_careers
       @current_careers ||= Career.live
@@ -41,7 +41,11 @@ class Public::CareersController < PublicController
     end
 
     def set_permalink
-      params[:permalink] = 'contact'
+      params[:permalink] = 'contact' unless params[:action] == 'show'
+    end
+
+    def contact_page
+      @contact_page ||= Page.live.find_by_permalink 'contact'
     end
 
 end
