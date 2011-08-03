@@ -2,7 +2,7 @@ class Public::CareersController < PublicController
 
   include ActionView::Helpers::TextHelper
 
-  before_filter :set_permalink
+  before_filter :set_permalink, :except => :show
   
   def index
   end
@@ -41,7 +41,7 @@ class Public::CareersController < PublicController
     end
 
     def set_permalink
-      params[:permalink] = 'contact' unless params[:action] == 'show'
+      params[:permalink] = 'contact' 
     end
 
     def contact_page
