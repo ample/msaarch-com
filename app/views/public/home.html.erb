@@ -19,15 +19,12 @@
 			
 			<% unless current_page.videos.empty? %>
 			  <% current_page.videos.each do |video| %>
-			  <div class="dark clearfix">
-				  <% if video.link.blank? %>
-			      <%= image_asset video, :dimensions => '91x59', :class => [:left, :frame, :video] unless video.asset.nil? %>
-			      <%= content_tag :p, video.title, :class => :valign %>
-				  <% else %>
-				    <%= image_asset video, :dimensions => '91x59', :class => [:left, :frame, :video], :link => video.link unless video.asset.nil? %>
-				    <%= content_tag :p, link_to(video.title, video.link), :class => :valign %>
-				  <% end %>
-			  </div>
+          <% unless video.link.blank? %>
+			    <div class="video dark clearfix">
+				    <%= link_to image_asset(video, :dimensions => '91x59#', :class => [:left, :frame, :video]), video.link, 'data-video-id' => video.video_id, :class => 'small' unless video.asset.nil? %>
+				    <%= content_tag :p, link_to(video.title, video.link, 'data-video-id' => video.video_id), :class => :valign %>
+			    </div>
+			    <% end %>
 			  <% end %>
 			<% end %>
 		</div>
