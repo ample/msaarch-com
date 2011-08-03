@@ -108,7 +108,7 @@
             var distance = "-" + ((width + this.options.distance) * this.options.per_page) +"px"; 
             $(this.options.el).prepend($(this.options.children + ":last-child", this.options.el).clone().css(( this.options.orientation=='horizontal' ? 'margin-left' : 'margin-top' ), distance));
             for(var j = 0; j < this.options.clone_adjust; j++) {
-              for(var i = 1; i < ( this.options.continuous ? this.options.total : 2 ); i++) {
+              for(var i = 1; i < ( this.options.continuous ? this.options.total + 1 : 2 ); i++) {
                 $(this.options.el).append($(this.options.children + ":eq(" + i + ")", this.options.el).clone()); 
               }
             }
