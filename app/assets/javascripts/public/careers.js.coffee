@@ -11,3 +11,4 @@ $ ->
     $('#sidebar div[data-role]').hide(); 
     $('#sidebar div[data-role=' + id + ']').show();
 
+  $("select#message_to_id").chosen()

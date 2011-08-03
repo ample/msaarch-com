@@ -1,5 +1,5 @@
 <%= content_tag :h1, 'Contact / Email Us' %>
-<div id="email" class="span-8 append-2">
+<div id="email" class="span-9 append-1">
   <%= form_for(@message, :url => contact_form_path, :method => :post, :html => { :multipart => true }) do |f| %>
     <%= show_flashes %>
 
@@ -11,10 +11,10 @@
   
     <div class="span-2">
       <%= f.label :from %>
-    </div><div class="span-6 last">
-      <%= f.text_field(:from, :class => 'text', :placeholder => 'Name*') %>
-      <%= f.text_field(:email, :class => 'text', :placeholder => 'Email*') %>
-      <%= f.text_field(:organization, :class => 'text', :placeholder => 'Business, Organization or Municipality*') %>
+    </div><div class="span-6 last mb">
+      <%= f.text_field(:from, :class => 'text italic', :placeholder => 'Name*') %>
+      <%= f.text_field(:email, :class => 'text italic', :placeholder => 'Email*') %>
+      <%= f.text_field(:organization, :class => 'text italic', :placeholder => 'Business, Organization or Municipality*') %>
     </div>
 
     <div class="span-2">
@@ -30,6 +30,8 @@
     </div>
 
     <div class="prepend-2 span-6 last">
+      <span class="req">Required*</span>
+      
       <%= f.submit 'Send', :class => :button %>
       <%= link_to 'Cancel', :class => :button %>
     </div>
