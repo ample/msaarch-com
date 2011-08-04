@@ -1,3 +1,6 @@
+<% if params[:action] == 'history' %>
+  <%= render :template => 'public/users/history' %>
+<% else %>
 <section id="alpha"<%= current_page.background %> class="clearfix">
 	<div class="container">
 		<div class="span-15 last intro">
@@ -8,3 +11,4 @@
 		</div>
 	</div>
 </section>
+<% end %>

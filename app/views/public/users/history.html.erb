@@ -1,0 +1,48 @@
+
+<section id="beta"><div class="bgx">
+  <div class="container">
+    <div class="span-12">
+      <%= content_tag :h2, 'Team / History', :class => 'section-title'  %>
+    </div>
+    <div class="span-3 last event-types">
+      <ul>
+        <li class="msa"><span></span> MSA Events</li>
+        <li class="cincinnati"><span></span> Cincinnati Events</li>
+        <li class="global"><span></span> World Events</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+<section id="controls">
+  <%= link_to '<span></span>'.html_safe, '#', :id => 'events-previous', :class => 'previous' %>
+  <%= link_to '<span></span>'.html_safe, '#', :id => 'events-next', :class => 'next' %>
+</section>
+<section id="tango">
+  <ul id="events">
+    <% current_events_by_group.each_with_index do |group, index| %>
+      <%= content_tag :li, :class => :event, :id => "slide-#{index}" do %>
+        <%= content_tag :div, :class => :bg, :style => (group[1].first[1].first.asset.nil? ? '' : "background-image: url(#{group[1].first[1].first.asset.attachment.thumb('625x460#').url})") do %>
+          <div class="events">
+            <div class="dark<%= ' empty' if group[1]['msa'].nil? %>">
+              <%= content_tag :h3, group[0].strftime('%Y') %>
+              <% group[1]['msa'].each_with_index do |event, i| %>
+                <%= content_tag :p, sanitize(event.body, :tags => ['a']), :class => 'small' + (i == 0 ? ' first' : '') %>
+              <% end unless group[1]['msa'].nil? %>
+            </div>
+            <% ['cincinnati', 'global'].each do |type| %>
+              <% unless group[1][type].nil? %>
+              <div class="event_type <%= type %>">
+                <% group[1][type].each_with_index do |event, i| %>
+                  <%= content_tag :p, sanitize(event.body, :tags => ['a']), :class => 'small' + (i == 0 ? ' first' : '') %>
+                <% end %>
+              </div>
+              <% end %>
+          <% end %>
+          </div>
+        <% end %>
+        
+      <% end %>
+    <% end %>
+  </ul>
+</section>
+

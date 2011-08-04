@@ -25,6 +25,11 @@ MsaarchCom::Application.routes.draw do
         post :update_sort_order
       end
     end
+    resources :events, :controller => 'admin/events' do
+      collection do
+        post :update_sort_order
+      end
+    end
     resources :users, :controller => 'admin/users' do 
       resources :features, :controller => 'admin/features'
     end
@@ -58,8 +63,10 @@ MsaarchCom::Application.routes.draw do
     end
   end
   
+  match 'team/history', :to => 'public/users#history', :as => :history
   resources :users, :only => [:index, :show], :path => 'team', :as => :team, :controller => 'public/users'
   resources :careers, :only => [:create], :path => 'contact/email', :controller => 'public/careers'
+
   match 'contact', :to => 'public/careers#index', :as => :contact
   match 'contact/email(/:id)', :to => 'public/careers#new', :as => :contact_form
   match 'contact/:permalink', :to => 'public/careers#show', :as => :public_career

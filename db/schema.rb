@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110728205147) do
+ActiveRecord::Schema.define(:version => 20110804142232) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -90,6 +90,20 @@ ActiveRecord::Schema.define(:version => 20110728205147) do
   create_table "categories_markets", :id => false, :force => true do |t|
     t.integer "category_id"
     t.integer "market_id"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.string   "event_type"
+    t.text     "body"
+    t.integer  "asset_id"
+    t.datetime "event_date"
+    t.integer  "sort_order",  :default => 0
+    t.boolean  "active",      :default => false
+    t.datetime "active_at"
+    t.datetime "inactive_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "features", :force => true do |t|

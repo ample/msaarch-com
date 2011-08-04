@@ -6,6 +6,7 @@ module PublicHelper
     classes += ' portfolio market' if params[:controller] == 'public/markets'
     classes += ' portfolio project' if params[:controller] == 'public/projects'
     classes += ' team' if params[:controller] == 'public/users'
+    classes += ' history' if params[:controller] == 'public/users' && params[:action] == 'history'
     classes += ' member' if params[:controller] == 'public/users' && params[:action] == 'show'
     classes += ' news' if params[:controller] == 'public/news'
     classes += ' archive' if params[:controller] == 'public/news' && params[:action] == 'archive'

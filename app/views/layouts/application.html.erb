@@ -36,10 +36,12 @@
 <% else %>
 	<%= render 'public/markets/header' if is_market? %>
 	<%= render 'public/projects/header' if is_project? %>
-	<%= render 'public/users/header' if is_user? && params[:action] == 'index' %>
+	<%= render 'public/users/header' if is_user? && params[:action] != 'show' %>
+	<% unless is_user? && params[:action] == 'history' %>
 	<section id="beta"><div class="bgx">
 		<%= content_tag :div, yield, :class => 'container' %>
 	</div></section>
+	<% end %>
 <% end %>
 
 <section id="footer">

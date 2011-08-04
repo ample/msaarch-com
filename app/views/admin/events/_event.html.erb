@@ -1,0 +1,4 @@
+<li id="event_<%= event.id %>" class="<%= event.admin_status_class %>">
+	<%= manage_object event, :sortable => true %>
+	<%= link_to event.title, edit_event_path(event) %>
+</li>
