@@ -79,4 +79,12 @@ module PublicHelper
     portfolio_project_path(project.markets.first.permalink, project.permalink)
   end
 
+  def title_pagination
+    " Page #{params[:page]}" if params[:page] && params[:page].to_i > 1
+  end
+
+  def page_title
+    @page_title && params[:permalink]!='index' ? "#{strip_tags(@page_title)}#{title_pagination}" : META[:page_title]
+  end
+
 end

@@ -5,6 +5,9 @@ class Public::NewsController < ApplicationController
   end
 
   def show
+    @page_title = META[:page_title]
+    @page_title = "#{current_post.title} | #{@page_title}"
+    @meta_description = html_escape(current_post.body.gsub(/\n/, "").truncate(130))
   end
 
   def archive

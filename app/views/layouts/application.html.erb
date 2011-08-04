@@ -1,29 +1,32 @@
 <!doctype html> 
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt-ie9"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if IE 7 ]>		 <html lang="en" class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>		 <html lang="en" class="no-js ie8 lt-ie9"> <![endif]-->
+<!--[if IE 9 ]>		 <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>MsaarchCom</title>
+	<%= content_tag :title, page_title %>
+	<meta name="keywords" content="<%= @meta_keywords || META[:keywords] %>" />
+	<meta name="description" content="<%= @meta_description || META[:description] %>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="author" content="Ample, http://helloample.com" />
 	<%= stylesheet_link_tag "public/blueprint/screen", :media => "screen, projection" %>
 	<%= stylesheet_link_tag "public/blueprint/print", :media => "print" %>
 	<!--[if lt IE 8]><%= stylesheet_link_tag "public/blueprint/ie", :media => "screen, projection" %><![endif]-->
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<%= stylesheet_link_tag		 "application" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
 </head>
 <body<%= body_classes %>>
 
 <section id="header" class="clearfix">
 	<header class="container">
-	  <% if is_project? && !current_market.logo.nil? %>
-	    <%= link_to image_asset(current_market, :object => current_market.logo, :class => 'logo', :dimensions => 'x25>'), root_path %>
+		<% if is_project? && !current_market.logo.nil? %>
+			<%= link_to image_asset(current_market, :object => current_market.logo, :class => 'logo', :dimensions => 'x25>'), root_path %>
 		<% else %>
-		  <%= link_to image_tag('/assets/elements/msa-architects.png', :id => 'logo', :size => '140x25'), root_path %>
+			<%= link_to image_tag('/assets/elements/msa-architects.png', :id => 'logo', :size => '140x25'), root_path %>
 		<% end %>
 		<nav>
 			<%= site_nav('header') %>
