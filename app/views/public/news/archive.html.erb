@@ -8,6 +8,7 @@
     <% unless group[1].empty? %>
       <% group[1].each_with_index do |post, idx| %>
         <div class="post span-3<%= ' last' if idx % 5 == 4 %>">
+          <%= image_asset post, :dimensions => '126x66#', :class => :frame, :link => public_post_path(post.permalink) unless post.asset.nil? %>
           <%= content_tag :h2, link_to(post.title, public_post_path(post.permalink)) %>
         </div>
       <% end %>
