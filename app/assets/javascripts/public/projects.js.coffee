@@ -14,7 +14,7 @@ $ ->
     next: '#project-imagery-next'
     previous: '#project-imagery-previous'
 
-    $("#project-imagery-next span, #project-imagery-previous span").hide(); 
+    $("#project-imagery-next span.wrap, #project-imagery-previous span.wrap").hide(); 
     $("#project-imagery-next, #project-imagery-previous").hover (->
-      $(this).find('span').fadeIn()
-    ), -> $(this).find('span').fadeOut()
+      $(this).find('span.wrap').fadeIn()
+    ), -> $(this).find('span.wrap').fadeOut()

@@ -28,10 +28,10 @@ $ ->
     next: '#events-next'
     previous: '#events-previous'
 
-  $("#events-next span, #events-previous span").hide(); 
+  $("#events-next span.wrap, #events-previous span.wrap").hide(); 
   $("#events-next, #events-previous").hover (->
-    $(this).find('span').fadeIn()
-  ), -> $(this).find('span').fadeOut()
+    $(this).find('span.wrap').fadeIn()
+  ), -> $(this).find('span.wrap').fadeOut()
 
   $('#events, section#controls').fadeTo(0,0).css('visibility','visible').delay(500).fadeTo(400,1)
   

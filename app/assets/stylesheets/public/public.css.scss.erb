@@ -280,7 +280,7 @@ body {
 		}
 		h3, #videos, #videos-controls {
 			text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
-			filter: dropshadow(color=rgba(0,0,0,0.8), offx=-1, offy=-1);
+			filter: progid:DXImageTransform.Microsoft.DropShadow(color=#573b00, offx=-1, offy=-1);
 		}
 		#videos {
 			margin-top: 10px; 
@@ -494,10 +494,14 @@ body.project {
 	section#tango {
 		height: 449px; 
 		overflow: hidden;
-		li img {
-			@include frame; 
-			border-right: none; 
-			margin: 0; 
+		li {
+			div.bg {
+				@include frame; 
+				width: 600px; 
+				height: 449px; 
+				border-right: none; 
+				margin-right: 0; 
+			}
 		}
 		border-bottom: 3px solid #FFF;
 	}
@@ -564,23 +568,30 @@ section#controls {
 		display: block;
 		width: 40%; 
 		height: 449px; 
-		span {
+		span.wrap {
 			display: block;
 			margin-top: 25%;
 			margin-left: 10%; 
 			height: 449px;
 			width: 130px; 
 			text-indent: -9999em;
-			background: url(/assets/elements/arrows.png) no-repeat top left; 
+			span.bg {
+				display: block;
+				height: 449px;
+				width: 130px; 
+				background: url(/assets/elements/arrows.png) no-repeat top left; 
+			}
 		}
 	}
 	a.next {
 		float: right; 
-		span {
+		span.wrap {
 			margin-right: 10%; 
 			margin-left: 0; 
-			background-position: top right; 
 			float: right;
+			span.bg {
+				background-position: top right; 
+			}
 		}
 	}
 }
@@ -862,9 +873,9 @@ body.news {
 				padding: 15px; 
 				width: 130px;
 				h2 {
-				  font-family: Arial, sans-serif;
-				  font-size: 12px;
-				  margin-bottom: 0;
+					font-family: Arial, sans-serif;
+					font-size: 12px;
+					margin-bottom: 0;
 				}
 			}
 		}
@@ -881,12 +892,12 @@ body.news {
 }
 
 body.archive {
-  div.post {
-    img.frame {
-      border-width: 2px;
-      margin-bottom: 3px;
-    }
-  }
+	div.post {
+		img.frame {
+			border-width: 2px;
+			margin-bottom: 3px;
+		}
+	}
 }
 
 body.contact {
@@ -1143,4 +1154,52 @@ section#beta {
 .isotope-hidden.isotope-item {
 	pointer-events: none;
 	z-index: 1;
+}
+
+.ie {
+	section#alpha {
+		#videos {
+			filter: progid:DXImageTransform.Microsoft.DropShadow(enabled=false);
+		}
+	}
+}
+
+.ie7 {
+	section#controls {
+		left: 0; 
+	}
+	section#tango {
+		overflow: hidden;
+	}
+	.dark {
+		background: #000;
+	}
+	section#alpha {
+		#videos-wrapper {
+			position:relative
+		}
+	}
+}
+
+.ie8 {
+	.dark {
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	}
+}
+
+.lt-ie9 {
+	section#controls {
+		a:active, a:focus, 
+		a:active span, a:focus span { 
+			border:none;
+			outline:none;
+		}
+		a.previous span,
+		a.next span {
+			background: transparent;
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; 
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF); 
+			zoom: 1;
+		}
+	}
 }
