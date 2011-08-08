@@ -1,4 +1,33 @@
 GIT
+  remote: git://github.com/rails/coffee-rails.git
+  revision: 5037201ce7a5b44bbbedf1194503171d6b09890d
+  branch: 3-1-stable
+  specs:
+    coffee-rails (3.1.0.rc.5)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.1.0.rc1)
+
+GIT
+  remote: git://github.com/rails/sass-rails.git
+  revision: 890273d7eebd2a1c6b285327ca0bee6239b17e2e
+  branch: 3-1-stable
+  specs:
+    sass-rails (3.1.0.rc.5)
+      actionpack (~> 3.1.0.rc1)
+      railties (~> 3.1.0.rc1)
+      sass (>= 3.1.4)
+      sprockets (>= 2.0.0.beta.9)
+
+GIT
+  remote: git://github.com/sstephenson/sprockets.git
+  revision: 9e88aee9ee3b28626ab30b00f905cc6737677fff
+  specs:
+    sprockets (2.0.0.beta.13)
+      hike (~> 1.2)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+
+GIT
   remote: https://github.com/rails/rails.git
   revision: d008c99f723a1623ab81bf111cc36b2101410d80
   branch: 3-1-stable
@@ -47,17 +76,6 @@ GIT
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.6)
-
-GIT
-  remote: https://github.com/rails/sass-rails.git
-  revision: 890273d7eebd2a1c6b285327ca0bee6239b17e2e
-  branch: 3-1-stable
-  specs:
-    sass-rails (3.1.0.rc.5)
-      actionpack (~> 3.1.0.rc1)
-      railties (~> 3.1.0.rc1)
-      sass (>= 3.1.4)
-      sprockets (>= 2.0.0.beta.9)
 
 PATH
   remote: vendor/gems/ample_admin
@@ -164,11 +182,7 @@ GEM
     rdiscount (1.6.8)
     rdoc (3.9.1)
     rmagick (2.12.2)
-    sass (3.1.5)
-    sprockets (2.0.0.beta.13)
-      hike (~> 1.2)
-      rack (~> 1.0)
-      tilt (!= 1.3.0, ~> 1.1)
+    sass (3.1.7)
     sqlite3 (1.3.4)
     thor (0.14.6)
     tilt (1.3.2)
@@ -193,13 +207,14 @@ PLATFORMS
 DEPENDENCIES
   ample_admin!
   capistrano
+  coffee-rails!
   coffee-script
   hoptoad_notifier
   jquery-rails
   mysql2
   rails!
-  sass (= 3.1.5)
   sass-rails!
+  sprockets!
   sqlite3
   turn
   uglifier
