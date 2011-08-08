@@ -61,12 +61,15 @@
 		<div id="social" class="span-2 last">
 			<%= link_to 'Facebook', 'http://www.facebook.com/MSAarchitects', :class => 'facebook' %>
 			<%= link_to 'LinkedIn', 'http://www.linkedin.com/company/michael-schuster-associates', :class => 'linkedin' %>
-			<%= link_to 'ShareThis', '#', :class => 'sharethis' %>
+			<span class="st_sharethis" displayText=""><%= link_to 'ShareThis'.html_safe, '#', :class => 'sharethis' %></span>
 		</div>
 	</footer>
 </section>
 
 <script type="text/javascript" src="http://fast.fonts.com/jsapi/94abe249-b3a4-4d0b-9e43-7d288b4a3853.js"></script>
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher:'676a2a5c-87b8-4b75-97a1-86a62aa22ac9'});</script>
 
 </body>
 </html>
