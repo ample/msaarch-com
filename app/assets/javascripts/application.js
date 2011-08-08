@@ -16,3 +16,4 @@
 //= require public/projects
 //= require public/users
 //= require public/careers
+//= require public/ie.placeholders
