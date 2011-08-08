@@ -6,7 +6,7 @@
   
   <div class="contact-us">
     <hr />
-    <%= link_to "Contact #{current_career.user.full_name} about this position", contact_form_path %>
+    <%= link_to "Contact #{current_career.user.full_name} about this position", contact_form_path(current_career.user) %>
     <hr />
   </div>
   
