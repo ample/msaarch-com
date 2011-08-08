@@ -4,7 +4,7 @@ group :production do
   gem 'mysql2'
 end
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-1-stable'
 gem 'sqlite3'
 gem 'capistrano'
 gem 'hoptoad_notifier'
