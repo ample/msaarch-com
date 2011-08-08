@@ -14,6 +14,8 @@ $ ->
     children: "div.feature"
     continuous: true
     keyboard_nav: false
+  $('.portfolio #alpha #videos').css({'display':'block','opacity',0}).fadeIn(); 
+
 
   $("#case-studies .panels").amplePanels 
     auto: false

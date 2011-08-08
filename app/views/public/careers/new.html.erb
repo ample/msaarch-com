@@ -8,6 +8,7 @@
     </div><div class="span-6 last">
       <%= f.collection_select :to_id, User.all, :id, :full_name %>
     </div>
+    <!--[if lte IE 7 ]><div class="clr">&nbsp;</div><![endif]-->
   
     <div class="span-2">
       <%= f.label :from %>
@@ -16,12 +17,14 @@
       <%= f.text_field(:email, :class => 'text italic', :placeholder => 'Email*') %>
       <%= f.text_field(:organization, :class => 'text italic', :placeholder => 'Business, Organization or Municipality*') %>
     </div>
+    <!--[if lte IE 7 ]><div class="clr">&nbsp;</div><![endif]-->
 
     <div class="span-2">
       <%= f.label :subject %>
     </div><div class="span-6 last">
       <%= f.text_field(:subject, :class => 'text', :value => 'Website Inquiry') %>
     </div>
+    <!--[if lte IE 7 ]><div class="clr">&nbsp;</div><![endif]-->
 
     <div class="span-2">
       <%= f.label :body %>
