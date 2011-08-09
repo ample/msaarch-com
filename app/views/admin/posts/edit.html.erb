@@ -1,28 +1,26 @@
+<%= content_tag :h2, title("Editing Post: #{current_post.title}"), :class => 'object_title' %>
+
 <div id="left" class="column span-16 append-1">
-	<%= content_tag :h2, title("Editing Post: #{current_post.title}"), :class => 'object_title' %>
 	<%= form_for(current_post, :html => { :multipart => true }) do |f| %>
 		<%= render :partial => f, :locals => { :f => f } %>
 		<button type="submit" name="continue" class="positive">Save Changes</button>
 		<%= link_to 'Cancel', posts_path, :class => 'button' %>
 	<% end %>
 </div>
+
 <div id="right" class="column span-7 last">
 	<%= render 'admin/error_messages', :object => current_post %>
-	<div id="tabs">
-		<ul class="clearfix">
-			<li><a href="#tabs-0">Features</a></li>
+	<div id="record-info">
+    <%= content_tag :h3, 'Features' %>
+		<ul class="feature_list">
+		<% Post.feature_types.each do |feature_type| %>
+			<li><%= content_tag :strong, feature_type[0] %> <small><%= link_to 'Add New', new_post_feature_path(current_post, :feature_type => feature_type[0].downcase) %></small>
+				<ul class="sortable association_list" rel="/admin/features/update_sort_order">
+					<%= render current_post.features.of_type(feature_type[1]) %>
+				</ul>
+			</li>
+		<% end %>
 		</ul>
-		<div id="tabs-0"> 
-			<ul>
-			<% Post.feature_types.each do |feature_type| %>
-				<li><%= feature_type[0] %> <small>(<%= link_to 'Add New', new_post_feature_path(current_post, :feature_type => feature_type[0].downcase) %>)</small>
-					<ul class="sortable association_list" rel="/admin/features/update_sort_order">
-						<%= render current_post.features.of_type(feature_type[1]) %>
-					</ul>
-				</li>
-			<% end %>
-			</ul>
-		</div>
 	</div>
 </div>
 
