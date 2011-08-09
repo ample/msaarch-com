@@ -1,0 +1,52 @@
+<%# javascript '/admin/javascripts/asset.js','/admin/javascripts/page.js' %>
+
+<%= content_tag :h2, title("Editing Page: #{current_page.nav_name}"), :class => 'object_title' %>
+
+<div id="left" class="column span-16 append-1">
+	<%= form_for(current_page, :html => { :multipart => true }) do |f| %>
+		<%= render :partial => f, :locals => { :f => f } %> 
+		<%= render :partial => 'admin/pages/fields', :locals => { :f => f }	 %> 
+		<button type="submit" name="continue" class="positive">Save Changes</button>
+		<%= link_to 'Cancel', pages_path, :class => 'button' %>
+	<% end %>
+</div>
+
+<div id="right" class="column span-7 last">
+	<%= render 'admin/error_messages', :object => current_page %>
+	<div id="tabs" class="clearfix">
+		<div id="tabs-0">
+			<%= content_tag :h3, 'Page Status' %>
+			<div class="span-2 quiet small align_right clear">Creator</div>
+			<div class="span-5 last"><%= current_page.created_by.try(:name) %><br /><em class="small quiet"><%= time_ago_in_words current_page.created_at %> ago</em></div>
+			<div class="span-2 quiet small align_right clear">Last Updated</div>
+			<div class="span-5 last"><%= current_page.updated_by.try(:name) %><br /><em class="small quiet"><%= time_ago_in_words current_page.updated_at %> ago</em></div>
+			<hr class="clear space" />
+			<hr />	
+			<%= content_tag :h3, 'Template Information' %>
+			<div class="span-2 quiet small align_right clear">Name</div>
+			<div class="span-5 last">
+				<%= select :page, :change_template, Page.templates_for_select, { :selected => current_page.template.filename }, { 'data-role' => 'change-template' } %>
+			</div>
+			<div class="span-2 quiet small align_right clear">Description</div>
+			<div class="span-5 last"><%= current_page.template.description %></div>
+		</div>
+	</div>
+	<hr class="clear space" />
+	<hr />	
+	
+	<div id="features">
+	  <%= content_tag :h3, 'Other Page Content' %>
+		<ul class="feature_list">
+		<% current_page.template.features.each do |feature_type| %>
+			<li><%= content_tag :strong, Feature.feature_types.detect { |f| f[1] == feature_type }[0].pluralize %> <small><%= link_to 'Add New', new_page_feature_path(current_page, :feature_type => feature_type) %></small>
+				<ul class="sortable association_list" rel="/admin/features/update_sort_order">
+					<%= render current_page.features.of_type(feature_type) %>
+				</ul>
+			</li>
+		<% end %>
+		</ul>
+	</div>
+	
+</div>
+
+<script>AA['assets']=true;</script>
