@@ -29,6 +29,7 @@ elsif dest == 'dev'
 end
 
 after 'deploy:update_code', 'deploy:update_shared'
+after 'deploy:update_code', 'deploy:precompile_assets'
 
 # Deploy options  
 role :app, host
