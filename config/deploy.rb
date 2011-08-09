@@ -51,7 +51,12 @@ namespace :deploy do
     run "cp #{shared_path}/config/database.yml #{release_path}/config/"
   end
 
+  desc 'Precompile assets'
+  task :precompile_assets, :roles => :app do
+    run "cd #{current_path} && rake assets:precompile RAILS_ENV=#{rails_env}"
+  end
+
 end
 
-        require './config/boot'
-        require 'hoptoad_notifier/capistrano'
+require './config/boot'
+require 'hoptoad_notifier/capistrano'
