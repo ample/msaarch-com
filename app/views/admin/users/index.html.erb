@@ -2,16 +2,16 @@
 
 	<div class="index_header clearfix">
 		<div class="column span-6">
-			<%= content_tag :h2, 'Everybody' %>
+			<%= content_tag :h2, 'Staff Users' %>
 		</div>
 		<div class="column span-5 last">
 			<%= link_to_new :user, new_user_path %>
 		</div>
 	</div>
 	<ul class="index_list clear sortable">
-		<%= render :partial => 'admin/users/user', :collection => current_objects %>
+		<%= render :partial => 'admin/users/user', :collection => current_staff_users %>
 	</ul>
-	<%= will_paginate current_objects %>
+	<%= will_paginate current_staff_users %>
 	<%= render 'admin/legend' %>
 
 </div>
@@ -26,9 +26,9 @@
 		</div>
 	</div>
 	<ul class="index_list clear sortable">
-		<%= render :partial => 'admin/users/user', :collection => current_objects %>
+		<%= render :partial => 'admin/users/user', :collection => current_admin_users %>
 	</ul>
-	<%= will_paginate current_objects %>
+	<%= will_paginate current_admin_users %>
 	<%= render 'admin/legend' %>
 
 </div>
