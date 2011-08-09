@@ -1,0 +1,11 @@
+<div class="quotes block">
+	<div class="va">
+	<h2>Inspiration</h2>
+  <% current_team_member.quotes.each_with_index do |quote, index| %>
+  <div class="quote<%= ' last' if current_team_member.quotes.size-1 == index %>">
+    <%= content_tag :p, "\"#{quote.body}\"" %>
+    <%= content_tag :p, "- #{quote.title}", :class => :credit %>
+  </div>
+  <% end %>
+  </div>
+</div>

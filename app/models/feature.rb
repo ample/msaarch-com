@@ -14,6 +14,7 @@ class Feature < ActiveRecord::Base
       ['Link', 'link'],
       ['Feature', 'feature'],
       ['Location', 'location'],
+      ['Quote', 'quote'],
     ]
   end
 

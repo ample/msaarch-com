@@ -20,7 +20,7 @@
 			<% unless current_page.videos.empty? %>
 			  <% current_page.videos.each do |video| %>
           <% unless video.link.blank? %>
-			    <div class="video dark clearfix">
+			    <div class="video dark clearfix<%= ' with-asset' unless video.asset.nil? %>">
 				    <%= link_to image_asset(video, :dimensions => '91x59#', :class => [:left, :frame, :video]), video.link, 'data-video-id' => video.video_id, :class => 'small' unless video.asset.nil? %>
 				    <%= content_tag :p, link_to(video.title, video.link, 'data-video-id' => video.video_id), :class => :valign %>
 			    </div>

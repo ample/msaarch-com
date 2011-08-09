@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   ###---------------------------------------------------- Class Methods
 
   def self.feature_types
-    feature_types = [ 'link' ]
+    feature_types = [ 'link', 'quote' ]
     Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
   end
 
@@ -54,6 +54,10 @@ class User < ActiveRecord::Base
 
   def links
     features.live.where :feature_type => 'link'
+  end
+
+  def quotes
+    features.live.where :feature_type => 'quote'
   end
 
   def full_name

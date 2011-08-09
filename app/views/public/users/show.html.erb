@@ -9,6 +9,7 @@
 
   <%= render 'public/users/favorites' unless current_team_member.favorites.empty? %>
   <%= render :partial => 'public/links', :object => current_team_member.links unless current_team_member.links.empty? %>
+  <%= render :partial => 'public/users/quotes', :object => current_team_member.quotes unless current_team_member.quotes.empty? %>
   <%= content_tag :div, :class => [:block, :clearfix] do %>
     <%= link_to 'View All Team Members', team_index_path %>
   <% end %>
