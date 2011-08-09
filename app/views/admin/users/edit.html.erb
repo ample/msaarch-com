@@ -1,5 +1,6 @@
+<%= content_tag :h2, title("Editing User: #{current_object.full_name}"), :class => 'object_title' %>
+
 <div id="left" class="column span-16 append-1">
-	<%= content_tag :h2, title("Editing User: #{current_object.full_name}"), :class => 'object_title' %>
 	<%= form_for(current_object, :html => { :multipart => true }) do |f| %>
 		<%= render :partial => f, :locals => { :f => f } %>
 		<button type="submit" name="continue" class="positive">Save Changes</button>
@@ -8,21 +9,17 @@
 </div>
 <div id="right" class="column span-7 last">
 	<%= render 'admin/error_messages', :object => current_object %>
-	<div id="tabs">
-		<ul class="clearfix">
-			<li><a href="#tabs-0">Features</a></li>
+	<div id="record-info">
+		<%= content_tag :h3, 'Features' %>  
+		<ul class="feature_list">
+		<% User.feature_types.each do |feature_type| %>
+			<li><%= content_tag :strong, feature_type[0] %> <small><%= link_to 'Add New', new_user_feature_path(current_object, :feature_type => feature_type[0].downcase) %></small>
+				<ul class="sortable association_list" rel="/admin/features/update_sort_order">
+					<%= render current_object.features.of_type(feature_type[1]) %>
+				</ul>
+			</li>
+		<% end %>
 		</ul>
-		<div id="tabs-0">
-			<ul>
-			<% User.feature_types.each do |feature_type| %>
-				<li><%= feature_type[0] %> <small>(<%= link_to 'Add New', new_user_feature_path(current_object, :feature_type => feature_type[0].downcase) %>)</small>
-					<ul class="sortable association_list" rel="/admin/features/update_sort_order">
-						<%= render current_object.features.of_type(feature_type[1]) %>
-					</ul>
-				</li>
-			<% end %>
-			</ul>
-		</div>
 	</div>
 </div>
 
