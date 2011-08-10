@@ -11,7 +11,7 @@
 		<%= content_tag :li, link_to_section('awards', 'Awards', awards_path) %>
 		<%= content_tag :li, link_to_section(['news', 'posts', 'updates'], 'News', news_path) %>
 		<%= content_tag :li, link_to_section('careers', 'Careers', careers_path) %>
-		<%= content_tag :li, link_to_section('users', 'Users', users_path) %>
+		<%= content_tag :li, link_to_section('users', 'Team', users_path) %>
 	</ul>
 	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'right' %>
 	<% end %>

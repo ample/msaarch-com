@@ -30,7 +30,7 @@ MsaarchCom::Application.routes.draw do
         post :update_sort_order
       end
     end
-    resources :users, :controller => 'admin/users' do 
+    resources :users, :controller => 'admin/users', :path => 'team' do 
       resources :features, :controller => 'admin/features'
     end
     resources :categories, :controller => 'admin/categories' do
