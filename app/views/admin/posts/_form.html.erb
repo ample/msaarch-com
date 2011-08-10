@@ -8,6 +8,8 @@
 		<p><%= f.label :permalink %><br />
 		<%= f.text_field(:permalink, :class => 'text') %></p>
 
+		<p><%= f.label :created_at %><br /><%= f.datetime_select(:created_at, :prompt => true) %></p>
+
 		<p><%= f.label :active_at %><br /><%= f.datetime_select(:active_at, :prompt => true) %></p>
 
 		<p><%= f.label :inactive_at %><br /><%= f.datetime_select(:inactive_at, :prompt => true) %></p>
@@ -21,6 +23,9 @@
 		<p><%= f.label :title %><br />
 		<%= f.text_field(:title, :class => 'text') %></p>
 
+		<p><%= f.label :teaser %><br />
+		<%= f.text_area(:teaser, :class => 'textile') %></p>
+		
 		<p><%= f.label :body %><br />
 		<%= f.text_area(:body, :class => 'textile') %></p>
 		
