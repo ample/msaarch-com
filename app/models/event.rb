@@ -19,7 +19,7 @@ class Event < ActiveRecord::Base
   def self.event_types
     [
       ['MSA Events', 'msa'], 
-      ['Cincinnati Events', 'cincinnati'], 
+      ['Local Events', 'local'], 
       ['World Events', 'global'],  
     ]
   end

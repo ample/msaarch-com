@@ -7,7 +7,7 @@
     <div class="span-3 last event-types">
       <ul>
         <li class="msa"><span></span> MSA Events</li>
-        <li class="cincinnati"><span></span> Cincinnati Events</li>
+        <li class="local"><span></span> Local Events</li>
         <li class="global"><span></span> World Events</li>
       </ul>
     </div>
@@ -29,7 +29,7 @@
                 <%= content_tag :p, sanitize(event.body, :tags => ['a']), :class => 'small' + (i == 0 ? ' first' : '') %>
               <% end unless group[1]['msa'].nil? %>
             </div>
-            <% ['cincinnati', 'global'].each do |type| %>
+            <% Event.event_types.collect{ |type| type[1] if type[1]!='msa' }.compact.each do |type| %>
               <% unless group[1][type].nil? %>
               <div class="event_type <%= type %>">
                 <% group[1][type].each_with_index do |event, i| %>
