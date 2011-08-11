@@ -21,7 +21,7 @@
 				<% else %>
 					<%= content_tag :h2, link_to(award.project.title, path_to_project(award.project)) %>
 				<% end %>
-				<%= content_tag :h3, "#{award.title} &mdash; #{award.source}".html_safe %>
+				<%= content_tag :h3, (award.title + (award.source.blank? ? '' : " &mdash; #{award.source}")).html_safe %>
 				
 				<% if award == group[1].last %>
 				</div>
