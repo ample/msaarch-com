@@ -28,6 +28,8 @@ class Project < ActiveRecord::Base
   ###---------------------------------------------------- Validations
 
   validates_presence_of :title
+  validates_presence_of :nav_name
+  validates_presence_of :market_ids
 
   ###---------------------------------------------------- Class Methods
 
