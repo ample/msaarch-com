@@ -1,3 +1,5 @@
+require 'acts_as_markup'
+
 class Event < ActiveRecord::Base
 
   ###---------------------------------------------------- Augmentations
@@ -13,6 +15,10 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :event_date
+
+  ###---------------------------------------------------- Plugins
+
+  acts_as_textile :body
 
   ###---------------------------------------------------- Class Methods
 
