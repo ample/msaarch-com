@@ -10,7 +10,7 @@
 					<% if award.asset.nil? %>
 						<%= project_thumbnail award.project, '154x96', award.project.markets.first unless award.project.blank? %>
 					<% else %>
-						<%= project_thumbnail award, '154x96', award.project.markets.first %>
+						<%= project_thumbnail award, '154x96', award.project.markets.first unless award.project.blank? %>
 					<% end %>
 				</div>
 				<div class="award span-4 last">
