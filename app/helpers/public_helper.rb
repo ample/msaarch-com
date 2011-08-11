@@ -91,7 +91,7 @@ module PublicHelper
 		html = '<style>'.html_safe
 		Market.live.each do |market|
 			html += ".#{market.permalink}, .#{market.permalink} a { ".html_safe
-			html += "border-color: #{market.color}; color: #{market.color}; border-style: solid; ".html_safe
+			html += "border-color: #{market.color}; color: #{market.text_color}; border-style: solid; ".html_safe
 			html += "} section.#{market.permalink} {background-color: #{market.color}; } ".html_safe
 		end
 		html += '</style>'.gsub(/ /,'').html_safe

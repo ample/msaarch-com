@@ -27,9 +27,13 @@
 	<p><%= f.label :banner_id, 'Market Banner' %></p>
 	<%= asset_drop(current_market, :banner) %>
 
-	<p><%= f.label :color %><br />
+	<p><%= f.label :color, 'Background Color' %><br />
 	<%= f.text_field :color, :value => (current_market.color.blank? ? '#000000' : current_market.color), :class => 'text' %></p>
 	<div id="colorpicker"></div>
+
+	<p><%= f.label :text_color %><br />
+	<%= f.text_field :text_color, :value => (current_market.text_color.blank? ? '#000000' : current_market.text_color), :class => 'text' %></p>
+	<div id="text_colorpicker"></div>
 
 <% end %>
 
