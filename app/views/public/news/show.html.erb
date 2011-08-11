@@ -6,6 +6,11 @@
   <%= content_tag :h3, current_post.created_at.strftime('%B %d, %Y'), :class => :date %>
   <%= current_post.body.to_html.html_safe %>
 
+  <%= content_tag :ul, :class => 'post-actions' do %>
+    <%= content_tag :li, link_to('<span>Print</span>'.html_safe, "javascript: window.print();", :class => :print) %>
+    <%= content_tag :li, link_to('<span>PDF</span>'.html_safe, "#{request.url}.pdf", :class => :pdf) %>
+  <% end %>
+
 </div>
 <div id="sidebar" class="span-5 last">
 

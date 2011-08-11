@@ -815,6 +815,29 @@ body.news {
 		}
 	}
 	div#post {
+		ul.post-actions {
+		  list-style-type: none; 
+		  margin: 40px 0 20px; 
+		  padding: 0; 
+		  a {
+		    span {
+		      display: none; 
+		    }
+		    display: block;
+		    float: left; 
+		    width: 16px; 
+		    height: 16px;
+		    background: url(/assets/elements/print-pdf.gif) no-repeat top left;
+		    margin-right: 5px; 
+		  }
+		  a.pdf {
+		    background-position: top right; 
+		  }
+		  li {
+		    display: inline; 
+		  }
+		}
+
 		h1 {
 			color: #FFF; 
 			font-size: 32px;

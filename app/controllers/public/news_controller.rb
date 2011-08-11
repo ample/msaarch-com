@@ -1,6 +1,6 @@
 class Public::NewsController < ApplicationController
 
-  layout :which_layout
+  layout 'pdf' #:which_layout
 
   def index
     params[:permalink] = 'news'
