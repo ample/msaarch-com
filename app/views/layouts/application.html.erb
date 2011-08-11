@@ -18,6 +18,19 @@
 	<%= stylesheet_link_tag		 "application" %>
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
+	<style>
+	<% Market.live.each do |market| %>
+	.<%= market.permalink %>, 
+	.<%= market.permalink %> a {
+		color: <%= market.color %>; 
+		border-color: <%= market.color %>; 
+		border-style: solid;
+	}
+	section.<%= market.permalink %> {
+		background-color: <%= market.color %>; 
+	}
+	<% end %>
+	</style>
 </head>
 <body<%= body_classes %>>
 

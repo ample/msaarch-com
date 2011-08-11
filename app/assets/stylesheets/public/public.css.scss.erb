@@ -2,18 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-<% Market.live.each do |market| %>
-.<%= market.permalink %>, 
-.<%= market.permalink %> a {
-	color: <%= market.color %>; 
-	border-color: <%= market.color %>; 
-	border-style: solid;
-}
-section.<%= market.permalink %> {
-	background-color: <%= market.color %>; 
-}
-<% end %>
-
 @mixin frame {
 	border: 3px solid #FFF;
 	margin: 0 10px 0 0;
