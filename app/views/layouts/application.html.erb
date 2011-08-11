@@ -38,8 +38,8 @@
 <% if is_homepage? %>
 	<%= yield %>
 <% else %>
-	<%= render 'public/markets/header' if is_market? %>
-	<%= render 'public/projects/header' if is_project? %>
+	<%= render 'public/markets/header' if is_market? && !current_market.nil? %>
+	<%= render 'public/projects/header' if is_project? && !current_project.nil? %>
 	<%= render 'public/users/header' if is_user? && params[:action] != 'show' %>
 	<% unless is_user? && params[:action] == 'history' %>
 	<section id="beta"><div class="bgx">

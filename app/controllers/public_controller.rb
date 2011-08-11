@@ -1,9 +1,9 @@
 class PublicController < ApplicationController
 
-  unless Rails.env.development?
+  #unless Rails.env.development?
    rescue_from Exception, :with => :error_message
    rescue_from ActiveRecord::RecordNotFound, :with => :file_not_found
-  end
+  #end
 
   def home
     params[:permalink] = 'index'
