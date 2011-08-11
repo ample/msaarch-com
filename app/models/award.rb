@@ -16,4 +16,14 @@ class Award < ActiveRecord::Base
   validates_presence_of :source
   validates_presence_of :awarded_date
 
+  ###---------------------------------------------------- Validations
+
+  def thumbnail
+    self.asset
+  end
+
+  def permalink
+    self.project.permalink rescue nil?
+  end
+
 end

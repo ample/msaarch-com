@@ -1,31 +1,35 @@
 <div id="awards" class="span-15 last">
 
-  <%= content_tag :h2, 'News / Awards', :class => 'section-title' %>
-  <% current_awards.each_with_index do |group, idx| %>
-    <div class="span-7<%= idx % 2 == 1 ? ' last' : ' append-1' %>">
-      <%= content_tag :h3, group[0].strftime('%Y') %>
-      <% group[1].each do |award| %>
-        <% if award == group[1].first %>
-        <div class="span-3">
-          <%= project_thumbnail award.project, '154x96', award.project.markets.first unless award.project.blank? %>
-        </div>
-        <div class="award span-4 last">
-        <% end %>
-        
-        <% if award.project.nil? %>
-          <%= content_tag :h2, award.project_name %>
-        <% else %>
-          <%= content_tag :h2, link_to(award.project.title, path_to_project(award.project)) %>
-        <% end %>
-        <%= content_tag :h3, "#{award.title} &mdash; #{award.source}".html_safe %>
-        
-        <% if award == group[1].last %>
-        </div>
-        <% end %>
-      <% end %>
+	<%= content_tag :h2, 'News / Awards', :class => 'section-title' %>
+	<% current_awards.each_with_index do |group, idx| %>
+		<div class="span-7<%= idx % 2 == 1 ? ' last' : ' append-1' %>">
+			<%= content_tag :h3, group[0].strftime('%Y') %>
+			<% group[1].each do |award| %>
+				<% if award == group[1].first %>
+				<div class="span-3">
+					<% if award.asset.nil? %>
+						<%= project_thumbnail award.project, '154x96', award.project.markets.first unless award.project.blank? %>
+					<% else %>
+						<%= project_thumbnail award, '154x96', award.project.markets.first %>
+					<% end %>
+				</div>
+				<div class="award span-4 last">
+				<% end %>
+				
+				<% if award.project.nil? %>
+					<%= content_tag :h2, award.project_name %>
+				<% else %>
+					<%= content_tag :h2, link_to(award.project.title, path_to_project(award.project)) %>
+				<% end %>
+				<%= content_tag :h3, "#{award.title} &mdash; #{award.source}".html_safe %>
+				
+				<% if award == group[1].last %>
+				</div>
+				<% end %>
+			<% end %>
 
-    </div>
-    <%= content_tag :hr, nil, :class => 'span-15 last' if idx % 2 == 1 %>
-  <% end %>
+		</div>
+		<%= content_tag :hr, nil, :class => 'span-15 last' if idx % 2 == 1 %>
+	<% end %>
 
 </div>
