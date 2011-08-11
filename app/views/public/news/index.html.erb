@@ -6,7 +6,11 @@
     <div class="post span-4<%= ' last' if idx % 2 == 1 %>">
       <%= link_to image_asset(post, :dimensions => '219x137', :class => :frame, :style => "border-color: #{post.asset.color}"), public_post_path(post.permalink) unless post.asset.nil? %>
       <%= content_tag :h2, link_to(post.title, public_post_path(post.permalink)) %>
-      <%= post.teaser.to_html.html_safe %>
+      <% if post.teaser.blank? %>
+        <%= truncate(sanitize(post.body.to_html.html_safe, :tags => [:a]), :length => 150) %>
+      <% else %>
+        <%= post.teaser.to_html.html_safe %>
+      <% end %>
     </div>
   <% end %>
   <hr /><%= link_to 'View News Archive', public_news_archive_path, :class => 'view-all' %><hr />
