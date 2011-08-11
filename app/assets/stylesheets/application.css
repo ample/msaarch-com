@@ -6,4 +6,5 @@
  *= require ./public/plugins/jquery.chosen
  *= require ./public/plugins/jquery.colorbox
  *= require ./public/public
+ *= require ./public/video-overlays
  */

@@ -1,0 +1,23 @@
+span.overlay,
+span.video {
+	display: block;
+}
+
+span.video {
+	border: 3px solid #FFF;
+}
+
+span.overlay {
+	background: url(/assets/elements/overlay.png) no-repeat center center;
+	position: relative;
+	float: left;
+}
+
+.small span.overlay {
+	background-image: url(/assets/elements/overlay-small.png);
+}
+
+.medium span.overlay {
+	background-image: url(/assets/elements/overlay-medium.png);
+}
+
