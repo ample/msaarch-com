@@ -1,6 +1,7 @@
 class Admin::AssetsController < AdminController
 
   def show
+    raise ActiveRecord::RecordNotFound if current_asset.nil?
     current_asset.touch
     render :file => "admin/assets/show", :layout => 'vanilla'
   end
