@@ -2,7 +2,6 @@ class Public::ProjectsController < PublicController
 
   def show
     raise ActiveRecord::RecordNotFound if current_project.nil?
-    
   end
 
   private
@@ -11,7 +10,7 @@ class Public::ProjectsController < PublicController
 
     def current_project
       project = Project.live.find_by_permalink(params[:permalink])
-      project.markets.include?(current_market) ? project : nil 
+      project.markets.include?(current_market) ? project : nil rescue nil
     end
 
 end
