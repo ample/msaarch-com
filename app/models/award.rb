@@ -14,5 +14,6 @@ class Award < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :source
+  validates_presence_of :awarded_date
 
 end
