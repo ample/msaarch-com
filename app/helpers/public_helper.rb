@@ -54,7 +54,7 @@ module PublicHelper
 	def markets_nav
 		children = ''
 		Market.live.each do |market|
-			children += content_tag :li, link_to(market.nav_name, portfolio_path(market.permalink), :class => market.permalink)
+			children += content_tag :li, link_to(market.nav_name.gsub(/MSA/,'<strong>MSA</strong>').html_safe, portfolio_path(market.permalink), :class => market.permalink)
 		end
 		content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
 	end
