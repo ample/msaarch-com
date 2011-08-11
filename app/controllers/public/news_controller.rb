@@ -15,10 +15,9 @@ class Public::NewsController < ApplicationController
         @meta_description = html_escape(current_post.body.gsub(/\n/, "").truncate(130))
       end
       format.pdf do
-        render :text => 'testing'
-      #  send_data PDFKit.new(public_page_url(current_page.hierarchy_permalink[1..-1])).to_pdf, 
-      #    :filename => "#{current_page.permalink}.pdf", :type => 'application/pdf', 
-      #    :disposition => 'attachment', :stream => false
+        send_data PDFKit.new(public_post_url(current_post.permalink)).to_pdf, 
+          :filename => "#{current_post.permalink}.pdf", :type => 'application/pdf', 
+          :disposition => 'attachment', :stream => false
       end    
     end
   end
