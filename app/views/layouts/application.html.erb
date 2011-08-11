@@ -52,7 +52,7 @@
 	<footer class="container">
 		<div id="markets" class="span-13">
 			<ul class="clearfix">
-				<li><strong>MSA</strong></li>
+				<li><%= image_tag '/assets/elements/msa-footer.png', :class => :logo, :alt => 'MSA Architects' %></li>
 			<% Market.live.each do |market| %>
 				<%= content_tag :li, link_to("#{market.title} (#{market.projectships_count})", portfolio_path(market.permalink), :class => market.permalink) %>
 			<% end %>
