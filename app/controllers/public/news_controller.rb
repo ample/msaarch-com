@@ -22,6 +22,12 @@ class Public::NewsController < ApplicationController
     end
   end
 
+  def print 
+    raise ActiveRecord::RecordNotFound if current_post.nil?
+    @page_title = META[:page_title]
+    render :template => 'public/news/show'
+  end
+
   def archive
   end
 
@@ -57,7 +63,7 @@ class Public::NewsController < ApplicationController
     end
 
     def which_layout
-      pdfkit? ? 'pdf' : 'application'
+      pdfkit? || params[:action] == 'print' ? 'pdf' : 'application'
     end
 
     def pdfkit?
