@@ -54,4 +54,10 @@ class Market < ActiveRecord::Base
     Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
   end
 
+  def self.update_project_counters
+    Market.all.each do |market|
+      market.update_attribute :projectships_count, market.projects.collect{ |p| p if p.active? }.compact.length
+    end
+  end
+
 end
