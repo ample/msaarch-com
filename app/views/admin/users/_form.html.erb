@@ -54,15 +54,21 @@
 <fieldset>
   <legend>Associations</legend>
 
-  <p><%= f.label :projects %><br />
-  <%= f.collection_select :project_ids, Project.all, :id, :title, {}, :multiple => true %></p>
+	<div class="span-5">
+	  <p><%= f.label :projects %><br />
+	  <%= f.collection_select :project_ids, Project.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
+	</div>
 
-  <p><%= f.label :favorites %><br />
-  <%= f.collection_select :favorite_ids, Project.all, :id, :title, {}, :multiple => true %></p>
+	<div class="span-5">
+  	<p><%= f.label :favorites %><br />
+  	<%= f.collection_select :favorite_ids, Project.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
+	</div>
 
-  <p><%= f.label :expertise, 'Expertise Markets' %><br />
-  <%= f.collection_select :expertise_ids, Market.all, :id, :title, {}, :multiple => true %></p>
-
+	<div class="span-5 last">
+  	<p><%= f.label :expertise, 'Expertise Markets' %><br />
+  	<%= f.collection_select :expertise_ids, Market.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
+	</div>
+	
 </fieldset>
 
 <% end %>

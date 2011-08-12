@@ -18,3 +18,4 @@ ul.feature_list ul							{margin: 5px 0 20px; }
 ul.feature_list li							{padding: 5px 0; }
 ul.feature_list li.active				{padding-left: 15px; background: url(/assets/admin/published_bg.gif) no-repeat 0 50%; }
 ul.feature_list li.inactive			{padding-left: 15px; background: url(/assets/admin/unpublished_bg.gif) no-repeat 0 50%; }
+select.multiple                 {width: 180px; }
