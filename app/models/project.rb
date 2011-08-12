@@ -29,7 +29,7 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :nav_name
-  validates_presence_of :market_ids
+  validates_presence_of :market_ids, :on => :update
 
   ###---------------------------------------------------- Class Methods
 
