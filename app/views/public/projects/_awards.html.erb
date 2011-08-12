@@ -2,7 +2,7 @@
 	<%= content_tag :h2, 'Awards' %>
 	<%= content_tag :ul do %>
     <% current_project.awards.live.each do |award| %>
-      <%= content_tag :li, link_to("#{award.title} &mdash; #{award.source}".html_safe, '#') %>
+      <%= content_tag :li, link_to("#{award.title} &mdash; #{award.source}".html_safe, public_awards_path) %>
     <% end %>
 	<% end %>
 </div>
