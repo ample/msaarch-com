@@ -1,17 +1,33 @@
 <%= form_for(current_project, :html => { :multipart => true }) do |f| %>
 
+<% if f.object.new_record? %>
+
 <fieldset>
-<% unless f.object.new_record? %>
+	<p><%= f.label :nav_name %><br />
+	<%= f.text_field(:nav_name, :class => 'text') %></p>
+
+	<p><%= f.label :title %><br />
+	<%= f.text_field(:title, :class => 'text') %></p>
+</fieldset>
+
+<% else %>
+
+<fieldset>
+  <legend>Properties</legend>
+
 	<p><%= f.label :permalink %><br />
 		<%= f.text_field(:permalink, :class => 'text') %></p>
 
 	<p><%= f.check_box(:active) %><%= f.label :active %></p>
 
-<% end %>
-
 	<p><%= f.label :nav_name %><br />
 	<%= f.text_field(:nav_name, :class => 'text') %></p>
 
+</fieldset>
+
+<fieldset>
+	<legend>Content</legend>
+	
 	<p><%= f.label :title %><br />
 	<%= f.text_field(:title, :class => 'text') %></p>
 
@@ -21,29 +37,6 @@
 	<p><%= f.label :location %><br />
 	<%= f.text_field(:location, :class => 'text') %></p>
 
-	<p><%= f.label :markets %><br />
-	<%= f.collection_select :market_ids, Market.all, :id, :title, {}, :multiple => true %></p>
-
-	<p><%= f.label :users, 'Team Members' %><br />
-	<%= f.collection_select :user_ids, User.all, :id, :full_name, {}, :multiple => true %></p>
-
-	<p><%= f.label :similar_projects %><br />
-	<%= f.collection_select :similar_project_ids, Project.all.reject{ |p| p == current_project }, :id, :title, {}, :multiple => true %></p>
-
-<% unless f.object.new_record? %>
-	
-  <fieldset class="clearfix">
-	  <legend><%= f.label :categories %></legend>
-  <% Category.root_level.each_with_index do |category, index| %>
-  <div class="opts<%= ' clear' if index%4 == 3 %>">
-    <%= label_tag category.title %>
-    <% category.children.each do |subcategory| %>
-      <label><%= check_box_tag "project[category_ids][]", subcategory.id, current_project.categories.include?(subcategory) %> <%= subcategory.title %></label>
-    <% end %>
-  </div>
-  <% end %>
-  </fieldset>
-	
 	<p><%= f.label :teaser, 'Case Study Description' %><br />
 	<%= f.text_area(:teaser, :class => 'textile') %></p>
 	
@@ -54,9 +47,41 @@
 	<p><%= f.label :thumbnail_id, 'Project Thumbnail' %></p>
 	<%= asset_drop(current_project, :thumbnail) %>
 
-<% end %>
-
 </fieldset>
+
+<fieldset class="clearfix">
+	<legend><%= f.label :categories %></legend>
+	<div class="xscroll">
+		<table><tr>
+		<% Category.root_level.each_with_index do |category, index| %>
+		<td class="opts">
+		<%= label_tag category.title %>
+		<% category.children.each do |subcategory| %>
+			<label><%= check_box_tag "project[category_ids][]", subcategory.id, current_project.categories.include?(subcategory) %> <%= subcategory.title %></label>
+		<% end %>
+		</td>
+		<% end %>
+		</tr></table>
+	</div>
+</fieldset>
+
+<fieldset>
+  <legend>Associations</legend>
+	<div class="span-5">
+		<p><%= f.label :markets %><br />
+		<%= f.collection_select :market_ids, Market.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
+	</div>
+	<div class="span-5">
+		<p><%= f.label :users, 'Team Members' %><br />
+		<%= f.collection_select :user_ids, User.all, :id, :full_name, {}, :multiple => true, :class => 'multiple' %></p>
+	</div>
+	<div class="span-4 last">
+		<p><%= f.label :similar_projects %><br />
+		<%= f.collection_select :similar_project_ids, Project.all.reject{ |p| p == current_project }, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
+	</div>
+</fieldset>
+
+<% end %>
 
 <button type="submit" name="continue" class="positive"><%= f.object.new_record? ? 'Create' : 'Update' %> Project</button>
 <%= link_to 'Cancel', projects_path, :class => 'button' %>
