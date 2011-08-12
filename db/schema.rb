@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110811192844) do
+ActiveRecord::Schema.define(:version => 20110812154940) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -227,6 +227,8 @@ ActiveRecord::Schema.define(:version => 20110811192844) do
     t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "meta_keywords"
+    t.string   "meta_description"
   end
 
   add_index "projects", ["permalink"], :name => "index_projects_on_permalink"

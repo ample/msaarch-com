@@ -18,6 +18,8 @@
 	<p><%= f.label :permalink %><br />
 		<%= f.text_field(:permalink, :class => 'text') %></p>
 
+		<%= render :partial => 'admin/meta_fields', :locals => { :f => f } %>
+
 	<p><%= f.check_box(:active) %><%= f.label :active %></p>
 
 	<p><%= f.label :nav_name %><br />
