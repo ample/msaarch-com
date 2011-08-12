@@ -6,12 +6,12 @@ class Admin::UsersController < AdminController
 
     def current_admin_users
       per_page = params[:per_page] || 15
-      User.all.collect{ |user| user if user.admin? }.compact.paginate(:page => params[:page], :per_page => per_page)
+      User.all.collect{ |user| user if user.admin? }.compact.paginate(:page => params[:admin_users_page], :per_page => per_page)
     end
 
     def current_staff_users
       per_page = params[:per_page] || 15
-      User.all.paginate(:page => params[:page], :per_page => per_page)
+      User.all.paginate(:page => params[:staff_users_page], :per_page => per_page)
     end
 
 end
