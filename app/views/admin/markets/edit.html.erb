@@ -26,7 +26,7 @@
 			<% current_market.projectships.each do |projectship| %>
 				<li><label>
 					<%= check_box_tag "featured_projectship_ids[#{projectship.id}]", '1', projectship.featured? %> 
-					<%= projectship.project.title %>
+					<%= truncate projectship.project.title %>
 				</label></li>
 			<% end %>
 		</ul>
