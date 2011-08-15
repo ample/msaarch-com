@@ -38,6 +38,14 @@ class Project < ActiveRecord::Base
     Feature.feature_types.collect { |feature_type| feature_type if feature_types.include?(feature_type[1])  }.compact
   end
 
+  def self.select_by_market
+    opts = []
+    Market.all.each do |market|
+      opts << [ market.title, market.projects.collect{ |p| [p.title, p.id] } ]
+    end
+    opts
+  end
+
   ###---------------------------------------------------- Instance Methods
 
   def images
