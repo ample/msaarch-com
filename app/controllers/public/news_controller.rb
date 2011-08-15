@@ -1,5 +1,6 @@
 class Public::NewsController < ApplicationController
 
+  caches_page :show, :if => Proc.new { |c| c.request.format.pdf? }
   layout :which_layout
 
   def index
@@ -16,8 +17,7 @@ class Public::NewsController < ApplicationController
       end
       format.pdf do
         send_data PDFKit.new(public_post_url(current_post.permalink)).to_pdf, 
-          :filename => "#{current_post.permalink}.pdf", :type => 'application/pdf', 
-          :disposition => 'attachment', :stream => false
+          :filename => "#{current_post.permalink}.pdf", :type => 'application/pdf', :stream => false
       end    
     end
   end
