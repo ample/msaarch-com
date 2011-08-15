@@ -1,4 +1,4 @@
 <li id="award_<%= award.id %>" class="<%= award.admin_status_class %>">
 	<%= manage_object award, :sortable => true %>
-	<%= link_to award.title, edit_award_path(award) %>
+	<%= link_to award.display_name, edit_award_path(award) %>
 </li>

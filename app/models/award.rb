@@ -15,7 +15,7 @@ class Award < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :awarded_date
 
-  ###---------------------------------------------------- Validations
+  ###---------------------------------------------------- Instance Methods
 
   def thumbnail
     self.asset
@@ -23,6 +23,17 @@ class Award < ActiveRecord::Base
 
   def permalink
     self.project.permalink rescue nil?
+  end
+
+  def display_name
+    display_name = ''
+    unless self.project.nil? 
+      display_name += self.project.title
+    else
+      display_name +=  self.project_name unless self.project_name.blank?
+    end
+    display_name += display_name.blank? ? self.title : " - #{self.title}"
+    display_name.truncate(80)
   end
 
 end
