@@ -1,0 +1,14 @@
+<% model_name = controller.controller_name.singularize %> 
+<%= content_tag :h2, "Search #{model_name.capitalize.pluralize}" %>
+
+<%= autocomplete_field_tag model_name, '', eval("autocomplete_#{model_name}_title_#{model_name.pluralize}_path"), :class => 'text span-7 xhr', 'data-id-element' => "##{model_name}_id", 'data-association' => model_name, 'data-controller' => model_name.pluralize %>
+<%= hidden_field(model_name.to_sym, :id) %>
+
+<script>
+$(document).ready(function(){
+	$('input#<%= model_name %>').bind('railsAutocomplete.select', function(e){
+		var id = $('input#<%= model_name %>_id').val(); 
+		window.location = '/admin/<%= model_name.pluralize %>/'+id+'/edit'; 
+	}); 
+});
+</script>

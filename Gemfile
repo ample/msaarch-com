@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'will_paginate', :path => File.join(File.dirname(__FILE__), '/vendor/gems/will_paginate')
 gem 'ample_admin', :path => File.join(File.dirname(__FILE__), '/vendor/gems/ample_admin')
 gem 'pdfkit'
+gem 'rails3-jquery-autocomplete'
 
 group :test do
   gem 'turn', :require => false

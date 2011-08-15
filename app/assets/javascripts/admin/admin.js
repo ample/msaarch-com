@@ -1,3 +1,4 @@
+//= require ./autocomplete-rails
 //= require ./farbtastic
 
 $(document).ready(function(){
