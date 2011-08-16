@@ -27,8 +27,6 @@ $ ->
     clone_adjust: 3
     next: '#events-next'
     previous: '#events-previous'
-    duration : 300
-    easing: 'easeOutQuad'
 
   $("#events-next span.wrap, #events-previous span.wrap").hide(); 
   $("#events-next, #events-previous").hover (->
