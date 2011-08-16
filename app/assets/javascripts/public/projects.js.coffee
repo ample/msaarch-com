@@ -13,8 +13,10 @@ $ ->
     clone_adjust: 3
     next: '#project-imagery-next'
     previous: '#project-imagery-previous'
+    duration : 300
+    easing: 'easeOutQuad'
 
-    $("#project-imagery-next span.wrap, #project-imagery-previous span.wrap").hide(); 
-    $("#project-imagery-next, #project-imagery-previous").hover (->
-      $(this).find('span.wrap').fadeIn()
-    ), -> $(this).find('span.wrap').fadeOut()
+  $("#project-imagery-next span.wrap, #project-imagery-previous span.wrap").hide(); 
+  $("#project-imagery-next, #project-imagery-previous").hover (->
+    $(this).find('span.wrap').fadeIn()
+  ), -> $(this).find('span.wrap').fadeOut()

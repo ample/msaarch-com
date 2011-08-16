@@ -7,6 +7,7 @@
 //= require public/modernizr-2.0.6
 //= require jquery
 //= require jquery_ujs
+//= require public/plugins/jquery.easing
 //= require public/plugins/jquery.ample-panels
 //= require public/plugins/jquery.isotope
 //= require public/plugins/jquery.chosen

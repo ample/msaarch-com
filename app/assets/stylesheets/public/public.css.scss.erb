@@ -28,9 +28,14 @@ ul, ol {
 	padding: 0; 
 }
 
-a, a:hover {
+a {
 	color: #FFF;
 	text-decoration: none;
+}
+
+a:hover {
+	color: #FFF; 
+	text-decoration: underline;
 }
 
 h1, h2, h3, h4 {
@@ -54,7 +59,7 @@ h1.page-title {
 }
 
 h2 {
-	font-family:'HelveticaNeueW01-45Ligh', Arial, sans-serif;
+	font-family:'HelveticaNeueW01W01-45Ligh', Arial, sans-serif;
 	font-size: 32px;
 	line-height: 36px;
 	margin-bottom: 20px;
@@ -181,6 +186,9 @@ section#header {
 			display: inline;
 			color: #FFF;  
 		}
+		a:hover {
+			text-decoration: none;
+		}
 	}
 	img.logo,
 	img#logo {
@@ -190,6 +198,9 @@ section#header {
 	nav {
 		float: right; 
 		width: 750px; 
+		a:hover {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -206,6 +217,9 @@ section#footer {
 		a {
 			font-weight: bold;
 			border-bottom-width: 2px;
+		}
+		a:hover {
+			text-decoration: none;
 		}
 		li {
 			margin-right: 20px;
@@ -269,6 +283,7 @@ body {
 			}
 			p {
 				font-size: 12px;
+				line-height: 16px;
 			}
 		}
 		#videos-controls {
@@ -645,7 +660,7 @@ body.history {
 				border-color: #501B1B; 
 			}
 			li.global span {
-				background: rgba(16,43,62,0.75); 
+				background: rgba(16,43,62,0.90); 
 				border-color: #214f6d; 
 			}
 		}
@@ -720,12 +735,12 @@ body.history {
 				div.local {
 					background: rgba(80,27,27,0.90); 
 					border-color: #501B1B; 
-					color: #a83838; 
+					color: #BB4343; 
 					text-shadow: -1px -1px 2px #300202;
 					filter: dropshadow(color=#300202, offx=-1, offy=-1);
 				}
 				div.global {
-					background: rgba(16,43,62,0.75); 
+					background: rgba(16,43,62,0.90); 
 					border-color: #214f6d; 
 					color: #5c87a1; 
 					text-shadow: -1px -1px 2px #021D31;
@@ -1131,7 +1146,7 @@ section#beta {
 	}
 	p {
 		font-size: 12px; 
-		line-height: 15px;
+		line-height: 16px;
 	}
 	#case-studies {
 		width: 940px; 
