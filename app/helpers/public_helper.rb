@@ -67,11 +67,10 @@ module PublicHelper
 				market = project.markets.first
 			end 
 		end
-
 		if project.thumbnail.nil?
-			link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink)
+			link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink), 'data-title' => project.title, 'data-dimensions' => dimensions
 		else
-			link_to image_asset(project, :object => project.thumbnail, :dimensions => dimensions, :class => 'frame', :style => "border-color: #{project.thumbnail.hex};"), portfolio_project_path(market.permalink, project.permalink)
+			link_to image_asset(project, :object => project.thumbnail, :dimensions => dimensions, :class => 'frame', :style => "border-color: #{project.thumbnail.hex}; "), portfolio_project_path(market.permalink, project.permalink), 'data-title' => project.title, 'data-dimensions' => dimensions
 		end 
 	end
 

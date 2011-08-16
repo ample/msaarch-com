@@ -38,3 +38,19 @@ $ ->
       height: h
     ).prependTo($(this).parent()).wrap(img)
 
+  $('a[data-title]').each ->
+    dimensions = $(this).attr('data-dimensions').split('x')
+    padding = 5
+    span = $("<span></span>").html($(this).attr('data-title')).hide().css
+      'margin-top': (parseInt(dimensions[1])+padding+3)*-1
+      padding: padding
+      width: dimensions[0]-padding*2
+      height: dimensions[1]-padding*2
+    $(this).addClass('rollover')
+    $(this).append(span)
+    $(this).hover (->
+      $(this).find('span').fadeIn()
+    ), ->
+      $(this).find('span').fadeOut()
+
+
