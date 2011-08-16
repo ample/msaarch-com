@@ -10,6 +10,8 @@ set :keep_releases, 4
 default_run_options[:pty] = true
 
 set :dest, Capistrano::CLI.ui.ask("dev - Development\nwww - Production\nDestination: ")
+set :assets, Capistrano::CLI.ui.ask("y - Yes\nn - No\nPrecompile assets?")
+
 
 # Rackspace options
 set :branch,       'master'
@@ -29,7 +31,9 @@ elsif dest == 'dev'
 end
 
 after 'deploy:update_code', 'deploy:update_shared'
-after 'deploy:update_code', 'deploy:precompile_assets'
+if assets == 'y'
+  after 'deploy:update_code', 'deploy:precompile_assets'
+end
 
 # Deploy options  
 role :app, host
