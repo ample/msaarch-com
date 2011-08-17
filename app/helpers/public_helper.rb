@@ -59,7 +59,7 @@ module PublicHelper
 		content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
 	end
 
-	def project_thumbnail(project, dimensions = '154x96', market = nil)
+	def project_thumbnail(project, dimensions = '154x96#', market = nil)
 		if market.nil?
 			unless current_market.nil? 
 				market = current_market
