@@ -5,7 +5,7 @@
 
   <p><%= f.check_box(:active) %><%= f.label :active %></p>
   
-  <p><%= f.label :event_date %><br /><%= f.datetime_select(:event_date, :prompt => true, :start_year => 1980) %></p>
+  <p><%= f.label :event_date, 'Event Year' %><br /><%= f.date_select(:event_date, :prompt => true, :start_year => 1980, :discard_day => true, :discard_month => true) %></p>
 
   <p><%= f.label :event_type %><br />
      <%= f.select :event_type, Event.options_for_select %></p>

@@ -21,7 +21,7 @@
 	<ul id="events">
 		<% current_events_by_group.each_with_index do |group, index| %>
 			<%= content_tag :li, :class => :event, :id => "slide-#{index}" do %>
-				<%= content_tag :div, :class => :bg, :style => (group[1].first[1].first.asset.nil? ? '' : "background-image: url(#{group[1].first[1].first.asset.attachment.thumb('625x460#').url})") do %>
+				<%= content_tag :div, :class => :bg, :style => (group[1].first[1].first.asset.nil? ? '' : "background-image: url('#{group[1].first[1].first.asset.attachment.thumb('625x460#').url}')") do %>
 					<div class="events">
 						<div class="dark<%= ' empty' if group[1]['msa'].nil? %>">
 							<%= content_tag :h3, group[0].strftime('%Y') %>
