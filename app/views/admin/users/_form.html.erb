@@ -32,6 +32,9 @@
 
 <% unless f.object.new_record? %>
 
+	<p><%= f.label :title %><br />
+	<%= f.text_field(:title, :class => 'text') %></p>
+
 	<p><%= f.label :credentials %><br />
 	<%= f.text_field(:credentials, :class => 'text') %></p>
 
