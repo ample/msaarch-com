@@ -15,8 +15,8 @@
 </div>
 
 <% unless current_careers.empty? %>
-  <hr />
-  <%= content_tag :h2, 'Careers' %>
+  <hr class="span-15 last" />
+  <%= content_tag :h2, 'Careers', :class => 'careers span-15 last' %>
   <div id="careers" class="span-8 append-1">
     <%= current_page.body.to_html.html_safe %>
     <%= content_tag :h3, 'Role Description' %>
