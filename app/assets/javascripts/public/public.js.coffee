@@ -48,8 +48,8 @@ $ ->
       'padding-bottom': padding_top
       'padding-left': padding_left
       'padding-right': padding_left
-      width: dimensions[0]-padding_left*2
-      height: dimensions[1]-padding_top*2
+      width: parseInt(dimensions[0])-padding_left*2
+      height: parseInt(dimensions[1])-padding_top*2
     $(this).addClass('rollover')
     $(this).append(span)
     $(this).hover (->
