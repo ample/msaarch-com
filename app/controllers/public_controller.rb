@@ -18,7 +18,7 @@ class PublicController < ApplicationController
     end
 
     def current_features
-      @current_features ||= current_page.features.live.collect{ |feature| feature if ['feature','video'].include?(feature.feature_type) }[0..4]
+      @current_features ||= current_page.features.live.collect{ |feature| feature if ['feature','video'].include?(feature.feature_type) }.compact[0..4]
     end
 
     def error_message(e)

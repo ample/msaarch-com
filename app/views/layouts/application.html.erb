@@ -19,6 +19,8 @@
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
 	<%= market_styles %>
+	<%= homepage_backgrounds if is_homepage? %>
+
 </head>
 <body<%= body_classes %>>
 

@@ -96,4 +96,16 @@ module PublicHelper
 		html += '</style>'.gsub(/ /,'').html_safe
 	end
 
+	def homepage_backgrounds
+		html = '<script>var MSA = {};'.html_safe
+		html += "$(document).ready(function(){"; 
+		html += "MSA['alpha_backgrounds'] = ['#{alpha_backgrounds}']; "
+		html += "MSA['alpha_captions'] = ['#{alpha_captions}']; ".html_safe
+		html += "MSA['alpha_rand'] = Math.floor(Math.random()*MSA['alpha_backgrounds'].length);	 "
+		html += "$('#alpha').css('background-image','url(\\'' + MSA['alpha_backgrounds'][MSA['alpha_rand']] + '\\')'); " 
+		html += "$('div.caption .container').html(MSA['alpha_captions'][MSA['alpha_rand']]); "
+		html += "});" 
+		html += '</script>'.gsub(/ /,'').html_safe
+	end
+
 end

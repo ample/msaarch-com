@@ -34,7 +34,7 @@ class Page < ActiveRecord::Base
   def locations
     features.live.where :feature_type => 'location'
   end
-  
+
   def background_caption
     unless self.template_filename != 'home'
       block = self.get_block(:background_image_caption)

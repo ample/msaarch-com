@@ -1,4 +1,4 @@
-<section id="alpha"<%= current_page.background %>>
+<section id="alpha">
 	<div class="container">
 		<div class="span-6 append-4">
 			<%= content_tag :h1, current_page.subtitle.html_safe, :class => :dark %>
@@ -32,13 +32,11 @@
 	</div>
 </section>
 
-<% unless current_page.background_caption.blank? %>
 <div class="caption dark">
 	<div class="container">
 	  <%= current_page.background_caption %>
 	</div>
 </div>
-<% end %>
 
 <section id="beta">
 <% unless current_features.empty? %>
@@ -48,3 +46,4 @@
 	</div>
 <% end %>
 </section>
+
