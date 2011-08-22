@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110818155337) do
+ActiveRecord::Schema.define(:version => 20110822192101) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20110818155337) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "color"
+    t.string   "keywords"
   end
 
   create_table "awards", :force => true do |t|
