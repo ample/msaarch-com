@@ -32,7 +32,7 @@ end
 	  </object>	
 	<% end %>
 	<hr />
-	<%= link_to "Destroy", thing_path(@current_asset), :confirm => "Are you sure?", :method => :delete, :class => 'delete' %>
+	<%# link_to "Destroy", thing_path(@current_asset), :confirm => "Are you sure?", :method => :delete, :class => 'delete' %>
 	<%= content_tag :p, "#{link_to File.basename(current_asset.attachment_uid), current_asset.attachment.url} #{clippy current_asset.attachment.url}<br />#{dimensions}#{filetype}Uploaded #{time_ago_in_words(current_asset.created_at)} ago".html_safe %>
 	<hr />
 	<%= show_flashes %>

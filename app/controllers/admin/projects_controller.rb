@@ -1,7 +1,7 @@
 class Admin::ProjectsController < AdminController
 
   set_model :project
-  autocomplete :project, :title
+  autocomplete :project, :title, :full => true
   
   def update 
     super
