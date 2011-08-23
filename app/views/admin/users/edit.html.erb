@@ -20,6 +20,31 @@
 			</li>
 		<% end %>
 		</ul>
+
+		<%= content_tag :h3, 'Favorite Projects' %>
+		<%= autocomplete_field_tag 'project', '', eval("autocomplete_project_title_projects_path"), :class => 'text span-7 xhr', 'data-id-element' => "#project_id", 'data-association' => 'project', 'data-controller' => 'projects' %>
+		<%= hidden_field('project'.to_sym, :id) %>
+		<hr class="space" />
+		<ul id="favorite-projects" class="association_list">
+		<% current_object.favorites.each do |project| %>
+			<%= render :partial => 'admin/projects/associated_project', :object => project, :locals => { :delete_url => remove_favorite_project_user_path(current_object, :project_id => project.id) } %>
+		<% end %>
+		</ul>
+
+		<script>
+		$(document).ready(function(){
+			$('input#project').bind('railsAutocomplete.select', function(e){
+				var id = $('input#project_id').val(); 
+				var post_data = { project_id: id };
+				$(this).val('');
+				$.post('<%= add_favorite_project_user_path(current_object) %>', post_data, function(data) {
+					$('#favorite-projects').append(data);
+				}, 'html');
+			}); 
+		});
+		</script>
+
+
 	</div>
 </div>
 

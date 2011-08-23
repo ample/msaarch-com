@@ -7,6 +7,7 @@
 <div id="right" class="column span-7 last">
 	<%= render 'admin/error_messages', :object => current_project %>
 	<div id="record-info" class="clearfix">
+
 	  <%= content_tag :h3, 'Features' %>
 		<ul class="feature_list">
 		<% Project.feature_types.each do |feature_type| %>
@@ -19,31 +20,9 @@
 		</ul>
 
 		<%= content_tag :h3, 'Similar Projects' %>
-		<% model_name = controller.controller_name.singularize %> 
-		<%= autocomplete_field_tag model_name, '', eval("autocomplete_#{model_name}_title_#{model_name}_path"), :class => 'text span-7 xhr', 'data-id-element' => "##{model_name}_id", 'data-association' => model_name, 'data-controller' => model_name.pluralize %>
-		<%= hidden_field(model_name.to_sym, :id) %>
-		<hr class="space" />
-		<ul id="similar-projects" class="association_list">
-		<% current_project.similar_projects.each do |project| %>
-			<%= render :partial => 'admin/projects/similar_project', :object => project, :locals => { :delete_url => remove_similar_project_project_path(current_project, :project_id => project.id) } %>
-		<% end %>
-		</ul>
+		<%= render 'admin/projects/attach' %>
 
-		<script>
-		$(document).ready(function(){
-			$('input#<%= model_name %>').bind('railsAutocomplete.select', function(e){
-				var id = $('input#<%= model_name %>_id').val(); 
-				var post_data = { project_id: id };
-				$(this).val('');
-				$.post('<%= add_similar_project_project_path(current_project) %>', post_data, function(data) {
-					$('#similar-projects').append(data);
-				}, 'html');
-			}); 
-		});
-		</script>
 	</div>
-
-
 </div>
 
 <script>AA['assets']=true;</script>

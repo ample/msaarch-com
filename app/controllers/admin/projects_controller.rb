@@ -18,7 +18,7 @@ class Admin::ProjectsController < AdminController
 
   def add_similar_project
     current_project.similar_projects << current_similar_project
-    render :partial => 'admin/projects/similar_project', :object => current_similar_project, :locals => { :delete_url => remove_similar_project_project_path(current_project, :project_id => current_similar_project.id) }, :content_type => :html
+    render :partial => 'admin/projects/associated_project', :object => current_similar_project, :locals => { :delete_url => remove_similar_project_project_path(current_project, :project_id => current_similar_project.id) }, :content_type => :html
   end
 
   def remove_similar_project

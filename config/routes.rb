@@ -32,6 +32,10 @@ MsaarchCom::Application.routes.draw do
     end
     resources :users, :controller => 'admin/users', :path => 'team' do 
       resources :features, :controller => 'admin/features'
+      member do 
+        post :add_favorite_project
+        delete :remove_favorite_project
+      end
     end
     resources :categories, :controller => 'admin/categories' do
       collection do

@@ -30,8 +30,8 @@ class User < ActiveRecord::Base
   ###---------------------------------------------------- Associations
 
   has_many :features, :as => :owner, :include => [ :asset ]
-  has_many :projectships, :as => :owner, :dependent => :destroy
-  has_many :projects, :through => :projectships
+  #has_many :projectships, :as => :owner, :dependent => :destroy
+  #has_many :projects, :through => :projectships
   has_many :careers
   has_and_belongs_to_many :expertise, :class_name => 'Market'
   has_and_belongs_to_many :favorites, :class_name => 'Project'
