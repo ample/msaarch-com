@@ -47,6 +47,7 @@ MsaarchCom::Application.routes.draw do
       end
       collection do
         post :update_sort_order
+        get :autocomplete_project_title
       end
     end
     resources :markets, :controller => 'admin/markets' do

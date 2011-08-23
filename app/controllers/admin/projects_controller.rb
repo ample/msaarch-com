@@ -27,7 +27,7 @@ class Admin::ProjectsController < AdminController
   end
 
   protected 
-  
+
     def get_autocomplete_items(parameters)
       model   = parameters[:model]
       term    = parameters[:term]
@@ -42,7 +42,11 @@ class Admin::ProjectsController < AdminController
 
       items = items.select(get_autocomplete_select_clause(model, method, options)) unless options[:full_model]
       items = items.where(get_autocomplete_where_clause(model, term, method, options)).limit(limit).order(order)
-      items.reject { |i| i == current_project || current_project.similar_projects.include?(i) }
+      begin
+        items.reject { |i| i == current_project || current_project.similar_projects.include?(i) }
+      rescue
+        items
+      end
     end
 
   private

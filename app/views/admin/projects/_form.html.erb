@@ -73,13 +73,9 @@
 		<p><%= f.label :markets %><br />
 		<%= f.collection_select :market_ids, Market.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
 	</div>
-	<div class="span-5">
+	<div class="span-5 last">
 		<p><%= f.label :users, 'Team Members' %><br />
 		<%= f.collection_select :user_ids, User.all, :id, :full_name, {}, :multiple => true, :class => 'multiple' %></p>
-	</div>
-	<div class="span-4 last">
-		<p><%= f.label :similar_projects %><br />
-		<%= f.collection_select :similar_project_ids, Project.all.reject{ |p| p == current_project }, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
 	</div>
 </fieldset>
 
