@@ -10,7 +10,6 @@ $(document).ready(function(){
 	});	
 }); 
 
-
 $(function() {
   if($('form.edit_market').length>0) {
   	var market_id = $('form.edit_market').attr('id').split('_')[2];
