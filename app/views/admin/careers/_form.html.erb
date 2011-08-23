@@ -13,7 +13,7 @@
 	<%= f.text_field(:title, :class => 'text') %></p>
 
 	<p><%= f.label :user, 'Contact' %><br />
-	<%= f.collection_select :user_id, User.all, :id, :full_name, :include_blank => true %></p>
+	<%= f.collection_select :user_id, User.live, :id, :full_name, :include_blank => true %></p>
 
 <% unless f.object.new_record? %>
 	<p><%= f.label :body %><br />

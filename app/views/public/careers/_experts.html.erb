@@ -9,7 +9,7 @@
 <% Market.live.each do |market| %>
   <%= content_tag :div, 'data-role' => market.permalink, :style => 'display: ' + (market == Market.live.first ? 'block' : 'none') do %>
     <%= content_tag :ul do %>
-    <% market.experts.each do |expert| %>
+    <% market.experts.live.each do |expert| %>
       <%= content_tag :li, link_to(expert.full_name, "/contact/email/#{expert.id}") + ' &nbsp;|&nbsp; '.html_safe + expert.credentials, :class => :arrow %>
     <% end %>
     <% end %>
