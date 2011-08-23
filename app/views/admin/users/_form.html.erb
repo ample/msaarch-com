@@ -24,13 +24,25 @@
 	<p><%= f.label :email %><br />
 	<%= f.text_field(:email, :class => 'text') %></p>
 
+<% if f.object.new_record? %>
+
+	<p><%= f.check_box(:admin) %> <%= f.label :admin %></p>
+	
+	<div id="password-fields"<%= f.object.errors.messages.include?(:password) ? ' class="show"'.html_safe : '' %>>
+		<p><%= f.label :password %><br />
+		<%= f.password_field(:password, :class => 'text') %></p>
+
+		<p><%= f.label :password_confirmation %><br />
+		<%= f.password_field(:password_confirmation, :class => 'text') %></p>
+	</div>
+
+<% else %>
+
 	<p><%= f.label :password %><br />
 	<%= f.password_field(:password, :class => 'text') %></p>
 
 	<p><%= f.label :password_confirmation %><br />
 	<%= f.password_field(:password_confirmation, :class => 'text') %></p>
-
-<% unless f.object.new_record? %>
 
 	<p><%= f.label :title %><br />
 	<%= f.text_field(:title, :class => 'text') %></p>

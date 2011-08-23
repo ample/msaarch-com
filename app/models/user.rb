@@ -3,6 +3,10 @@ require 'acts_as_markup'
 
 class User < ActiveRecord::Base
 
+  ###---------------------------------------------------- AR Callbacks
+
+  before_validation :generate_password
+
   ###---------------------------------------------------- Augmentations
 
   augment Publishing
@@ -17,7 +21,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, 
                   :credentials, :education, :bio, :favorite_ids, :project_ids, :expertise_ids, :admin, :active,
-                  :permalink, :bio, :projectships_count, :asset_id, :active_at, :inactive_at
+                  :permalink, :bio, :projectships_count, :asset_id, :active_at, :inactive_at, :title
 
   acts_as_textile :bio
   acts_as_textile :education
@@ -62,6 +66,13 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def generate_password
+    unless self.admin?
+      self.password = ActiveSupport::SecureRandom.base64(8).to_yaml
+      self.password_confirmation = self.password
+    end
   end
 
 end

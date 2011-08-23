@@ -1,4 +1,9 @@
 class Admin::UsersController < AdminController
+  
+  def create
+    params[:user].reject! { |k,v| k.include?('password') && v.blank? }
+    super
+  end
 
   def update
     params[:user].reject! { |k,v| k.include?('password') && v.blank? }

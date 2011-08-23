@@ -9,9 +9,9 @@
 #asset-detail #asset_color			{width: 250px; }
 #asset-detail #notifications		{margin-right: 7px; } 
 #asset-list img.asset_thumb			{border-width: 3px; border-style: solid; }
-td.opts												{width: 135px; vertical-align: top; }
-td.opts label									{display: block; white-space: nowrap }
-div#record-info										{padding-top: 10px; }
+td.opts												  {width: 135px; vertical-align: top; }
+td.opts label									  {display: block; white-space: nowrap }
+div#record-info									{padding-top: 10px; }
 ul.feature_list									{margin: 0; padding: 0; list-style-type: none; }
 ul.feature_list small						{float: right; }
 ul.feature_list ul							{margin: 5px 0 20px; }
@@ -21,3 +21,4 @@ ul.feature_list li.inactive			{padding-left: 15px; background: url(/assets/admin
 select.multiple                 {width: 180px; }
 .span-4 select.multiple         {width: 160px; }
 div.xscroll                     {width: 600px; overflow-x: scroll; }
+#password-fields                {height: 0px; overflow: hidden; }
