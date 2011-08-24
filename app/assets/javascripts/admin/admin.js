@@ -30,4 +30,11 @@ $(document).ready(function(){
     }
   });
   $('div.show#password-fields').animate({ height: 150 }); 
+
+  // market filter on projects#index
+  $('select#markets').change(function(){
+    var root = '/admin/projects'; 
+    window.location = $(this).val()=='' ? root : root + '/' + $(this).val();
+  });
+
 }); 

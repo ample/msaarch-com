@@ -12,20 +12,11 @@ MsaarchCom::Application.routes.draw do
   scope '/admin' do
     match 'news', :to => 'admin/news#index'
     match 'team/update_sort_order', :to => 'admin/users#update_sort_order'
-
     resources :careers, :controller => 'admin/careers' do
       collection do
         post :update_sort_order
       end
     end
-
-    
-    #resources :users, :except => [:index, :new, :create, :destroy, :update, :edit, :show], :controller => 'admin/users' do
-    #  collection do
-    #    post :update_sort_order
-    #  end
-    #end
-
     resources :posts, :controller => 'admin/posts', :path => 'news/posts' do 
       resources :features, :controller => 'admin/features'
     end
@@ -62,6 +53,7 @@ MsaarchCom::Application.routes.draw do
       collection do
         post :update_sort_order
         get :autocomplete_project_title
+        match ':market_filter', :to =>  'admin/projects#index'
       end
     end
     resources :markets, :controller => 'admin/markets' do

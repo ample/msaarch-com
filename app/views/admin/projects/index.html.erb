@@ -16,6 +16,8 @@
 </div>
 <div id="right" class="column span-7 last">
 
+	<%= content_tag :h2, 'Filter by Market' %>
+	<%= select_tag "markets", options_from_collection_for_select(Market.all, :permalink, :title, params[:market_filter]), :include_blank => true %></p>
 	<%= render 'admin/search' %>
 
 </div>

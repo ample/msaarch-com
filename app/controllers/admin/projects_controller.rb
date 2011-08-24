@@ -51,6 +51,20 @@ class Admin::ProjectsController < AdminController
 
   private
 
+    def current_market
+      @current_market ||= Market.find_by_permalink params[:market_filter]
+    end
+
+    def current_projects
+      per_page = params[:per_page] || 15
+      if params[:market_filter]
+        projects = current_market.projects.paginate(:page => params[:page], :per_page => per_page)
+      else
+        projects = Project.all.paginate(:page => params[:page], :per_page => per_page)
+      end
+      @current_projects ||= projects
+    end
+
     def empty_markets
       current_object.update_attribute :market_ids, nil 
     end
