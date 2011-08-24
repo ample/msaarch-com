@@ -22,3 +22,4 @@ select.multiple                 {width: 180px; }
 .span-4 select.multiple         {width: 160px; }
 div.xscroll                     {width: 600px; overflow-x: scroll; }
 #password-fields                {height: 0px; overflow: hidden; }
+.dashboard .index_list li       {padding-left: 3px; }

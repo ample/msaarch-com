@@ -1,0 +1,23 @@
+<% title('Admin') %>
+
+<div id="left" class="column span-16 append-1 dashboard">
+
+	<%= content_tag :h2, 'Recently Edited' %>
+	<ul class="index_list clear">
+		<%= recently_edited(Page, :nav_name) %>
+		<%= recently_edited(Market, :nav_name) %>
+		<%= recently_edited(Project, :nav_name) %>
+		<%= recently_edited(Category) %>
+		<%= recently_edited(Event) %>
+		<%= recently_edited(Award) %>
+		<%= recently_edited(Post) %>
+		<%= recently_edited(Update) %>
+		<%= recently_edited(Career) %>
+		<%= recently_edited(User, :full_name) %>
+	</ul>
+
+</div>
+<div id="right" class="column span-7 last dashboard">
+	<%= content_tag :h2, 'Recently Uploaded' %>
+	<%= render :partial => 'admin/assets/asset', :collection => Asset.find(:all, :limit => 24, :order => 'updated_at DESC') %>
+</div>
