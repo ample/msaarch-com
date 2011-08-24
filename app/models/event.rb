@@ -1,4 +1,5 @@
 require 'acts_as_markup'
+require 'helpers'
 
 class Event < ActiveRecord::Base
 
@@ -13,7 +14,7 @@ class Event < ActiveRecord::Base
 
   ###---------------------------------------------------- Validations
 
-  validates_presence_of :title
+  validates_presence_of :body
   validates_presence_of :event_date
 
   ###---------------------------------------------------- Plugins
@@ -32,6 +33,12 @@ class Event < ActiveRecord::Base
 
   def self.options_for_select
     self.event_types.collect { |r| [r[0], r[1]] }
+  end
+
+  ###---------------------------------------------------- Instance Methods
+
+  def title 
+    help.truncate help.strip_tags(self.body.to_html.html_safe), :length => 80
   end
 
 end

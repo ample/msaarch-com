@@ -5,6 +5,8 @@ en:
   hello: "Hello world"
   activerecord:
     attributes:
+      event:
+        body: 'Event Description'
       project:
         title: 'Project Name'
         subtitle: 'Type'
