@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   ###---------------------------------------------------- Augmentations
 
   augment Publishing
+  augment Sorting
 
   ###---------------------------------------------------- Plugins
 
@@ -21,7 +22,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, 
                   :credentials, :education, :bio, :favorite_ids, :project_ids, :expertise_ids, :admin, :active,
-                  :permalink, :bio, :projectships_count, :asset_id, :active_at, :inactive_at, :title
+                  :permalink, :bio, :projectships_count, :asset_id, :active_at, :inactive_at, :title, :sort_order
 
   acts_as_textile :bio
   acts_as_textile :education

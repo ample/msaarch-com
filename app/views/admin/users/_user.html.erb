@@ -1,4 +1,4 @@
 <li id="user_<%= user.id %>" class="<%= user.admin_status_class %>">
-	<%= manage_object user, :sortable => false %>
+	<%= manage_object user, :sortable => true %>
 	<%= link_to user.full_name, edit_user_path(user) %>
 </li>

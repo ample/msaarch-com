@@ -13,7 +13,6 @@
 	<ul class="index_list clear sortable">
 		<%= render :partial => 'admin/users/user', :collection => current_staff_users %>
 	</ul>
-	<%= will_paginate current_staff_users, :param_name => 'staff_users_page' %>
 	<%= render 'admin/legend' %>
 
 </div>
@@ -30,7 +29,6 @@
 	<ul class="index_list clear sortable">
 		<%= render :partial => 'admin/users/user', :collection => current_admin_users %>
 	</ul>
-	<%= will_paginate current_admin_users, :param_name => 'admin_users_page' %>
 	<%= render 'admin/legend' %>
 
 </div>

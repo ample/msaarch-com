@@ -1,4 +1,6 @@
 class Admin::UsersController < AdminController
+
+  set_model :user
   
   def create
     params[:user].reject! { |k,v| k.include?('password') && v.blank? }
@@ -27,13 +29,11 @@ class Admin::UsersController < AdminController
     helper_method :current_admin_users, :current_staff_users
 
     def current_admin_users
-      per_page = params[:per_page] || 15
-      User.all.collect{ |user| user if user.admin? }.compact.paginate(:page => params[:admin_users_page], :per_page => per_page)
+      User.all.collect{ |user| user if user.admin? }.compact
     end
 
     def current_staff_users
-      per_page = params[:per_page] || 15
-      User.all.paginate(:page => params[:staff_users_page], :per_page => per_page)
+      User.all.reject{ |user| user if user.admin? && !user.active?  }
     end
 
   private 
