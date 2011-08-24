@@ -1,5 +1,5 @@
 <% current_features.each_with_index do |feature, idx| %>
-  <div class="<%= feature.feature_type %> span-3<%= ' last' if idx % 5 == 4 %>">
+  <div class="<%= feature.feature_type %><%= feature.is_video? ? ' video' : '' %> span-3<%= ' last' if idx % 5 == 4 %>">
     <% unless feature.asset.nil? %>
       <% if feature.link.blank? %>
         <%= image_asset feature, :dimensions => '154x96', :class => :frame, :style => "border-color: #{feature.asset.color}" %>
