@@ -1,3 +1,5 @@
+require 'helpers'
+
 class Feature < ActiveRecord::Base
 
   ###---------------------------------------------------- Class Methods
@@ -15,10 +17,19 @@ class Feature < ActiveRecord::Base
       ['Feature', 'feature'],
       ['Location', 'location'],
       ['Quote', 'quote'],
+      ['Headline', 'headline'],
     ]
   end
 
   ###---------------------------------------------------- Instance Methods
+
+  def display_name
+    if self.feature_type == 'headline'
+      help.strip_tags(self.body)
+    else
+      self.title
+    end
+  end
 
   def is_video?
     self.link.include?('youtube') unless self.link.blank?
