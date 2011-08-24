@@ -39,11 +39,11 @@
 	<p><%= f.label :location %><br />
 	<%= f.text_field(:location, :class => 'text') %></p>
 
-	<p><%= f.label :teaser, 'Case Study Description' %><br />
-	<%= f.text_area(:teaser, :class => 'textile') %></p>
-	
 	<p><%= f.label :body %><br />
 	<%= f.text_area(:body, :class => 'textile') %></p>
+	
+	<p><%= f.label :teaser %><br />
+	<%= f.text_area(:teaser, :class => 'textile') %></p>
 	
 	<%= f.hidden_field(:thumbnail_id, :value => current_project.thumbnail_id, :class => next_asset_drop_class) %>
 	<p><%= f.label :thumbnail_id, 'Project Thumbnail' %></p>
@@ -74,7 +74,7 @@
 		<%= f.collection_select :market_ids, Market.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
 	</div>
 	<div class="span-5 last">
-		<p><%= f.label :users, 'Team Members' %><br />
+		<p><%= f.label :users %><br />
 		<%= f.collection_select :user_ids, User.all, :id, :full_name, {}, :multiple => true, :class => 'multiple' %></p>
 	</div>
 </fieldset>

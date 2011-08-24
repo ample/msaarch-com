@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      project:
+        title: 'Project Name'
+        subtitle: 'Type'
+        teaser: 'Case Study Description'
+        users: 'Team Members'
+    
