@@ -38,7 +38,7 @@ class Event < ActiveRecord::Base
   ###---------------------------------------------------- Instance Methods
 
   def title 
-    help.truncate help.strip_tags(self.body.to_html.html_safe), :length => 80
+    help.truncate help.strip_tags(self.body.to_html.html_safe), :length => 70
   end
 
 end
