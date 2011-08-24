@@ -8,7 +8,14 @@ module Public::PagesHelper
 
   def alpha_captions
     current_page.features.live.of_type(:image).collect{ |img| 
-      "<strong>#{escape_javascript(img.title)}</strong> #{escape_javascript(img.body)}" unless img.asset.nil? 
+      unless img.asset.nil? 
+        if img.project.nil?
+          "<strong>#{escape_javascript(img.title)}</strong> #{escape_javascript(img.body)}"
+        else
+          link = portfolio_project_path(img.project.markets.first.permalink, img.project.permalink)
+          link_to("<strong>#{escape_javascript(img.title)}</strong> #{escape_javascript(img.body)}".html_safe,link)
+        end
+      end
     }.compact.join('\',\'').html_safe
   end
 

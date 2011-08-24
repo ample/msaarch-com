@@ -2,6 +2,10 @@ require 'helpers'
 
 class Feature < ActiveRecord::Base
 
+  ###---------------------------------------------------- Associations
+
+  belongs_to :project
+
   ###---------------------------------------------------- Class Methods
 
   def self.feature_types

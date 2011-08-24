@@ -10,4 +10,7 @@
 <p><%= f.label :body, 'Location' %><br />
 	 <%= f.text_field(:body, :class => 'text') %></p>
 
+<p><%= f.label :project %><br />
+	<%= f.grouped_collection_select :project_id, Market.all, :projects, :title, :id, :title, :include_blank => true %></p>
+
 <script>AA['assets'] = true;</script>

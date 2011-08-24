@@ -38,7 +38,7 @@ class Page < ActiveRecord::Base
   def background_caption
     unless self.template_filename != 'home'
       block = self.get_block(:background_image_caption)
-      block.textarea.to_html.html_safe unless block.nil?
+      sanitize(block.textarea.to_html).html_safe unless block.nil?
     end
   end
 
