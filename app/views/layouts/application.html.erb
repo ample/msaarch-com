@@ -19,8 +19,9 @@
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
 	<%= market_styles %>
+	<script>var MSA = {};</script>
 	<%= homepage_backgrounds if is_homepage? %>
-
+	<%= random_titles if is_homepage? || is_team? %>
 </head>
 <body<%= body_classes %>>
 

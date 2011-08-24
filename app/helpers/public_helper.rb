@@ -31,6 +31,10 @@ module PublicHelper
 		params[:controller] == 'public/users'
 	end
 
+	def is_team?
+		is_user? && params[:action] == 'index'
+	end
+
 	def site_nav(position)
 		html = ''
 		pages = position == 'header' ? Page.in_header : Page.in_footer.reverse!		 
@@ -97,8 +101,8 @@ module PublicHelper
 	end
 
 	def homepage_backgrounds
-		html = '<script>var MSA = {};'.html_safe
-		html += "$(document).ready(function(){"; 
+		html = '<script>'.html_safe
+		html += "$(document).ready(function(){"
 		html += "MSA['alpha_backgrounds'] = ['#{alpha_backgrounds}']; "
 		html += "MSA['alpha_captions'] = ['#{alpha_captions}']; ".html_safe
 		html += "MSA['alpha_rand'] = Math.floor(Math.random()*MSA['alpha_backgrounds'].length);	 "
@@ -107,5 +111,17 @@ module PublicHelper
 		html += "});" 
 		html += '</script>'.gsub(/ /,'').html_safe
 	end
+
+  def random_titles
+		html = '<script>'.html_safe
+		html += "$(document).ready(function(){"
+		html += "MSA['random_titles'] = ['"
+		html += "#{random_headlines} ".html_safe
+  	html += "']; MSA['random_titles_rand'] = Math.floor(Math.random()*MSA['random_titles'].length); "
+		html += "$('h1.dark').css('opacity',0).html(MSA['random_titles'][MSA['random_titles_rand']]).delay(500).animate({'opacity':1}); "
+		html += "});" 
+		html += '</script>'.gsub(/ /,'').html_safe
+    
+  end
 
 end

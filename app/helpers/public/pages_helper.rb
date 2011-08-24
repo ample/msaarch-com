@@ -12,4 +12,10 @@ module Public::PagesHelper
     }.compact.join('\',\'').html_safe
   end
 
+  def random_headlines 
+    current_page.headlines.collect{ |headline|
+      escape_javascript(headline.body.to_html.html_safe)
+    }.join('\',\'')
+  end
+
 end

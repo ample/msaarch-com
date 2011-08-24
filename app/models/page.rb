@@ -24,21 +24,33 @@ class Page < ActiveRecord::Base
   end
 
   def videos
-    features.live.where :feature_type => 'video'
+    @videos ||= features.live.where :feature_type => 'video'
   end
   
   def links
-    features.live.where :feature_type => 'link'
+    @links ||= features.live.where :feature_type => 'link'
   end
 
   def locations
-    features.live.where :feature_type => 'location'
+    @locations ||= features.live.where :feature_type => 'location'
   end
 
   def background_caption
     unless self.template_filename != 'home'
       block = self.get_block(:background_image_caption)
       block.textarea.to_html.html_safe unless block.nil?
+    end
+  end
+
+  def headlines
+    @headlines ||= features.live.where :feature_type => 'headline'
+  end
+
+  def random_headline
+    if headlines.empty?
+      ''
+    else
+      page = headlines.sort_by{ rand }.slice(0...1).first.body
     end
   end
 

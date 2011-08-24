@@ -42,4 +42,8 @@ class Feature < ActiveRecord::Base
     end
   end
 
+  def not_image?
+    !['image','headline'].include?(feature_type)
+  end
+
 end
