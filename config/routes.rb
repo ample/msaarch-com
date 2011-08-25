@@ -1,11 +1,5 @@
 MsaarchCom::Application.routes.draw do
 
-  get "careers/index"
-
-  get "careers/show"
-
-  get "careers/new"
-
   devise_for :users, :class_name => 'User', :path_prefix => '/admin'
   root :to => 'public#home'
 
