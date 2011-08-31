@@ -1,9 +1,10 @@
 <div class="awards block">
 	<%= content_tag :h2, 'Awards' %>
-	<%= content_tag :ul do %>
-    <% current_project.awards.live.each do |award| %>
-      <%= content_tag :li, link_to("#{award.title} &mdash; #{award.source}".html_safe, public_awards_path) %>
-    <% end %>
+	<% current_project.awards.live.each do |award| %>
+	<div class="link clearfix">
+	  <%= image_asset award, :object => award.thumbnail, :dimensions => '59x36#', :class => 'frame left', :style => "border-color: #{award.asset.color}", :link => public_awards_path unless award.asset.nil? %>
+		<%= link_to("#{award.title} &mdash; #{award.source}".html_safe, public_awards_path) %>
+	</div>
 	<% end %>
 </div>
 

@@ -18,7 +18,11 @@ class Award < ActiveRecord::Base
   ###---------------------------------------------------- Instance Methods
 
   def thumbnail
-    self.asset
+    if self.project.nil? || self.project.thumbnail.nil?
+      self.asset
+    else
+      self.project.thumbnail 
+    end
   end
 
   def permalink
