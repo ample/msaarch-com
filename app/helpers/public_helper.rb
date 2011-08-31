@@ -63,7 +63,7 @@ module PublicHelper
 		content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
 	end
 
-	def project_thumbnail(project, dimensions = '154x96#', market = nil)
+	def project_thumbnail(project, dimensions = '154x96#', market = nil, overlay = true)
 		if market.nil?
 			unless current_market.nil? 
 				market = current_market
@@ -71,10 +71,12 @@ module PublicHelper
 				market = project.markets.first
 			end 
 		end
+	  opts = { 'data-title' => project.title, 'data-dimensions' => dimensions } 
+	  opts = {} if overlay == false
 		if project.thumbnail.nil?
-			link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink), 'data-title' => project.title, 'data-dimensions' => dimensions
+			link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink), opts
 		else
-			link_to image_asset(project, :object => project.thumbnail, :dimensions => dimensions, :class => 'frame', :style => "border-color: #{project.thumbnail.hex}; "), portfolio_project_path(market.permalink, project.permalink), 'data-title' => project.title, 'data-dimensions' => dimensions
+			link_to image_asset(project, :object => project.thumbnail, :dimensions => dimensions, :class => 'frame', :style => "border-color: #{project.thumbnail.hex}; "), portfolio_project_path(market.permalink, project.permalink), opts
 		end 
 	end
 

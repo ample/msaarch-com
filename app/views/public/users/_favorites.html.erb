@@ -3,7 +3,7 @@
 	<h2><%= current_team_member.first_name %>'s Favorite Projects</h2>
   <ul class="clearfix">
   <% current_team_member.favorites.each do |project| %>
-    <%= content_tag :li, project_thumbnail(project, '59x30') + link_to(project.title, portfolio_project_path(project.markets.first.permalink, project.permalink)), :class => :clearfix %>
+    <%= content_tag :li, project_thumbnail(project, '59x30', nil, false) + link_to(project.title, portfolio_project_path(project.markets.first.permalink, project.permalink)), :class => :clearfix %>
   <% end %>
 	<% current_team_member.other_favorites.each do |project| %>
 		<%= content_tag :li, project %>
