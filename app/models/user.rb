@@ -78,6 +78,10 @@ class User < ActiveRecord::Base
   end
 
   def other_favorites
-    self.additional_favorites.split(/\n+/).reject{ |f| f.blank? }
+    unless self.additional_favorites.nil?
+      self.additional_favorites.split(/\n+/).reject{ |f| f.blank? }
+    else
+      []
+    end
   end
 end
