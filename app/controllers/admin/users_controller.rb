@@ -10,7 +10,6 @@ class Admin::UsersController < AdminController
   def update
     params[:user].reject! { |k,v| k.include?('password') && v.blank? }
     super
-    empty_favorites unless params[:user].has_key?(:favorite_ids)
     empty_expertise unless params[:user].has_key?(:expertise_ids)
   end
 
@@ -40,10 +39,6 @@ class Admin::UsersController < AdminController
 
     def empty_projects
       current_object.update_attribute :project_ids, nil 
-    end
-
-    def empty_favorites
-      current_object.update_attribute :favorite_ids, nil 
     end
 
     def empty_expertise
