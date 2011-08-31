@@ -39,15 +39,14 @@ MsaarchCom::Application.routes.draw do
     end
     resources :projects, :controller => 'admin/projects' do
       resources :features, :controller => 'admin/features'
+      collection do
+        post :update_sort_order
+        get :autocomplete_project_title
+      end
       member do 
         post :add_similar_project
         delete :remove_similar_project
         get :autocomplete_project_title
-      end
-      collection do
-        post :update_sort_order
-        get :autocomplete_project_title
-        match ':market_filter', :to =>  'admin/projects#index'
       end
     end
     resources :markets, :controller => 'admin/markets' do
