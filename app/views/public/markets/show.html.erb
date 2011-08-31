@@ -2,7 +2,7 @@
 <h2>Case Studies</h2>
 <div id="case-studies-controls"></div>
 <div id="case-studies" class="span-15 last">
-	<div id="case-study-slides" class="panels">
+	<div id="case-study-slides" class="panels" style="width: <%= current_market.featured_projects.count*340 %>px;">
 	<% current_market.featured_projects.each do |project| %>
 		<div class="case-study span-5">
 			<% if project.thumbnail.nil? %>

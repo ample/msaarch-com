@@ -13,7 +13,7 @@ PATH
       nokogiri
       permalink_fu
       rack-cache
-      rails (= 3.1.0.rc4)
+      rails (~> 3.1.0.rc4)
       rmagick (~> 2.12.2)
       will_paginate
 
@@ -108,7 +108,7 @@ GEM
     multi_json (1.0.3)
     mysql2 (0.3.6)
     net-http-digest_auth (1.1.1)
-    net-http-persistent (1.8)
+    net-http-persistent (1.8.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -175,7 +175,7 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.0.5)
       rack (>= 1.0)
-    webrobots (0.0.10)
+    webrobots (0.0.11)
       nokogiri (>= 1.4.4)
     wikitext (2.1.1)
 
