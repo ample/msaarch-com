@@ -22,12 +22,16 @@
 		</ul>
 
 		<%= content_tag :h3, 'Favorite Projects' %>
+		<%= label :favorites, 'Search Existing Projects' %>
 		<%= autocomplete_field_tag 'project', '', eval("autocomplete_project_title_projects_path"), :class => 'text span-7 xhr', 'data-id-element' => "#project_id", 'data-association' => 'project', 'data-controller' => 'projects' %>
 		<%= hidden_field('project'.to_sym, :id) %>
 		<hr class="space" />
 		<ul id="favorite-projects" class="association_list">
 		<% current_object.favorites.each do |project| %>
 			<%= render :partial => 'admin/projects/associated_project', :object => project, :locals => { :delete_url => remove_favorite_project_user_path(current_object, :project_id => project.id) } %>
+		<% end %>
+		<% current_object.other_favorites.each do |project| %>
+			<%= content_tag :li, project %>
 		<% end %>
 		</ul>
 
@@ -43,7 +47,6 @@
 			}); 
 		});
 		</script>
-
 
 	</div>
 </div>

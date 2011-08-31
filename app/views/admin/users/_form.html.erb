@@ -67,13 +67,12 @@
 <% unless f.object.new_record? %>
 
 <fieldset>
-  <legend>Associations</legend>
+  <legend>Other</legend>
 
-	<div class="span-5 last">
-  	<p><%= f.label :expertise, 'Expertise Markets' %><br />
-  	<%= f.collection_select :expertise_ids, Market.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
-	</div>
+ 	<p><%= f.label :expertise, 'Expertise Markets' %><br />
+ 	<%= f.collection_select :expertise_ids, Market.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
 	
-</fieldset>
+	<p><%= f.label :additional_favorites %> (<a href="javascript:void(0)" class="quiet" data-tip="For favorite projects not available on the site (see 'Search Projects' in the right sidebar of this page)&mdash; list them below, putting each project on a seperate line.">Help</a>)<br />
+	<%= f.text_area(:additional_favorites) %></p></fieldset>
 
 <% end %>

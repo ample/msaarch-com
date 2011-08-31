@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110824184006) do
+ActiveRecord::Schema.define(:version => 20110831163649) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -290,6 +290,7 @@ ActiveRecord::Schema.define(:version => 20110824184006) do
     t.datetime "updated_at"
     t.string   "title"
     t.integer  "sort_order",                            :default => 0
+    t.text     "additional_favorites"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
