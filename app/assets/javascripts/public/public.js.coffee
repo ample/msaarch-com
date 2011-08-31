@@ -57,4 +57,11 @@ $ ->
     ), ->
       $(this).find('span').fadeOut()
 
+  # open external links in new window
+  $.each $("a[href^=http]:not([rel*=facebox]):not(.video)"), (idx, item) ->
+    unless $(item).attr("rel") == "internal"
+      $(item).click (event) ->
+        event.preventDefault()
+        event.stopPropagation()
+        window.open @href, "_blank"
 
