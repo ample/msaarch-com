@@ -58,7 +58,7 @@ $ ->
       $(this).find('span').fadeOut()
 
   # open external links in new window
-  $.each $("a[href^=http]:not([rel*=facebox]):not(.video)"), (idx, item) ->
+  $.each $("a[href^=http]:not([rel*=facebox]):not(.video):not([data-video-id])"), (idx, item) ->
     unless $(item).attr("rel") == "internal"
       $(item).click (event) ->
         event.preventDefault()
