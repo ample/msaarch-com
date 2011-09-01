@@ -6,7 +6,7 @@ $ ->
   $("select#team_member").chosen().change ->
     id = $(this).val()
     permalink = $('div[id=member-' + id + ']').attr('data-permalink')
-    window.location = '/team/' + permalink
+    window.location = '/team/staff/' + permalink
 
   $('#events div.events').each ->
     rh = 0
