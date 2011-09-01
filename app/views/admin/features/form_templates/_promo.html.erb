@@ -1,0 +1,13 @@
+<% unless current_feature.new_record? %>
+	<%= f.hidden_field(:asset_id, :value => current_feature.asset_id, :class => next_asset_drop_class) %>
+	<p><%= f.label :asset_id %></p>
+	<%= asset_drop(current_feature, :asset) %>
+<% end %>
+
+<p><%= f.label :title %><br />
+<%= f.text_field(:title, :class => 'text') %></p>
+
+<p><%= f.label :body %><br />
+	 <%= f.text_area(:body, :class => 'textile') %></p>
+
+<script>AA['assets']=true;</script>

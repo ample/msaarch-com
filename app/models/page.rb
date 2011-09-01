@@ -46,6 +46,10 @@ class Page < ActiveRecord::Base
     @headlines ||= features.live.where :feature_type => 'headline'
   end
 
+  def promotions
+    @promotions ||= features.live.where :feature_type => 'promo'
+  end
+
   def random_headline
     if headlines.empty?
       ''
