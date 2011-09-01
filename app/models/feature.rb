@@ -36,13 +36,12 @@ class Feature < ActiveRecord::Base
   end
 
   def is_video?
-    self.link.include?('youtube') unless self.link.blank?
+    self.link.include?('vimeo') unless self.link.blank?
   end
 
   def video_id
     if (is_video? || self.feature_type == 'video') && !self.link.blank?
-      params = Rack::Utils.parse_nested_query(self.link.gsub(/^[^?]*\?/, ''))
-      params['v'] if params.has_key?('v')
+      self.link.gsub(/^[^0-9]*/, '')
     end
   end
 

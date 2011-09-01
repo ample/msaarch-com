@@ -14,7 +14,7 @@ $ ->
   $('a[data-video-id]').click ->
     $.colorbox
       iframe: true
-      href: 'http://www.youtube.com/embed/' + $(this).attr('data-video-id')
+      href: 'http://player.vimeo.com/video/' + $(this).attr('data-video-id')
       innerWidth: 640
       innerHeight: 390
       transition: 'none'
