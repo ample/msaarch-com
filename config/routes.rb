@@ -68,8 +68,9 @@ MsaarchCom::Application.routes.draw do
     end
   end
   
+  match 'team', :to => 'public/users#index', :as => :team_index
   match 'team/history', :to => 'public/users#history', :as => :history
-  resources :users, :only => [:index, :show], :path => 'team', :as => :team, :controller => 'public/users'
+  resources :users, :only => :show, :path => 'team/staff', :as => :team, :controller => 'public/users'
   resources :careers, :only => [:create], :path => 'contact/email', :controller => 'public/careers'
 
   match 'contact', :to => 'public/careers#index', :as => :contact
