@@ -5,7 +5,6 @@ class Admin::ProjectsController < AdminController
   
   def update 
     super
-    empty_similar unless params[:project].has_key?(:similar_project_ids)
     empty_markets unless params[:project].has_key?(:market_ids)
     empty_users unless params[:project].has_key?(:user_ids)
     Market.update_project_counters
@@ -58,9 +57,9 @@ class Admin::ProjectsController < AdminController
     def current_projects
       per_page = params[:per_page] || 15
       if params[:market_filter]
-        projects = current_market.projects.paginate(:page => params[:page], :per_page => per_page)
+        projects = current_market.projects.order(:title).paginate(:page => params[:page], :per_page => per_page)
       else
-        projects = Project.all.paginate(:page => params[:page], :per_page => per_page)
+        projects = Project.find(:all, :order => :title).paginate(:page => params[:page], :per_page => per_page)
       end
       @current_projects ||= projects
     end
@@ -71,10 +70,6 @@ class Admin::ProjectsController < AdminController
 
     def empty_users
       current_object.update_attribute :user_ids, nil 
-    end
-
-    def empty_similar
-      current_object.update_attribute :similar_project_ids, nil 
     end
 
     def current_similar_project
