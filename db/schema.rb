@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110831163649) do
+ActiveRecord::Schema.define(:version => 20110903124343) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110831163649) do
     t.datetime "updated_at"
     t.string   "color"
     t.string   "keywords"
+    t.string   "attachment_gravity"
   end
 
   create_table "awards", :force => true do |t|
