@@ -7,7 +7,7 @@ class Admin::AwardsController < AdminController
     helper_method :current_awards
   
     def current_awards
-      Award.live.group_by(&:awarded_date).sort_by{ |a, b| a.strftime('%Y') }.reverse
+      Award.all.group_by(&:awarded_date).reject{ |d| d.nil? }.sort_by{ |a, b| a.strftime('%Y') }.reverse
     end
   
 end
