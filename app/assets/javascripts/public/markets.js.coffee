@@ -43,9 +43,9 @@ $ ->
 
   $("#projects-filters a, #projects-filters input").click ->
     if this.nodeName == 'A'
-      check = (if $(this).prev().attr("checked") then false else true)
-      $(this).prev().attr("checked", check);
-      $(this).prev().prev().toggleClass('on');
+      check = (if $(this).parent().prev().attr("checked") then false else true)
+      $(this).parent().prev().attr("checked", check);
+      $(this).parent().prev().prev().prev().toggleClass('on');
     filters = []
     $.each $("#projects-filters input:checked"), (i, el) ->
       filters.push $(el).attr("data-filter")
@@ -56,7 +56,7 @@ $ ->
   $('#projects-filters input[type=checkbox]').each ->
     $(this).hide();
     link = $('<a href="#" class="checkbox"></a>').click ->
-      $(this).next().next().trigger('click')
+      $(this).next().next().next().find('a:first-child').trigger('click')
       false
-    $(this).before(link); 
+    $(this).prev().before(link)
 
