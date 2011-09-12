@@ -1,8 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteCond %{REQUEST_URI} !^/$ 
-RewriteCond %{REQUEST_URI} ^(.*)$
-RewriteCond %{DOCUMENT_ROOT}/static/%1 -f [OR]
-RewriteCond %{DOCUMENT_ROOT}/static/%1 -d
-RewriteRule ^(.*)?$ /static/%1 [L]
+RewriteRule ^fire$ / [L, R=301]
+#http://msaarch.com/five
+#http://msaarch.com/makeitofficial
 </IfModule>
