@@ -128,6 +128,7 @@
             ref.stop(); 
             return ref.previous(); 
           });
+
         }
         if(this.options.next) {
           $(this.options.next).bind('click',function(event){
@@ -135,6 +136,19 @@
             return ref.next(); 
           });
         }
+        $('#controls').swipe({
+          swipe: function(event, direction){
+            switch(direction) {
+              case 'left':
+                ref.next(); 
+                break;
+              case 'right':
+                ref.previous(); 
+                break; 
+            }
+          },
+          threshold: 0
+        });
       },
 
       /** 
