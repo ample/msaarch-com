@@ -1345,6 +1345,11 @@ section#beta {
 	a.next {
 		margin-top: 40px;
 	}
+	a.rollover {
+		span {
+			background: #FFFFFF !important;
+		}
+	}
 	body.history {
 		overflow-x: hidden; 
 		section#tango div#events-wrapper {
@@ -1381,9 +1386,42 @@ section#beta {
 	.dark {
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 	}
+	body.team {
+		div.dark {
+			h1.dark {
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+			}
+		}
+	}
 }
 
 .lt-ie9 {
+	a.rollover {
+		span {
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF, endColorstr=#99FFFFFF)";
+		}
+	}
+	a.rollover {
+		span {
+			margin-top: 2px !important;
+			margin-left: -166px !important; 
+		}
+	}
+	div.team-member {
+		a.rollover {
+			span {
+				margin-top: 3px !important;
+				margin-left: -167px !important; 
+			}
+		}
+	}
+	div#similar {
+		a.rollover {
+			span {
+				margin-left: -167px !important; 
+			}
+		}
+	}
 	section#controls {
 		a:active, a:focus, 
 		a:active span, a:focus span { 
