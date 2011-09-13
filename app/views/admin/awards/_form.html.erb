@@ -18,7 +18,7 @@
   <p><%= f.label :source %><br />
   <%= f.text_field(:source, :class => 'text') %></p>
 
-	<p><%= f.label :awarded_date %><br /><%= f.datetime_select(:awarded_date, :prompt => true, :start_year => 1980) %></p>
+	<p><%= f.label :awarded_date %><br /><%= f.date_select(:awarded_date, :prompt => true, :start_year => 1980, :discard_day => true, :discard_month => true) %></p>
 
 <% unless f.object.new_record? %>
   <%= f.hidden_field(:asset_id, :value => current_award.asset_id, :class => next_asset_drop_class) %>
