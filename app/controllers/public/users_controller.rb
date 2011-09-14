@@ -11,9 +11,9 @@ class Public::UsersController < PublicController
     @page_title = META[:page_title]
     begin
       @page_title = "#{current_user.full_name} | #{@page_title}"
+      @meta_description = current_user.bio.truncate(135)
     rescue 
     end
-    @meta_description = current_user.bio.truncate(135)
   end
 
   def history
