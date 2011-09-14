@@ -1,6 +1,14 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteRule ^fire$ / [R=301]
-#http://msaarch.com/five
-#http://msaarch.com/makeitofficial
+
+RewriteCond %{HTTP_HOST} ^msaarch.com$ [NC]  
+RewriteRule ^(.*)$ http://www.msaarch.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^msa-sport.com$ [NC]  
+RewriteCond %{HTTP_HOST} ^www.msa-sport.com$ [NC]  
+RewriteRule ^(.*)$ http://www.msaarch.com/portfolio/msa-sport [R=301,L]
+
+RewriteRule ^fire / [R=301,L]
+RewriteRule ^five / [R=301,L]
+RewriteRule ^makeitofficial / [R=301,L]
 </IfModule>
