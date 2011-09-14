@@ -1,4 +1,8 @@
 PATH
+  remote: vendor/gems/sprockets
+  specs:
+
+PATH
   remote: vendor/gems/ample_admin
   specs:
     ample_admin (0.1.4)
@@ -193,7 +197,7 @@ DEPENDENCIES
   rails (= 3.1.0.rc4)
   rails3-jquery-autocomplete
   sass-rails (~> 3.1.0.rc)
-  sprockets (= 2.0.0.beta.10)
+  sprockets!
   sqlite3
   turn
   uglifier
