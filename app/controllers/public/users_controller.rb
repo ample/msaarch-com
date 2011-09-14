@@ -9,7 +9,10 @@ class Public::UsersController < PublicController
   def show
     raise ActiveRecord::RecordNotFound if current_team_member.nil?
     @page_title = META[:page_title]
-    @page_title = "#{current_user.full_name} | #{@page_title}"
+    begin
+      @page_title = "#{current_user.full_name} | #{@page_title}"
+    rescue 
+    end
     @meta_description = current_user.bio.truncate(135)
   end
 
