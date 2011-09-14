@@ -10,7 +10,7 @@ gem 'capistrano'
 gem 'hoptoad_notifier'
 
 # Asset template engines
-gem 'sprockets', :path => File.join(File.dirname(__FILE__), '/vendor/gems/sprockets') 
+gem 'sprockets', '= 2.0.0.beta.10'
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
