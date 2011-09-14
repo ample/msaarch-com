@@ -1,8 +1,4 @@
 PATH
-  remote: vendor/gems/sprockets
-  specs:
-
-PATH
   remote: vendor/gems/ample_admin
   specs:
     ample_admin (0.1.4)
@@ -20,6 +16,10 @@ PATH
       rails (~> 3.1.0.rc4)
       rmagick (~> 2.12.2)
       will_paginate
+
+PATH
+  remote: vendor/gems/sprockets
+  specs:
 
 PATH
   remote: vendor/gems/will_paginate
