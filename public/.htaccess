@@ -9,6 +9,6 @@ RewriteCond %{HTTP_HOST} ^www.msa-sport.com$ [NC]
 RewriteRule ^(.*)$ http://www.msaarch.com/portfolio/msa-sport [R=301,L]
 
 RewriteRule ^fire / [R=301,L]
-RewriteRule ^five / [R=301,L]
-RewriteRule ^makeitofficial / [R=301,L]
+RewriteRule ^five http://old.msaarch.com/five [R=302,L]
+RewriteRule ^makeitofficial http://old.msaarch.com/makeitofficial [R=302,L]
 </IfModule>
