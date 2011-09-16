@@ -24,12 +24,12 @@ class PublicController < ApplicationController
     def error_message(e)
       HoptoadNotifier.notify(e)
       params[:permalink] = 'index'
-      render :template => 'public/errors/500', :status => 500
+      render :template => 'public/errors/500', :status => 500, :layout => 'application'
     end
 
     def file_not_found
       params[:permalink] = 'index'
-      render :template => 'public/errors/404', :status => 404
+      render :template => 'public/errors/404', :status => 404, :layout => 'application'
     end
 
 end
