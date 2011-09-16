@@ -4,7 +4,11 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^msaarch.com$ [NC]  
 RewriteRule ^(.*)$ http://www.msaarch.com/$1 [R=301,L]
 
-RewriteCond %{HTTP_HOST} ^msa-sport.com$ [NC]  
+RewriteCond %{HTTP_HOST} ^msa-sport.net$ [NC,OR]  
+RewriteCond %{HTTP_HOST} ^www.msa-sport.net$ [NC,OR]  
+RewriteCond %{HTTP_HOST} ^msa-sport.org$ [NC,OR]  
+RewriteCond %{HTTP_HOST} ^www.msa-sport.org$ [NC,OR]  
+RewriteCond %{HTTP_HOST} ^msa-sport.com$ [NC,OR]  
 RewriteCond %{HTTP_HOST} ^www.msa-sport.com$ [NC]  
 RewriteRule ^(.*)$ http://www.msaarch.com/portfolio/msa-sport [R=301,L]
 
