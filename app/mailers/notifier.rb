@@ -4,7 +4,7 @@ class Notifier < ActionMailer::Base
   def contact_notification(message)
     @message = message
     mail(
-      :to => [@message.to.email, CONTACT_EMAIL[Rails.env.intern]],
+      :to => @message.to.email,
       :from => "#{@message.from} <#{@message.email}>",
       :subject => "[msaarch.com] #{@message.subject}"
     )
