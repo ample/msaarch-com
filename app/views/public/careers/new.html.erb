@@ -6,7 +6,7 @@
     <div class="span-2">
       <%= f.label :to %>
     </div><div class="span-6 last">
-      <%= f.collection_select :to_id, User.all, :id, :full_name %>
+      <%= f.collection_select :to_id, User.live, :id, :full_name %>
     </div>
     <!--[if lte IE 7 ]><div class="clr">&nbsp;</div><![endif]-->
   
