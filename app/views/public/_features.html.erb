@@ -2,11 +2,11 @@
   <div class="<%= feature.feature_type %><%= feature.is_video? ? ' video' : '' %> span-3<%= ' last' if idx % 5 == 4 %>">
     <% unless feature.asset.nil? %>
       <% if feature.link.blank? %>
-        <%= image_asset feature, :dimensions => '154x96', :class => :frame, :style => "border-color: #{feature.asset.color}" %>
+        <%= image_asset feature, :dimensions => '154x96#', :class => :frame, :style => "border-color: #{feature.asset.color}" %>
       <% elsif feature.is_video? %>
-        <%= link_to image_asset(feature, :dimensions => '154x96', :class => :frame, :style => "border-color: #{feature.asset.color}"), feature.link, 'data-video-id' => feature.video_id, :class => :medium %>
+        <%= link_to image_asset(feature, :dimensions => '154x96#', :class => :frame, :style => "border-color: #{feature.asset.color}"), feature.link, 'data-video-id' => feature.video_id, :class => :medium %>
       <% else %>
-        <%= image_asset feature, :dimensions => '154x96', :class => :frame, :style => "border-color: #{feature.asset.color}", :link => feature.link %>
+        <%= image_asset feature, :dimensions => '154x96#', :class => :frame, :style => "border-color: #{feature.asset.color}", :link => feature.link %>
       <% end %>
     <% end %>
     <% if feature.is_video? %>
