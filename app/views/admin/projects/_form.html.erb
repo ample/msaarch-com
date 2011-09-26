@@ -73,10 +73,6 @@
 		<p><%= f.label :markets %><br />
 		<%= f.collection_select :market_ids, Market.all, :id, :title, {}, :multiple => true, :class => 'multiple' %></p>
 	</div>
-	<div class="span-5 last">
-		<p><%= f.label :users %><br />
-		<%= f.collection_select :user_ids, User.live, :id, :full_name, {}, :multiple => true, :class => 'multiple' %></p>
-	</div>
 </fieldset>
 
 <% end %>

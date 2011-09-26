@@ -1,0 +1,14 @@
+<li id="<%= dom_id(associated_user) %>">
+	<% if local_assigns[:delete_url] %>
+	<div class="manage_association">
+		<%= link_to image_tag('/assets/admin/delete_btn.gif'),
+		    delete_url,
+			:class => 'delete_object',
+			:method => :delete,
+			:confirm => 'Are you sure?',
+			:remote => true
+		%>
+	</div>
+	<% end %>
+	<%= associated_user.full_name %>
+</li>

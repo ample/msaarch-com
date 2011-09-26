@@ -1,6 +1,7 @@
 class Admin::UsersController < AdminController
 
   set_model :user
+  autocomplete :user, :first_name, :extra_data => [:last_name], :display_value => :full_name
   
   def create
     params[:user].reject! { |k,v| k.include?('password') && v.blank? }

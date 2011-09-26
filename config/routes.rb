@@ -27,6 +27,9 @@ MsaarchCom::Application.routes.draw do
     end
     resources :users, :controller => 'admin/users', :path => 'team' do 
       resources :features, :controller => 'admin/features'
+      collection do 
+        get :autocomplete_user_first_name
+      end
       member do 
         post :add_favorite_project
         delete :remove_favorite_project
@@ -44,7 +47,9 @@ MsaarchCom::Application.routes.draw do
         get :autocomplete_project_title
       end
       member do 
+        post :add_team_member
         post :add_similar_project
+        delete :remove_team_member
         delete :remove_similar_project
         get :autocomplete_project_title
       end

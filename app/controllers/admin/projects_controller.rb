@@ -6,13 +6,22 @@ class Admin::ProjectsController < AdminController
   def update 
     super
     empty_markets unless params[:project].has_key?(:market_ids)
-    empty_users unless params[:project].has_key?(:user_ids)
     Market.update_project_counters
   end
   
   def destroy
     super
     Market.update_project_counters
+  end
+
+  def add_team_member
+    current_project.users << current_team_member
+    render :partial => 'admin/users/associated_user', :object => current_team_member, :locals => { :delete_url => remove_team_member_project_path(current_project, :user_id => current_team_member.id) }, :content_type => :html
+  end
+
+  def remove_team_member
+    current_project.users.delete(current_team_member)
+    render :nothing => true, :content_type => :html
   end
 
   def add_similar_project
@@ -74,6 +83,10 @@ class Admin::ProjectsController < AdminController
 
     def current_similar_project
       @current_similar_project ||= Project.find(params[:project_id])
+    end
+
+    def current_team_member
+      @current_team_member ||= User.find(params[:user_id])
     end
 
 end

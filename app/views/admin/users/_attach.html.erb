@@ -1,0 +1,23 @@
+<% model_name = 'user' %> 
+
+<%= autocomplete_field_tag model_name, '', eval("autocomplete_#{model_name}_first_name_#{model_name.pluralize}_path"), :class => 'text span-7 xhr', 'data-id-element' => "##{model_name}_id", 'data-association' => model_name, 'data-controller' => model_name.pluralize %>
+<%= hidden_field(model_name.to_sym, :id) %>
+<hr class="space" />
+<ul id="similar-users" class="association_list">
+<% current_object.users.each do |user| %>
+	<%= render :partial => 'admin/users/associated_user', :object => user, :locals => { :delete_url => remove_team_member_project_path(current_project, :user_id => user.id) } %>
+<% end %>
+</ul>
+
+<script>
+$(document).ready(function(){
+	$('input#<%= model_name %>').bind('railsAutocomplete.select', function(e){
+		var id = $('input#<%= model_name %>_id').val(); 
+		var post_data = { user_id: id };
+		$(this).val('');
+		$.post('<%= add_team_member_project_path(current_object) %>', post_data, function(data) {
+			$('#similar-users').append(data);
+		}, 'html');
+	}); 
+});
+</script>
