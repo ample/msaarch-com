@@ -1,5 +1,5 @@
 <div class="span-8">
-  <%= image_asset current_project.images.first, :dimensions => '544x>', :class => 'frame project', :style => "border-color: #{current_project.images.first.asset.hex}" if !current_project.images.empty? && current_project.images.size == 1 %>
+  <%= image_asset current_project.images.first, :dimensions => '544x>', :class => 'frame project', :style => "border-color: #{current_project.images.first.asset.hex}" if !current_project.images.empty? && current_project.images.size == 1 && current_project.images.first.asset %>
 	<%= content_tag :h3, current_project.subtitle, :class => current_market.permalink %>
 	<%= content_tag :h1, current_project.title %>
 	<%= content_tag :h3, current_project.location %>
