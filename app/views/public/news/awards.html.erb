@@ -19,7 +19,7 @@
 				
 				<% if award.project.nil? %>
 					<% if award.project_name.blank? %>
-						<%= content_tag :h2, award.title %>
+						<%= content_tag :h2, award.title.html_safe %>
 						<%= content_tag :h3, award.source.blank? ? '' : award.source  %>
 					<% else %>
 						<%= content_tag :h2, award.project_name %>
