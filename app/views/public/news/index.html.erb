@@ -18,9 +18,6 @@
 </div>
 <div id="sidebar" class="span-5 last">
   
-  <div class="block big">
-    <%= link_to 'Browse Our Growing List of Awards', public_awards_path %>
-  </div>
 	<%= render :partial => 'public/news/updates' unless latest_updates.empty? %>
   <%= render :partial => 'public/links', :object => current_page.links unless current_page.links.empty? %>
   
