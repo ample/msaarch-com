@@ -36,6 +36,7 @@ class Public::NewsController < ApplicationController
   end
 
   def awards
+    params[:permalink] = 'awards'
   end
 
   protected 

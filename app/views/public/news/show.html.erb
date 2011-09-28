@@ -1,6 +1,6 @@
 <div id="post" class="span-9 append-1">
 
-  <%= content_tag :h2, 'News', :class => 'section-title' %>
+  <%= content_tag :h2, "About / News", :class => 'section-title' %>
   <%= image_asset current_post, :dimensions => '544x>', :class => :frame, :style => "border-color: #{current_post.asset.color}" unless current_post.asset.nil? %>
   <%= content_tag :h1, current_post.title %>
   <%= content_tag :h3, current_post.created_at.strftime('%B %d, %Y'), :class => :date %>

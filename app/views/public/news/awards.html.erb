@@ -1,6 +1,6 @@
 <div id="awards" class="span-15 last">
 
-	<%= content_tag :h2, 'News / Awards', :class => 'section-title' %>
+	<%= content_tag :h2, "#{current_page.parent.nav_name} / #{current_page.nav_name}", :class => 'section-title' %>
 	<% current_awards.each_with_index do |group, idx| %>
 		<div class="span-7<%= idx % 2 == 1 ? ' last' : ' append-1' %>">
 			<%= content_tag :h3, group[0].strftime('%Y') %>

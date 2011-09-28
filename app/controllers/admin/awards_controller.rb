@@ -1,7 +1,7 @@
 class Admin::AwardsController < AdminController
   
   set_model :award
-  
+
   protected
   
     helper_method :current_awards
