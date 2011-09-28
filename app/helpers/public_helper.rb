@@ -52,7 +52,7 @@ module PublicHelper
 			  children = ''
 			  link = page.hierarchy_permalink
 		    if !page.children.empty? && position == 'header'
-			    state += ' drop'
+			    state += ' drop no-color'
 			    children = child_nav(page)
 			    link = '#'
 			  end
