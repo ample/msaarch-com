@@ -11,7 +11,7 @@ class Page < ActiveRecord::Base
   end
 
   def self.navigable(position)
-    Page.root_level.live.order('sort_order ASC').collect { |p| p if p.nav_position == position || p.nav_position == 'both' }.compact.reverse
+    Page.live.order('sort_order ASC').root_level.collect { |p| p if p.nav_position == position || p.nav_position == 'both' }.compact.reverse
   end
 
   ###---------------------------------------------------- Instance Methods
