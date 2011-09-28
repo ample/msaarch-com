@@ -29,6 +29,6 @@ features:
 		<%= render :partial => 'public/video', :collection => current_page.videos %>
 	</div>
 	<% end %>
-	<%= render :partial => 'public/links', :object => current_page.links %>
+	<%= render :partial => 'public/links', :object => current_page.links unless current_page.links.empty? %>
 
 </div>
