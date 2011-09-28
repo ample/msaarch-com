@@ -349,19 +349,24 @@ body {
 			}
 			&.default {
 				h1.page-title,
-				h2.subtitle {
+				h3.subtitle {
 					margin-bottom: 0;
 				}
-				h2.subtitle {
+				h2.section-title {
+					margin-bottom: 24px;
+				}
+				h3.subtitle {
+					font-size: 13px; 
+					line-height: 16px; 
+					margin: 0 0 10px 0;
 					margin-top: 5px;
-					font-size: 24px;
-					line-height: 28px;
 				}
 				.body {
 					margin-top: 20px;
 				}
 			}
 		}
+		
 		#notifications {
 			.flash {
 				padding: 15px;
@@ -404,6 +409,22 @@ body {
 	}
 	div.sidebar,
 	div#sidebar {
+		&.default {
+			margin-top: 74px;
+			div.videos {
+				p {
+					margin-bottom: 0;
+				}
+				a {
+					display: block; 
+					margin-bottom: 10px;
+				}
+				color: #A1A1A1; 
+				img.frame {
+					margin-bottom: 7px;
+				}
+			}
+		}
 		div.link {
 			margin-bottom: 7px;
 			img {

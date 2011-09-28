@@ -4,20 +4,31 @@ description: This is the base page template
 fields: 
  asset: image
 help: {}
-features: {}
+features:
+  - video
+  - link
 --- %>
 
 <% asset = current_page.get_block(:asset) %>
-<div id="page" class="span-11 append-1 default">
+<div id="page" class="span-9 append-1 default">
 
+	<%= content_tag :h2, current_page.parent.nav_name, :class => 'section-title' %>
 	<%= image_asset asset, :object => asset.asset, :dimensions => '544x>', :class => :frame unless asset.nil? %>
 	<%= content_tag :h1, current_page.title, :class => 'page-title' %>
-	<%= content_tag :h2, current_page.subtitle, :class => 'subtitle' unless current_page.subtitle.blank? %>
+  <%= content_tag :h3, current_page.subtitle, :class => :subtitle unless current_page.subtitle.blank? %>
 	<div class="body">
 		<%= current_page.body.to_html.html_safe %>
 	</div>
 
 </div>
-<div id="sidebar" class="span-3 last">
+<div id="sidebar" class="span-5 last default">
+
+	<% unless current_page.videos.empty? %>
+	<div class="block videos">
+	  <%= content_tag :h2, 'Videos' %>
+		<%= render :partial => 'public/video', :collection => current_page.videos %>
+	</div>
+	<% end %>
+	<%= render :partial => 'public/links', :object => current_page.links %>
 
 </div>
