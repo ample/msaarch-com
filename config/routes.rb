@@ -81,11 +81,11 @@ MsaarchCom::Application.routes.draw do
   match 'contact', :to => 'public/careers#index', :as => :contact
   match 'contact/email(/:id)', :to => 'public/careers#new', :as => :contact_form
   match 'contact/:permalink', :to => 'public/careers#show', :as => :public_career
-  match 'news', :to => 'public/news#index', :as => :public_news
-  match 'news/awards', :to => 'public/news#awards', :as => :public_awards
-  match 'news/archive', :to => 'public/news#archive', :as => :public_news_archive
-  match 'news/:permalink', :to => 'public/news#show', :as => :public_post
-  match 'news/:permalink/print', :to => 'public/news#print', :as => :public_post_print
+  match 'about/news', :to => 'public/news#index', :as => :public_news
+  match 'about/awards', :to => 'public/news#awards', :as => :public_awards
+  match 'about/news/archive', :to => 'public/news#archive', :as => :public_news_archive
+  match 'about/news/:permalink', :to => 'public/news#show', :as => :public_post
+  match 'about/news/:permalink/print', :to => 'public/news#print', :as => :public_post_print
   match 'portfolio/:market_permalink', :to => 'public/markets#show', :as => :portfolio
   match 'portfolio/:market_permalink/:permalink', :to => 'public/projects#show', :as => :portfolio_project
   match 'index', :to => 'public#home'
