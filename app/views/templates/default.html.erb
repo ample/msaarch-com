@@ -8,11 +8,14 @@ features: {}
 --- %>
 
 <% asset = current_page.get_block(:asset) %>
-<div id="page" class="span-11 append-1">
+<div id="page" class="span-11 append-1 default">
 
 	<%= image_asset asset, :object => asset.asset, :dimensions => '544x>', :class => :frame unless asset.nil? %>
 	<%= content_tag :h1, current_page.title, :class => 'page-title' %>
-	<%= current_page.body.to_html.html_safe %>
+	<%= content_tag :h2, current_page.subtitle, :class => 'subtitle' unless current_page.subtitle.blank? %>
+	<div class="body">
+		<%= current_page.body.to_html.html_safe %>
+	</div>
 
 </div>
 <div id="sidebar" class="span-3 last">
