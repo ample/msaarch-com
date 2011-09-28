@@ -47,6 +47,10 @@ class Market < ActiveRecord::Base
     projectships.collect{ |projectship| projectship.project if projectship.featured? }.compact
   end
 
+  def sorted_projects 
+    self.projects.sort{ |a,b| a[:title] <=> b[:title] } 
+  end
+
   ###---------------------------------------------------- Class Methods
 
   def self.feature_types

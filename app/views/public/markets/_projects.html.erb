@@ -21,7 +21,7 @@
 	</div>
 	<div class="span-12 last">
 		<div id="projects-filtered">
-		<% current_market.projects.each_with_index do |project, idx| %>
+		<% current_market.sorted_projects.each_with_index do |project, idx| %>
 			<div id="<%= project.permalink %>" class="project <%= project.categories.collect(&:permalink).join(' ').downcase %>">
 				<%= project_thumbnail project %>
 			</div>
