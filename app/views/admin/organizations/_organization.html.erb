@@ -1,0 +1,4 @@
+<li id="organization_<%= organization.id %>" class="<%= organization.admin_status_class %>">
+	<%= manage_object organization, :sortable => false %>
+	<%= link_to organization.title, edit_organization_path(organization) %>
+</li>

@@ -23,3 +23,24 @@ select.multiple                 {width: 180px; }
 div.xscroll                     {width: 600px; overflow-x: scroll; }
 #password-fields                {height: 0px; overflow: hidden; }
 .dashboard .index_list li       {padding-left: 3px; }
+
+.ample-admin header nav {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.ample-admin header nav a {
+  background: #6c6c6c;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  color: #FFFFFF;
+}
+
+.ample-admin header nav a.active {
+  color: #ffd200;
+  background: none;
+}

@@ -1,0 +1,18 @@
+<fieldset>
+	<legend>Update Properties</legend>
+
+	<p><%= f.check_box(:active) %><%= f.label :active %></p>
+
+</fieldset>
+
+<fieldset>
+	<legend>Update Content</legend>
+
+	<p><%= f.label :title %><br />
+	<%= f.text_field :title, :class => :text %></p>
+
+	<%= f.hidden_field(:logo_id, :value => current_organization.logo_id, :class => next_asset_drop_class) %>
+	<p><%= f.label :logo_id, 'Organization Logo' %></p>
+	<%= asset_drop(current_organization, :logo) %>
+
+</fieldset>

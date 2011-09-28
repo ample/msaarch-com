@@ -29,12 +29,12 @@
 	</script>	
 
 </head>
-<body>
+<body class="ample-admin">
 
+	<header class="clearfix">
+		<%= render 'admin/nav' %>
+	</header>
 	<div id="container">
-		<header class="clearfix">
-			<%= render 'admin/nav' %>
-		</header>
 		<div id="main" class="container">
 			<%= show_flashes %>
 			<%= yield %>

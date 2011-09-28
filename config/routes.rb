@@ -15,6 +15,7 @@ MsaarchCom::Application.routes.draw do
       resources :features, :controller => 'admin/features'
     end
     resources :updates, :controller => 'admin/updates', :path => 'news/updates'
+    resources :organizations, :controller => 'admin/organizations'
     resources :awards, :controller => 'admin/awards' do
       collection do
         post :update_sort_order
