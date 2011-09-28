@@ -37,7 +37,7 @@ module PublicHelper
 
 	def site_nav(position)
 		html = ''
-		pages = position == 'header' ? Page.in_header : Page.in_footer.reverse!		 
+		pages = position == 'header' ? Page.in_header : Page.in_footer.reverse!
 		path = request.path.split('/')
 		pages.each do |page|
 			begin
@@ -49,11 +49,26 @@ module PublicHelper
 				state += ' drop'
 				html += content_tag :li, link_to(page.nav_name, '#') + markets_nav, :class => state
 			else
-				html += content_tag :li, link_to(page.nav_name, page.hierarchy_permalink), :class => state
+			  children = ''
+			  link = page.hierarchy_permalink
+		    if !page.children.empty? && position == 'header'
+			    state += ' drop'
+			    children = child_nav(page)
+			    link = '#'
+			  end
+				html += content_tag :li, link_to(page.nav_name, link) + children, :class => state
 			end
 		end
 		content_tag :ul, html.html_safe, :class => 'clearfix'
 	end
+
+  def child_nav(parent) 
+    children = ''
+    parent.children_in_header.each do |page|
+	    children += content_tag :li, link_to(page.nav_name, page.hierarchy_permalink)
+	  end
+		content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
+  end
 
 	def markets_nav
 		children = ''

@@ -11,7 +11,7 @@ class Page < ActiveRecord::Base
   end
 
   def self.navigable(position)
-    Page.live.order('sort_order ASC').collect { |p| p if p.nav_position == position || p.nav_position == 'both' }.compact.reverse
+    Page.root_level.live.order('sort_order ASC').collect { |p| p if p.nav_position == position || p.nav_position == 'both' }.compact.reverse
   end
 
   ###---------------------------------------------------- Instance Methods
@@ -56,6 +56,10 @@ class Page < ActiveRecord::Base
     else
       page = headlines.sort_by{ rand }.slice(0...1).first.body
     end
+  end
+
+  def children_in_header
+    self.children.live.collect { |p| p if ['header','both'].include?(p.nav_position) }.compact
   end
 
 end

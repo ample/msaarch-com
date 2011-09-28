@@ -3,7 +3,7 @@ class Public::UsersController < PublicController
   include ActionView::Helpers::TextHelper
 
   def index
-    params[:permalink] = 'team'
+    params[:permalink] = 'overview'
   end
 
   def show
