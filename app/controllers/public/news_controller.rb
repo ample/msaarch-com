@@ -25,7 +25,7 @@ class Public::NewsController < ApplicationController
   def print 
     raise ActiveRecord::RecordNotFound if current_post.nil?
     if params[:format] == 'pdf'
-      redirect_to "/news/#{params[:permalink]}/print"
+      redirect_to "/about/news/#{params[:permalink]}/print"
     else
       @page_title = META[:page_title]
       render :template => 'public/news/show'
