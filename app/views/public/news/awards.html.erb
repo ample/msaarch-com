@@ -20,14 +20,14 @@
 				<% if award.project.nil? %>
 					<% if award.project_name.blank? %>
 						<%= content_tag :h2, award.title.html_safe %>
-						<%= content_tag :h3, award.source.blank? ? '' : award.source  %>
+						<%= content_tag :h3, award.organization_name %>
 					<% else %>
 						<%= content_tag :h2, award.project_name %>
-						<%= content_tag :h3, (award.title + (award.source.blank? ? '' : " &mdash; #{award.source}")).html_safe %>
+						<%= content_tag :h3, award.organization_name %>
 					<% end %>
 				<% else %>
 					<%= content_tag :h2, link_to(award.project.title, path_to_project(award.project)) %>
-					<%= content_tag :h3, (award.title + (award.source.blank? ? '' : " &mdash; #{award.source}")).html_safe %>
+					<%= content_tag :h3, award.organization_name %>
 				<% end %>
 
 				<% if award == group[1].last %>

@@ -19,7 +19,9 @@ class Award < ActiveRecord::Base
   ###---------------------------------------------------- Instance Methods
 
   def thumbnail
-    if self.project.nil? || self.project.thumbnail.nil?
+    if self.organization && self.organization.logo
+      self.organization.logo
+    elsif self.project.nil? || self.project.thumbnail.nil?
       self.asset
     else
       self.project.thumbnail 
@@ -39,6 +41,26 @@ class Award < ActiveRecord::Base
     end
     display_name += display_name.blank? ? self.title : " - #{self.title}"
     display_name.truncate(80)
+  end
+  
+  def organization_name
+    if self.project.nil?
+      if self.project_name.blank?
+        self.source_name
+      else
+        (self.title + (self.source_name.blank? ? '' : " &mdash; #{self.source_name}")).html_safe
+      end
+    else 
+      (self.title + (self.source_name.blank? ? '' : " &mdash; #{self.source_name}")).html_safe
+    end
+  end
+  
+  def source_name
+    if self.organization
+     self.organization.title
+    else
+      self.source unless self.source.blank?
+    end
   end
 
 end

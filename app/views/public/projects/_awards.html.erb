@@ -2,8 +2,8 @@
 	<%= content_tag :h2, 'Awards' %>
 	<% current_project.awards.live.each do |award| %>
 	<div class="link clearfix">
-	  <%= image_asset award, :object => award.thumbnail, :dimensions => '59x36#', :class => 'frame left', :style => "border-color: #{award.asset.color}", :link => public_awards_path unless award.asset.nil? %>
-		<%= link_to("#{award.title} &mdash; #{award.source}".html_safe, public_awards_path) %>
+	  <%= image_asset award, :object => award.thumbnail, :dimensions => '59x36#', :class => 'frame left', :style => "border-color: #{award.thumbnail.color}", :link => public_awards_path if award.thumbnail %>
+		<%= link_to(award.organization_name, public_awards_path) %>
 	</div>
 	<% end %>
 </div>

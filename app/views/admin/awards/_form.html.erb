@@ -6,16 +6,19 @@
 
 <% end %>
 
-  <p><%= f.label :project %><br />
+	<p><%= f.label :title, 'Award Title' %><br />
+	<%= f.text_field(:title, :class => 'text') %></p>
+
+  <p><%= f.label :project %> (<a href="javascript:void(0)" class="quiet" data-tip="Selecting a project will override the value supplied for 'Project Name' below.">Help</a>)<br />
 	<%= f.grouped_collection_select :project_id, Market.find(:all, :order => :title, :include => :projects), :projects, :title, :id, :title, :include_blank => true %></p>
 
-  <p><%= f.label :project_name %><br />
+  <p><%= f.label :project_name, 'Project Name' %> (<a href="javascript:void(0)" class="quiet" data-tip="Enter a value here if project doesn't exist in the drop-down above.">Help</a>)<br />
   <%= f.text_field(:project_name, :class => 'text') %></p>
 
-  <p><%= f.label :title %><br />
-  <%= f.text_field(:title, :class => 'text') %></p>
+  <p><%= f.label :organization %> (<a href="javascript:void(0)" class="quiet" data-tip="Selecting a organization will override the value supplied for 'Organization Name' below. <br/><br/>The award thumbnail displayed on project pages will be sourced from the selected organization.">Help</a>)<br />
+	<%= f.collection_select :organization_id, Organization.all, :id, :title, :include_blank => true %></p>
 
-  <p><%= f.label :source %><br />
+  <p><%= f.label :source, 'Organization Name' %> (<a href="javascript:void(0)" class="quiet" data-tip="Enter a value here if the organization doesn't exist in the drop-down above.">Help</a>)<br />
   <%= f.text_field(:source, :class => 'text') %></p>
 
 	<p><%= f.label :awarded_date %><br /><%= f.date_select(:awarded_date, :prompt => true, :start_year => 1980, :discard_day => true, :discard_month => true) %></p>
