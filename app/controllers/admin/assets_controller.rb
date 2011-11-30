@@ -1,5 +1,10 @@
 class Admin::AssetsController < AdminController
-
+  
+  def index
+    params[:per_page] = 100 unless params[:per_page]
+    super
+  end
+  
   def show
     raise ActiveRecord::RecordNotFound if current_asset.nil?
     current_asset.touch
