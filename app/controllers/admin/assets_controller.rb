@@ -16,4 +16,13 @@ class Admin::AssetsController < AdminController
     render :nothing => true
   end
   
+  def destroy
+    current_asset.destroy
+    if request.referrer.include?("#{AmpleAdmin::Engine.config.mount_at}assets")
+      render :nothing => true
+    else 
+      redirect_to request.referrer
+    end
+  end
+  
 end
