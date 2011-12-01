@@ -44,7 +44,7 @@ MsaarchCom::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( public/blueprint/screen.css public/blueprint/print.css public/blueprint/ie.css admin/blueprint/screen.css admin/blueprint/print.css admin/blueprint/ie.css ample_admin.css admin/admin.css ample_admin.js admin/admin.js )
+  config.assets.precompile += %w( public/blueprint/screen.css public/blueprint/print.css public/blueprint/ie.css admin/blueprint/screen.css admin/blueprint/print.css admin/blueprint/ie.css ample_admin.css admin/admin.css ample_admin.js admin/admin.js public/pdf.css public/video-overlays.css )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
