@@ -1,7 +1,7 @@
 class Admin::AssetsController < AdminController
   
   def index
-    params[:per_page] = 100 unless params[:per_page]
+    params[:per_page] = 30 unless params[:per_page]
     super
   end
   
