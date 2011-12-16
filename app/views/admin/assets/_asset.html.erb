@@ -3,7 +3,7 @@
 <% if params[:controller] == 'admin/assets' %>
 	<%= content_tag :div, :class => 'asset-block' do %>
 		<%= link_to image_tag( image_url, :id => "asset_#{asset.id}", :title => asset.attachment_name, :size => '50x50', :class => 'asset_thumb', 'data-deletable-target' => 'parent', :style => "border-color: #{asset.color.blank? ? '#CCC' : asset.color}"), asset.attachment.url, :target => '_blank' %>
-		<%= check_box_tag "bulk_action_ids[#{asset.id}]", asset.id %>
+		<%= check_box_tag "bulk_action_ids[#{asset.id}]", asset.id if local_assigns.has_key?(:selectable) && local_assigns[:selectable] %>
 	<% end %>
 <% else %>
 	<%= link_to image_tag( image_url, :id => "asset_#{asset.id}", :title => asset.attachment_name, :size => '50x50', :class => 'asset_thumb', 'data-deletable-target' => 'parent', :style => "border-color: #{asset.color.blank? ? '#CCC' : asset.color}"), asset.attachment.url, :target => '_blank' %>
