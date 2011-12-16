@@ -57,5 +57,8 @@ module MsaarchCom
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    
+    config.assets.precompile += %w( public/blueprint/screen.css pubic/blueprint/print.css public/blueprint/ie.css admin/blueprint/screen.css admin/blueprint/print.css admin/blueprint/ie.css application.css application.js ample_admin.css admin/admin.css ample_admin.js admin/admin.js )
+    
   end
 end
