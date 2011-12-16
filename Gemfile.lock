@@ -66,7 +66,7 @@ PATH
       capistrano
       devise
       devise
-      dragonfly (~> 0.9.4)
+      dragonfly (~> 0.9.8)
       jquery-rails (>= 0.2.6)
       mechanize
       nokogiri
