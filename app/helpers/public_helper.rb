@@ -49,26 +49,32 @@ module PublicHelper
 				state += ' drop'
 				html += content_tag :li, link_to(page.nav_name, '#') + markets_nav, :class => state
 			else
-			  children = ''
-			  link = page.hierarchy_permalink
-		    if !page.children.empty? && position == 'header'
-			    state += ' drop no-color'
-			    children = child_nav(page)
-			    link = '#'
-			  end
+				children = ''
+				link = page.hierarchy_permalink
+				if !page.children.empty? && position == 'header'
+					state += ' drop no-color'
+					children = child_nav(page)
+					link = '#'
+				end
 				html += content_tag :li, link_to(page.nav_name, link) + children, :class => state
 			end
 		end
 		content_tag :ul, html.html_safe, :class => 'clearfix'
 	end
 
-  def child_nav(parent) 
-    children = ''
-    parent.children_in_header.each do |page|
-	    children += content_tag :li, link_to(page.nav_name, page.hierarchy_permalink)
-	  end
+	def child_nav(parent) 
+		children = ''
+		parent.children_in_header.each do |page|
+			permalink = page.hierarchy_permalink
+			if page.permalink.include?('locations')
+				permalink = "/contact"
+			elsif page.permalink.include?('email')
+				permalink = "/contact/email"
+			end
+			children += content_tag :li, link_to(page.nav_name, permalink)
+		end
 		content_tag(:div, content_tag(:ul, children.html_safe), :class => 'subnav')
-  end
+	end
 
 	def markets_nav
 		children = ''
@@ -86,8 +92,8 @@ module PublicHelper
 				market = project.markets.first
 			end 
 		end
-	  opts = { 'data-title' => project.title, 'data-dimensions' => dimensions } 
-	  opts = {} if overlay == false
+		opts = { 'data-title' => project.title, 'data-dimensions' => dimensions } 
+		opts = {} if overlay == false
 		if project.thumbnail.nil?
 			link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink), opts
 		else
@@ -129,15 +135,15 @@ module PublicHelper
 		html += '</script>'.gsub(/ /,'').html_safe
 	end
 
-  def random_titles
+	def random_titles
 		html = '<script>'.html_safe
 		html += "$(document).ready(function(){"
 		html += "MSA['random_titles'] = ['"
 		html += "#{random_headlines} ".html_safe
-  	html += "']; MSA['random_titles_rand'] = Math.floor(Math.random()*MSA['random_titles'].length); "
+		html += "']; MSA['random_titles_rand'] = Math.floor(Math.random()*MSA['random_titles'].length); "
 		html += "$('h1.dark').css('opacity',0).show().html(MSA['random_titles'][MSA['random_titles_rand']]).delay(500).animate({'opacity':1}); "
 		html += "});" 
 		html += '</script>'.gsub(/ /,'').html_safe
-  end
+	end
 
 end

@@ -41,11 +41,11 @@ class Public::CareersController < PublicController
     end
 
     def set_permalink
-      params[:permalink] = 'contact' 
+      params[:permalink] = 'locations' 
     end
 
     def contact_page
-      @contact_page ||= Page.live.find_by_permalink 'contact'
+      @contact_page ||= Page.live.find_by_permalink 'locations'
     end
 
 end
