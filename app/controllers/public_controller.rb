@@ -18,7 +18,12 @@ class PublicController < ApplicationController
     end
 
     def current_features
-      @current_features ||= current_page.features.live.collect{ |feature| feature if ['feature','video'].include?(feature.feature_type) }.compact[0..4]
+      @current_features ||= current_page.features.live.collect{ |feature| feature if ['feature','video'].include?(feature.feature_type) }
+      if params[:action] == 'home'
+        @current_features.reject{ |f| f == current_page.videos.first }.compact[0..4] 
+      else
+        @current_features.compact[0..4]
+      end
     end
 
     def error_message(e)

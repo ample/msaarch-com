@@ -1,0 +1,6 @@
+<% unless video_promo.link.blank? %>
+	<div class="video dark clearfix<%= ' with-asset' unless video_promo.asset.nil? %>">
+		<%= link_to image_asset(video_promo, :dimensions => '91x59#', :class => [:left, :frame, :video]), video_promo.link, 'data-video-id' => video_promo.video_id, :class => 'small' unless video_promo.asset.nil? %>
+		<%= content_tag :p, link_to(video_promo.title, video_promo.link, 'data-video-id' => video_promo.video_id), :class => :valign %>
+	</div>
+<% end %>
