@@ -5,7 +5,6 @@ class Notifier < ActionMailer::Base
     @message = message
     mail(
       :to => @message.to.email,
-      :from => "#{@message.from} <#{@message.email}>",
       :subject => "[msaarch.com] #{@message.subject}"
     )
   end
