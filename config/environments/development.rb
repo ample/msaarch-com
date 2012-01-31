@@ -2,7 +2,7 @@ MsaarchCom::Application.configure do
 
   # Settings specified here will take precedence over those in config/application.rb
   config.action_mailer.default_url_options = { :host => 'msaarch-com.dev' }
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :ses
   config.action_mailer.smtp_settings = { :host => "localhost", :port => 1025 }
 
   # In the development environment your application's code is reloaded on

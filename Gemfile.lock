@@ -93,6 +93,11 @@ GEM
       wikitext (~> 2.0)
     ansi (1.4.1)
     arel (2.2.1)
+    aws-ses (0.4.3)
+      builder
+      mail (> 2.2.5)
+      mime-types
+      xml-simple
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capistrano (2.9.0)
@@ -197,12 +202,14 @@ GEM
     webrobots (0.0.12)
       nokogiri (>= 1.4.4)
     wikitext (2.1.1)
+    xml-simple (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   ample_admin!
+  aws-ses (~> 0.4.3)
   capistrano
   coffee-rails (~> 3.1.0.rc)
   compass!

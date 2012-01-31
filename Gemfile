@@ -9,6 +9,7 @@ gem 'will_paginate', :path => File.join(File.dirname(__FILE__), '/vendor/gems/wi
 gem 'ample_admin', :path => File.join(File.dirname(__FILE__), '/vendor/gems/ample_admin')
 gem 'pdfkit'
 gem 'rails3-jquery-autocomplete'
+gem 'aws-ses', '~> 0.4.3', :require => 'aws/ses'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0.rc'

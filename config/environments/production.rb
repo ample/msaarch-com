@@ -50,7 +50,7 @@ MsaarchCom::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.asset_host = 'http://www.msaarch.com'
   config.action_mailer.default_url_options = { :host => 'www.msaarch.com' }
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :ses
 
   # Enable threaded mode
   # config.threadsafe!
