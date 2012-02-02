@@ -12,7 +12,12 @@ features:
 <% asset = current_page.get_block(:asset) %>
 <div id="page" class="span-9 append-1 default">
 
-	<%= content_tag :h2, "#{current_page.parent.nav_name} / #{current_page.nav_name}", :class => 'section-title' %>
+	<% if current_page.parent %>
+		<%= content_tag :h2, "#{current_page.parent.try(:nav_name)} / #{current_page.nav_name}", :class => 'section-title' %>
+	<% else %>
+		<%= content_tag :h2, current_page.nav_name, :class => 'section-title' %>
+	<% end %>
+
 	<%= image_asset asset, :object => asset.asset, :dimensions => '544x>', :class => :frame unless asset.nil? %>
 	<%= content_tag :h1, current_page.title, :class => 'page-title' %>
   <%= content_tag :h3, current_page.subtitle, :class => :subtitle unless current_page.subtitle.blank? %>
