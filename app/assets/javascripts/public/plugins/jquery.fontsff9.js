@@ -17,7 +17,6 @@
     },
     ff9 : function() {
       var ua = $.browser;
-      console.log(ua);
       return ua.mozilla && parseInt(ua.version, 10) > 8;
     }
   };
