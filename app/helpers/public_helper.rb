@@ -142,6 +142,7 @@ module PublicHelper
 		html += "#{random_headlines} ".html_safe
 		html += "']; MSA['random_titles_rand'] = Math.floor(Math.random()*MSA['random_titles'].length); "
 		html += "$('h1.dark').css('opacity',0).show().html(MSA['random_titles'][MSA['random_titles_rand']]).delay(500).animate({'opacity':1}); "
+		html += "$('h1,h2,h3,strong').fontsff9();"
 		html += "});" 
 		html += '</script>'.gsub(/ /,'').html_safe
 	end

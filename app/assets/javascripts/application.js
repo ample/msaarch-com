@@ -13,6 +13,7 @@
 //= require public/plugins/jquery.chosen
 //= require public/plugins/jquery.colorbox
 //= require public/plugins/jquery.touchswipe
+//= require public/plugins/jquery.fontsff9
 //= require public/public
 //= require public/markets
 //= require public/projects
