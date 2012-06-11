@@ -10,6 +10,8 @@ gem 'ample_admin', :path => File.join(File.dirname(__FILE__), '/vendor/gems/ampl
 gem 'pdfkit'
 gem 'rails3-jquery-autocomplete'
 gem 'aws-ses', '~> 0.4.3', :require => 'aws/ses'
+gem 'twitter'
+gem 'twitter-text'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0.rc'
