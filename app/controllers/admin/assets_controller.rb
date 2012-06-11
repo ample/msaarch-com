@@ -28,7 +28,6 @@ class Admin::AssetsController < AdminController
       format.html { @current_objects }
     end
   end
-
   
   def show
     raise ActiveRecord::RecordNotFound if current_asset.nil?
@@ -36,8 +35,8 @@ class Admin::AssetsController < AdminController
     render :file => "admin/assets/show", :layout => 'vanilla'
   end
   
-  def update_color
-    current_asset.update_attribute(:color, params[:asset][:color])
+  def update
+    current_object.update_attributes(params["#{self.class.model_sym}"])
     render :nothing => true
   end
   

@@ -65,11 +65,11 @@ MsaarchCom::Application.routes.draw do
       end
     end
     resources :assets, :as => 'things', :controller => 'admin/assets' do 
-      member do 
-        post :update_color
-      end
-      collection do 
+      collection do
         post :search
+      end
+      member do
+        post :update
       end
     end
   end
