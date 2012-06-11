@@ -9,8 +9,7 @@ class Admin::UpdatesController < AdminController
 
   def create
     @current_object = model.new(params["#{self.class.model_sym}"])
-    if current_object.save
-      send_tweet unless current_object.twitter_id || !current_object.active
+    if current_object.save && current_object.tweet
       flash[:notice] = I18n.t('ample_admin.create.success', :model => self.class.model_sym.to_s.titleize)
       conditional_continue
     else
@@ -18,13 +17,5 @@ class Admin::UpdatesController < AdminController
       render :action => :new
     end
   end
-
-  private
-
-    def send_tweet
-      body = current_object.link ? "#{current_object.body} #{current_object.link}" : current_object.body
-      tweet = Twitter.update(current_object.body)
-      current_object.update_attributes :twitter_id => tweet.id.to_s
-    end
 
 end

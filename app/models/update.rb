@@ -18,4 +18,15 @@ class Update < ActiveRecord::Base
     help.truncate(self.body)
   end
 
+  def tweet
+    if twitter_id.blank? && active
+      tweet = Twitter.update(linked_body)
+      update_attributes :twitter_id => tweet.id.to_s
+    end
+  end
+
+  def linked_body
+    link.blank? ? body : "#{body} #{link}"
+  end
+
 end
