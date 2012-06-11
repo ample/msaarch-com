@@ -10,6 +10,7 @@ class Update < ActiveRecord::Base
   ###---------------------------------------------------- Validations
 
   validates_presence_of :body
+  validates_uniqueness_of :twitter_id
 
   ###---------------------------------------------------- Instance Methods
 

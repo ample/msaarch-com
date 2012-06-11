@@ -4,7 +4,7 @@
   <ul class="clearfix">
   <% latest_updates.each do |update| %>
     <%= content_tag :li, :class => :clearfix do %>
-      <%= update.link.blank? ? update.body : link_to(update.body, update.link) %>
+      <%= update.link.blank? ? auto_link(update.body).html_safe : link_to(update.body, update.link) %>
       <%= content_tag :p, "#{time_ago_in_words(update.created_at)} ago" %>
     <% end %>
   <% end %>
