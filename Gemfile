@@ -25,5 +25,13 @@ group :production do
 end
 
 group :test do
+  gem 'database_cleaner'
+  gem 'shoulda', '3.0.1'
   gem 'turn', :require => false
+  gem 'minitest'
+  gem 'spin', '~> 0.2.1'
+  gem 'guard-spin'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'launchy'
 end
