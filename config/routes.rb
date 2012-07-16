@@ -67,6 +67,7 @@ MsaarchCom::Application.routes.draw do
     resources :assets, :as => 'things', :controller => 'admin/assets' do 
       collection do
         post :search
+        post :bulk_destroy
       end
       member do
         post :update
