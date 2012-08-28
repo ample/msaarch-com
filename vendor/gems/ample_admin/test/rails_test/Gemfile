@@ -1,0 +1,25 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.1.2.rc2'
+gem 'sqlite3'
+gem 'jquery-rails'
+gem 'ample_admin', :path => File.join(File.dirname(__FILE__), *%w(.. ..))
+gem 'will_paginate', :path => File.join(File.dirname(__FILE__), '/vendor/gems/will_paginate')
+gem 'devise'
+
+group :assets do
+  gem 'sass-rails',   '~> 3.1.5.rc.2'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :development do
+  gem 'pry'
+end
+
+group :test do
+  gem 'turn', '0.8.2', :require => false
+  gem 'shoulda', '>= 3.0.0.beta'
+  gem 'capybara'
+  gem 'launchy'
+end

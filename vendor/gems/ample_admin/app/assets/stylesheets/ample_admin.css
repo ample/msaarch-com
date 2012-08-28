@@ -1,0 +1,8 @@
+/**
+ *= require_self
+ *= require ./admin/screen
+ *= require ./admin/assets
+ *= require ./admin/uploadify
+ *= require ./admin/colorbox
+ *= require ./admin/poshytip
+ */

@@ -1,0 +1,5 @@
+<%= block_form.hidden_field :name %>
+<%= block_form.hidden_field :block_type %>
+<%= block_form.hidden_field :asset_id, :value => block_form.object.asset_id, :class => next_asset_drop_class %>
+<p><%= block_form.label :asset_id, block_form.object.name.humanize %><%= template_field_help(block_form) %></p>
+<%= asset_drop(block_form.object, :asset) %>

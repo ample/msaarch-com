@@ -1,0 +1,5 @@
+<li id="page_<%= page.id %>" class="<%= page.admin_status_class %>">
+	<%= manage_object page, :sortable => true %>
+	<%= link_to page.nav_name, edit_page_path(page) %>
+	<%= content_tag :ul, render(:partial => 'page', :collection => page.children), :id => "children_#{page.id}", :class => 'sortable' if page.children %>
+</li>

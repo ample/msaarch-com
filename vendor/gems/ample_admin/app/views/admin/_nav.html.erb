@@ -1,0 +1,11 @@
+<nav class="container">
+	<% if user_signed_in? %>
+	<ul>
+		<%= content_tag :li, link_to_section('admin', 'Dashboard', AmpleAdmin::Engine.config.mount_at) %>
+		<%= content_tag :li, link_to_section('pages', 'Pages', pages_path) %>
+		<%= content_tag :li, link_to_section('assets', 'Assets', things_path) %>
+		<%# content_tag :li, link_to_section('users', 'Users', users_path) %>
+	</ul>
+	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'right' %>
+	<% end %>
+</nav>

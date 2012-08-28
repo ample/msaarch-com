@@ -1,0 +1,14 @@
+<div id="left" class="column span-16 append-1">
+	<%= content_tag :h2, title("Editing #{model}: #{current_object.title}"), :class => 'object_title' %>
+	<%= form_for(current_object, :html => { :multipart => true }) do |f| %>
+		<%= render :partial => f, :locals => { :f => f } %>	
+		<%= content_tag :button, "Update #{model}", :type => :submit, :name => :continue, :class => :positive %>
+		<%= link_to 'Cancel', eval("#{model.to_s.downcase.pluralize}_path"), :class => 'button' %>
+	<% end %>
+</div>
+
+<div id="right" class="column span-7 last">
+	<%= render 'admin/error_messages', :object => current_object %>
+</div>
+
+<script>AA['assets']=true;</script>

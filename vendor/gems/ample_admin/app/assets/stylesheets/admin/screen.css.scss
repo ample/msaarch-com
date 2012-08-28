@@ -1,0 +1,79 @@
+a, a:active, a:visited 								{color: #607890; }
+a:hover 															{color: #036; }
+
+
+h2 																		{margin-bottom: 10px; font-size: 26px; font-weight: normal; }
+h2.object_title 											{border-bottom: 4px solid #ccc; padding-bottom: 15px; margin-bottom: 20px; }
+header 																{background: #312f2e; padding: 10px 0; margin-bottom: 30px; }
+header ul, header ol									{margin: 0; padding: 0; }
+.right																{float: right; }
+
+nav.container a												{background: #6c6c6c; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; padding: 6px 12px; color: #FFFFFF; }
+nav.container a.active								{color: #ffd200; background: none; }
+nav a,              									
+nav li																{display: block; float: left; }
+nav li																{margin-right: 10px; }
+
+input[type=checkbox]									{margin-right: 7px; }
+input.loading 												{background-image: url(/assets/admin/loading-white.gif); background-position: 100% 5px; background-repeat: no-repeat; }
+
+#right.dashboard .asset_thumb					{margin-right: 5px; }
+#right.dashboard .asset_thumb,
+#asset-detail img											{border: 3px solid #CCC; }
+#asset-list .index_list 							{padding-top: 20px; }
+.asset_drop														{-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border:1px solid #ccc; padding: 10px; -moz-box-shadow: inset 2px 2px 5px #ccc; -webkit-box-shadow: inset 2px 2px 5px #ccc; box-shadow: inset 2px 2px 5px #ccc; background: #eee; margin-bottom: 20px; }
+.asset_drop.success										{background: #ccc;}
+#user_new p														{margin-bottom: 10px; }
+
+#container 														{margin-bottom: 125px; }
+#legend 															{padding-top: 10px; }
+#legend span 													{padding-right: 20px; font-size: 12px; color: #434343; }
+#legend span.active		 								{padding-left: 10px; color: #2aa305; background: url(/assets/admin/published_bg.gif) no-repeat 0 50%; }
+#legend span.inactive		 							{padding-left: 10px;	color: #c8a500; 	background: url(/assets/admin/unpublished_bg.gif) no-repeat 0 50%; }
+#legend span.hidden 									{color: #989898; display: inline;  }
+
+#tabs>ul 															{list-style-type: none; padding: 0; margin: 25px 0 20px 0; border-bottom: 4px solid #ccc; }
+#tabs>ul li 													{float: left; padding: 0; margin: 0 1px 0 0; }
+#tabs h4															{margin-bottom: 10px; }
+#tabs li 															{font-weight: bold; }
+#tabs ul ul li,                 			
+#tabs ul ul label 										{font-weight: normal; }
+#tabs ul ul 													{list-style-type: none !important; margin-left: 0; padding-left: 20px; }
+#tabs ul ul>ul 												{margin-left: 20px; }
+#tabs>ul li a 												{display: block; border: 1px solid #ccc; border-bottom: none; padding: 5px 7px 3px 7px; text-decoration: none; font-size: 11px; font-weight: bold; color: #999; -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; }
+#tabs>ul li.ui-tabs-selected a, 			
+#tabs>ul li a:hover 									{background: #ccc; color: #000; }
+#tabs .ui-tabs-hide 									{display: none; }
+
+ul.association_list 						{margin: 0; padding: 0; list-style-type: none; border-top: 1px solid #cacaca; }
+ul.association_list li 					{border-bottom: 1px solid #cacaca; padding: 2px 0; }
+ul.association_list li div.manage_association {float: right; padding-top: 2px; }
+
+.new_object 													{background: url(/assets/admin/icons/add.png) no-repeat 0 50%; padding-left: 20px; text-decoration: none; margin-top: 10px; margin-bottom: 6px; display: block; color: #000; font-weight: bold; font-size: 14px; float: right; text-transform: capitalize; }
+.index_list 													{margin: 5px 0 12px 0; padding: 0; list-style-type: none;  border-top: 4px solid #ccc; }
+.index_list li 												{font-size: 16px; color: #434343; border-bottom: 1px solid #ddd; }
+
+.index_list li .manage_object 				{float: right; padding-right: 10px; }
+.handle 															{cursor: move; }
+.index_list li ul 										{margin: 0; padding: 0 0 0 10px; list-style-type: none; border-left: 10px solid #ddd; }
+.index_list li ul li 									{list-style-type: none; border-bottom:medium none; border-top:1px solid #DDDDDD; }
+.index_list li 												{border-bottom:1px solid #DDDDDD; color:#434343; font-size:16px; padding: 3px 0 3px 20px; }
+.index_list li.active 								{background-image: url(/assets/admin/published_bg.gif); background-repeat: no-repeat; background-position: 5px 12px; }
+.index_list li.inactive 							{background-image: url(/assets/admin/unpublished_bg.gif); background-repeat: no-repeat; background-position: 5px 12px; }
+.index_list li:hover 									{background-color: #eee; }
+.index_list li.no-hover								{background-color: transparent !important; }
+.index_list li.no-hover								{padding-left: 0; }
+.index_list li.no-hover ul						{margin-top: 10px; }
+.users .index_list li									{padding-left: 10px; }
+
+.ample-admin .cj											{text-align: center; }
+fieldset p														{margin-bottom: 10px; }
+.charsLeft { padding-left: 10px; }
+
+.ui-autocomplete { margin: 0; padding: 0; list-style-type: none; width: 200px; border-left: 1px solid #CACACA; border-right: 1px solid #CACACA;}
+.ui-autocomplete .ui-menu-item { margin: 0; padding: 0; border-bottom: 1px solid #CACACA; }
+.ui-autocomplete .ui-menu-item a { display: block; padding: 5px; text-decoration: none; background: #fff; }
+.ui-autocomplete .ui-menu-item a.ui-state-hover, 
+.ui-autocomplete .ui-menu-item a:hover { background: #CACACA; }
+ul.ui-autocomplete, 
+ul.ui-autocomplete li.ui-menu-item 			{text-align: left !important; }

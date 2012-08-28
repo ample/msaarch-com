@@ -1,0 +1,16 @@
+<div id="left" class="column span-16 append-1">
+	<div class="index_header clearfix">
+		<div class="column span-11">
+			<% title('Users') %>
+			<%= content_tag :h2, 'Select a User' %>
+		</div>
+		<div class="column span-5 last">
+			<%= link_to_new :user, new_user_path %>
+		</div>
+	</div>
+	<ul class="index_list clear sortable">
+		<%= render :partial => 'admin/users/user', :collection => current_objects %>
+	</ul>
+</div>
+<div id="right" class="column span-7 last">
+</div>

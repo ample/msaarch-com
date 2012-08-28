@@ -1,6 +1,3 @@
-[submodule "vendor/gems/ample_admin"]
-	path = vendor/gems/ample_admin
-	url = git@github.com:ample/ample_admin.git
 [submodule "vendor/plugins/acts_as_indexed"]
 	path = vendor/plugins/acts_as_indexed
 	url = https://github.com/dougal/acts_as_indexed.git

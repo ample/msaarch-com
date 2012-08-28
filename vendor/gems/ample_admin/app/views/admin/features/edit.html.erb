@@ -1,0 +1,15 @@
+<% javascript '/admin/javascripts/asset.js','/admin/javascripts/assets.js' %>
+
+<div id="left" class="column span-16 append-1">
+	<%= content_tag :h2, title("Editing Feature: #{current_feature.title}"), :class => 'object_title' %>
+	<%= form_for([current_owner, current_feature], :html => { :multipart => true }) do |f| %>
+		<%= render :partial => f, :locals => { :f => f } %>	
+		<button type="submit" name="continue" class="positive">Save Changes</button>
+	<% end %>
+</div>
+
+<div id="right" class="column span-7 last">
+	<%= render 'admin/error_messages', :object => current_feature %>
+	<hr />
+	<%= link_to "Return to Parent #{current_owner.class.to_s.underscore.humanize}", [:edit, current_owner], :class => 'button' %>
+</div>

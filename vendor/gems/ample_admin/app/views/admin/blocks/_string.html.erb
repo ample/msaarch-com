@@ -1,0 +1,4 @@
+<%= block_form.hidden_field :name %>
+<%= block_form.hidden_field :block_type %>
+<p><%= block_form.label :body, block_form.object.name.humanize %><%= template_field_help(block_form) %><br />
+<%= block_form.text_field :body, :class => 'text' %></p>

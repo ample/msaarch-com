@@ -1,0 +1,13 @@
+<% title('AmpleAdmin') %>
+
+<div id="left" class="column span-16 append-1 dashboard">
+	<%= content_tag :h2, 'Recently Edited' %>
+	<ul class="index_list clear">
+		<% page = Page.first :order => 'updated_at DESC' %>
+		<%= content_tag :li, link_to(page.nav_name, edit_page_path(page)) if page %>
+	</ul>
+</div>
+<div id="right" class="column span-7 last dashboard">
+	<%= content_tag :h2, 'Recently Uploaded' %>
+	<%= render :partial => 'admin/assets/asset', :collection => recent_assets unless recent_assets.empty? %>
+</div>

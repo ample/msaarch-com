@@ -1,0 +1,41 @@
+<%= label_tag 'q', 'Add New Assets' %><br /><br />
+<p><input type="file" name="uploadify" id="uploadify" /></p>
+
+<div id="fileQueue"></div>
+<script type="text/javascript">
+<% session_key = Rails.application.config.session_options[:key] %>
+$(document).ready(function() {
+  var uploadify_script_data = {};
+  var csrf_token = $('meta[name=csrf-token]').attr('content');
+  var csrf_param = $('meta[name=csrf-param]').attr('content');
+	uploadify_script_data[csrf_param] = encodeURIComponent(encodeURIComponent(csrf_token)); 
+	uploadify_script_data['<%= session_key %>'] = '<%= cookies[session_key] %>';
+  $('#uploadify').uploadify({
+    'uploader': 	'/assets/admin/swf/uploadify.swf',
+    'script': 		'/admin/assets.html',
+		'cancelImg': 	'/assets/admin/cancel.png',
+    'scriptData': uploadify_script_data,
+    'queueID': 		'fileQueue',
+    'auto': 			true,
+    'multi': 			true,
+		'onComplete': function(e,id,file,response,data) {
+			<% unless params[:controller]=='admin/assets' %>
+				$('#asset-list').prepend(response);
+			<% else %>
+				$('#asset-list').find('.index_list').prepend(response);
+			<% end %>
+		}
+  });
+});
+</script>
+
+<hr />
+
+<div id="search_collection">
+	<%= label_tag 'q', 'Search Assets' %><br />
+	<%= text_field_tag 'q', '', :class => 'text span-7 last', :rel => '/admin/assets/search' %>
+</div>
+<hr />
+<div id="search_collection_results">
+	&nbsp;
+</div>

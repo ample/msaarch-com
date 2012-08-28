@@ -1,0 +1,15 @@
+<%# ---
+name: Test Template
+description: This is a test template. Please disregard.
+fields:
+  test_one: string
+  test_two: text
+  test_three: image
+help: {}
+features:
+  - image
+  - testimonial
+--- %>
+
+<%= content_tag :h1, current_page.title, :class => 'page-title' %>
+<%= current_page.body.to_html.html_safe %>

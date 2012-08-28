@@ -1,0 +1,8 @@
+<% unless current_page.blocks.empty? %>
+	<fieldset>
+		<legend><%= current_page.template.name %> Attributes</legend>
+		<%= f.fields_for :blocks do |block_form| %>
+			<%= render :partial => "admin/blocks/#{block_form.object.block_type}", :locals => { :block_form => block_form } %>
+		<% end %>
+	</fieldset>
+<% end %>

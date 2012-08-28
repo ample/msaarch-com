@@ -1,0 +1,29 @@
+<%= f.hidden_field :feature_type, :value => f.object.feature_type %>
+<%= f.hidden_field :owner_type, :value => current_owner.class %>
+<%= f.hidden_field :owner_id, :value => current_owner.id %>
+
+<fieldset>
+	<legend>Feature Properties</legend>
+	
+	<%= content_tag :p, f.object.type_name %>
+	
+	<p><%= f.check_box(:active) %><%= f.label :active %></p>
+
+	<p><%= f.label :active_at %><br /><%= f.datetime_select(:active_at, :prompt => true) %></p>
+
+	<p><%= f.label :inactive_at %><br /><%= f.datetime_select(:inactive_at, :prompt => true) %></p>
+
+</fieldset>
+
+<fieldset>
+	<legend>Feature Content</legend>
+
+	<%= 
+	begin
+		render :partial => "admin/features/form_templates/#{f.object.feature_type}", :locals => { :f => f }
+	rescue
+		render :partial => 'admin/features/form_templates/default', :locals => { :f => f }
+	end
+	%>
+
+</fieldset>

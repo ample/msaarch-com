@@ -1,0 +1,20 @@
+<div id="left" class="column span-16 append-1">
+	<% title('Assets') %>
+	<%= content_tag :h2, 'Assets', :class => 'bottom' %>
+	<div id="asset-list">
+		<div class="index_list clear clearfix">
+			<%= render :partial => 'asset', :collection => current_assets, :locals => { :selectable => true } %>
+		</div>
+		<%= will_paginate current_assets %>
+		<hr class="space clear" />
+		<hr class="clear" />
+		<%= link_to "Clear Selected", '#', :class => 'clear-selected' %>
+		<%= link_to "Delete Selected", bulk_destroy_things_path, :class => 'delete-selected' %>
+	</div>
+</div>
+
+<div id="right" class="column span-7 last">
+	<%= render :partial => 'form' %>
+</div>
+
+<script>AA['assets']=true;</script>

@@ -1,0 +1,18 @@
+<% 
+output = "["
+@current_objects.each do |asset| 
+	output += "{\"asset\":{
+			\"id\":#{asset.id},
+			\"attachment_mime_type\":\"#{asset.attachment_mime_type}\",
+			\"attachment_uid\":\"#{asset.attachment_uid}\",
+			\"created_at\":\"#{asset.created_at}\",
+			\"updated_at\":\"#{asset.updated_at}\",
+			\"thumb_path\":\"#{asset.is_image? ? asset.attachment.thumb('50x50#').encode(:jpg).url : asset.filetype_icon}\",
+			\"url\":\"#{asset.attachment.url}\"
+		}}"
+	output += @current_objects.last == asset ? '' : ','
+end
+output += "]"
+%>
+<%= output.gsub(/\s/,'').html_safe %>
+<%# output %>
