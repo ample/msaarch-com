@@ -26,7 +26,7 @@ class Update < ActiveRecord::Base
   end
 
   def linked_body
-    link.blank? ? body : "#{body} #{link}"
+    link.blank? ? body : "#{help.truncate(body, length: 117)} #{link}"
   end
 
 end
