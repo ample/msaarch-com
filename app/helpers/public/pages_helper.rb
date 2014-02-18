@@ -21,7 +21,7 @@ module Public::PagesHelper
 
   def random_headlines 
     current_page.headlines.collect{ |headline|
-      escape_javascript(headline.body.to_html.html_safe)
+      escape_javascript(textilize_without_paragraph(headline.body).html_safe)
     }.join('\',\'')
   end
 

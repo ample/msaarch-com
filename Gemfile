@@ -12,6 +12,7 @@ gem 'rails3-jquery-autocomplete'
 gem 'aws-ses', '~> 0.4.3', :require => 'aws/ses'
 gem 'twitter'
 gem 'twitter-text'
+gem 'formatize'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0.rc'
