@@ -286,18 +286,18 @@ ActiveRecord::Schema.define(:version => 20120611205243) do
     t.string   "permalink"
     t.text     "education"
     t.text     "bio"
-    t.boolean  "admin",                                 :default => false
-    t.boolean  "active",                                :default => false
+    t.boolean  "admin",                  :default => false
+    t.boolean  "active",                 :default => false
     t.datetime "active_at"
     t.datetime "inactive_at"
     t.integer  "projectships_count"
     t.integer  "asset_id"
-    t.string   "email",                                 :default => "",    :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -305,7 +305,7 @@ ActiveRecord::Schema.define(:version => 20120611205243) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
-    t.integer  "sort_order",                            :default => 0
+    t.integer  "sort_order",             :default => 0
     t.text     "additional_favorites"
   end
 

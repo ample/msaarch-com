@@ -5,7 +5,7 @@ gem 'sqlite3'
 gem 'capistrano'
 gem 'hoptoad_notifier'
 gem 'jquery-rails'
-gem 'will_paginate', :path => File.join(File.dirname(__FILE__), '/vendor/gems/will_paginate')
+gem 'will_paginate'
 gem 'ample_admin', :path => File.join(File.dirname(__FILE__), '/vendor/gems/ample_admin')
 gem 'pdfkit'
 gem 'rails3-jquery-autocomplete'
@@ -15,7 +15,7 @@ gem 'twitter-text'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0.rc'
-  gem 'coffee-rails', '~> 3.1.0.rc'
+  gem 'coffee-rails'
   gem 'uglifier'
   # gem 'compass', :git => 'https://github.com/chriseppstein/compass.git', :branch => 'rails31'
   gem "compass-rails", "~> 1.0.3"
