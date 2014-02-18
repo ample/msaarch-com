@@ -293,4 +293,4 @@ DEPENDENCIES
   twitter
   twitter-text
   uglifier
-  will_paginate
+  will_paginate (~> 3.0)

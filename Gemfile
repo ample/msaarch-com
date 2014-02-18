@@ -5,7 +5,7 @@ gem 'sqlite3'
 gem 'capistrano'
 gem 'hoptoad_notifier'
 gem 'jquery-rails'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0'
 gem 'ample_admin', :path => File.join(File.dirname(__FILE__), '/vendor/gems/ample_admin')
 gem 'pdfkit'
 gem 'rails3-jquery-autocomplete'
