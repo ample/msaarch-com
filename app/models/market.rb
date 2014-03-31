@@ -31,7 +31,7 @@ class Market < ActiveRecord::Base
 
   def background
     unless banner.blank?
-      " style=\"background-image: url(#{banner.attachment.url}); \"".html_safe
+      " style=\"background-image: url(#{ActionController::Base.asset_host}#{banner.attachment.url}); \"".html_safe
     end
   end
 
@@ -47,8 +47,8 @@ class Market < ActiveRecord::Base
     projectships.collect{ |projectship| projectship.project if projectship.featured? }.compact
   end
 
-  def sorted_projects 
-    self.projects.sort{ |a,b| a[:title] <=> b[:title] } 
+  def sorted_projects
+    self.projects.sort{ |a,b| a[:title] <=> b[:title] }
   end
 
   ###---------------------------------------------------- Class Methods

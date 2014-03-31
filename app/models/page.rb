@@ -19,14 +19,14 @@ class Page < ActiveRecord::Base
   def background
     block = self.get_block(:background_image)
     unless block.nil?
-      " style=\"background-image: url(#{block.asset.attachment.url}); \"".html_safe
+      " style=\"background-image: url(#{ActionController::Base.asset_host}#{block.asset.attachment.url}); \"".html_safe
     end
   end
 
   def videos
     @videos ||= features.live.where :feature_type => 'video'
   end
-  
+
   def links
     @links ||= features.live.where :feature_type => 'link'
   end
