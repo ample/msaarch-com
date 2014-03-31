@@ -2,7 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# make sure engine classes load first. 
+# make sure engine classes load first.
 # @see http://stackoverflow.com/questions/5045068/extending-controllers-of-a-rails-3-engine-in-the-main-app/5100825
 require 'active_support/dependencies'
 module ActiveSupport::Dependencies
@@ -39,7 +39,10 @@ module MsaarchCom
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
     # Activate observers that should always be running.
-    # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+    config.active_record.observers = :cache_observer
+
+    # change cache location
+    config.action_controller.page_cache_directory = Rails.root.to_s + "/public/cache"
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
@@ -57,8 +60,8 @@ module MsaarchCom
 
     # Enable the asset pipeline
     config.assets.enabled = true
-    
+
     config.assets.precompile += %w( public/blueprint/screen.css pubic/blueprint/print.css public/blueprint/ie.css admin/blueprint/screen.css admin/blueprint/print.css admin/blueprint/ie.css application.css application.js ample_admin.css admin/admin.css ample_admin.js admin/admin.js )
-    
+
   end
 end

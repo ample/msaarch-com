@@ -1,5 +1,7 @@
 class PublicController < ApplicationController
 
+  caches_page :home
+
   unless Rails.env.development?
    rescue_from Exception, :with => :error_message
    rescue_from ActiveRecord::RecordNotFound, :with => :file_not_found
@@ -20,7 +22,7 @@ class PublicController < ApplicationController
     def current_features
       @current_features ||= current_page.features.live.collect{ |feature| feature if ['feature','video'].include?(feature.feature_type) }
       if params[:action] == 'home'
-        @current_features.reject{ |f| f == current_page.videos.first }.compact[0..4] 
+        @current_features.reject{ |f| f == current_page.videos.first }.compact[0..4]
       else
         @current_features.compact[0..4]
       end

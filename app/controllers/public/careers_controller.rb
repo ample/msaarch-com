@@ -2,8 +2,9 @@ class Public::CareersController < PublicController
 
   include ActionView::Helpers::TextHelper
 
+  caches_page :index, :show
   before_filter :set_permalink, :except => :show
-  
+
   def index
   end
 
@@ -33,13 +34,13 @@ class Public::CareersController < PublicController
       Notifier.contact_notification(@message).deliver if @message.valid?
       flash[:notice] = 'Thanks! Your message was received successfully and will be forward on to the appropriate person.'.html_safe
       redirect_to :action => :new
-    else 
+    else
       flash.now[:error] = pluralize(@message.errors.count, "error") + ' prohibited this email from being sent.'
       render :action => :new
     end
   end
 
-  protected 
+  protected
 
     helper_method :current_careers, :current_career, :market_experts, :contact_page
 
@@ -52,7 +53,7 @@ class Public::CareersController < PublicController
     end
 
     def set_permalink
-      params[:permalink] = 'locations' 
+      params[:permalink] = 'locations'
     end
 
     def contact_page

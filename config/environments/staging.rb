@@ -41,7 +41,7 @@ MsaarchCom::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  config.action_controller.asset_host = ''
+  # config.action_controller.asset_host = ''
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( public/blueprint/screen.css public/blueprint/print.css public/blueprint/ie.css admin/blueprint/screen.css admin/blueprint/print.css admin/blueprint/ie.css ample_admin.css admin/admin.css ample_admin.js admin/admin.js public/pdf.css public/video-overlays.css )
