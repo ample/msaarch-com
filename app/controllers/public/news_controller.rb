@@ -1,6 +1,6 @@
 class Public::NewsController < ApplicationController
 
-  caches_page :show, :if => Proc.new { |c| c.request.format.pdf? }
+  caches_page :show, :index
   layout :which_layout
 
   def index
@@ -16,13 +16,13 @@ class Public::NewsController < ApplicationController
         @meta_description = html_escape(current_post.body.gsub(/\n/, "").truncate(130))
       end
       format.pdf do
-        send_data PDFKit.new(public_post_url(current_post.permalink)).to_pdf, 
+        send_data PDFKit.new(public_post_url(current_post.permalink)).to_pdf,
           :filename => "#{current_post.permalink}.pdf", :type => 'application/pdf', :stream => false
-      end    
+      end
     end
   end
 
-  def print 
+  def print
     raise ActiveRecord::RecordNotFound if current_post.nil?
     if params[:format] == 'pdf'
       redirect_to "/about/news/#{params[:permalink]}/print"
@@ -39,8 +39,8 @@ class Public::NewsController < ApplicationController
     params[:permalink] = 'awards'
   end
 
-  protected 
-  
+  protected
+
     helper_method :latest_updates, :latest_posts, :archived_posts, :current_post, :current_awards
 
     def current_post
@@ -54,7 +54,7 @@ class Public::NewsController < ApplicationController
     def latest_posts
       if current_post.nil?
         @latest_posts ||= Post.live.limit(6).order('created_at DESC')
-      else 
+      else
         @latest_posts ||= Post.live.limit(6).order('created_at DESC').reject{ |post| post==current_post }
       end
     end

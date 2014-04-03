@@ -1,6 +1,6 @@
 class CacheObserver < ActiveRecord::Observer
 
-  observe :award, :career, :category, :event, :feature, :market, :organization, :page, :post, :project, :projectship, :update, :user
+  observe :award, :career, :category, :event, :feature, :market, :organization, :page, :post, :project, :projectship, :update
 
   def after_save(obj)
     expire_cache
