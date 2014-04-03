@@ -8,7 +8,8 @@
 	<ul id="project-imagery">
 	<% current_project.images.each do |image| %>
 		<%= content_tag :li do %>
-		  <%= content_tag :div, nil, :class => :bg, :style => "background-image: url('#{escape_javascript(ActionController::Base.asset_host+image.asset.attachment.thumb('600x449#').url)}'); " unless image.asset.nil? %>
+      <% url = "#{ActionController::Base.asset_host}#{image.asset.attachment.thumb('600x449#').url}" %>
+		  <%= content_tag :div, nil, :class => :bg, :style => "background-image: url('#{escape_javascript(url)}'); " unless image.asset.nil? %>
     <% end %>
 	<% end %>
 	</ul>
