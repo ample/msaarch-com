@@ -4,6 +4,7 @@ log/*.log
 tmp/
 .sass-cache/
 .DS_Store
+public/cache/**/*
 public/system/**/*
 public/stylesheets/all.css
 public/javascripts/all.js

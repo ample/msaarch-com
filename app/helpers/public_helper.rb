@@ -62,7 +62,7 @@ module PublicHelper
 		content_tag :ul, html.html_safe, :class => 'clearfix'
 	end
 
-	def child_nav(parent) 
+	def child_nav(parent)
 		children = ''
 		parent.children_in_header.each do |page|
 			permalink = page.hierarchy_permalink
@@ -86,19 +86,19 @@ module PublicHelper
 
 	def project_thumbnail(project, dimensions = '154x96#', market = nil, overlay = true)
 		if market.nil?
-			unless current_market.nil? 
+			unless current_market.nil?
 				market = current_market
-			else 
+			else
 				market = project.markets.first
-			end 
+			end
 		end
-		opts = { 'data-title' => project.title, 'data-dimensions' => dimensions } 
+		opts = { 'data-title' => project.title, 'data-dimensions' => dimensions }
 		opts = {} if overlay == false
 		if project.thumbnail.nil?
 			link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink), opts
 		else
 			link_to image_asset(project, :object => project.thumbnail, :dimensions => dimensions, :class => 'frame', :style => "border-color: #{project.thumbnail.hex}; "), portfolio_project_path(market.permalink, project.permalink), opts
-		end 
+		end
 	end
 
 	def path_to_project(project)
@@ -129,9 +129,9 @@ module PublicHelper
 		html += "MSA['alpha_backgrounds'] = ['#{alpha_backgrounds}']; "
 		html += "MSA['alpha_captions'] = ['#{alpha_captions}']; ".html_safe
 		html += "MSA['alpha_rand'] = Math.floor(Math.random()*MSA['alpha_backgrounds'].length);	 "
-		html += "$('#alpha').css('background-image','url(\\'' + MSA['alpha_backgrounds'][MSA['alpha_rand']] + '\\')'); " 
+		html += "$('#alpha').css('background-image','url(\\'' + MSA['alpha_backgrounds'][MSA['alpha_rand']] + '\\')'); "
 		html += "$('div.caption .container').html(MSA['alpha_captions'][MSA['alpha_rand']]); "
-		html += "});" 
+		html += "});"
 		html += '</script>'.gsub(/ /,'').html_safe
 	end
 
@@ -142,7 +142,6 @@ module PublicHelper
 		html += "#{random_headlines} ".html_safe
 		html += "']; MSA['random_titles_rand'] = Math.floor(Math.random()*MSA['random_titles'].length); "
 		html += "$('h1.dark').css('opacity',0).show().html(MSA['random_titles'][MSA['random_titles_rand']]).delay(500).animate({'opacity':1}); "
-		html += "$('h1,h2,h3,strong').fontsff9();"
 		html += "});" 
 		html += '</script>'.gsub(/ /,'').html_safe
 	end

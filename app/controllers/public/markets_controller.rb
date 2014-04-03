@@ -1,5 +1,7 @@
 class Public::MarketsController < PublicController
 
+  caches_page :show
+
   def show
     raise ActiveRecord::RecordNotFound if current_market.nil?
     @page_title = META[:page_title]

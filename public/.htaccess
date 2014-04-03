@@ -1,15 +1,15 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^msaarch.com$ [NC]  
+RewriteCond %{HTTP_HOST} ^msaarch.com$ [NC]
 RewriteRule ^(.*)$ http://www.msaarch.com/$1 [R=301,L]
 
-RewriteCond %{HTTP_HOST} ^msa-sport.net$ [NC,OR]  
-RewriteCond %{HTTP_HOST} ^www.msa-sport.net$ [NC,OR]  
-RewriteCond %{HTTP_HOST} ^msa-sport.org$ [NC,OR]  
-RewriteCond %{HTTP_HOST} ^www.msa-sport.org$ [NC,OR]  
-RewriteCond %{HTTP_HOST} ^msa-sport.com$ [NC,OR]  
-RewriteCond %{HTTP_HOST} ^www.msa-sport.com$ [NC]  
+RewriteCond %{HTTP_HOST} ^msa-sport.net$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.msa-sport.net$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^msa-sport.org$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.msa-sport.org$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^msa-sport.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.msa-sport.com$ [NC]
 RewriteRule ^(.*)$ http://www.msaarch.com/portfolio/msa-sport [R=301,L]
 
 RewriteRule ^team/?$ /team/overview [R=301,L]
@@ -19,4 +19,20 @@ RewriteRule ^news/?(.*)$ /about/news/$1 [R=301,L]
 RewriteRule ^fire /portfolio/msa-government [R=301,L]
 RewriteRule ^five http://old.msaarch.com/five [R=302,L]
 RewriteRule ^makeitofficial http://old.msaarch.com/makeitofficial [R=302,L]
+
+# Rewrite to check for Rails index page
+RewriteCond  %{THE_REQUEST} ^(GET|HEAD)
+RewriteCond  %{DOCUMENT_ROOT}/cache/index.html -f
+RewriteRule  ^$ /cache/index.html [QSA,L]
+
+# Rewrite to check for Rails non-html cached pages (i.e. xml, json, atom, etc)
+RewriteCond  %{THE_REQUEST} ^(GET|HEAD)
+RewriteCond  %{DOCUMENT_ROOT}/cache/%{REQUEST_URI} -f
+RewriteRule  ^(.*)$ /cache/$1 [QSA,L]
+
+# Rewrite to check for Rails cached html page
+RewriteCond  %{THE_REQUEST} ^(GET|HEAD)
+RewriteCond  %{DOCUMENT_ROOT}/cache/%{REQUEST_URI}.html -f
+RewriteRule  ^(.*)$ /cache/$1.html [QSA,L]
+
 </IfModule>

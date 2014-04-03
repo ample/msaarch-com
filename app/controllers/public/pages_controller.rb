@@ -1,15 +1,17 @@
 class Public::PagesController < PublicController
 
+  caches_page :show
+
   def show
     if current_page.nil?
       if params[:permalink] == 'team/staff'
         redirect_to team_index_url
       else
-        raise ActiveRecord::RecordNotFound 
+        raise ActiveRecord::RecordNotFound
       end
-    else 
+    else
       if params[:permalink] == 'portfolio'
-        redirect_to root_url 
+        redirect_to root_url
       else
         respond_to do |format|
           format.html do
@@ -23,5 +25,5 @@ class Public::PagesController < PublicController
       end
     end
   end
-  
+
 end

@@ -22,7 +22,7 @@ group :assets do
   gem "compass-rails", "~> 1.0.3"
 end
 
-group :production do 
+group :production do
   gem 'mysql2'
 end
 

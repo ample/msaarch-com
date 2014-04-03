@@ -1,5 +1,7 @@
 class Public::ProjectsController < PublicController
 
+  caches_page :index, :show
+
   def show
     raise ActiveRecord::RecordNotFound if current_project.nil?
     @page_title = META[:page_title]
