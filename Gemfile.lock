@@ -130,7 +130,8 @@ GEM
     dragonfly (0.9.10)
       rack
     erubis (2.7.0)
-    execjs (2.0.2)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
     ffi (1.0.11)
@@ -281,6 +282,7 @@ DEPENDENCIES
   coffee-rails
   compass-rails (~> 1.0.3)
   database_cleaner
+  execjs (= 1.4.0)
   formatize
   guard-spin
   hoptoad_notifier

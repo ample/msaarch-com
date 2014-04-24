@@ -13,6 +13,7 @@ gem 'aws-ses', '~> 0.4.3', :require => 'aws/ses'
 gem 'twitter'
 gem 'twitter-text'
 gem 'formatize'
+gem 'execjs', '1.4.0'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0.rc'

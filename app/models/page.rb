@@ -18,7 +18,7 @@ class Page < ActiveRecord::Base
 
   def background
     block = self.get_block(:background_image)
-    unless block.nil?
+    unless block.nil? || block.asset_id.blank?
       " style=\"background-image: url(#{ActionController::Base.asset_host}#{block.asset.attachment.url}); \"".html_safe
     end
   end

@@ -1,6 +1,7 @@
 <%= content_tag :h2, 'Contact', :class => 'section-title' %>
 <div class="span-8 append-1 clearfix">
 
+<% if current_page.try(:locations) %>
   <% current_page.locations.each_with_index do |location, i| %>
   <div class="location span-4<%= ' last' if i%2 == 1 %>">
     <%= image_asset location, :dimensions => '219x137#', :class => 'frame', :style => "border-color: #{location.asset.hex}" unless location.asset.nil? %>
@@ -8,7 +9,8 @@
     <%= location.body.to_html.html_safe %>
   </div>
   <% end %>
-  
+<% end %>
+
 </div>
 <div id="sidebar" class="span-5 prepend-1 last">
   <%= render 'experts' %>
