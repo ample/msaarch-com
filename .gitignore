@@ -1,4 +1,6 @@
 .bundle
+.ruby-version
+vendor/ruby
 db/*.sqlite3
 log/*.log
 tmp/
