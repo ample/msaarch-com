@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-1-stable'
+gem 'rails', '~> 3.1'
 gem 'sqlite3'
 gem 'capistrano'
 gem 'hoptoad_notifier'
