@@ -14,6 +14,7 @@ gem 'twitter'
 gem 'twitter-text'
 gem 'formatize'
 gem 'execjs', '1.4.0'
+gem 'paper_trail', '~> 3.0.3'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0.rc'

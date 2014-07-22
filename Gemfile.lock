@@ -172,6 +172,9 @@ GEM
     nokogiri (1.5.0)
     ntlm-http (0.1.1)
     orm_adapter (0.4.0)
+    paper_trail (3.0.3)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     pdfkit (0.5.2)
     permalink_fu (1.0.0)
     polyglot (0.3.5)
@@ -301,6 +304,7 @@ DEPENDENCIES
   launchy
   minitest
   mysql2
+  paper_trail (~> 3.0.3)
   pdfkit
   rails (~> 3.1)
   rails3-jquery-autocomplete

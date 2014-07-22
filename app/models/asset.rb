@@ -4,6 +4,10 @@ class Asset < ActiveRecord::Base
 
   has_many :blocks, dependent: :nullify
 
+  ###---------------------------------------------------- Plugins
+
+  has_paper_trail
+
   ###---------------------------------------------------- Instance Methods
 
   def hex
