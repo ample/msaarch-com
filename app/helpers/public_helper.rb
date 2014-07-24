@@ -124,7 +124,7 @@ module PublicHelper
 	end
 
 	def homepage_backgrounds
-		html = '<script>'.html_safe
+		html = '<script>'
 		html += "$(document).ready(function(){"
 		html += "MSA['alpha_backgrounds'] = ['#{alpha_backgrounds}']; "
 		html += "MSA['alpha_captions'] = ['#{alpha_captions}']; ".html_safe
@@ -132,18 +132,18 @@ module PublicHelper
 		html += "$('#alpha').css('background-image','url(\\'' + MSA['alpha_backgrounds'][MSA['alpha_rand']] + '\\')'); "
 		html += "$('div.caption .container').html(MSA['alpha_captions'][MSA['alpha_rand']]); "
 		html += "});"
-		html += '</script>'.gsub(/ /,'').html_safe
+		html += '</script>'.gsub(/ /,'')
 	end
 
 	def random_titles
-		html = '<script>'.html_safe
+		html = '<script>'
 		html += "$(document).ready(function(){"
 		html += "MSA['random_titles'] = ['"
 		html += "#{random_headlines} ".html_safe
 		html += "']; MSA['random_titles_rand'] = Math.floor(Math.random()*MSA['random_titles'].length); "
 		html += "$('h1.dark').css('opacity',0).show().html(MSA['random_titles'][MSA['random_titles_rand']]).delay(500).animate({'opacity':1}); "
-		html += "});" 
-		html += '</script>'.gsub(/ /,'').html_safe
+		html += "});"
+		html += '</script>'.gsub(/ /,'')
 	end
 
 end
