@@ -14,7 +14,7 @@ set :assets, Capistrano::CLI.ui.ask("y - Yes\nn - No\nPrecompile assets?")
 
 
 # Rackspace options
-set :branch,       'master'
+set :branch,       ENV['BRANCH'] || 'master'
 set :user,         'deploy'
 set :group,        'wheel'
 set :repository,   "git@github.com:ample/#{application}-com.git"
