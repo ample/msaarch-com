@@ -8,9 +8,11 @@
       <div class="dark">
         <%= current_page.body.to_html.html_safe %>
       </div>
+      <% unless current_updates.empty? %>
       <div class="dark updates">
         <%= render :partial => 'public/updates/update', :collection => current_updates %>
       </div>
+      <% end %>
     </div>
 
   </div>
