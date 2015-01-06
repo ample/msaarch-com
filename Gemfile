@@ -28,6 +28,10 @@ group :production do
   gem 'mysql2'
 end
 
+group :development, :test do
+  gem 'pry-rails'
+end
+
 group :test do
   gem 'database_cleaner'
   gem 'shoulda', '3.0.1'
