@@ -12,6 +12,18 @@ class Update < ActiveRecord::Base
   validates_presence_of :body
   validates_uniqueness_of :twitter_id
 
+  ###---------------------------------------------------- Associations
+
+  belongs_to :media, :class_name => 'Asset'
+
+  ###---------------------------------------------------- Attributes
+
+  accepts_nested_attributes_for :media
+
+  ###---------------------------------------------------- Scopes
+
+  scope :with_media, lambda { where("#{table_name}.media_id IS NOT NULL") }
+
   ###---------------------------------------------------- Instance Methods
 
   def title

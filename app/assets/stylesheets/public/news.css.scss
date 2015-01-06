@@ -2,6 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body.public/news {
-  // Place scoped styles here
+.update {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+.homepage {
+  .updates > .update {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    color: #A1A1A1;
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: normal;
+    .left {
+      float: right;
+      margin: 0 0 0 10px;
+    }
+  }
 }

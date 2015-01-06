@@ -1,0 +1,7 @@
+<div class="update">
+  <% if update.media_id.present? %>
+    <%= image_asset(update, :object => update.media, :dimensions => '50x50#', :class => 'frame left', :link => update.expanded_url) %>
+  <% end %>
+  <%= update.link.blank? ? auto_link(update.body).html_safe : link_to(update.body, update.link) %>
+  <%= content_tag :p, "#{time_ago_in_words(update.created_at)} ago" %>
+</div>

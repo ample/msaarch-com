@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140722192201) do
+ActiveRecord::Schema.define(:version => 20150106162522) do
 
   create_table "assets", :force => true do |t|
     t.string   "alt_text"
@@ -266,8 +266,8 @@ ActiveRecord::Schema.define(:version => 20140722192201) do
   create_table "updates", :force => true do |t|
     t.text     "body"
     t.string   "link"
-    t.integer  "sort_order",  :default => 0
-    t.boolean  "active",      :default => false
+    t.integer  "sort_order",   :default => 0
+    t.boolean  "active",       :default => false
     t.datetime "active_at"
     t.datetime "inactive_at"
     t.integer  "created_by"
@@ -275,6 +275,8 @@ ActiveRecord::Schema.define(:version => 20140722192201) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "twitter_id"
+    t.integer  "media_id"
+    t.string   "expanded_url"
   end
 
   add_index "updates", ["twitter_id"], :name => "index_updates_on_twitter_id", :unique => true

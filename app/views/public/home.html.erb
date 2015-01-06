@@ -1,53 +1,33 @@
 <section id="alpha">
-	<div class="container">
-		<div class="span-6 append-4">
-			<%= content_tag :h1, current_page.random_headline.html_safe, :class => :dark, :style => 'display: none;' %>
-		</div>
+  <div class="container">
+    <div class="span-6 append-4">
+      <%= content_tag :h1, current_page.random_headline.html_safe, :class => :dark, :style => 'display: none;' %>
+    </div>
 
-		<div class="span-5 last">
-			<div class="dark">
-				<%= current_page.body.to_html.html_safe %>
-			</div>
-			<div class="dark">
-				<p>View the collaboration:</p>
-				<ul>
-				<% Market.live.each do |market| %>
-					<%= content_tag :li, link_to(market.title, portfolio_path(market.permalink)) %>
-				<% end %>
-				</ul>
-			</div>
+    <div class="span-5 last">
+      <div class="dark">
+        <%= current_page.body.to_html.html_safe %>
+      </div>
+      <div class="dark updates">
+        <%= render :partial => 'public/updates/update', :collection => current_updates %>
+      </div>
+    </div>
 
-			<% unless current_page.promotions.empty? %>
-				<% current_page.promotions.each do |promo| %>
-					<div class="promo dark clearfix<%= ' with-asset' unless promo.asset.nil? %>">
-						<% if promo.link.blank? %>		
-							<%= link_to image_asset(promo, :dimensions => '91x59#', :class => [:left, :frame, :promo]), promo.link, :class => 'small' unless promo.asset.nil? %>
-						<% else %>
-							<%= image_asset(promo, :dimensions => '91x59#', :class => [:left, :frame, :promo]) unless promo.asset.nil? %>
-						<% end %>
-						<%= content_tag :p, link_to(promo.title, promo.link), :class => :valign %>
-						<%= promo.body.to_html.html_safe %>
-					</div>
-				<% end %>
-			<% end %>
-			<%= render :partial => 'public/video_promo', :object => current_page.videos.first unless current_page.videos.empty? %>
-		</div>
-
-	</div>
+  </div>
 </section>
 
 <div class="caption dark">
-	<div class="container">
-		<%= current_page.background_caption %>
-	</div>
+  <div class="container">
+    <%= current_page.background_caption %>
+  </div>
 </div>
 
 <section id="beta">
 <% unless current_features.empty? %>
-	<div id="features" class="container">
-		<h2>Featured</h2>
-		<%= render 'public/features' %>
-	</div>
+  <div id="features" class="container">
+    <h2>Featured</h2>
+    <%= render 'public/features' %>
+  </div>
 <% end %>
 </section>
 

@@ -13,7 +13,7 @@ class PublicController < ApplicationController
 
   protected
 
-    helper_method :current_market, :current_features
+    helper_method :current_market, :current_features, :current_updates
 
     def current_market
       @current_market ||= Market.live.find_by_permalink params[:market_permalink]
@@ -26,6 +26,10 @@ class PublicController < ApplicationController
       else
         @current_features.compact[0..4]
       end
+    end
+
+    def current_updates
+      @current_updates ||= Update.with_media.live.limit(2)
     end
 
     def error_message(e)
