@@ -5,11 +5,12 @@
     </div>
 
     <div class="span-5 last">
-      <div class="dark">
+      <div class="dark what-we-do">
         <%= current_page.body.to_html.html_safe %>
       </div>
       <% unless current_updates.empty? %>
       <div class="dark updates">
+        <h2>Latest Updates</h2>
         <%= render :partial => 'public/updates/update', :collection => current_updates %>
       </div>
       <% end %>

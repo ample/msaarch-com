@@ -13,15 +13,28 @@
   }
 }
 .homepage {
+  .dark {
+    &.what-we-do,
+    &.updates {
+      h2 {
+        text-shadow: -1px -1px 1px black;
+        filter: dropshadow(color=black, offx=-1, offy=-1);
+        font-size: 150%;
+        line-height: 100%;
+        margin: 0 0 10px;
+        color: #FFF;
+      }
+      color: #A1A1A1;
+      line-height: 16px;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
   .updates > .update {
-    margin-bottom: 10px;
+    margin: 10px 0 25px;
     &:last-child {
       margin-bottom: 0;
     }
-    color: #A1A1A1;
-    line-height: 16px;
-    font-size: 12px;
-    font-weight: normal;
     .left {
       float: right;
       margin: 0 0 0 10px;
