@@ -29,7 +29,7 @@ class PublicController < ApplicationController
     end
 
     def current_updates
-      @current_updates ||= Update.live.limit(2)
+      @current_updates ||= Update.live.order('created_at DESC').limit(2)
     end
 
     def error_message(e)
