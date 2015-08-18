@@ -39,7 +39,7 @@ module MsaarchCom
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
     # Activate observers that should always be running.
-    config.active_record.observers = :cache_observer
+    config.active_record.observers = :cache_observer unless File.basename( $0 ) == "rake"
 
     # change cache location
     config.action_controller.page_cache_directory = Rails.root.to_s + "/public/cache"

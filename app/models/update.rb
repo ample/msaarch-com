@@ -32,7 +32,7 @@ class Update < ActiveRecord::Base
 
   def tweet
     if twitter_id.blank? && active
-      tweet = Twitter.update(linked_body)
+      tweet = ::TwitterClient.update(linked_body)
       update_attributes :twitter_id => tweet.id.to_s
     end
   end

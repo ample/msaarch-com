@@ -16,6 +16,7 @@ gem 'formatize'
 gem 'execjs', '1.4.0'
 gem 'i18n', '~> 0.6.11'
 gem 'paper_trail', '~> 3.0.5'
+gem 'acts_as_markup', '~> 2.0.2'
 
 group :assets do
   gem 'sass-rails', '~> 3.1.0.rc'
@@ -37,6 +38,7 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda', '3.0.1'
   gem 'turn', :require => false
+  gem 'test-unit'
   gem 'minitest'
   gem 'spin', '~> 0.2.1'
   gem 'guard-spin'
