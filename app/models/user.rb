@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
 
   def generate_password
     unless self.admin?
-      self.password = ActiveSupport::SecureRandom.base64(8).to_yaml
+      self.password = SecureRandom.base64(8).to_yaml
       self.password_confirmation = self.password
     end
   end

@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.string   "attachment_name"
     t.integer  "attachment_width"
     t.integer  "attachment_height"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "color"
     t.string   "keywords"
     t.string   "attachment_gravity"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.boolean  "active",          :default => false
     t.datetime "active_at"
     t.datetime "inactive_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "organization_id"
   end
 
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   add_index "careers", ["permalink"], :name => "index_careers_on_permalink"
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.integer  "parent_id"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   add_index "categories", ["permalink"], :name => "index_categories_on_permalink"
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.boolean  "active",      :default => false
     t.datetime "active_at"
     t.datetime "inactive_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "features", :force => true do |t|
@@ -124,8 +124,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.integer  "project_id"
   end
 
@@ -144,8 +144,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "text_color"
   end
 
@@ -154,8 +154,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
   create_table "markets_users", :id => false, :force => true do |t|
     t.integer  "market_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "messages", :force => true do |t|
@@ -165,8 +165,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.string   "organization"
     t.string   "subject"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   add_index "messages", ["to_id"], :name => "index_messages_on_to_id"
@@ -177,8 +177,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.integer  "created_by"
     t.integer  "updated_by"
     t.boolean  "active"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "pages", :force => true do |t|
@@ -199,8 +199,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
@@ -217,8 +217,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   add_index "posts", ["permalink"], :name => "index_posts_on_permalink"
@@ -239,8 +239,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "meta_keywords"
     t.string   "meta_description"
   end
@@ -250,8 +250,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
   create_table "projects_users", :id => false, :force => true do |t|
     t.integer  "project_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "projectships", :force => true do |t|
@@ -259,8 +259,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.integer  "owner_id"
     t.string   "owner_type"
     t.boolean  "featured",   :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "updates", :force => true do |t|
@@ -272,8 +272,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.datetime "inactive_at"
     t.integer  "created_by"
     t.integer  "updated_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.string   "twitter_id"
     t.integer  "media_id"
     t.string   "expanded_url"
@@ -304,8 +304,8 @@ ActiveRecord::Schema.define(:version => 20150106162522) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "title"
     t.integer  "sort_order",             :default => 0
     t.text     "additional_favorites"

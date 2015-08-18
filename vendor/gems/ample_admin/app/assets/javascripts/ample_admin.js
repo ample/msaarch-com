@@ -5,16 +5,16 @@
 // the compiled file.
 //
 //= require jquery
-//= require jquery-ui
+//= require ./ample_admin/libs/jquery-ui
 //= require jquery_ujs
-//= require ./admin/libs/modernizr
-//= require ./admin/libs/swfobject
-//= require ./admin/plugins/jquery.colorbox
-//= require ./admin/plugins/jquery.jcarousel
-//= require ./admin/plugins/jquery.poshytip
-//= require ./admin/plugins/jquery.uploadify
-//= require ./admin/textile-editor
-//= require ./admin/textile-editor-config
-//= require ./admin/assets
-//= require ./admin/asset_gravity
-//= require ./admin/page
+//= require ./ample_admin/libs/modernizr
+//= require ./ample_admin/libs/swfobject
+//= require ./ample_admin/plugins/jquery.colorbox
+//= require ./ample_admin/plugins/jquery.jcarousel
+//= require ./ample_admin/plugins/jquery.poshytip
+//= require ./ample_admin/plugins/jquery.uploadify
+//= require ./ample_admin/textile-editor
+//= require ./ample_admin/textile-editor-config
+//= require ./ample_admin/assets
+//= require ./ample_admin/asset_gravity
+//= require ./ample_admin/page
