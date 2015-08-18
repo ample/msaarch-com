@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1'
+gem 'rails', '~> 3.2.21'
 gem 'sqlite3'
 gem 'capistrano'
 gem 'hoptoad_notifier'
@@ -12,17 +12,16 @@ gem 'rails3-jquery-autocomplete'
 gem 'aws-ses', '~> 0.4.3', :require => 'aws/ses'
 gem 'twitter'
 gem 'twitter-text'
-gem 'formatize'
+#gem 'formatize'
 gem 'execjs', '1.4.0'
 gem 'i18n', '~> 0.6.11'
 gem 'paper_trail', '~> 3.0.5'
 gem 'acts_as_markup', '~> 2.0.2'
 
 group :assets do
-  gem 'sass-rails', '~> 3.1.0.rc'
-  gem 'coffee-rails'
-  gem 'uglifier'
-  # gem 'compass', :git => 'https://github.com/chriseppstein/compass.git', :branch => 'rails31'
+  gem 'sass-rails',   '~> 3.2.6'
+  gem 'coffee-rails', '~> 3.2.2'
+  gem 'uglifier',     '>= 1.0.3'
   gem "compass-rails", "~> 1.0.3"
 end
 
