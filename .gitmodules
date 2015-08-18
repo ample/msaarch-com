@@ -1,5 +1,5 @@
-[submodule "vendor/plugins/acts_as_indexed"]
-	path = vendor/plugins/acts_as_indexed
+[submodule "vendor/gems/acts_as_indexed"]
+	path = vendor/gems/acts_as_indexed
 	url = https://github.com/dougal/acts_as_indexed.git
 [submodule "vendor/gems/will_paginate"]
 	path = vendor/gems/will_paginate

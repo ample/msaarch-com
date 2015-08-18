@@ -7,7 +7,7 @@ gem 'capistrano'
 gem 'devise'
 gem 'permalink_fu'
 gem 'devise'
-gem 'acts_as_indexed'
+gem 'acts_as_indexed', :path => File.join(File.dirname(__FILE__), '../../../vendor/gems/acts_as_indexed')
 gem 'acts_as_markup', '~> 2.0.2'
 gem 'mechanize'
 gem 'nokogiri'
