@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '~> 4.2.3'
 gem 'sqlite3'
-gem 'capistrano'
 gem 'hoptoad_notifier'
 gem 'jquery-rails' #, '~> 1.0.19'
 gem 'will_paginate', '~> 3.0'
@@ -37,6 +36,11 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  gem 'capistrano'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-rails'
+  #gem 'capistrano3-unicorn'
+  gem 'slackistrano', require: false
 end
 
 group :development, :test do
