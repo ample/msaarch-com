@@ -20,7 +20,7 @@
   <% current_project.similar_projects[0..4].each do |project| %>
   	<div class="project span-3<%= ' last' if current_project.similar_projects[0..4].last == project %>">
   	<% if project.thumbnail.nil? %>
-  		<%= link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => '154x96'), portfolio_project_path(project.markets.first.permalink, project.permalink), 'data-title' => project.title, 'data-dimensions' => '154x96' %>
+  		<%= link_to image_tag('pages/project/project-placeholder.jpg', :class => 'frame', :size => '154x96'), portfolio_project_path(project.markets.first.permalink, project.permalink), 'data-title' => project.title, 'data-dimensions' => '154x96' %>
   	<% elsif !project.markets.empty? %>
   		<%= link_to image_asset(project, :object => project.thumbnail, :dimensions => '154x96#', :class => 'frame', :style => "border-color: #{project.thumbnail.hex};"), portfolio_project_path(project.markets.first.permalink, project.permalink), 'data-title' => project.title, 'data-dimensions' => '154x96' %>
   	<% end %>

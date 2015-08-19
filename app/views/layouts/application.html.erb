@@ -43,7 +43,7 @@
 		<% if is_project? && !current_market.logo.nil? %>
 			<%= link_to image_asset(current_market, :object => current_market.logo, :class => 'logo', :dimensions => 'x25>'), portfolio_path(current_market.permalink) %>
 		<% else %>
-			<%= link_to image_tag('/assets/elements/msa-architects.png', :id => 'logo', :size => '140x25'), root_path %>
+			<%= link_to image_tag('elements/msa-architects.png', :id => 'logo', :size => '140x25'), root_path %>
 		<% end %>
 		<nav>
 			<%= site_nav('header') %>
@@ -68,7 +68,7 @@
 	<footer class="container">
 		<div id="markets" class="span-13">
 			<ul class="clearfix">
-				<li><%= link_to image_tag('/assets/elements/msa-footer.png', :class => :logo, :alt => 'MSA Architects'), root_path %></li>
+				<li><%= link_to image_tag('elements/msa-footer.png', :class => :logo, :alt => 'MSA Architects'), root_path %></li>
 			<% Market.live.each do |market| %>
 				<%= content_tag :li, link_to("#{market.title} (#{market.projectships_count})", portfolio_path(market.permalink), :class => market.permalink) %>
 			<% end %>

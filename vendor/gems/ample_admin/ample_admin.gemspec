@@ -19,8 +19,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.10"
   s.summary = "A beautiful CMS Rails Engine"
 
-  s.add_dependency(%q<rails>, ["~> 4.1.12"])
-  s.add_dependency(%q<capistrano>, [">= 0"])
+  s.add_dependency(%q<rails>, ["~> 4.2.3"])
   s.add_dependency(%q<devise>, [">= 0"])
   s.add_dependency(%q<permalink_fu>, [">= 0"])
   s.add_dependency(%q<devise>, [">= 0"])
