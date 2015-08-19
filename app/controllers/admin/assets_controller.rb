@@ -39,7 +39,7 @@ class Admin::AssetsController < AdminController
   end
 
   def update
-    current_object.update_attributes(params["#{self.class.model_sym}"])
+    current_object.update_attributes(object_params)
     render :nothing => true
   end
 

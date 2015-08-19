@@ -7,7 +7,7 @@ end
 <div id="asset-detail">
   <% if ['image/png','image/jpeg','image/gif'].include?(current_asset.attachment_mime_type) %>
     <div class="cj"><%= image_tag current_asset.attachment.thumb('500x250>').url, :title => current_asset.attachment_name %></div>
-    <%= image_tag '/assets/admin/focal_point.png', :id => 'focus' %>
+    <%= image_tag 'admin/focal_point.png', :id => 'focus' %>
     <%= form_for current_asset, :url => update_gravity_thing_path(current_asset), :method => :post, :remote => true, :html => {:id => 'edit_gravity'} do |f| %>
       <%= f.hidden_field :attachment_gravity %>
     <% end %>

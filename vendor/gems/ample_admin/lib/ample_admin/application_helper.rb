@@ -43,9 +43,9 @@ module ApplicationHelper
   
   def manage_object(object, options = {})
     content_tag :div, :class => 'manage_object' do 
-      link_to(image_tag('/assets/admin/delete_btn.gif'), eval("#{object.class.to_s.demodulize.underscore}_path(#{object.id})"), :method => :delete, :confirm => 'Are you sure?', :title => "Delete this #{object.class.to_s.demodulize.humanize}") + 
+      link_to(image_tag('admin/delete_btn.gif'), eval("#{object.class.to_s.demodulize.underscore}_path(#{object.id})"), :method => :delete, :confirm => 'Are you sure?', :title => "Delete this #{object.class.to_s.demodulize.humanize}") + 
       "&nbsp;".html_safe + 
-      (options[:sortable] ? image_tag('/assets/admin/move_btn.gif', :class => 'handle') : '')
+      (options[:sortable] ? image_tag('admin/move_btn.gif', :class => 'handle') : '')
     end
   end
   
