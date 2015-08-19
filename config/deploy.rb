@@ -22,15 +22,13 @@ set :slack_run_starting,     -> { true }
 set :slack_run_finished,     -> { true }
 set :slack_run_failed,       -> { true }
 
-namespace :deploy do
 
-  after :restart, :clear_cache do
+namespace :deploy do
+  task :restart_unicorn do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      execute "service unicorn_msa upgrade"
     end
   end
-
 end
+
+after 'deploy', 'deploy:restart_unicorn'
