@@ -19,11 +19,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # FIXME Update controller for strong params.
+  #
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, 
-                  :credentials, :education, :bio, :favorite_ids, :project_ids, :expertise_ids, :admin, :active,
-                  :permalink, :bio, :projectships_count, :asset_id, :active_at, :inactive_at, :title, :sort_order,
-                  :additional_favorites
+  #attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me, 
+  #                :credentials, :education, :bio, :favorite_ids, :project_ids, :expertise_ids, :admin, :active,
+  #                :permalink, :bio, :projectships_count, :asset_id, :active_at, :inactive_at, :title, :sort_order,
+  #                :additional_favorites
 
   acts_as_textile :bio
   acts_as_textile :education
@@ -31,7 +33,7 @@ class User < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
-  has_many :features, :as => :owner, :include => [ :asset ]
+  has_many :features, -> { includes(:asset) }, :as => :owner
   #has_many :projectships, :as => :owner, :dependent => :destroy
   #has_many :projects, :through => :projectships
   has_many :careers

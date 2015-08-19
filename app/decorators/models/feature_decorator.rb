@@ -1,6 +1,6 @@
 require 'helpers'
 
-class Feature < ActiveRecord::Base
+AmpleAdmin::Feature.class_eval do
 
   ###---------------------------------------------------- Associations
 
@@ -50,3 +50,4 @@ class Feature < ActiveRecord::Base
   end
 
 end
+

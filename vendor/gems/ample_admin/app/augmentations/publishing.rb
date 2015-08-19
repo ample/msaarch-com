@@ -3,7 +3,7 @@ module Publishing augmentation do
   ###---------------------------------------------------- Scopes
 
   scope :live, lambda  { where(live_conditions) }
-  scope :active,  lambda { where("#{table_name}.active = ?", true) }
+  scope :active, lambda { where("#{table_name}.active = ?", true) }
 
   ###---------------------------------------------------- Associations
 

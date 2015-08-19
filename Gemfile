@@ -1,10 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', :git => 'git@github.com:rails/rails.git', :branch => '3-2-stable'
+gem 'rails', '~> 4.0.13'
 gem 'sqlite3'
 gem 'capistrano'
 gem 'hoptoad_notifier'
-gem 'jquery-rails', '~> 1.0.19'
+gem 'jquery-rails' #, '~> 1.0.19'
 gem 'will_paginate', '~> 3.0'
 gem 'ample_admin', :path => File.join(File.dirname(__FILE__), '/vendor/gems/ample_admin')
 gem 'pdfkit'
@@ -12,18 +12,22 @@ gem 'rails3-jquery-autocomplete'
 gem 'aws-ses', '~> 0.4.3', :require => 'aws/ses'
 gem 'twitter'
 gem 'twitter-text'
-gem 'formatize'
+gem 'formatize', :git => 'git@github.com:niklas/formatize.git'
 gem 'execjs', '1.4.0'
 gem 'i18n', '~> 0.6.11'
 gem 'paper_trail', '~> 3.0.5'
 gem 'acts_as_markup', '~> 2.0.2'
+gem 'actionpack-page_caching'
+gem 'rails-observers'
+gem 'devise'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.6'
-  gem 'coffee-rails', '~> 3.2.2'
-  gem 'uglifier',     '>= 1.0.3'
-  gem "compass-rails", "~> 1.0.3"
-end
+gem 'sass-rails', '~> 4.0.2'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
+#gem "compass-rails", "~> 1.0.3"
+
+gem 'therubyracer', platforms: :ruby
+gem 'turbolinks'
 
 group :production do
   gem 'mysql2'

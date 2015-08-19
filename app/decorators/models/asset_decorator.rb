@@ -1,4 +1,4 @@
-class Asset < ActiveRecord::Base
+AmpleAdmin::Asset.class_eval do
 
   ###---------------------------------------------------- Associations
 

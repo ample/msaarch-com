@@ -10,7 +10,8 @@
 	<%= f.text_field(:title, :class => 'text') %></p>
 
   <p><%= f.label :project %> (<a href="javascript:void(0)" class="quiet" data-tip="Selecting a project will override the value supplied for 'Project Name' below.">Help</a>)<br />
-	<%= f.grouped_collection_select :project_id, Market.find(:all, :order => :title, :include => :projects), :projects, :title, :id, :title, :include_blank => true %></p>
+	<%# TODO: Make sure this still works. %>
+	<%= f.grouped_collection_select :project_id, Market.include(:projects).order(:title), :projects, :title, :id, :title, :include_blank => true %></p>
 
   <p><%= f.label :project_name, 'Project Name' %> (<a href="javascript:void(0)" class="quiet" data-tip="Enter a value here if project doesn't exist in the drop-down above.">Help</a>)<br />
   <%= f.text_field(:project_name, :class => 'text') %></p>

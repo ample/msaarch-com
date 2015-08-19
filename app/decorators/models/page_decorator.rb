@@ -1,18 +1,4 @@
-class Page < ActiveRecord::Base
-
-  ###---------------------------------------------------- Class Methods
-
-  def self.in_header
-    @header_navigable ||= self.navigable('header')
-  end
-
-  def self.in_footer
-    @footer_navigable ||= self.navigable('footer')
-  end
-
-  def self.navigable(position)
-    Page.live.order('sort_order ASC').root_level.collect { |p| p if p.nav_position == position || p.nav_position == 'both' }.compact.reverse
-  end
+AmpleAdmin::Page.class_eval do
 
   ###---------------------------------------------------- Instance Methods
 
@@ -60,6 +46,20 @@ class Page < ActiveRecord::Base
 
   def children_in_header
     self.children.live.collect { |p| p if ['header','both'].include?(p.nav_position) }.compact
+  end
+
+  ###---------------------------------------------------- Class Methods
+
+  def self.in_header
+    @header_navigable ||= self.navigable('header')
+  end
+
+  def self.in_footer
+    @footer_navigable ||= self.navigable('footer')
+  end
+
+  def self.navigable(position)
+    Page.live.order('sort_order ASC').root_level.collect { |p| p if p.nav_position == position || p.nav_position == 'both' }.compact.reverse
   end
 
 end

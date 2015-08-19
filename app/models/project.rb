@@ -11,7 +11,7 @@ class Project < ActiveRecord::Base
   ###---------------------------------------------------- Associations
 
   has_many :awards
-  has_many :features, :as => :owner, :include => [ :asset ]
+  has_many :features, -> { includes(:asset) }, :as => :owner
   has_many :projectships, :dependent => :destroy
   has_many :categories, :through => :projectships, :source => :owner, :source_type => 'Category'
   has_many :markets, :through => :projectships, :source => :owner, :source_type => 'Market'

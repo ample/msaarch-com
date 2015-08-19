@@ -5,7 +5,7 @@
 // the compiled file.
 //
 //= require public/modernizr-2.0.6
-//= require jquery
+//= require jquery-1.7.2
 //= require jquery_ujs
 //= require public/plugins/jquery.easing
 //= require public/plugins/jquery.ample-panels

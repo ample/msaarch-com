@@ -44,17 +44,17 @@ module ActiveRecord
           configuration.update(options) if options.is_a?(Hash)
 
           belongs_to :parent, :class_name => name, :foreign_key => configuration[:foreign_key], :counter_cache => configuration[:counter_cache]
-          has_many :children, :class_name => name, :foreign_key => configuration[:foreign_key], :order => configuration[:order], :dependent => :destroy
+          has_many :children, -> { order(configuration[:order]) }, :class_name => name, :foreign_key => configuration[:foreign_key], :dependent => :destroy
 
           class_eval <<-EOV
             include ActiveRecord::Acts::Tree::InstanceMethods
 
             def self.roots
-              find(:all, :conditions => "#{configuration[:foreign_key]} IS NULL", :order => #{configuration[:order].nil? ? "nil" : %Q{"#{configuration[:order]}"}})
+              where("#{configuration[:foreign_key]} IS NULL").order(#{configuration[:order].nil? ? "nil" : %Q{"#{configuration[:order]}"}})
             end
 
             def self.root
-              find(:first, :conditions => "#{configuration[:foreign_key]} IS NULL", :order => #{configuration[:order].nil? ? "nil" : %Q{"#{configuration[:order]}"}})
+              where("#{configuration[:foreign_key]} IS NULL").order(#{configuration[:order].nil? ? "nil" : %Q{"#{configuration[:order]}"}}).try(:first)
             end
           EOV
         end

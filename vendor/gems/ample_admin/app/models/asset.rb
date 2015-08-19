@@ -12,7 +12,7 @@ class Asset < ActiveRecord::Base
   
   ###---------------------------------------------------- Scopes
   
-  scope :recent, order('created_at DESC')
+  scope :recent, -> { order('created_at DESC') }
   
   ###---------------------------------------------------- Validations
   
