@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 4.0.13'
+gem 'rails', '~> 4.1.12'
 gem 'sqlite3'
 gem 'capistrano'
 gem 'hoptoad_notifier'
@@ -20,6 +20,7 @@ gem 'acts_as_markup', '~> 2.0.2'
 gem 'actionpack-page_caching'
 gem 'rails-observers'
 gem 'devise'
+gem 'figaro'
 
 gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
@@ -40,7 +41,6 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'shoulda', '3.0.1'
-  gem 'turn', :require => false
   gem 'test-unit'
   gem 'minitest'
   gem 'spin', '~> 0.2.1'
