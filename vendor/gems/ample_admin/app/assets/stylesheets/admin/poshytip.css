@@ -1,13 +1,13 @@
 .tip-twitter										{opacity:0.8; z-index:1000; text-align:left; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; padding:8px 8px; max-width:200px; color:#fff; background-color:#000; }
 .tip-twitter .tip-inner					{font:bold 11px/14px 'Lucida Grande',sans-serif; }
-.tip-twitter .tip-arrow-top			{margin-top:-5px; margin-left:-5px; top:0; left:50%; width:9px; height:5px; background:url(/assets/admin/poshytip/tip-twitter_arrows.gif) no-repeat; }
-.tip-twitter .tip-arrow-right		{margin-top:-4px; margin-left:0; top:50%; left:100%; width:5px; height:9px; background:url(/assets/admin/poshytip/tip-twitter_arrows.gif) no-repeat -9px 0; }
-.tip-twitter .tip-arrow-bottom	{margin-top:0; margin-left:-5px; top:100%; left:50%; width:9px; height:5px; background:url(/assets/admin/poshytip/tip-twitter_arrows.gif) no-repeat -18px 0; }
-.tip-twitter .tip-arrow-left		{margin-top:-4px; margin-left:-5px; top:50%; left:0; width:5px; height:9px; background:url(/assets/admin/poshytip/tip-twitter_arrows.gif) no-repeat -27px 0; }
+.tip-twitter .tip-arrow-top			{margin-top:-5px; margin-left:-5px; top:0; left:50%; width:9px; height:5px; background:url(/no-digest-assets/admin/poshytip/tip-twitter_arrows.gif) no-repeat; }
+.tip-twitter .tip-arrow-right		{margin-top:-4px; margin-left:0; top:50%; left:100%; width:5px; height:9px; background:url(/no-digest-assets/admin/poshytip/tip-twitter_arrows.gif) no-repeat -9px 0; }
+.tip-twitter .tip-arrow-bottom	{margin-top:0; margin-left:-5px; top:100%; left:50%; width:9px; height:5px; background:url(/no-digest-assets/admin/poshytip/tip-twitter_arrows.gif) no-repeat -18px 0; }
+.tip-twitter .tip-arrow-left		{margin-top:-4px; margin-left:-5px; top:50%; left:0; width:5px; height:9px; background:url(/no-digest-assets/admin/poshytip/tip-twitter_arrows.gif) no-repeat -27px 0; }
 
 .tip-white 											{z-index:1000; text-align:center; border:1px solid #9d9d9d; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; padding:3px 4px; min-width:50px; max-width:300px; text-transform: capitalize; color:#094fa3; background-color:#fff; }
 .tip-white .tip-inner 					{font:12px/16px arial,helvetica,sans-serif; }
-.tip-white .tip-arrow-top 			{margin-top:-6px; margin-left:-5px; top:0; left:50%; width:9px; height:6px; background:url(/assets/admin/poshytip/tip-white_arrows.gif) no-repeat; }
-.tip-white .tip-arrow-right 		{margin-top:-4px; margin-left:0; top:50%; left:100%; width:6px; height:6px; background:url(/assets/admin/poshytip/tip-white_arrows.gif) no-repeat -9px 0; }
-.tip-white .tip-arrow-bottom 		{margin-top:0; margin-left:-5px; top:100%; left:50%; width:9px; height:10px; background:url(/assets/admin/poshytip/tip-white_arrows.gif) no-repeat -18px 0; }
-.tip-white .tip-arrow-left 			{margin-top:-4px; margin-left:-6px; top:50%; left:0; width:6px; height:9px; background:url(/assets/admin/poshytip/tip-white_arrows.gif) no-repeat -27px 0; }
+.tip-white .tip-arrow-top 			{margin-top:-6px; margin-left:-5px; top:0; left:50%; width:9px; height:6px; background:url(/no-digest-assets/admin/poshytip/tip-white_arrows.gif) no-repeat; }
+.tip-white .tip-arrow-right 		{margin-top:-4px; margin-left:0; top:50%; left:100%; width:6px; height:6px; background:url(/no-digest-assets/admin/poshytip/tip-white_arrows.gif) no-repeat -9px 0; }
+.tip-white .tip-arrow-bottom 		{margin-top:0; margin-left:-5px; top:100%; left:50%; width:9px; height:10px; background:url(/no-digest-assets/admin/poshytip/tip-white_arrows.gif) no-repeat -18px 0; }
+.tip-white .tip-arrow-left 			{margin-top:-4px; margin-left:-6px; top:50%; left:0; width:6px; height:9px; background:url(/no-digest-assets/admin/poshytip/tip-white_arrows.gif) no-repeat -27px 0; }

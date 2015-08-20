@@ -1,5 +1,5 @@
-<% image_url = asset.is_image? ? asset.attachment.thumb('50x50#').encode(:jpg).url : '/assets/admin/icons/icon_pdf.gif' %>
-<% image_url = asset.is_swf? ? '/assets/admin/icons/icon_swf.gif' : image_url %>
+<% image_url = asset.is_image? ? asset.attachment.thumb('50x50#').encode(:jpg).url : '/no-digest-assets/admin/icons/icon_pdf.gif' %>
+<% image_url = asset.is_swf? ? '/no-digest-assets/admin/icons/icon_swf.gif' : image_url %>
 
 <%= content_tag :div, :class => 'asset-block' do %>
 	<%= link_to image_tag( image_url, :id => "asset_#{asset.id}", :title => asset.attachment_name, :size => '50x50', :class => 'asset_thumb', 'data-deletable-target' => 'parent'), asset.attachment.url, :target => '_blank' %>

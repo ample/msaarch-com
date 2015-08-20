@@ -126,7 +126,7 @@ TextileEditor.Methods = {
       var img = document.createElement('img');
       img.setAttribute('width', '16');
       img.setAttribute('height', '16');
-      img.src = '/assets/admin/textile-editor/' + button.display;
+      img.src = '/no-digest-assets/admin/textile-editor/' + button.display;
       theButton.appendChild(img);
     } else {
       return button;

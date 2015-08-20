@@ -180,13 +180,13 @@ module ApplicationHelper
               width="110"
               height="14"
               id="clippy" >
-      <param name="movie" value="/assets/admin/swf/clippy.swf"/>
+      <param name="movie" value="/no-digest-assets/admin/swf/clippy.swf"/>
       <param name="allowScriptAccess" value="always" />
       <param name="quality" value="high" />
       <param name="scale" value="noscale" />
       <param NAME="FlashVars" value="text=#{text}">
       <param name="bgcolor" value="#{bgcolor}">
-      <embed src="/assets/admin/swf/clippy.swf"
+      <embed src="/no-digest-assets/admin/swf/clippy.swf"
              width="110"
              height="14"
              name="clippy"

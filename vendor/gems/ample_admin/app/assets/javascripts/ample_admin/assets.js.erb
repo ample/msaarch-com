@@ -79,13 +79,13 @@ Assets.setupSearch = function() {
  */
 Assets.setupUploads = function() {
 	$('#asset-uploads').uploadify({
-		'uploader': 	'/assets/admin/swf/uploadify.swf',
-		'buttonImg': 	'/assets/admin/browse.jpg',
+		'uploader': 	'/no-digest-assets/admin/swf/uploadify.swf',
+		'buttonImg': 	'/no-digest-assets/admin/browse.jpg',
 		'wmode': 		'transparent',
 		'width': 		'120',
 		'height': 		'28',
 		'script': 		'/admin/assets.html',
-		'cancelImg': 	'/assets/admin/cancel.png',
+		'cancelImg': 	'/no-digest-assets/admin/cancel.png',
 		'scriptData': 	uploadify_script_data,
 		'queueID': 		'file-queue',
 		'auto': 		true,
@@ -178,7 +178,7 @@ Assets.setupTabs = function() {
 		li = $('<li></li>').append(link); 
 		ul.append(li); 
 	});
-	ul.append($('<li id="loading">').append($('<img src="/assets/admin/loading.gif" />')))
+	ul.append($('<li id="loading">').append($('<img src="/no-digest-assets/admin/loading.gif" />')))
 	$(Assets.settings.id+' .collections').wrap('<div class="mask"></div>')
 }
 
@@ -248,11 +248,11 @@ Assets.loadJSON = function(opts) {
 	$.getJSON(url, {}, function(data) {
 		$.each(data,function(idx,obj){
 			var img = $('<img />')
-					.attr({'src':'/assets/admin/x.gif','rel':obj.asset.thumb_path,'width':50,'height':50,'alt':obj.asset.attachment_uid})
+					.attr({'src':'/no-digest-assets/admin/x.gif','rel':obj.asset.thumb_path,'width':50,'height':50,'alt':obj.asset.attachment_uid})
 					.css('border','none'); 
 			var li = $('<li></li>')
 					.attr({'rel':obj.asset.thumb_path,'id':obj.asset.id})
-					.css('background','url(/assets/admin/loading.gif) no-repeat center center')
+					.css('background','url(/no-digest-assets/admin/loading.gif) no-repeat center center')
 					.html(img); 
 			$(Assets.settings[type].el).append(li); 
 			Assets.settings[type].assets.push(li); 

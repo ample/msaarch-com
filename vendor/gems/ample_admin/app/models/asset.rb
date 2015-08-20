@@ -30,8 +30,8 @@ class Asset < ActiveRecord::Base
   end
   
   def filetype_icon
-    { 'application/x-shockwave-flash' => '/assets/admin/icons/icon_swf.gif', 
-      'application/pdf' => '/assets/admin/icons/icon_pdf.gif' }.fetch(attachment_mime_type, '/assets/admin/icons/page_attach.png')
+    { 'application/x-shockwave-flash' => '/no-digest-assets/admin/icons/icon_swf.gif', 
+      'application/pdf' => '/no-digest-assets/admin/icons/icon_pdf.gif' }.fetch(attachment_mime_type, '/no-digest-assets/admin/icons/page_attach.png')
   end
   
 end
