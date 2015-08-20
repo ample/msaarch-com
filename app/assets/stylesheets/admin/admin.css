@@ -17,8 +17,8 @@ ul.feature_list									{margin: 0; padding: 0; list-style-type: none; }
 ul.feature_list small						{float: right; }
 ul.feature_list ul							{margin: 5px 0 20px; }
 ul.feature_list li							{padding: 5px 0; }
-ul.feature_list li.active				{padding-left: 15px; background: url(/assets/admin/published_bg.gif) no-repeat 0 50%; }
-ul.feature_list li.inactive			{padding-left: 15px; background: url(/assets/admin/unpublished_bg.gif) no-repeat 0 50%; }
+ul.feature_list li.active				{padding-left: 15px; background: asset_url('admin/published_bg.gif') no-repeat 0 50%; }
+ul.feature_list li.inactive			{padding-left: 15px; background: asset_url('admin/unpublished_bg.gif') no-repeat 0 50%; }
 select.multiple                 {width: 180px; }
 .span-4 select.multiple         {width: 160px; }
 div.xscroll                     {width: 600px; overflow-x: scroll; }

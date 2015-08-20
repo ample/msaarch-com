@@ -8,16 +8,16 @@ span.video {
 }
 
 span.overlay {
-	background: url(/assets/elements/overlay.png) no-repeat center center;
+	background: asset_url('elements/overlay.png') no-repeat center center;
 	position: relative;
 	float: left;
 }
 
 .small span.overlay {
-	background-image: url(/assets/elements/overlay-small.png);
+	background-image: asset_url('elements/overlay-small.png');
 }
 
 .medium span.overlay {
-	background-image: url(/assets/elements/overlay-medium.png);
+	background-image: asset_url('elements/overlay-medium.png');
 }
 
