@@ -18,10 +18,6 @@ class Public::UsersController < PublicController
     end
   end
 
-  def history
-    render :nothing => true, :layout => true
-  end
-
   protected
 
     helper_method :current_team_member, :current_events_by_group
