@@ -11,7 +11,7 @@ $(document).ready(function() {
 	uploadify_script_data[csrf_param] = encodeURIComponent(encodeURIComponent(csrf_token)); 
 	uploadify_script_data['<%= session_key %>'] = '<%= cookies[session_key] %>';
   $('#uploadify').uploadify({
-    'uploader': 	'/assets/admin/swf/uploadify.swf',
+    'uploader': 	'/no-digest-assets/admin/swf/uploadify.swf',
     'script': 		'/admin/assets.html',
 		'cancelImg': 	'/assets/admin/cancel.png',
     'scriptData': uploadify_script_data,
