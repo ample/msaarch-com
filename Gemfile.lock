@@ -362,6 +362,7 @@ DEPENDENCIES
   i18n
   jquery-rails
   launchy
+  minitest
   mysql2
   paper_trail (~> 3.0.5)
   pdfkit

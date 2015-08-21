@@ -68,7 +68,6 @@ class Admin::ProjectsController < AdminController
       if params[:market_filter]
         projects = current_market.projects.order(:title).paginate(:page => params[:page], :per_page => per_page)
       else
-        # TODO ensure this still works.
         projects = Project.all.order(:title).paginate(:page => params[:page], :per_page => per_page)
       end
       @current_projects ||= projects

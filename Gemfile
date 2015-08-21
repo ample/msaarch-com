@@ -46,6 +46,7 @@ end
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'minitest'
 end
 
 group :test do
