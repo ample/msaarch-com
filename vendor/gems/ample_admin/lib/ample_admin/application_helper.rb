@@ -104,7 +104,7 @@ module ApplicationHelper
       opts[:alt] = object.title
     end
     
-    encode = args[:encode] || :png
+    encode = args[:encode] || :jpg
     dimensions = args[:dimensions] || false
     dfly_object = args[:object] || nil
     video = args[:video] || nil

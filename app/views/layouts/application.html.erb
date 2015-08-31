@@ -41,7 +41,7 @@
 <section id="header" class="clearfix">
   <header class="container">
     <% if is_project? && !current_market.logo.nil? %>
-      <%= link_to image_asset(current_market, :object => current_market.logo, :class => 'logo', :dimensions => 'x25>'), portfolio_path(current_market.permalink) %>
+      <%= link_to image_asset(current_market, :object => current_market.logo, :class => 'logo', :dimensions => 'x25>', :encode => :png), portfolio_path(current_market.permalink) %>
     <% else %>
       <%= link_to image_tag('elements/msa-architects.png', :id => 'logo', :size => '140x25'), root_path %>
     <% end %>
