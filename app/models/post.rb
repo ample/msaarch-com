@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
   ###---------------------------------------------------- Associations
 
   belongs_to :asset
-  has_many :features, :as => :owner, :include => [ :asset ]
+  has_many :features, -> { includes(:asset) }, :as => :owner
 
   ###---------------------------------------------------- Plugins
 

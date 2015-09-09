@@ -1,0 +1,364 @@
+/**
+ * Attach onload event handler, setup namespace & declare initial params
+ */
+$(document).ready(function(){
+	if(AA.assets) {
+		Assets.init();
+	}
+});
+
+var Assets = function() {}; 
+		Assets.settings = { 
+			progress: null,
+			initial_load: { images: false, documents: false },
+			loading: '#asset-toolbar #loading img',
+			id:'#asset-toolbar', 
+			handle_id:'#asset-toggle',
+			per_page: 14,
+			expanded: false,
+			collapsed_height:'25px', 
+			expanded_height:'150px',
+			recent: { el: '#recent-assets', page: 0, assets: [], total: null, loaded: 0, carousel: null },
+			images: { el: '#image-assets', page: 0, assets: [], total: null, loaded: 0, carousel: null },
+			documents: { el: '#document-assets', page: 0, assets: [], total: null, loaded: 0, carousel: null }
+		}; 
+
+/**
+ * Build HTML for asset toolbar
+ */
+Assets.setupHTML = function() {
+	var id = Assets.settings.id.substr(1); 
+	var handle = Assets.settings.handle_id.substr(1); 
+	var pages = Assets.setupPages();
+	var els = $('<div id="'+id+'" class="clear"></div>')
+			.append('<a href="#" id="'+handle+'" class="handle">Assets</a>')
+			.append($('<div class="content"></div>')
+			.append($('<div class="container"></div>').append(pages)))
+			.appendTo('body'); 
+
+	activatePlaceholders(); 
+}
+
+Assets.setupPages = function() {
+	var results = $('<div id="search-assets-results"></div>'); 
+	var search = $('<div id="search-collection"></div>')
+			.append('<input type="text" id="search-assets" name="q" class="text span-7 last" placeholder="Enter Keyword" />')
+			.append('<div id="results-total"></div>'); 
+
+	var pages = $('<div class="collections"></div>')
+			.append($('<div rel="Recently Viewed" class="tab clearfix"></div>').append('<ul id="recent-assets" class="jcarousel-skin-tango"></ul>'))
+			.append($('<div rel="Recent Images" class="tab clearfix"></div>').append('<ul id="image-assets" class="jcarousel-skin-tango"></ul>'))
+			.append($('<div rel="Recent Documents" class="tab clearfix"></div>').append('<ul id="document-assets" class="jcarousel-skin-tango"></ul>')) 
+			.append($('<div rel="Search" class="tab clearfix"></div>')
+			.append(search).append(results))
+			.append($('<div rel="Upload" class="tab clearfix"></div>')
+			.append('<div id="upload-collection"><label>Shift + Click to select multiple items.</label><input type="file" name="asset-uploads" id="asset-uploads" /></div><div id="file-queue"></div>')); 
+
+	return pages; 
+}
+
+/**
+ * Setup event handler for search tab
+ */
+Assets.setupSearch = function() {
+	$('#search-assets').change(function() {
+		var search_url = '/admin/assets/search';
+		$(Assets.settings.loading).show(); 
+		$.post(search_url, $(this).serialize(), function(data) {
+			$('#search-assets-results').html(data);
+			var total = $(data).find('img').length;
+			$('#results-total').text(total+' result'+(total>1||total==0?'s':'')+' returned. '+(total>10?'Please refine search criteria.':'')); 
+			$('#results-total').show(); 
+			$(Assets.settings.loading).hide(); 
+		});
+	});
+}
+
+/**
+ * Setup event handler for upload tab
+ */
+Assets.setupUploads = function() {
+	$('#asset-uploads').uploadify({
+		'uploader': 	'/no-digest-assets/admin/swf/uploadify.swf',
+		'buttonImg': 	'/no-digest-assets/admin/browse.jpg',
+		'wmode': 		'transparent',
+		'width': 		'120',
+		'height': 		'28',
+		'script': 		'/admin/assets.html',
+		'cancelImg': 	'/no-digest-assets/admin/cancel.png',
+		'scriptData': 	uploadify_script_data,
+		'queueID': 		'file-queue',
+		'auto': 		true,
+		'multi': 		true,
+		'onAllComplete': function(event, data) {
+			Assets.reset(); 
+		}
+  });
+}
+
+/**
+ * Reload assets after successful upload
+ */
+Assets.reset = function() {
+	var types = new Array('documents','images'); 
+	$.each(types,function(idx,type){
+		Assets.settings[type].assets = []; 
+		Assets.settings[type].total = null; 
+		Assets.settings[type].loaded = 0; 
+		delete Assets.settings[type].carousel; 
+		Assets.settings[type]['carousel'] = null; 
+		$(Assets.settings[type].el).empty(); 
+	}); 
+	$('.tabs a:eq(1)').trigger('click'); 
+	Assets.loadData(); 
+}
+
+/**
+ * Expand & collapse asset toolbar
+ */
+Assets.toggle = function() {
+
+	if(Assets.settings.expanded) {
+		$(Assets.settings.id).animate({height:Assets.settings.collapsed_height}, 'fast');
+		Assets.settings.expanded = false; 
+	} else {
+		Assets.initialLoad(); 
+		$(Assets.settings.id).animate({height:Assets.settings.expanded_height}, 'fast');
+		Assets.settings.expanded = true; 
+	}
+
+	$.each($('.toggle-assets'), function(idx,el){
+		el.innerHTML = Assets.settings.expanded ? 'Hide Assets' : 'Show Assets'; 
+	}); 
+
+	/*
+	$.cookie('assets_toolbar_expanded',null,{path:'/'}); 
+	$.cookie('assets_toolbar_expanded',Assets.settings.expanded,{path:'/'}); 
+	*/
+	return false;
+}
+
+/**
+ * Toggle visible tab following user selection 
+ */
+Assets.selectTab = function(event) {
+	$(Assets.settings.id+' .tabs a').removeClass('on'); 
+	$(this).addClass('on'); 
+	if(event.data.direction=='horizontal') {
+		var opts = {left:event.data.position}; 
+	} else {		
+		var opts = {top:event.data.position}; 
+	}
+	Assets.settings.tab_position = $(Assets.settings.id+' .tab').position(); 
+	$(Assets.settings.id+' .collections').animate(opts, 'fast');
+	return false;
+}
+
+/**
+ * Build HTML for asset tabs
+ */
+Assets.setupTabs = function() {
+	Assets.settings.tab_position = $(Assets.settings.id+' .tab').position(); 
+	Assets.settings.tabs = []; 
+	var ul = $('<ul></ul>').addClass('tabs')
+	$(Assets.settings.id+' .container').prepend(ul); 
+	var link, li;
+	var collections = $(Assets.settings.id+' .tab'); 
+	$.each(collections, function(index, el){
+		var mb = $(el).css('margin-bottom'); 
+		var pt = $(el).css('padding-top'); 
+		var height = $(el).height()+parseInt(mb)+parseInt(pt); 
+		var position = 0-height*index; 
+		link = $('<a></a>'); 
+		if(index==0) {
+			link.addClass('on'); 
+		}
+		link.bind('click',{position:position,direction:'vertical'},Assets.selectTab); 
+		link.attr('href','#').attr('rel',index).text($(el).attr('rel')); 
+		li = $('<li></li>').append(link); 
+		ul.append(li); 
+	});
+	ul.append($('<li id="loading">').append($('<img src="/no-digest-assets/admin/loading.gif" />')))
+	$(Assets.settings.id+' .collections').wrap('<div class="mask"></div>')
+}
+
+/**
+ * Jcarousel Callback
+ * Load images on each page event
+ */
+Assets.carouselCallback = function(carousel,dir,last,data) {
+	var type = carousel.options.asset_type; 
+	var loaded = Assets.settings[type].loaded; 
+	var last = (carousel.current_page*Assets.settings.per_page);
+	if((dir=='next' || dir=='init') && loaded<last) {
+		for(i=loaded; i<(dir=='init'?last+1:last+1); i++) {
+			var src = $(Assets.settings[type].assets[i]).attr('rel');
+			var li = $(Assets.settings[type].assets[i]);
+		  var alt = $(Assets.settings[type].assets[i]).find('img').attr('alt'); 
+			var img = new Image();
+		  $(img)
+				.load(function(){
+		      $(this).hide();
+					$(Assets.settings[type].assets[$(this).attr('rel')]).html(this); 
+					$(this).fadeIn();
+				})
+				.addClass('asset_thumb ui-draggable')
+				.attr({'rel':i,'src':src,'width':50,'height':50,'id':'asset_'+$(Assets.settings[type].assets[i]).attr('id'),'alt':alt,'title':alt});
+		}
+		Assets.settings[type].loaded = last+1; 
+	}
+}
+
+/**
+ * OnLoad Callback
+ * Load images on each page event
+ */
+Assets.loadPage = function(type,dir,last) {
+	$(Assets.settings[type].el).parent().addClass('no-carousel'); 
+	var loaded = Assets.settings[type].loaded; 
+	for(i=loaded; i<(dir=='init'?last+1:last+1); i++) {
+		var src = $(Assets.settings[type].assets[i]).attr('rel');
+		var li = $(Assets.settings[type].assets[i]);
+	  var alt = $(Assets.settings[type].assets[i]).find('img').attr('alt'); 
+		var img = new Image();
+	  $(img)
+			.load(function(){
+	      $(this).hide();
+				$(Assets.settings[type].assets[$(this).attr('rel')]).html(this); 
+				$(this).fadeIn();
+			})
+			.addClass('asset_thumb ui-draggable')
+			.attr({'rel':i,'src':src,'width':50,'height':50,'id':'asset_'+$(Assets.settings[type].assets[i]).attr('id'),'alt':alt,'title':alt});
+	}
+	Assets.settings[type].loaded = last+1; 
+}
+
+/**
+ * Loads JSON data for asset tabs
+ * @param String type [images, documents]
+ */
+Assets.loadJSON = function(opts) {
+	var type = opts.type; 
+	
+	var url = '/admin/assets.json?'; 
+			url += type == 'images' || type == 'documents' ? '&type=' + type : ''; 
+			url += opts.hasOwnProperty('limit') ? '&per_page=' + opts.limit : ''; 
+			url += opts.hasOwnProperty('order') ? '&order=' + opts.order : ''; 
+
+	$.getJSON(url, {}, function(data) {
+		$.each(data,function(idx,obj){
+			var img = $('<img />')
+					.attr({'src':'/no-digest-assets/admin/x.gif','rel':obj.asset.thumb_path,'width':50,'height':50,'alt':obj.asset.attachment_uid})
+					.css('border','none'); 
+			var li = $('<li></li>')
+					.attr({'rel':obj.asset.thumb_path,'id':obj.asset.id})
+					.css('background','url(/no-digest-assets/admin/loading.gif) no-repeat center center')
+					.html(img); 
+			$(Assets.settings[type].el).append(li); 
+			Assets.settings[type].assets.push(li); 
+		}); 
+
+		if(opts.paginate) {
+			$(Assets.settings[type].el).jcarousel({
+				asset_type:type,
+				scroll:Assets.settings.per_page,
+				itemLoadCallback:{onAfterAnimation:Assets.carouselCallback}
+			});
+			Assets.settings[type].carousel = jQuery(Assets.settings[type].el).data('jcarousel');
+		} else {
+			Assets.loadPage(type,'init',opts.limit); 
+		}
+		Assets.settings.initial_load[type] = true; 
+	}); 
+}
+
+/**
+ * Attach event handlers
+ */
+Assets.setupEvents = function() {
+	$(Assets.settings.id+' .handle, .toggle-assets').bind('click',{},Assets.toggle); 
+	$(Assets.settings.id+' .pager').bind('click',{},Assets.selectPage); 
+}
+
+/**
+ * Set initial display state 
+ */
+Assets.initialDisplay = function() {
+	/***
+	Assets.settings.expanded = $.cookie('assets_toolbar_expanded')=='true' ? true : false; 	
+	if(!Assets.settings.expanded) {
+		$(Assets.settings.id).css({height:Assets.settings.collapsed_height});
+	} else {
+		$(Assets.settings.id).css({height:Assets.settings.expanded_height});
+	}
+	***/
+	$(Assets.settings.id).css({height:Assets.settings.collapsed_height});
+	$(Assets.settings.id).show();
+}
+ 
+Assets.initialLoad = function() {
+	if(!Assets.settings.initial_load.images || !Assets.settings.initial_load.documents) {
+		$(Assets.settings.loading).show(); 
+		Assets.loadInitData(); 
+		Assets.settings.progress = window.setInterval(function(){ Assets.checkJSONProgess(); }, 2500 );
+	}	
+}
+
+Assets.checkJSONProgess = function() {
+	if(Assets.settings.initial_load.images && Assets.settings.initial_load.documents) {	
+		$(Assets.settings.loading).hide(); 		
+		window.clearInterval(Assets.settings.progress); 
+	}	
+}
+
+/**
+ * Load data asset data
+ */
+Assets.loadInitData = function() {
+	Assets.loadJSON({type:'recent', limit:15, order:'touched_at', paginate: false})
+	Assets.loadData(); 
+}
+
+Assets.loadData = function() {
+	Assets.loadJSON({type:'images', limit:43, order:'created_at', paginate: true}); 
+	Assets.loadJSON({type:'documents', limit:43, order:'created_at', paginate: true}); 
+}
+
+/**
+ * Initialize asset toolbar
+ */
+Assets.init = function () {
+	Assets.setupHTML(); 
+	Assets.setupSearch(); 
+	Assets.setupUploads(); 
+	Assets.setupTabs();
+	Assets.setupEvents();
+	Assets.initialDisplay();
+}
+
+function activatePlaceholders() {
+var detect = navigator.userAgent.toLowerCase(); 
+if (detect.indexOf('safari') > 0) return false;
+var inputs = document.getElementsByTagName('input');
+for (var i=0;i<inputs.length;i++) {
+  if (inputs[i].getAttribute('type') == 'text') {
+   if (inputs[i].getAttribute('placeholder') && inputs[i].getAttribute('placeholder').length > 0) {
+    inputs[i].value = inputs[i].getAttribute('placeholder');
+    inputs[i].onclick = function() {
+     if (this.value == this.getAttribute('placeholder')) {
+      this.value = '';
+     }
+     return false;
+    }
+    inputs[i].onblur = function() {
+     if (this.value.length < 1) {
+      this.value = this.getAttribute('placeholder');
+     }
+    }
+   }
+  }
+}
+}
+window.onload=function() {
+	activatePlaceholders();
+}

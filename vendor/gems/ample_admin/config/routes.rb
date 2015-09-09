@@ -23,6 +23,6 @@ Rails.application.routes.draw do
       end
     end
   end
-  match mount_at => 'admin#dashboard'
+  get mount_at => 'admin#dashboard'
 
 end

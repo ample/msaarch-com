@@ -2,7 +2,7 @@ module Nesting augmentation do
 
   ###---------------------------------------------------- Scopes
 
-  scope :root_level, where('parent_id IS NULL')
+  scope :root_level, -> { where('parent_id IS NULL') }
 
   ###---------------------------------------------------- Plugins
 

@@ -7,7 +7,7 @@ namespace :msa do
 
     desc "Pulls in fresh tweets."
     task :twitter => :environment do
-      tweets = Twitter.user_timeline("msaarch")
+      tweets = ::TwitterClient.user_timeline("msaarch")
       tweets.each do |tweet|
 
         opts = {

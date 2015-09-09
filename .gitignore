@@ -11,3 +11,6 @@ public/system/**/*
 public/stylesheets/all.css
 public/javascripts/all.js
 public/index.html
+
+# Ignore application configuration
+/config/application.yml

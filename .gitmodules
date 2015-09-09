@@ -1,9 +1,3 @@
-[submodule "vendor/plugins/acts_as_indexed"]
-	path = vendor/plugins/acts_as_indexed
+[submodule "vendor/gems/acts_as_indexed"]
+	path = vendor/gems/acts_as_indexed
 	url = https://github.com/dougal/acts_as_indexed.git
-[submodule "vendor/plugins/acts_as_tree"]
-	path = vendor/plugins/acts_as_tree
-	url = https://github.com/rails/acts_as_tree.git
-[submodule "vendor/gems/will_paginate"]
-	path = vendor/gems/will_paginate
-	url = https://github.com/xspond/will_paginate.git

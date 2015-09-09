@@ -95,7 +95,7 @@ module PublicHelper
 		opts = { 'data-title' => project.title, 'data-dimensions' => dimensions }
 		opts = {} if overlay == false
 		if project.thumbnail.nil?
-			link_to image_tag('/assets/pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink), opts
+			link_to image_tag('pages/project/project-placeholder.jpg', :class => 'frame', :size => dimensions), portfolio_project_path(market.permalink, project.permalink), opts
 		else
 			link_to image_asset(project, :object => project.thumbnail, :dimensions => dimensions, :class => 'frame', :style => "border-color: #{project.thumbnail.hex}; "), portfolio_project_path(market.permalink, project.permalink), opts
 		end

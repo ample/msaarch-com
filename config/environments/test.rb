@@ -1,4 +1,10 @@
 MsaarchCom::Application.configure do
+
+  config.eager_load = false
+
+  # Raise exception on mass assignment protection for Active Record models
+  # config.active_record.mass_assignment_sanitizer = :strict
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # The test environment is used exclusively to run your application's
@@ -12,7 +18,10 @@ MsaarchCom::Application.configure do
   config.static_cache_control = "public, max-age=3600"
 
   # Log error messages when you accidentally call methods on nil
-  config.whiny_nils = true
+  # config.whiny_nils = true
+
+  config.serve_static_files   = true
+  config.static_cache_control = 'public, max-age=3600'
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -36,6 +45,13 @@ MsaarchCom::Application.configure do
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
 
+  # Randomize the order test cases are executed.
+  config.active_support.test_order = :random
+
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Raises error for missing translations
+  # config.action_view.raise_on_missing_translations = true
+
 end

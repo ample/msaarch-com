@@ -1,11 +1,11 @@
 MsaarchCom::Application.routes.draw do
-
+#
   devise_for :users, :class_name => 'User', :path_prefix => '/admin'
   root :to => 'public#home'
 
   scope '/admin' do
-    match 'news', :to => 'admin/news#index'
-    match 'team/update_sort_order', :to => 'admin/users#update_sort_order'
+    get 'news', :to => 'admin/news#index'
+    get 'team/update_sort_order', :to => 'admin/users#update_sort_order'
     resources :careers, :controller => 'admin/careers' do
       collection do
         post :update_sort_order
@@ -75,23 +75,23 @@ MsaarchCom::Application.routes.draw do
     end
   end
   
-  match 'team/overview', :to => 'public/users#index', :as => :team_index
-  match 'team/history', :to => 'public/users#history', :as => :history
+  get 'team/overview', :to => 'public/users#index', :as => :team_index
+  get 'team/history', :to => 'public/users#history', :as => :history
   resources :users, :only => :show, :path => 'team/staff', :as => :team, :controller => 'public/users'
   resources :careers, :only => [:create], :path => 'contact/email', :controller => 'public/careers'
 
-  match 'contact', :to => 'public/careers#index', :as => :contact
-  match 'contact/email(/:id)', :to => 'public/careers#new', :as => :contact_form
-  match 'contact/:permalink', :to => 'public/careers#show', :as => :public_career
-  match 'about/news', :to => 'public/news#index', :as => :public_news
-  match 'about/awards', :to => 'public/news#awards', :as => :public_awards
-  match 'about/news/archive', :to => 'public/news#archive', :as => :public_news_archive
-  match 'about/news/:permalink', :to => 'public/news#show', :as => :public_post
-  match 'about/news/:permalink/print', :to => 'public/news#print', :as => :public_post_print
-  match 'portfolio/:market_permalink', :to => 'public/markets#show', :as => :portfolio
-  match 'portfolio/:market_permalink/:permalink', :to => 'public/projects#show', :as => :portfolio_project
-  match 'index', :to => 'public#home'
-  match '*permalink.:format', :to =>  'public/pages#show', :as => 'public_page', :constraints => { :path => /.+?/, :permalink => /(?!.*?(admin)).*/ }
-  match ':permalink', :to =>  'public/pages#show', :as => 'public_page', :constraints => { :permalink => /(?!.*?(admin)).*/ }
+  get 'contact', :to => 'public/careers#index', :as => :contact
+  get 'contact/email(/:id)', :to => 'public/careers#new', :as => :contact_form
+  get 'contact/:permalink', :to => 'public/careers#show', :as => :public_career
+  get 'about/news', :to => 'public/news#index', :as => :public_news
+  get 'about/awards', :to => 'public/news#awards', :as => :public_awards
+  get 'about/news/archive', :to => 'public/news#archive', :as => :public_news_archive
+  get 'about/news/:permalink', :to => 'public/news#show', :as => :public_post
+  get 'about/news/:permalink/print', :to => 'public/news#print', :as => :public_post_print
+  get 'portfolio/:market_permalink', :to => 'public/markets#show', :as => :portfolio
+  get 'portfolio/:market_permalink/:permalink', :to => 'public/projects#show', :as => :portfolio_project
+  get 'index', :to => 'public#home'
+  get '*permalink.:format', :to =>  'public/pages#show', :as => 'formatted_public_page', :constraints => { :path => /.+?/, :permalink => /(?!.*?(admin)).*/ }
+  get ':permalink', :to =>  'public/pages#show', :as => 'public_page', :constraints => { :permalink => /(?!.*?(admin)).*/ }
 
 end

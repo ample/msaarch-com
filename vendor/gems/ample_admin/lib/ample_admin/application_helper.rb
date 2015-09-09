@@ -43,9 +43,9 @@ module ApplicationHelper
   
   def manage_object(object, options = {})
     content_tag :div, :class => 'manage_object' do 
-      link_to(image_tag('/assets/admin/delete_btn.gif'), eval("#{object.class.to_s.demodulize.underscore}_path(#{object.id})"), :method => :delete, :confirm => 'Are you sure?', :title => "Delete this #{object.class.to_s.demodulize.humanize}") + 
+      link_to(image_tag('admin/delete_btn.gif'), eval("#{object.class.to_s.demodulize.underscore}_path(#{object.id})"), :method => :delete, :confirm => 'Are you sure?', :title => "Delete this #{object.class.to_s.demodulize.humanize}") + 
       "&nbsp;".html_safe + 
-      (options[:sortable] ? image_tag('/assets/admin/move_btn.gif', :class => 'handle') : '')
+      (options[:sortable] ? image_tag('admin/move_btn.gif', :class => 'handle') : '')
     end
   end
   
@@ -104,7 +104,7 @@ module ApplicationHelper
       opts[:alt] = object.title
     end
     
-    encode = args[:encode] || :png
+    encode = args[:encode] || :jpg
     dimensions = args[:dimensions] || false
     dfly_object = args[:object] || nil
     video = args[:video] || nil
@@ -180,13 +180,13 @@ module ApplicationHelper
               width="110"
               height="14"
               id="clippy" >
-      <param name="movie" value="/assets/admin/swf/clippy.swf"/>
+      <param name="movie" value="/no-digest-assets/admin/swf/clippy.swf"/>
       <param name="allowScriptAccess" value="always" />
       <param name="quality" value="high" />
       <param name="scale" value="noscale" />
       <param NAME="FlashVars" value="text=#{text}">
       <param name="bgcolor" value="#{bgcolor}">
-      <embed src="/assets/admin/swf/clippy.swf"
+      <embed src="/no-digest-assets/admin/swf/clippy.swf"
              width="110"
              height="14"
              name="clippy"

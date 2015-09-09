@@ -24,12 +24,11 @@ class Public::CareersController < PublicController
   end
 
   def new
-    params[:message] = { :to_id => params[:id] } if params[:message].nil?
-    @message = Message.new params[:message]
+    @message = Message.new params[:message].nil? ? { :to_id => params[:id] }  : {}
   end
 
   def create
-    @message = Message.new params[:message]
+    @message = Message.new message_params
     if @message.save
       Notifier.contact_notification(@message).deliver if @message.valid?
       flash[:notice] = 'Thanks! Your message was received successfully and will be forward on to the appropriate person.'.html_safe
@@ -58,6 +57,10 @@ class Public::CareersController < PublicController
 
     def contact_page
       @contact_page ||= Page.live.find_by_permalink 'locations'
+    end
+
+    def message_params
+      params.require(:message).permit(:to_id, :from, :email, :organization, :subject, :body)
     end
 
 end

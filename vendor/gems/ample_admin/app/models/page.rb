@@ -24,7 +24,7 @@ class Page < ActiveRecord::Base
 
   ###---------------------------------------------------- Associations
 
-  has_many :features, :as => :owner, :include => [ :asset ]
+  has_many :features, -> { includes(:asset) }, :as => :owner
   has_many :blocks, :dependent => :destroy
   accepts_nested_attributes_for :blocks
 

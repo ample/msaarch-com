@@ -1,67 +1,34 @@
-require './config/boot'
-#require 'hoptoad_notifier/capistrano'
-require 'bundler/capistrano'
+# config valid only for current version of Capistrano
+lock '3.4.0'
 
-set :application, 'msaarch'
-set :deploy_via,   :remote_cache
-set :scm,          :git
-set :git_enable_submodules, 1
-set :keep_releases, 4
-default_run_options[:pty] = true
+set :application, 'msaarch-com'
+set :repo_url, 'git@github.com:ample/msaarch-com.git'
 
-set :dest, Capistrano::CLI.ui.ask("dev - Development\nwww - Production\nDestination: ")
-set :assets, Capistrano::CLI.ui.ask("y - Yes\nn - No\nPrecompile assets?")
+# Default branch is :master
+ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
+set :deploy_via, :remote_cache
+set :bundle_flags, "--quiet --no-cache"
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/application.yml')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+set :rbenv_type, :user
+set :rbenv_ruby, '2.2.2'
 
-# Rackspace options
-set :branch,       ENV['BRANCH'] || 'master'
-set :user,         'deploy'
-set :group,        'wheel'
-set :repository,   "git@github.com:ample/#{application}-com.git"
-set :host,         '50.57.126.202'
-set :use_sudo,     false
-ssh_options[:port] = 30123
+set :slack_webhook, "https://hooks.slack.com/services/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"
+set :slack_icon_emoji,       -> { ':rocket:' }
+set :slack_channel,          -> { '#ops' }
+set :slack_username,         -> { 'tcmacdonald' }
+set :slack_run_starting,     -> { true }
+set :slack_run_finished,     -> { true }
+set :slack_run_failed,       -> { true }
 
-if dest == 'www'
-  set :deploy_to,    "/home/#{user}/sites/#{application}.com"
-  set :rails_env,    'production'
-elsif dest == 'dev'
-  set :deploy_to,    "/home/#{user}/sites/dev.#{application}.com"
-  set :rails_env,    'staging'
-end
-
-after 'deploy:update_code', 'deploy:update_shared'
-if assets == 'y'
-  after 'deploy:update_code', 'deploy:precompile_assets'
-end
-
-# Deploy options  
-role :app, host
-role :web, host
-role :db,  host, :primary => true
 
 namespace :deploy do
-  desc "Restarting mod_rails with restart.txt"
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "touch #{current_path}/tmp/restart.txt"
+  task :restart_unicorn do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      execute "service unicorn_msa upgrade"
+    end
   end
-
-  desc 'Hook up all of the shared content to the current release'
-  task :update_shared, :roles => :app do
-    # Dragonfly Rack::Cache files
-    run "mkdir -p #{shared_path}/tmp/dragonfly && ln -nfs #{shared_path}/tmp/dragonfly #{release_path}/tmp/dragonfly"
-    # Search Index files
-    run "mkdir -p #{shared_path}/tmp/index && ln -nfs #{shared_path}/tmp/index #{release_path}/tmp/index"
-    # Copy in db config
-    run "cp #{shared_path}/config/database.yml #{release_path}/config/"
-  end
-
-  desc 'Precompile assets'
-  task :precompile_assets, :roles => :app do
-    run "cd #{release_path} && bundle exec rake assets:precompile RAILS_ENV=#{rails_env}"
-  end
-
 end
 
-require './config/boot'
-require 'hoptoad_notifier/capistrano'
+after 'deploy', 'deploy:restart_unicorn'

@@ -1,7 +1,7 @@
 <section id="alpha"<%= current_market.background %> class="clearfix <%= current_market.permalink %>">
 	<div class="container">
 		<div class="span-9 append-1 intro">
-			<%= image_asset current_market, :object => current_market.logo, :dimensions => '324x>', :class => 'market-logo' unless current_market.logo.blank? %>
+      <%= image_asset current_market, :object => current_market.logo, :dimensions => '324x>', :class => 'market-logo', :encode => :png unless current_market.logo.blank? %>
 			<%= current_market.body.to_html.html_safe %>
 		</div>
 		<div class="span-5 last">

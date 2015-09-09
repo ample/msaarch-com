@@ -23,6 +23,14 @@ module AmpleAdmin
       }
     }
 
+    config.to_prepare do
+      [Rails.root + "app/decorators/**/*_decorator*.rb"].each do |path|
+        Dir.glob(path).each do |c|
+          require_dependency(c)
+        end
+      end
+    end
+
     initializer 'mount ample admin' do |app|
 
       # make sure mount_at ends with trailing slash

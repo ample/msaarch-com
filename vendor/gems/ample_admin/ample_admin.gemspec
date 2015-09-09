@@ -19,52 +19,17 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.10"
   s.summary = "A beautiful CMS Rails Engine"
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 3.1"])
-      s.add_runtime_dependency(%q<capistrano>, [">= 0"])
-      s.add_runtime_dependency(%q<devise>, [">= 0"])
-      s.add_runtime_dependency(%q<permalink_fu>, [">= 0"])
-      s.add_runtime_dependency(%q<devise>, [">= 0"])
-      s.add_runtime_dependency(%q<acts_as_indexed>, [">= 0"])
-      s.add_runtime_dependency(%q<acts_as_markup>, ["~> 1.3.4"])
-      s.add_runtime_dependency(%q<mechanize>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
-      s.add_runtime_dependency(%q<will_paginate>, [">= 0"])
-      s.add_runtime_dependency(%q<jquery-rails>, [">= 0.2.6"])
-      s.add_runtime_dependency(%q<rack-cache>, [">= 0"])
-      s.add_runtime_dependency(%q<dragonfly>, ["~> 0.9.8"])
-    else
-      s.add_dependency(%q<rails>, ["~> 3.1"])
-      s.add_dependency(%q<capistrano>, [">= 0"])
-      s.add_dependency(%q<devise>, [">= 0"])
-      s.add_dependency(%q<permalink_fu>, [">= 0"])
-      s.add_dependency(%q<devise>, [">= 0"])
-      s.add_dependency(%q<acts_as_indexed>, [">= 0"])
-      s.add_dependency(%q<acts_as_markup>, ["~> 1.3.4"])
-      s.add_dependency(%q<mechanize>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, [">= 0"])
-      s.add_dependency(%q<will_paginate>, [">= 0"])
-      s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
-      s.add_dependency(%q<rack-cache>, [">= 0"])
-      s.add_dependency(%q<dragonfly>, ["~> 0.9.8"])
-    end
-  else
-    s.add_dependency(%q<rails>, ["~> 3.1"])
-    s.add_dependency(%q<capistrano>, [">= 0"])
-    s.add_dependency(%q<devise>, [">= 0"])
-    s.add_dependency(%q<permalink_fu>, [">= 0"])
-    s.add_dependency(%q<devise>, [">= 0"])
-    s.add_dependency(%q<acts_as_indexed>, [">= 0"])
-    s.add_dependency(%q<acts_as_markup>, ["~> 1.3.4"])
-    s.add_dependency(%q<mechanize>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, [">= 0"])
-    s.add_dependency(%q<will_paginate>, [">= 0"])
-    s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
-    s.add_dependency(%q<rack-cache>, [">= 0"])
-    s.add_dependency(%q<dragonfly>, ["~> 0.9.8"])
-  end
+  s.add_dependency(%q<rails>, ["~> 4.2.3"])
+  s.add_dependency(%q<devise>, [">= 0"])
+  s.add_dependency(%q<permalink_fu>, [">= 0"])
+  s.add_dependency(%q<devise>, [">= 0"])
+  s.add_dependency(%q<acts_as_indexed>, [">= 0"])
+  s.add_dependency(%q<acts_as_markup>, ["~> 2.0.2"])
+  s.add_dependency(%q<mechanize>, [">= 0"])
+  s.add_dependency(%q<nokogiri>, [">= 0"])
+  s.add_dependency(%q<will_paginate>, [">= 0"])
+  s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
+  s.add_dependency(%q<rack-cache>, [">= 0"])
+  s.add_dependency(%q<dragonfly>, ["~> 0.9.8"])
 end
 

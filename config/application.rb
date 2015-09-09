@@ -2,27 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# make sure engine classes load first.
-# @see http://stackoverflow.com/questions/5045068/extending-controllers-of-a-rails-3-engine-in-the-main-app/5100825
-require 'active_support/dependencies'
-module ActiveSupport::Dependencies
-  alias_method :require_or_load_without_multiple, :require_or_load
-  def require_or_load(file_name, const_path = nil)
-    if file_name.starts_with?(Rails.root.to_s + '/app')
-      relative_name = file_name.gsub(Rails.root.to_s, '')
-      @engine_paths ||= MsaarchCom::Application.railties.engines.collect{|engine| engine.config.root.to_s }
-      @engine_paths.each do |path|
-        engine_file = File.join(path, relative_name)
-        require_or_load_without_multiple(engine_file, const_path) if File.file?(engine_file)
-      end
-    end
-    require_or_load_without_multiple(file_name, const_path)
-  end
-end
-
-# If you have a Gemfile, require the gems listed there, including any gems
+# Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+Bundler.require(*Rails.groups)
 
 module MsaarchCom
   class Application < Rails::Application
@@ -39,7 +21,7 @@ module MsaarchCom
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
     # Activate observers that should always be running.
-    config.active_record.observers = :cache_observer
+    config.active_record.observers = :cache_observer unless File.basename( $0 ) == "rake"
 
     # change cache location
     config.action_controller.page_cache_directory = Rails.root.to_s + "/public/cache"
@@ -64,5 +46,7 @@ module MsaarchCom
 
     config.assets.precompile += %w( public/blueprint/screen.css pubic/blueprint/print.css public/blueprint/ie.css admin/blueprint/screen.css admin/blueprint/print.css admin/blueprint/ie.css application.css application.js ample_admin.css admin/admin.css ample_admin.js admin/admin.js )
 
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end

@@ -2,7 +2,7 @@ module Public::PagesHelper
 
   def alpha_backgrounds
     current_page.features.live.of_type(:image).collect{ |img|
-      "#{ActionController::Base.asset_host}#{img.asset.attachment.url}" unless img.asset.nil? 
+      "#{ActionController::Base.asset_host}#{img.asset.attachment.thumb('2000x>').encode(:jpg, '-quality 60 -compress JPEG').url}" unless img.asset.nil? 
     }.compact.join('\',\'')
   end
 

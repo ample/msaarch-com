@@ -1,5 +1,5 @@
 users = User.create([
-  { :first_name => 'Taylor', :last_name => 'MacDonald', :email => 'taylor@helloample.com', :password => 'ample2008', :password_confirmation => 'ample2011', :admin => true },
+  { :first_name => 'Taylor', :last_name => 'MacDonald', :email => 'taylor@helloample.com', :password => 'ample2008', :password_confirmation => 'ample2008', :admin => true },
 ])
 
 homepage = Page.create :title => 'Home', :subtitle => '<strong>Design<br>is<br>life</strong> and we<br>have a<br>passion<br>for<br>living', :active => true, :permalink => 'index', :nav_name => 'Home', :nav_position => 'header', :body => 'We have six core markets, each with its own dedicated architects living and breathing their genre. But our culture is collaborative. Which means that the latest sports trends leak into our newest retail construction and that a technological advancement in education can make a new restaurant design better.', :sort_order => 1

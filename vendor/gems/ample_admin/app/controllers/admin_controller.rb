@@ -24,7 +24,7 @@ class AdminController < ApplicationController
   end
   
   def create
-    @current_object = model.new(params["#{self.class.model_sym}"])
+    @current_object = model.new(object_params)
     if current_object.save
       flash[:notice] = I18n.t('ample_admin.create.success', :model => self.class.model_sym.to_s.titleize)
       conditional_continue
@@ -39,7 +39,7 @@ class AdminController < ApplicationController
   end
   
   def update
-    if current_object.update_attributes(params["#{self.class.model_sym}"])
+    if current_object.update_attributes(object_params)
       flash[:notice] = I18n.t('ample_admin.update.success', :model => self.class.model_sym.to_s.titleize)
       conditional_continue
     else
@@ -133,6 +133,10 @@ class AdminController < ApplicationController
         current_object.blocks.detect { |b| f[0] == b.name && f[1] == b.block_type } || current_object.blocks.build(:name => f[0], :block_type => f[1])
       end
       current_object.blocks = new_blocks
+    end
+
+    def object_params
+      params.require(self.class.model_sym).permit!
     end
 
 end
