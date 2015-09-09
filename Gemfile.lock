@@ -206,7 +206,7 @@ GEM
     paper_trail (3.0.8)
       activerecord (>= 3.0, < 5.0)
       activesupport (>= 3.0, < 5.0)
-    pdfkit (0.8.0)
+    pdfkit (0.8.2)
     permalink_fu (1.0.0)
     power_assert (0.2.2)
     pry (0.10.1)
