@@ -8,6 +8,7 @@ PDFKit.configure do |config|
     :margin_bottom => "0.25in",
     :margin_left => "1in",
     :disable_smart_shrinking => false,
-    :custom_header => "User-Agent: PDFKit"
+    :custom_header => "User-Agent: PDFKit",
+    :ignore_errors => true
   }
 end

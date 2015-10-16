@@ -17,7 +17,7 @@ class Public::NewsController < ApplicationController
       end
       format.pdf do
         send_data PDFKit.new(public_post_url(current_post.permalink)).to_pdf,
-          :filename => "#{current_post.permalink}.pdf", :type => 'application/pdf', :stream => false
+          :filename => "#{current_post.permalink}.pdf", :stream => false
       end
     end
   end
