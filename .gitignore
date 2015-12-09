@@ -15,3 +15,4 @@ public/index.html
 # Ignore application configuration
 /config/application.yml
 /config/unicorn.conf
+/config/database.yml
