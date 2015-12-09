@@ -82,7 +82,7 @@ MsaarchCom::Application.routes.draw do
 
   get 'contact', :to => 'public/careers#index', :as => :contact
   get 'contact/email(/:id)', :to => 'public/careers#new', :as => :contact_form
-  get 'contact/:permalink', :to => 'public/careers#show', :as => :public_career
+  get 'careers/:permalink', :to => 'public/careers#show', :as => :public_career
   get 'about/news', :to => 'public/news#index', :as => :public_news
   get 'about/awards', :to => 'public/news#awards', :as => :public_awards
   get 'about/news/archive', :to => 'public/news#archive', :as => :public_news_archive
