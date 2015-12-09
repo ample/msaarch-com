@@ -26,7 +26,4 @@ class Public::PagesController < PublicController
     end
   end
 
-
-
-
 end
