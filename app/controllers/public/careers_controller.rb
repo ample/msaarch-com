@@ -41,11 +41,7 @@ class Public::CareersController < PublicController
 
   protected
 
-    helper_method :current_careers, :current_career, :market_experts, :contact_page
-
-    def current_careers
-      @current_careers ||= Career.live
-    end
+    helper_method :current_career
 
     def current_career
       @current_career ||= Career.live.find_by_permalink params[:permalink]
@@ -53,10 +49,6 @@ class Public::CareersController < PublicController
 
     def set_permalink
       params[:permalink] = 'locations'
-    end
-
-    def contact_page
-      @contact_page ||= Page.live.find_by_permalink 'locations'
     end
 
     def message_params

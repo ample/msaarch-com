@@ -29,11 +29,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
-
-group :production do
-  gem 'mysql2'
-  gem 'unicorn'
-end
+gem 'unicorn'
+gem 'mysql2'
 
 group :development do
   gem 'web-console', '~> 2.0'

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   protected
     
-    helper_method :current_page, :current_jobs, :current_job, :careers_page
+    helper_method :current_page, :current_jobs, :current_job, :careers_page, :current_careers, :contact_page
     
     def cleaned_permalink
       (params[:permalink].include?('/') ? params[:permalink].split('/').last : params[:permalink]).strip
@@ -25,6 +25,14 @@ class ApplicationController < ActionController::Base
     
     def careers_page
       @careers_page ||= Page.live.find_by_permalink 'careers'
+    end
+
+    def current_careers
+      @current_careers ||= Career.live
+    end
+
+    def contact_page
+      @contact_page ||= Page.live.find_by_permalink 'locations'
     end
 
 end
