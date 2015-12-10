@@ -2,16 +2,19 @@
 name: Careers
 description: This is the base page template for careers
 fields: 
- asset: image
+  asset: image
+  sidebar_header: string
+  sidebar_content: text
 help: {}
 features:
   - video
   - link
   - promo
-  - feature
 --- %>
 
 <% asset = current_page.get_block(:asset) %>
+<% sidebar_header = current_page.get_block(:sidebar_header) %>
+<% sidebar_content = current_page.get_block(:sidebar_content) %>
 <div id="page" class="career span-9 default">
 
   <% if current_page.parent %>
@@ -41,8 +44,8 @@ features:
 </div>
 <div id="sidebar" class="prepend-1 span-5 last">
   <div id="careers" class="block">
-    <%= content_tag :h2, 'Careers' %>
-    <%== current_page.features.of_type(:feature).first.body.to_html %>
+    <%= content_tag :h2, sidebar_header.body %>
+    <%== sidebar_content.textarea.to_html %>
     <%= render :partial => 'public/careers/careers' %>
   </div>
   <div class="block">
