@@ -15,18 +15,3 @@
 <div id="sidebar" class="span-5 prepend-1 last">
   <%= render 'experts' %>
 </div>
-
-<% unless current_careers.empty? %>
-  <hr class="span-15 last" />
-  <%= content_tag :h2, 'Careers', :class => 'careers span-15 last' %>
-  <div id="careers" class="span-8 append-1">
-    <%= current_page.body.to_html.html_safe %>
-    <%= content_tag :h3, 'Role Description' %>
-    <%= render :partial => 'public/careers/careers' %>
-  </div>
-  <div class="sidebar span-5 prepend-1 last">
-    <div class="block big">
-      <%= link_to 'Learn about the MSA Team', team_index_path %>
-    </div>
-  </div>
-<% end %>
