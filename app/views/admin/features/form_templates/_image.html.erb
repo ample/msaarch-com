@@ -7,10 +7,15 @@
 <p><%= f.label :title %><br />
 	 <%= f.text_field(:title, :class => 'text') %></p>
  
-<p><%= f.label :body, 'Location' %><br />
-	 <%= f.text_field(:body, :class => 'text') %></p>
+<% if nesting_object.is_a? Project %>
+  <p><%= f.label :body, 'Caption' %><br />
+    <%= f.text_field(:body, :class => 'text') %></p>
+<% else %>
+  <p><%= f.label :body, 'location' %><br />
+    <%= f.text_field(:body, :class => 'text') %></p>
 
-<p><%= f.label :project %><br />
-	<%= f.grouped_collection_select :project_id, Market.all, :projects, :title, :id, :title, :include_blank => true %></p>
+  <p><%= f.label :project %><br />
+    <%= f.grouped_collection_select :project_id, Market.all, :projects, :title, :id, :title, :include_blank => true %></p>
+<% end %>
 
 <script>AA['assets'] = true;</script>

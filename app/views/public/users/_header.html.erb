@@ -2,13 +2,13 @@
   <%= render :template => 'public/users/history' %>
 <% else %>
 <section id="alpha"<%= current_page.background %> class="clearfix">
-	<div class="container">
-		<div class="span-15 last intro">
+  <div class="container">
+    <div class="span-15 last intro">
       <div class="span-9 append-6 clearfix dark">
         <%= content_tag :h1, '', :class => :dark %>
         <%= current_page.body.to_html.html_safe unless current_page.body.blank? %>
-  		</div>
-		</div>
-	</div>
+      </div>
+    </div>
+  </div>
 </section>
 <% end %>
