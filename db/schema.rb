@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106162522) do
+ActiveRecord::Schema.define(version: 20151214200850) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "alt_text",             limit: 255
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20150106162522) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "project_id",   limit: 4
+    t.text     "caption",      limit: 65535
   end
 
   create_table "markets", force: :cascade do |t|

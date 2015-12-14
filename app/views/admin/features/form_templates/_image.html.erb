@@ -8,8 +8,8 @@
 	 <%= f.text_field(:title, :class => 'text') %></p>
  
 <% if nesting_object.is_a? Project %>
-  <p><%= f.label :body, 'Caption' %><br />
-    <%= f.text_field(:body, :class => 'text') %></p>
+  <p><%= f.label :caption %><br />
+    <%= f.text_field(:caption, :class => 'text') %></p>
 <% else %>
   <p><%= f.label :body, 'location' %><br />
     <%= f.text_field(:body, :class => 'text') %></p>
