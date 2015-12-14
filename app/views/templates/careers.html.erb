@@ -6,24 +6,22 @@ fields:
   sidebar_header: string
   sidebar_content: text
 help: {}
-features:
-  - video
-  - link
-  - promo
+features: {}
 --- %>
 
-<% asset = current_page.get_block(:asset) %>
-<% sidebar_header = current_page.get_block(:sidebar_header) %>
-<% sidebar_content = current_page.get_block(:sidebar_content) %>
+
+<% if current_page.parent %>
+  <%= content_tag :h2, "#{current_page.parent.try(:nav_name)} / #{current_page.nav_name}", :class => 'section-title' %>
+<% else %>
+  <%= content_tag :h2, current_page.nav_name, :class => 'section-title' %>
+<% end %>
+
 <div id="page" class="career span-9 default">
 
-  <% if current_page.parent %>
-    <%= content_tag :h2, "#{current_page.parent.try(:nav_name)} / #{current_page.nav_name}", :class => 'section-title' %>
-  <% else %>
-    <%= content_tag :h2, current_page.nav_name, :class => 'section-title' %>
+  <% if asset = current_page.get_block(:asset) %>
+    <%= image_asset asset, :object => asset.asset, :dimensions => '544x>', :class => :frame %>
   <% end %>
 
-  <%= image_asset asset, :object => asset.asset, :dimensions => '544x>', :class => :frame unless asset.nil? %>
   <%= content_tag :h1, current_page.title, :class => 'page-title' %>
   <%= content_tag :h3, current_page.subtitle, :class => :subtitle unless current_page.subtitle.blank? %>
   <div class="body">
@@ -31,24 +29,4 @@ features:
   </div>
 
 </div>
-<div id="sidebar" class="span-5 last default">
-
-  <% unless current_page.videos.empty? %>
-    <div class="block videos">
-      <%= content_tag :h2, 'Videos' %>
-      <%= render :partial => 'public/video', :collection => current_page.videos %>
-    </div>
-  <% end %>
-  <%= render :partial => 'public/links', :object => current_page.links unless current_page.links.empty? %>
-
-</div>
-<div id="sidebar" class="prepend-1 span-5 last">
-  <div id="careers" class="block">
-    <%= content_tag :h2, sidebar_header.body %>
-    <%== sidebar_content.textarea.to_html %>
-    <%= render :partial => 'public/careers/careers' %>
-  </div>
-  <div class="block">
-    <%= link_to 'View General Contact Information', contact_path %>
-  </div>
-</div>
+<%= render 'public/careers/sidebar' %>

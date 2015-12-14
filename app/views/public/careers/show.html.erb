@@ -1,4 +1,4 @@
-<%= content_tag :h2, 'Contact / Careers', :class => 'section-title' %>
+<%= content_tag :h2, 'Careers', :class => 'section-title' %>
 <div class="career span-9">
   
   <%= content_tag :h1, current_career.title, :class => 'page-title' %>
@@ -11,13 +11,4 @@
   </div>
   
 </div>
-<div id="sidebar" class="prepend-1 span-5 last">
-  <div id="careers" class="block">
-    <%= content_tag :h2, 'Careers' %>
-    <%= contact_page.body.to_html.html_safe %>
-    <%= render :partial => 'public/careers/careers' %>
-  </div>
-  <div class="block">
-    <%= link_to 'View General Contact Information', contact_path %>
-  </div>
-</div>
+<%= render 'public/careers/sidebar' %>

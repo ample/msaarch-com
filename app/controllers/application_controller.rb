@@ -22,9 +22,9 @@ class ApplicationController < ActionController::Base
     def current_jobs
       @current_jobs ||= Job.live
     end
-    
+
     def careers_page
-      @careers_page ||= Page.live.find_by_permalink 'careers'
+      @careers_page ||= Page.live.find_by_template_filename('careers')
     end
 
     def current_careers

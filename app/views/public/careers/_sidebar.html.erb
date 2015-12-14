@@ -1,0 +1,16 @@
+<% if careers_page.present? %>
+<%
+header = careers_page.get_block(:sidebar_header)
+body = careers_page.get_block(:sidebar_content)
+%>
+  <div id="sidebar" class="prepend-1 span-5 last">
+    <div id="careers" class="block">
+      <%= content_tag :h2, header.body if header.present? %>
+      <%== body.textarea.try(:to_html) if body.present? %>
+      <%= render :partial => 'public/careers/careers' %>
+    </div>
+    <div class="block">
+      <%= link_to 'View General Contact Information', contact_path %>
+    </div>
+  </div>
+<% end %>

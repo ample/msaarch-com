@@ -11,7 +11,6 @@ module PublicHelper
 		classes += ' news' if params[:controller] == 'public/news'
 		classes += ' archive' if params[:controller] == 'public/news' && params[:action] == 'archive'
 		classes += ' awards' if params[:controller] == 'public/news' && params[:action] == 'awards'
-		classes += ' contact' if params[:controller] == 'public/careers'
 		" class=\"#{classes.lstrip}\"".html_safe unless classes.empty?
 	end
 
