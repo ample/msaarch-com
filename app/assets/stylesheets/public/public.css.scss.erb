@@ -609,6 +609,14 @@ body.project {
         height: 449px;
         border-right: none;
         margin-right: 0;
+        position: relative;
+      }
+      .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 5px 10px;
+        background-color: #ffffff;
       }
     }
     border-bottom: 3px solid #FFF;
@@ -671,6 +679,7 @@ body.project {
 section#controls {
   position: absolute;
   width: 100%;
+  z-index: 9999;
   a.previous,
   a.next {
     outline: none;
