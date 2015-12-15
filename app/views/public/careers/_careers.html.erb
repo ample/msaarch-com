@@ -1,5 +1,10 @@
 <%= content_tag :ul do %>
   <% current_careers.each do |career| %>
-    <%= content_tag :li, link_to(career.title, public_career_path(career.permalink)) + (career.now_hiring? ? ' (Now Hiring)' : ''), :class => :arrow  %>
+    <%= content_tag :li, :class => :arrow do %>
+      <%= link_to career.title, public_career_path(career.permalink) %>
+      <% if career.location.present? || career.now_hiring? %>
+        <%= "(#{career.location if career.location.present?}#{' - ' if career.location.present? && career.now_hiring?}#{'Now Hiring' if career.now_hiring?})" %>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>

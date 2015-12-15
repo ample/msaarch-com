@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214200850) do
+ActiveRecord::Schema.define(version: 20151215153759) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "alt_text",             limit: 255
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20151214200850) do
     t.integer  "updated_by",  limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location",    limit: 255
   end
 
   add_index "careers", ["permalink"], name: "index_careers_on_permalink", using: :btree
