@@ -5,7 +5,7 @@ MsaarchCom::Application.routes.draw do
 
   scope '/admin' do
     get 'news', :to => 'admin/news#index'
-    get 'team/update_sort_order', :to => 'admin/users#update_sort_order'
+    post 'team/update_sort_order', :to => 'admin/users#update_sort_order'
     resources :careers, :controller => 'admin/careers' do
       collection do
         post :update_sort_order
