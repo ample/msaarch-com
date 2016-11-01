@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215153759) do
+ActiveRecord::Schema.define(version: 20161101133152) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "alt_text",             limit: 255
@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(version: 20151215153759) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "text_color",         limit: 255
+    t.boolean  "visible",                          default: true
   end
 
   add_index "markets", ["permalink"], name: "index_markets_on_permalink", using: :btree
