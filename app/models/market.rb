@@ -48,7 +48,7 @@ class Market < ActiveRecord::Base
   end
 
   def sorted_projects
-    self.projects.sort{ |a,b| a[:title] <=> b[:title] }
+    self.projects.active.sort{ |a,b| a[:title] <=> b[:title] }
   end
 
   ###---------------------------------------------------- Class Methods
