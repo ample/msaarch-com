@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'ruby_dep', '~> 1.3.1'
 gem 'rails', '~> 4.2.3'
 gem 'sqlite3'
-gem 'hoptoad_notifier', '~> 2.4.11'
+gem 'rollbar'
 gem 'jquery-rails', '~> 3.1.3'
 gem 'will_paginate', '~> 3.0'
 gem 'ample_admin', :path => File.join(File.dirname(__FILE__), '/vendor/gems/ample_admin')
