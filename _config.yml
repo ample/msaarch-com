@@ -1,0 +1,23 @@
+title: MSA Architects
+email: msa@helloample.com
+
+# Build settings
+markdown: kramdown
+
+collections_dir: collections
+collections:
+  pages:
+    output: true
+    permalink: /:slug
+
+contentful:
+  content_types:
+    pages:
+      id: page
+      body: body
+      frontmatter:
+        entry_mappings:
+          title: title
+          slug: slug
+          permalink: slug
+          layout: layout
