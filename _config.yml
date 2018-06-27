@@ -21,3 +21,11 @@ contentful:
           slug: slug
           permalink: slug
           layout: layout
+
+assets:
+  source_maps: true # false on JEKYLL_ENV=production
+  destination: "/assets"
+  compression: true
+  sources:
+  - _assets/stylesheets
+  - _assets/javascripts

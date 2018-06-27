@@ -5,8 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% asset application.scss !integrity %}
 </head>
 <body>
   {{ content }}
+
+  <script type="text/javascript" src="{% asset application.js @path %}"></script>
+
 </body>
 </html>
