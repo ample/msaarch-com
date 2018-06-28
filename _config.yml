@@ -5,10 +5,10 @@ email: msa@helloample.com
 markdown: kramdown
 
 collections_dir: collections
-collections:
-  pages:
-    output: true
-    permalink: /:slug
+# collections:
+#   pages:
+#     output: true
+#     permalink: /:slug
 
 contentful:
   content_types:
@@ -21,6 +21,12 @@ contentful:
           slug: slug
           permalink: slug
           layout: layout
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
 
 assets:
   source_maps: true # false on JEKYLL_ENV=production

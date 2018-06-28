@@ -282,7 +282,7 @@ $font-family-sans-serif: $font-family-urwdin;
 // $font-family-base:       $font-family-sans-serif;
 // // stylelint-enable value-keyword-case
 
-// $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 // $font-size-lg:                ($font-size-base * 1.25) !default;
 // $font-size-sm:                ($font-size-base * .875) !default;
 
@@ -293,7 +293,7 @@ $font-family-sans-serif: $font-family-urwdin;
 // $font-weight-base:            $font-weight-normal !default;
 // $line-height-base:            1.5 !default;
 
-// $h1-font-size:                $font-size-base * 2.5 !default;
+$h1-font-size:                $font-size-base * 4; //OVERRIDE
 // $h2-font-size:                $font-size-base * 2 !default;
 // $h3-font-size:                $font-size-base * 1.75 !default;
 // $h4-font-size:                $font-size-base * 1.5 !default;
@@ -680,19 +680,19 @@ $font-family-sans-serif: $font-family-urwdin;
 // $navbar-toggler-font-size:          $font-size-lg !default;
 // $navbar-toggler-border-radius:      $btn-border-radius !default;
 
-// $navbar-dark-color:                 rgba($white, .5) !default;
+$navbar-dark-color:                 rgba($white, 1); //OVERRIDE
 // $navbar-dark-hover-color:           rgba($white, .75) !default;
 // $navbar-dark-active-color:          $white !default;
 // $navbar-dark-disabled-color:        rgba($white, .25) !default;
 // $navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-// $navbar-dark-toggler-border-color:  rgba($white, .1) !default;
+$navbar-dark-toggler-border-color:  transparent; //OVERRIDE
 
 // $navbar-light-color:                rgba($black, .5) !default;
 // $navbar-light-hover-color:          rgba($black, .7) !default;
 // $navbar-light-active-color:         rgba($black, .9) !default;
 // $navbar-light-disabled-color:       rgba($black, .3) !default;
 // $navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-// $navbar-light-toggler-border-color: rgba($black, .1) !default;
+$navbar-light-toggler-border-color:  transparent; //OVERRIDE
 
 // // Pagination
 
@@ -727,7 +727,7 @@ $font-family-sans-serif: $font-family-urwdin;
 
 // // Jumbotron
 
-// $jumbotron-padding:                 2rem !default;
+$jumbotron-padding:                 5rem; //OVERRIDE
 // $jumbotron-bg:                      $gray-200 !default;
 
 
