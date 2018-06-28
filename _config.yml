@@ -29,3 +29,5 @@ assets:
   sources:
   - _assets/stylesheets
   - _assets/javascripts
+
+typekit_url: https://use.typekit.net/dow2fxa.css

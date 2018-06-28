@@ -1,104 +1,104 @@
-// // Override Bootstrap variables here (defaults from bootstrap v4.1.1):
-// //
-// // Variables should follow the `$component-state-property-size` formula for
-// // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// Override Bootstrap variables here (defaults from bootstrap v4.1.1):
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-// // Table of Contents
-// //
-// // Color system
-// // Options
-// // Spacing
-// // Body
-// // Links
-// // Grid breakpoints
-// // Grid containers
-// // Grid columns
-// // Fonts
-// // Components
-// // Tables
-// // Buttons
-// // Forms
-// // Dropdowns
-// // Z-index master list
-// // Navs
-// // Navbar
-// // Pagination
-// // Jumbotron
-// // Form states and alerts
-// // Cards
-// // Tooltips
-// // Popovers
-// // Badges
-// // Modals
-// // Alerts
-// // Progress bars
-// // List group
-// // Image thumbnails
-// // Figures
-// // Breadcrumbs
-// // Carousel
-// // Close
-// // Code
+// Table of Contents
+//
+// Color system
+// Options
+// Spacing
+// Body
+// Links
+// Grid breakpoints
+// Grid containers
+// Grid columns
+// Fonts
+// Components
+// Tables
+// Buttons
+// Forms
+// Dropdowns
+// Z-index master list
+// Navs
+// Navbar
+// Pagination
+// Jumbotron
+// Form states and alerts
+// Cards
+// Tooltips
+// Popovers
+// Badges
+// Modals
+// Alerts
+// Progress bars
+// List group
+// Image thumbnails
+// Figures
+// Breadcrumbs
+// Carousel
+// Close
+// Code
 
 
 
-// //
-// // Color system
-// //
+//
+// Color system
+//
 
 // // stylelint-disable
-// $white:    #fff !default;
-// $gray-100: #f8f9fa !default;
-// $gray-200: #e9ecef !default;
-// $gray-300: #dee2e6 !default;
-// $gray-400: #ced4da !default;
-// $gray-500: #adb5bd !default;
-// $gray-600: #6c757d !default;
-// $gray-700: #495057 !default;
-// $gray-800: #343a40 !default;
-// $gray-900: #212529 !default;
-// $black:    #000 !default;
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
 
-// $grays: () !default;
-// $grays: map-merge((
-//   "100": $gray-100,
-//   "200": $gray-200,
-//   "300": $gray-300,
-//   "400": $gray-400,
-//   "500": $gray-500,
-//   "600": $gray-600,
-//   "700": $gray-700,
-//   "800": $gray-800,
-//   "900": $gray-900
-// ), $grays);
+$grays: () !default;
+$grays: map-merge((
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+), $grays);
 
-// $blue:    #007bff !default;
-// $indigo:  #6610f2 !default;
-// $purple:  #6f42c1 !default;
-// $pink:    #e83e8c !default;
-// $red:     #dc3545 !default;
-// $orange:  #fd7e14 !default;
-// $yellow:  #ffc107 !default;
-// $green:   #28a745 !default;
-// $teal:    #20c997 !default;
-// $cyan:    #17a2b8 !default;
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:      #ff0000; // OVERRIDE
+$green:   #28a745;
+$yellow:  #ffc107;
+$orange:  #fd7e14;
+$teal:    #20c997;
+$cyan:    #17a2b8;
 
-// $colors: () !default;
-// $colors: map-merge((
-//   "blue":       $blue,
-//   "indigo":     $indigo,
-//   "purple":     $purple,
-//   "pink":       $pink,
-//   "red":        $red,
-//   "orange":     $orange,
-//   "yellow":     $yellow,
-//   "green":      $green,
-//   "teal":       $teal,
-//   "cyan":       $cyan,
-//   "white":      $white,
-//   "gray":       $gray-600,
-//   "gray-dark":  $gray-800
-// ), $colors);
+$colors: () !default;
+$colors: map-merge((
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+), $colors);
 
 // $primary:       $blue !default;
 // $secondary:     $gray-600 !default;
@@ -269,9 +269,17 @@
 // // Font, line-height, and color for body text, headings, and more.
 
 // // stylelint-disable value-keyword-case
-// $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-families:   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$tk-urwdin: 'urw-din';
+$tk-urwdin-cond: 'urw-din-condensed';
+
+$font-family-urwdin: $tk-urwdin, $base-font-families;
+$font-family-urwdin-cond: $tk-urwdin-cond, $base-font-families;
+
+$font-family-sans-serif: $font-family-urwdin;
 // $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-// $font-family-base:            $font-family-sans-serif !default;
+// $font-family-base:       $font-family-sans-serif;
 // // stylelint-enable value-keyword-case
 
 // $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
