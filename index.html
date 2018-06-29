@@ -2,19 +2,41 @@
 layout: default
 ---
 
-<header class="jumbotron jumbotron-fluid" style="background-image: url('{{ "/assets/images/banner.jpg" | absolute_url }}');">
-  <div class="container text-center text-uppercase text-white">
+<header class="jumbotron jumbotron-fluid pb-0" style="background-image: url('{{ "/assets/images/banner.jpg" | absolute_url }}');">
+  <div class="container text-uppercase text-white">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <h1 class="header-text-bg text-center">design. create. innovate.</h1>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-10 offset-1">
-        <h1 class="header-text-bg">design. create. innovate.</h1>
+      <div class="col-6">
+        <p class="tagline text-uppercase">architecture | interiors | graphics</p>
       </div>
     </div>
   </div>
 </header>
 <section class="container">
-  <article class="overlap-header">
-    <div class="row">
-
+  <article class="">
+    <div class="row bg-right justify-content-end">
+      <div class="col-sm-4 order-sm-12">
+        <img class="img-square" src="{{ "/assets/images/home-img-1.jpg" | absolute_url }}" alt="image 1">
+      </div>
+      <div class="col-sm-8 text-right align-self-center">
+        <h2 class="text-uppercase">philosophy in action</h2>
+        <p>We transform environments into experiences. We rely on strategy and creative process to create spaces that are unique and enhance the lives of the people within them </p>
+      </div>
+    </div>
+  </article>
+  <article>
+    <div class="row bg-left">
+      <div class="col-sm-4">
+        <img class="img-square" src="{{ "/assets/images/home-img-2.jpg" | absolute_url }}" alt="image 2">
+      </div>
+      <div class="col-sm-8 text-left align-self-center">
+        <h2 class="text-uppercase">how we work</h2>
+        <p>Our culture is based on collaboration. While we do work in  seven core markets, we take our learnings each project and discipline to make all of our work stronger      </p>
+      </div>
     </div>
   </article>
 </section>
