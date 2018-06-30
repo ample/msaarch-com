@@ -74,4 +74,22 @@ footer {
   background-color: $red;
   color: $white;
   font-family: $font-family-sans-serif;
+
+  .social-icons a i {
+    font-size: 1.4rem;
+    color: $white;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+}
+
+.btn-slim {
+  padding: .5rem 2rem;
+  font-size: .75rem;
+  line-height: .75rem;
+}
+
+.copyright {
+  font-size: .75rem;
+  line-height: .75rem;
 }
