@@ -1,0 +1,43 @@
+
+.link-card {
+  .link-img {
+    position: relative;
+  }
+
+  .link-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: .5px;
+    padding-left: .5rem;
+
+    @media (min-width: 767.98px) {
+      font-size: 1.875rem;
+      padding-left: 1rem;
+    }
+  }
+
+  .link-body {
+    padding-left: 0;
+    padding-right: .5rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
+
+    @media (min-width: 767.98px) {
+      padding-left: 1rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(rgba($black, 0), rgba($black, 0.34) 51%, $black);
+}

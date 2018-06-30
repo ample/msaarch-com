@@ -38,58 +38,6 @@
   widows: 350px;
 }
 
-.link-card {
-  .link-img {
-
-    position: relative;
-  }
-
-  .link-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-left: .5rem;
-    color: $white;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    letter-spacing: .5px;
-
-    @media (min-width: 767.98px) {
-      font-size: 1.875rem;
-      padding-left: 1rem;
-    }
-  }
-}
-
-.bg-gradient {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: linear-gradient(rgba($black, 0), rgba($black, 0.34) 51%, $black);
-}
-
-footer {
-  background-color: $red;
-  color: $white;
-  font-family: $font-family-sans-serif;
-
-  .social-icons a i {
-    font-size: 1.4rem;
-    color: $white;
-    padding-left: .5rem;
-    padding-right: .5rem;
-  }
-}
-
-.btn-slim {
-  padding: .5rem 2rem;
-  font-size: .75rem;
-  line-height: .75rem;
-}
-
-.copyright {
-  font-size: .75rem;
-  line-height: .75rem;
+.pb-7 {
+  padding-bottom: 7rem;
 }
