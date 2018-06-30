@@ -11,10 +11,14 @@
 }
 
 .tagline {
-  font-size: 2rem;
+  font-size: 1.375rem;
   padding-top: 10rem;
   padding-bottom: 1rem;
   font-family: $font-family-urwdin-cond;
+
+  @media (min-width: 767.98px) {
+    font-size: 2rem;
+  }
 }
 
 .overlap-header {
@@ -32,4 +36,42 @@
 .img-square {
   height: 350px;
   widows: 350px;
+}
+
+.link-card {
+  .link-img {
+
+    position: relative;
+  }
+
+  .link-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: .5rem;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: .5px;
+
+    @media (min-width: 767.98px) {
+      font-size: 1.875rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(rgba($black, 0), rgba($black, 0.34) 51%, $black);
+}
+
+footer {
+  background-color: $red;
+  color: $white;
+  font-family: $font-family-sans-serif;
 }

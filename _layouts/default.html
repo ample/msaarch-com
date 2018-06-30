@@ -10,6 +10,7 @@
 <body>
   {% include header.html %}
   {{ content }}
+  {% include footer.html %}
 
   <script type="text/javascript" src="{% asset application.js @path %}"></script>
   {% if jekyll.environment == "production" %}
