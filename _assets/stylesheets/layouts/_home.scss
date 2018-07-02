@@ -1,11 +1,3 @@
-.home-header {
-  text-transform: uppercase;
-
-  @media (min-width: $screen-md) and (max-width: $screen-lg) {
-    font-size: 3rem;
-  }
-}
-
 .main-home {
   @media (max-width: $screen-sm) {
     overflow: hidden;
