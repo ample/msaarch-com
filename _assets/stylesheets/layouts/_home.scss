@@ -1,0 +1,44 @@
+.home-header {
+  text-transform: uppercase;
+
+  @media (min-width: $screen-md) and (max-width: $screen-lg) {
+    font-size: 3rem;
+  }
+}
+
+.main-home {
+  @media (max-width: $screen-sm) {
+    overflow: hidden;
+  }
+}
+
+.home-content {
+  position: relative;
+}
+
+.home-content-left {
+  margin-top: 7rem;
+
+  @media (min-width: $screen-sm) {
+    margin-top: 5rem;
+  }
+}
+
+.home-featured-links {
+  position: relative;
+  margin-top: 6rem;
+
+  @media (min-width: $screen-sm) {
+    margin-top: 8rem;
+  }
+}
+
+.overlap-header {
+  top: -50px;
+
+  &.home-content {
+    @media (max-width: $screen-lg) {
+      top: -10px;
+    }
+  }
+}

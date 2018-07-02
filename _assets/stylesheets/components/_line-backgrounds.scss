@@ -1,0 +1,37 @@
+.line-bg {
+  position: absolute;
+}
+
+.line-bg-r {
+  top: -60px;
+  right: -20px;
+  // max-width: 475px;
+
+  @media (min-width: $screen-sm) {
+    right: -30px;
+  }
+}
+
+.line-bg-l {
+  top: -72px;
+  left: -30px;
+  // max-width: 507px;
+
+  @media (min-width: $screen-sm) {
+    left: -33px;
+  }
+}
+
+.line-bg-c {
+  top: -73px;
+  left: 36px;
+
+  @media (min-width: $screen-sm) {
+    top: -60px;
+    left: 10vw;
+
+    img {
+      max-width: 80%;
+    }
+  }
+}

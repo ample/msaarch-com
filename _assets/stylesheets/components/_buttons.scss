@@ -1,5 +1,10 @@
 .btn-slim {
-  padding: .5rem 2rem;
+  padding: .375rem 2rem;
   font-size: .75rem;
   line-height: .75rem;
+  border-radius: 0;
+
+  &:hover {
+    color: $red;
+  }
 }

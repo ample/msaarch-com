@@ -14,7 +14,7 @@
     letter-spacing: .5px;
     padding-left: .5rem;
 
-    @media (min-width: 767.98px) {
+    @media (min-width: $screen-md) {
       font-size: 1.875rem;
       padding-left: 1rem;
     }
@@ -25,8 +25,9 @@
     padding-right: .5rem;
     font-size: 1rem;
     line-height: 1.4rem;
+    background-color: $white;
 
-    @media (min-width: 767.98px) {
+    @media (min-width: $screen-md) {
       padding-left: 1rem;
       padding-right: 3rem;
     }

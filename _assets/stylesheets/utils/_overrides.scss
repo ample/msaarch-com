@@ -211,7 +211,9 @@ $colors: map-merge((
 //   xl: 1200px
 // ) !default;
 
+$screen-sm: 576px;
 $screen-md: 768px;
+$screen-lg: 992px;
 
 // @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 // @include _assert-starts-at-zero($grid-breakpoints);
