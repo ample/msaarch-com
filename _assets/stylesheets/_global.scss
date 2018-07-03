@@ -53,3 +53,11 @@ h2 {
 .load-more {
   margin-top: $headings-padding-mobile;
 }
+
+a .link-img {
+  &:hover {
+    .bg-gradient, img {
+      background: rgba($white, .3);
+    }
+  }
+}

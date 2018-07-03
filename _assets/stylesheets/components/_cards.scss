@@ -38,6 +38,7 @@
     bottom: 0;
     left: 0;
     color: $white;
+    text-shadow: 0 0 8px rgba($black, 0.5);
 
     &.title-overlap-2x {
       font-size: 2rem;
@@ -83,10 +84,6 @@
   left: 0;
   bottom: 0;
   background: linear-gradient(rgba($black, 0), rgba($black, 0.34) 51%, $black);
-
-  &:hover {
-    background: rgba($white, .3);
-  }
 }
 
 .bg-gradient-light {
