@@ -3,6 +3,10 @@
   .link-img {
     position: relative;
 
+    & img:hover {
+      opacity: .3;
+    }
+
     &.link-img-2x {
       height: 6rem;
 
@@ -55,6 +59,8 @@
   .link-body {
     padding-left: .5rem;
     padding-right: .5rem;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
     font-size: 1rem;
     line-height: 1.4rem;
     background-color: $white;
@@ -73,6 +79,10 @@
   left: 0;
   bottom: 0;
   background: linear-gradient(rgba($black, 0), rgba($black, 0.34) 51%, $black);
+
+  &:hover {
+    background: rgba($white, .3);
+  }
 }
 
 .bg-gradient-light {
