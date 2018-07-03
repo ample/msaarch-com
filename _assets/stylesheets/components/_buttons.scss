@@ -8,3 +8,22 @@
     color: $red;
   }
 }
+
+.btn-gray-light {
+  border: solid 2px rgba($gray-600, 0.25);
+  font-family: $font-family-urwdin-cond;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.6px;
+  text-align: center;
+  color: $red;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+
+  &:hover{
+    color: $red;
+    border: solid 2px rgba($gray-600, 0.5);
+    background-color: transparent;
+    text-decoration: none;
+  }
+}

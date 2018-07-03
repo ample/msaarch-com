@@ -33,6 +33,7 @@ h2 {
 
   @media (min-width: $screen-md) {
     padding-top: $headings-padding-desktop;
+    padding-left: 1rem;
   }
 
   &.home-header {
@@ -43,4 +44,12 @@ h2 {
       font-size: 4rem;
     }
   }
+
+  &.extra-pb {
+    padding-bottom: $headings-padding-mobile;
+  }
+}
+
+.load-more {
+  margin-top: $headings-padding-mobile;
 }
