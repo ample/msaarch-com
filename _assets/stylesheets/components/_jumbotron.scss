@@ -18,20 +18,14 @@
 
   & span {
     background-color: $red;
-    padding: 0 1rem;
+    padding: 0 1rem .5rem;
   }
 
-  &.header-text-xs-l {
+  &.header-text-l {
     & span {
       display: inline;
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
-    }
-
-    @media (min-width: $screen-md) {
-      & span {
-        display: block;
-      }
     }
   }
 }
