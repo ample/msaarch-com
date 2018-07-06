@@ -50,6 +50,15 @@
   }
 }
 
+.line-bg-lt-outside {
+  top: -60px;
+  left: -30px;
+
+  @media (min-width: $screen-md) {
+    left: 150px;
+  }
+}
+
 .line-bg-rb {
   bottom: -30px;
   right: -15px;
