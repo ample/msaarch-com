@@ -13,13 +13,41 @@
   font-family: $font-family-urwdin;
 }
 
+.font-family-bodoni {
+  font-family: $font-family-ltc-bodoni-175;
+}
+
+aside {
+  background-color: $red;
+  color: $white;
+  font-size: 1rem;
+  padding: 2rem 1.8rem;
+  font-family: $font-family-urwdin;
+
+  & p {
+    margin-bottom: 0;
+  }
+
+  & > h3 {
+    font-size: 1rem;
+    letter-spacing: .5px;
+    font-family: $font-family-urwdin-cond;
+    margin-bottom: 0;
+    margin-top: 1rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
 .img-square {
   height: 350px;
   widows: 350px;
 }
 
 .pb-7 {
-  padding-bottom: 7rem;
+  padding-bottom: 7rem; //112px
 }
 
 .mt-7 {
@@ -27,5 +55,5 @@
 }
 
 .mt-8 {
-  margin-top: 8rem;
+  margin-top: 8rem; //128px
 }

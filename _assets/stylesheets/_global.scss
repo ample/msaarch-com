@@ -24,32 +24,6 @@ h2 {
   object-position: top;
 }
 
-.section-header {
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  font-size: 3rem;
-  padding-top: $headings-padding-mobile;
-  padding-bottom: 1.625rem;
-
-  @media (min-width: $screen-md) {
-    padding-top: $headings-padding-desktop;
-    padding-left: 1rem;
-  }
-
-  &.home-header {
-    @media (min-width: $screen-md) and (max-width: $screen-lg) {
-      font-size: 3rem;
-    }
-    @media (min-width: $screen-lg) {
-      font-size: 4rem;
-    }
-  }
-
-  &.extra-pb {
-    padding-bottom: $headings-padding-mobile;
-  }
-}
-
 .load-more {
   margin-top: $headings-padding-mobile;
 }
@@ -60,4 +34,20 @@ a .link-img {
       background: rgba($white, .3);
     }
   }
+}
+
+.callout {
+ font-family: $font-family-ltc-bodoni-175;
+ line-height: 1.8rem;
+ font-size: 1.625rem;
+}
+
+figcaption {
+  background-color: $gray-200;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  text-align: right;
+  font-style: italic;
+  color: rgba($gray-600, .8);
+  padding: .5rem 1rem .7rem;
 }

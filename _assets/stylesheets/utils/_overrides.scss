@@ -49,7 +49,7 @@
 // // stylelint-disable
 $white:    #fff;
 $gray-100: #f8f9fa;
-$gray-200: #e9ecef;
+$gray-200: #eeeeee; //OVERRIDE
 $gray-300: #dee2e6;
 $gray-400: #ced4da;
 $gray-500: #adb5bd;
@@ -277,9 +277,11 @@ $base-font-families:   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "H
 
 $tk-urwdin: 'urw-din';
 $tk-urwdin-cond: 'urw-din-condensed';
+$tk-ltc-bodoni-175: 'ltc-bodoni-175';
 
 $font-family-urwdin: $tk-urwdin, $base-font-families;
 $font-family-urwdin-cond: $tk-urwdin-cond, $base-font-families;
+$font-family-ltc-bodoni-175: $tk-ltc-bodoni-175, Palatino, Garamond, $base-font-families;
 
 $font-family-sans-serif: $font-family-urwdin;
 // $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
