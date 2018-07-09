@@ -6,6 +6,10 @@
     <div class="block-{{ block.content_type | slugify }}s">
     {% assign type = block.content_type %}
   {% endif %}
-  {% include blocks/{{block.content_type}}.html block=block counter=i %}
+  {% if site.scoped_includes[page.layout] contains block.content_type %}
+    {% include blocks/{{page.layout}}/{{block.content_type}}.html block=block counter=i %}
+  {% else %}
+    {% include blocks/{{block.content_type}}.html block=block counter=i %}
+  {% endif %}
   {% assign i = i | plus: 1 %}
 {% endfor %}</div>
