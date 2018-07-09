@@ -16,80 +16,21 @@ layout: default
       </div>
     </div>
     <div class="row">
-      <p class="header-info tagline text-uppercase">architecture | interiors | graphics</p>
+      <p class="header-info tagline text-uppercase">{{ page.subtitle }}</p>
     </div>
   </div>
 </header>
-<main class="container main-home">
+<main class="container main-home {{ page.path | slugify }}">
 
-  {% assign i = 0 %}
-  {% for block in page.associations.blocks %}
-    {% include blocks/{{block.content_type}}.html block=block counter=i %}
-    {% assign i = i | plus: 1 %}
-  {% endfor %}
+  {% assign blocks = page.associations.blocks | where:"content_type", "media_object" %}
+  {% include blocks.html collection=blocks %}
 
   <section class="home-featured-links">
     <picture class="line-bg line-bg-c">
       <source media="(min-width: 576px)" srcset="{{ "/assets/svgs/home-blocks-rect.svg" }}">
       <img src="{{ "/assets/svgs/home-blocks-rect-m.svg" | absolute_url }}" alt="">
     </picture>
-    <div class="row no-gutters pb-7">
-      <div class="col-6 col-md">
-        <section class="link-card">
-          <a href="#">
-            <div class="link-img">
-              <img class="img-fluid w-100 object-fit-cover" src="{{ "/assets/images/home-story-1.jpg" | absolute_url }}" alt="story one">
-              <div class="bg-gradient"></div>
-              <h3 class="link-title title-overlap title-overlap-4x">design thinking</h3>
-            </div>
-          </a>
-          <div class="link-body">
-            <p>Inspiration and Where to Find it by Michael Schuster</p>
-          </div>
-        </section>
-      </div>
-      <div class="col-6 col-md">
-        <section class="link-card">
-          <a href="#">
-            <div class="link-img">
-              <img class="img-fluid w-100 object-fit-cover" src="{{ "/assets/images/home-story-2.jpg" | absolute_url }}" alt="story one">
-              <div class="bg-gradient"></div>
-              <h3 class="link-title title-overlap title-overlap-4x">feature</h3>
-            </div>
-          </a>
-          <div class="link-body">
-            <p>Astros 2017 World Champions</p>
-          </div>
-        </section>
-      </div>
-      <div class="col-6 col-md">
-        <section class="link-card">
-          <a href="#">
-            <div class="link-img">
-              <img class="img-fluid w-100 object-fit-cover" src="{{ "/assets/images/home-story-3.jpg" | absolute_url }}" alt="story one">
-              <div class="bg-gradient"></div>
-              <h3 class="link-title title-overlap title-overlap-4x">team</h3>
-            </div>
-          </a>
-          <div class="link-body">
-            <p>New Hire: Seizan, Project Designer</p>
-          </div>
-        </section>
-      </div>
-      <div class="col-6 col-md">
-        <section class="link-card">
-          <a href="#">
-            <div class="link-img">
-              <img class="img-fluid w-100 object-fit-cover" src="{{ "/assets/images/home-story-4.jpg" | absolute_url }}" alt="story one">
-              <div class="bg-gradient"></div>
-              <h3 class="link-title title-overlap title-overlap-4x title-overlap title-overlap-4x">news</h3>
-            </div>
-          </a>
-          <div class="link-body">
-            <p>Xavier Team Curling Retreat</p>
-          </div>
-        </section>
-      </div>
-    </div>
+    {% assign blocks = page.associations.blocks | where:"content_type", "feature" %}
+    {% include blocks.html collection=blocks %}
   </section>
 </main>

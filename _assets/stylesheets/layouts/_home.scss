@@ -46,4 +46,10 @@
   @media (min-width: $screen-sm) {
     margin-top: 8rem;
   }
+
+  .block-features {
+    @include make-row();
+    @extend .no-gutters;
+    @extend .pb-7;
+  }
 }

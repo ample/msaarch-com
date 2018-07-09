@@ -11,10 +11,12 @@ class CreatePages < ContentfulMigrations::Migration
       uniqueness.unique = true
 
       content_type.fields.create(id: 'title', name: 'Title', type: 'Symbol', required: true)
+      content_type.fields.create(id: 'subtitle', name: 'Subtitle', type: 'Symbol')
       content_type.fields.create(id: 'slug', name: 'Slug', type: 'Symbol', required: true, validations: [uniqueness])
+      content_type.fields.create(id: 'image', name: 'Image', type: 'Link', link_type: 'Asset', required: true)
 
       of_type = Contentful::Management::Validation.new
-      of_type.link_content_type =  ['media_object']
+      of_type.link_content_type =  ['feature', 'media_object']
 
       items = Contentful::Management::Field.new
       items.type = 'Link'
