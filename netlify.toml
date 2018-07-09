@@ -1,0 +1,5 @@
+[build]
+  command = '''
+    bundle exec jekyll contentful &&
+    bundle exec jekyll build
+  '''

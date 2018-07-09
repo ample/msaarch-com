@@ -1,0 +1,28 @@
+{% assign n = include.counter | modulo: 2 %}
+{% assign klasses = 'position-relative' %}
+
+{% if include.counter == 0 %}
+  {% assign klasses = klasses | append: ' overlap-header' %}
+{% endif %}
+
+{% if n == 1 %}
+  {% assign klasses = klasses | append: ' home-content-left' %}
+{% else %}
+  {% assign klasses = klasses | append: ' home-content-right' %}
+{% endif %}
+
+
+<article class="{{ klasses }} media-object">
+  <div class="line-bg">
+    <img src="{{ "/assets/svgs/home-blocks-squares.svg" | absolute_url }}" alt="">
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-lg-4">
+      <img class="img-fluid d-block mx-auto" src="{{ include.block.image }}" alt="{{ include.block.title }}">
+    </div>
+    <div class="col-sm-6 col-lg-8 align-self-center">
+      <h2 class="section-header home-header">{{ include.block.title }}</h2>
+      {{ include.block.content }}
+    </div>
+  </div>
+</article>

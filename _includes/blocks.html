@@ -1,0 +1,15 @@
+{% assign i = 0 %}
+{% assign type = '' %}
+{% for block in include.collection %}
+  {% if type != block.content_type %}
+    {% if i > 0 %}</div>{% endif %}
+    <div class="block-{{ block.content_type | slugify }}s">
+    {% assign type = block.content_type %}
+  {% endif %}
+  {% if site.scoped_includes[page.layout] contains block.content_type %}
+    {% include blocks/{{page.layout}}/{{block.content_type}}.html block=block counter=i %}
+  {% else %}
+    {% include blocks/{{block.content_type}}.html block=block counter=i %}
+  {% endif %}
+  {% assign i = i | plus: 1 %}
+{% endfor %}</div>

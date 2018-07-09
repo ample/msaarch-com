@@ -1,8 +1,9 @@
 GIT
-  remote: https://github.com/ample/jekyll-contentful.git
-  revision: b1fb66f3fda6de813e52b45817cecd7945a26591
+  remote: https://github.com/crdschurch/jekyll-contentful.git
+  revision: 8c2a8168d5f460a7b2648cb1624356304245838e
+  branch: feature/associations
   specs:
-    jekyll-contentful (0.0.4)
+    jekyll-contentful (1.0.0)
       activesupport
       contentful (>= 2.6.0)
       dotenv
@@ -153,7 +154,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.0.1)
   jekyll (~> 3.7.3)
   jekyll-assets
-  jekyll-contentful (~> 0.0.1)!
+  jekyll-contentful (~> 1.0.0)!
   pry
   rake
 
