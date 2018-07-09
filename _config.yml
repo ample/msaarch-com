@@ -4,17 +4,34 @@ email: msa@helloample.com
 # Build settings
 markdown: kramdown
 
+exclude:
+  - lib
+  - migrations
+  - Rakefile
+  - Gemfile*
+
 collections_dir: collections
-# collections:
-#   pages:
-#     output: true
-#     permalink: /:slug
+collections:
+  media_objects:
+    output: false
+  pages:
+    output: true
+    permalink: /:slug
 
 contentful:
   content_types:
+    media_objects:
+      id: media_object
+      body: body
+      frontmatter:
+        entry_mappings:
+          title: title
+          image: image/url
     pages:
       id: page
       body: body
+      has_many:
+        blocks: [ media_objects ]
       frontmatter:
         entry_mappings:
           title: title

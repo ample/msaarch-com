@@ -4,11 +4,38 @@
   }
 }
 
-.home-content-left {
+.media-object {
   margin-top: 7rem;
-
   @media (min-width: $screen-sm) {
     margin-top: 5rem;
+  }
+}
+
+.home-content-right {
+  .line-bg {
+    @extend .line-bg-r;
+  }
+  > .row {
+    @extend .justify-content-end;
+    > div {
+      text-align: right;
+      &:first-child {
+        @extend .order-sm-12;
+      }
+    }
+  }
+}
+
+.home-content-left {
+  .line-bg {
+    @extend .line-bg-l;
+  }
+
+  > .row {
+    // @extend .bg-left;
+    > div {
+      text-align: left;
+    }
   }
 }
 
