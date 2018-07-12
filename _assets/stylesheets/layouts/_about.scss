@@ -134,17 +134,19 @@
         position: relative;
         @extend .justify-content-start;
         @include make-col-ready();
+        padding-left: 0;
 
-        @include media-breakpoint-up(sm) {
-          > div {
+        > div {
+          width: 284px;
+
+          @include media-breakpoint-up(sm) {
             @include make-col(6);
+            width: 444px;
           }
         }
 
         img {
-          position: absolute;
-          width: 444px;
-          left: -20%;
+          object-fit: cover;
 
           @include media-breakpoint-up(md) {
             min-height: 331px;
@@ -154,16 +156,13 @@
         }
 
         .media-object-text {
-          margin-top: 280px;
-          @include media-breakpoint-up(md) {
-            margin-top: 0;
-          }
+          padding-left: 15px;
         }
       }
 
       .line-bg {
-        top: -31px;
-        left: 1rem;
+        top: -60px;
+        left: 4rem;
 
         @include media-breakpoint-up(md) {
           top: -86px;
