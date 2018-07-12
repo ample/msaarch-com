@@ -26,9 +26,6 @@ class CreateProjects < ContentfulMigrations::Migration
         editor_interface.update(controls: controls)
         editor_interface.reload
       end
-
-      content_type.save
-      content_type.publish
     end
   end
 
