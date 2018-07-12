@@ -1,0 +1,400 @@
+---
+layout: default
+---
+<header class="jumbotron jumbotron-fluid" style="background-image: url('{{ "/assets/images/banner.jpg" | absolute_url }}');">
+  <div class="container text-uppercase text-white">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="padded-header">
+          <h1 class="header-text-bg text-center mb-5">
+            <span>
+              about
+            </span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="container about">
+  <nav class="button-nav">
+    <div class="button-col"><a href="#disciplines"><button class="btn btn-red btn-block">
+      disciplines
+    </button></a></div>
+    <div><a href="#team"><button class="btn btn-red btn-block">
+      team
+    </button></a></div>
+    <div><a href="#awards"><button class="btn btn-red btn-block">
+      awards
+    </button></a></div>
+  </nav>
+  <div id="disciplines">
+    <h2 class="section-header">disciplines</h2>
+
+    <article class="{{ klasses }} home-content-right media-object">
+        <div class="line-bg">
+          <img src="{{ "/assets/svgs/red-square.svg" }}" alt="red square">
+        </div>
+        <div class="media-object-content">
+          <div>
+            <img class="img-fluid" src="{{ "/assets/images/architecture.jpg" | absolute_url }}" alt="{{ include.block.title }}">
+          </div>
+          <div class="media-object-text">
+            <h2 class="section-header">architecture</h2>
+            <h3>Bringing Your Facilities to Life</h3>
+            <p>Architecture is the basis of our firm and the heart of our design practice. We help our clients create facilities that are more than a structure, they are a spacial experience and a reflection of their unique culture </p>
+          </div>
+        </div>
+      </article>
+
+    <article class="{{ klasses }} home-content-left media-object">
+      <div class="line-bg">
+        <img src="{{ "/assets/images/interior-design-blocks.jpg" }}" alt="red square and drawing">
+      </div>
+      <div class="media-object-content">
+        <div>
+          <img class="img-fluid" src="{{ "/assets/images/interior-design.jpg" | absolute_url }}" alt="{{ include.block.title }}">
+        </div>
+        <div class="media-object-text">
+          <h2 class="section-header">interior design</h2>
+          <h3>Exhibiting the Excellence of the Interiors</h3>
+          <p>Our highly talented and diversified interior design team works collaboratively with our architectural design team from the very start of the project.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="{{ klasses }} home-content-right media-object">
+        <div class="line-bg">
+          <img src="{{ "/assets/svgs/red-square.svg" }}" alt="red square">
+        </div>
+        <div class="media-object-content">
+          <div>
+            <img class="img-fluid" src="{{ "/assets/images/graphic-design.jpg" | absolute_url }}" alt="{{ include.block.title }}">
+          </div>
+          <div class="media-object-text">
+            <h2 class="section-header">graphic design</h2>
+            <h3>Branding Environments & Everything Else</h3>
+            <p>Our Award-Winning Graphic Design team specializes in experiential design – the visual elements that make your space YOURS.</p>
+          </div>
+        </div>
+      </article>
+
+  </div>
+
+  <article id="team">
+    <h2 class="section-header">team</h2>
+
+    <section class="team-cards">
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-1.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">Dan Montgomery, AIA LEED AP</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Associate / Project Manager</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-2.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">Joseph Schmidt, AIA LEED AP BD+C</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Project Architect</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-3.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">John Jaskiewicz, Jr., AIA, Autodesk Revit Certified Professional</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Project Architect</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+          <a href="#">
+            <div class="link-img">
+              <img class="img-fluid w-100" src="{{ "/assets/images/team-4.jpg" | absolute_url }}" alt="story one">
+              <h3 class="link-title">katelyn younger, aiga segd</h3>
+            </div>
+          </a>
+          <div class="link-body">
+            <p>Associate / Graphic Designer</p>
+          </div>
+        </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-1.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">Dan Montgomery, AIA LEED AP</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Associate / Project Manager</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-2.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">Joseph Schmidt, AIA LEED AP BD+C</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Project Architect</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-3.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">John Jaskiewicz, Jr., AIA, Autodesk Revit Certified Professional</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Project Architect</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+          <a href="#">
+            <div class="link-img">
+              <img class="img-fluid w-100" src="{{ "/assets/images/team-4.jpg" | absolute_url }}" alt="story one">
+              <h3 class="link-title">katelyn younger, aiga segd</h3>
+            </div>
+          </a>
+          <div class="link-body">
+            <p>Associate / Graphic Designer</p>
+          </div>
+        </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-1.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">Dan Montgomery, AIA LEED AP</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Associate / Project Manager</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-2.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">Joseph Schmidt, AIA LEED AP BD+C</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Project Architect</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-3.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">John Jaskiewicz, Jr., AIA, Autodesk Revit Certified Professional</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Project Architect</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+          <a href="#">
+            <div class="link-img">
+              <img class="img-fluid w-100" src="{{ "/assets/images/team-4.jpg" | absolute_url }}" alt="story one">
+              <h3 class="link-title">katelyn younger, aiga segd</h3>
+            </div>
+          </a>
+          <div class="link-body">
+            <p>Associate / Graphic Designer</p>
+          </div>
+        </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-1.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">Dan Montgomery, AIA LEED AP</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Associate / Project Manager</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-2.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">Joseph Schmidt, AIA LEED AP BD+C</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Project Architect</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+            <a href="#">
+              <div class="link-img">
+                <img class="img-fluid w-100" src="{{ "/assets/images/team-3.jpg" | absolute_url }}" alt="story one">
+                <h3 class="link-title">John Jaskiewicz, Jr., AIA, Autodesk Revit Certified Professional</h3>
+              </div>
+            </a>
+            <div class="link-body">
+              <p>Project Architect</p>
+            </div>
+          </section>
+      </div>
+      <div>
+        <section class="link-card">
+          <a href="#">
+            <div class="link-img">
+              <img class="img-fluid w-100" src="{{ "/assets/images/team-4.jpg" | absolute_url }}" alt="story one">
+              <h3 class="link-title">katelyn younger, aiga segd</h3>
+            </div>
+          </a>
+          <div class="link-body">
+            <p>Associate / Graphic Designer</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </article>
+
+  <article id="awards">
+    <h2 class="section-header">awards</h2>
+    <section class="awards-section">
+      <div class="left">
+        <div class="award-header">
+          <img src="/assets/images/awards-blocks-left.jpg" alt="red rect and drawing">
+          <p>2018</p>
+        </div>
+        <div class="awards-list">
+          <div>
+            <h3>Madiera and Indian Hill</h3>
+            <p>Merit Award for Public Safety Masonry Design — Tri-State Masonry Institute</p>
+            <p>Lorem Ipsum Dolor Sin Amet — Anem Doloring</p>
+          </div>
+          <div>
+            <h3>Holiday Mailer 2017</h3>
+            <p>Gold Award — Indigo Awards</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="award-header">
+          <img src="/assets/images/awards-blocks-right.jpg" alt="red rect and drawing">
+          <p>2017</p>
+        </div>
+        <div class="awards-list">
+          <div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Dolor Sit Amet</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Dolor Sit Amet</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Dolor Sit Amet</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="left">
+        <div class="award-header">
+          <img src="/assets/images/awards-blocks-left.jpg" alt="red rect and drawing">
+          <p>2016</p>
+        </div>
+        <div class="awards-list">
+          <div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Dolor Sit Amet</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Dolor Sit Amet</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Dolor Sit Amet</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+          <div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+            <p>Quis nostrud exercitation ullamco laboris nisi  — Quis Nostrud Exercitation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+</main>
