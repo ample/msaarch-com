@@ -1,0 +1,150 @@
+---
+layout: default
+---
+<header class="jumbotron jumbotron-fluid" style="background-image: url('{{ "/assets/images/banner.jpg" | absolute_url }}');">
+  <div class="container text-uppercase text-white">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="padded-header">
+          <h1 class="header-text-bg text-center mb-5">
+            <span>
+              contact
+            </span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="contact">
+  <div class="container">
+    <nav class="button-nav">
+      <div class="button-col"><a href="#locations"><button class="btn btn-red btn-block">
+        locations
+      </button></a></div>
+      <div><a href="#email"><button class="btn btn-red btn-block">
+        email
+      </button></a></div>
+      <div><a href="#careers"><button class="btn btn-red btn-block">
+        careers
+      </button></a></div>
+    </nav>
+    <div id="locations">
+      <h2 class="section-header">locations</h2>
+
+      <article class="{{ klasses }} home-content-left media-object">
+        <div class="line-bg">
+          <div class="red-lines"></div>
+        </div>
+        <div class="media-object-content">
+          <div>
+            <img class="img-fluid" src="{{ "/assets/images/cincinnati-map.jpg" | absolute_url }}" alt="{{ include.block.title }}">
+          </div>
+          <div>
+            <h2 class="section-header">cincinnati</h2>
+            <p>Address line 1</p>
+            <p>Address line 2</p>
+            <p>City, State 00000</p>
+            <p>000.000.0000</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="{{ klasses }} home-content-right media-object">
+        <div class="line-bg">
+          <div class="red-lines"></div>
+        </div>
+        <div class="media-object-content">
+          <div>
+            <img class="img-fluid" src="{{ "/assets/images/columbus-map.jpg" | absolute_url }}" alt="{{ include.block.title }}">
+          </div>
+          <div class="">
+            <h2 class="section-header">Columbus</h2>
+            <p>Address line 1</p>
+            <p>Address line 2</p>
+            <p>City, State 00000</p>
+            <p>000.000.0000</p>
+          </div>
+        </article>
+
+        <article class="{{ klasses }} home-content-left media-object">
+          <div class="line-bg">
+            <div class="red-lines"></div>
+          </div>
+          <div class="media-object-content">
+            <div>
+              <img class="img-fluid" src="{{ "/assets/images/orlando-map.jpg" | absolute_url }}" alt="{{ include.block.title }}">
+            </div>
+            <div class="">
+              <h2 class="section-header">orlando</h2>
+              <p>Address line 1</p>
+              <p>Address line 2</p>
+              <p>City, State 00000</p>
+              <p>000.000.0000</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+    <article id="email" class="container-fluid contact-form">
+      <div>
+        <h2 class="section-header">Drop Us a Line</h2>
+
+        <section class="email-form">
+          <div>
+            <form name="contact" method="POST" netlify>
+              <p>
+                <input type="text" name="first-name" placeholder="First Name" />
+              </p>
+              <p>
+                <input type="text" name="last-name" placeholder="Last Name" />
+              </p>
+          <p>
+            <input type="phone" name="phone" placeholder="Phone" />
+          </p>
+          <p>
+            <input type="email" name="email" placeholder="Email" />
+          </p>
+          <p>
+            <select name="role[]" placeholder="Subject" multiple>
+              <option value="sport">Sport</option>
+              <option value="education">Education</option>
+            </select>
+          </p>
+          <p>
+            <textarea name="message" placeholder="Message"></textarea>
+          </p>
+          <p>
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+    </section>
+  </div>
+</article>
+<div class="container">
+  <article id="careers">
+    <section class="careers-section">
+      <h2 class="section-header">careers</h2>
+      <p class="callout">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+        <div class="careers-list">
+          <div>
+            <h3>Project Architect</h3>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </h3>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div>
+            <h3>Project Designer</h3>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+
+</main>
