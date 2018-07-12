@@ -12,16 +12,31 @@ exclude:
 
 collections_dir: collections
 collections:
-  media_objects:
+  case_studies:
     output: false
   features:
+    output: false
+  markets:
+    output: true
+    permalink: /work/:slug
+    layout: market
+  media_objects:
     output: false
   pages:
     output: true
     permalink: /:slug
+  projects:
+    output: false
 
 contentful:
   content_types:
+    case_studies:
+      id: case_study
+      frontmatter:
+        entry_mappings:
+          title: title
+          slug: slug
+          image: image/url
     features:
       id: feature
       body: body
@@ -30,6 +45,15 @@ contentful:
           title: title
           image: image/url
           href: href
+    markets:
+      id: market
+      has_many:
+        projects: [ projects ]
+        case_studies: [ case_studies ]
+      frontmatter:
+        entry_mappings:
+          title: title
+          slug: slug
     media_objects:
       id: media_object
       body: body
@@ -48,7 +72,16 @@ contentful:
           subtitle: subtitle
           slug: slug
           permalink: slug
+          image: image/url
+          image_caption: image/description
           layout: layout
+    projects:
+      id: project
+      frontmatter:
+        entry_mappings:
+          title: title
+          slug: slug
+          image: image/url
 
 defaults:
   - scope:
