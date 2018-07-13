@@ -119,6 +119,14 @@
       @extend .callout;
       color: $red;
     }
+
+    p {
+      padding-bottom: 1.625rem;
+    }
+
+    figure {
+      padding-bottom: 1.625rem;
+    }
   }
 
   .section-header {
