@@ -196,11 +196,13 @@
   }
 
   .contact-form {
-    padding-left: 30px;
-    padding-right: 30px;
     background-color: $red;
     color: $white;
     margin-top: 3rem;
+
+    > div {
+      @extend .container;
+    }
 
     .section-header {
       padding-top: 4rem;
@@ -210,6 +212,7 @@
     form > div {
       margin-bottom: 1.875rem;
       @include make-row();
+      position: relative;
 
       &:last-of-type {
         justify-content: flex-end;
@@ -264,13 +267,16 @@
       -moz-appearance: none;
       appearance: none;
       background: transparent;
+      position: relative;
     }
 
     .fa-chevron-down {
       position: absolute;
-      right: 2rem;
+      right: 15px;
       padding-top: 16px;
       font-size: 20px;
+
+
     }
 
     button {
