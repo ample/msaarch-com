@@ -3,7 +3,7 @@
 {% for block in include.collection %}
   {% if type != block.content_type %}
     {% if i > 0 %}</div>{% endif %}
-    <div class="block-{{ block.content_type | slugify }}s">
+    <div class="block-{{ block.content_type | pluralize | slugify }} {{ include.css }}">
     {% assign type = block.content_type %}
   {% endif %}
   {% if site.scoped_includes[page.layout] contains block.content_type %}
@@ -13,3 +13,4 @@
   {% endif %}
   {% assign i = i | plus: 1 %}
 {% endfor %}</div>
+

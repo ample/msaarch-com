@@ -6,6 +6,7 @@ gem 'rake'
 gem 'bootstrap'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass',   '~> 5.0.1'
+gem 'activesupport'
 
 group :jekyll_plugins do
   gem 'jekyll-contentful', '~> 1.0.0', git: 'https://github.com/crdschurch/jekyll-contentful.git', branch: 'feature/associations'
