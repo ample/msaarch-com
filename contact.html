@@ -95,16 +95,20 @@ layout: default
           <div>
             <form name="contact" method="POST" netlify>
               <div>
-                  <input class="form-control" aria-label="first name" type="text" name="first-name" placeholder="First Name" />
+                <div>
+                  <input class="form-control" type="text" aria-label="first name" name="first-name" placeholder="First Name" />
+                </div>
+                <div>
+                  <input class="form-control" type="text" aria-label="last name" name="last-name" placeholder="Last Name" />
+                </div>
               </div>
               <div>
-                <input class="form-control" aria-label="last name" type="text" name="last-name" placeholder="Last Name" />
-              </div>
-              <div>
-              <input class="form-control" aria-label="phone" type="phone" name="phone" placeholder="Phone" />
-              </div>
-              <div>
-                <input class="form-control" aria-label="email" type="email" name="email" placeholder="Email" />
+                <div>
+                  <input class="form-control" type="phone" aria-label="phone" name="phone" placeholder="Phone" />
+                </div>
+                <div>
+                  <input class="form-control" type="email" aria-label="email" name="email" placeholder="Email" />
+                </div>
               </div>
               <div>
                 <select class="custom-select" name="role[]" aria-label="subject">
@@ -113,6 +117,7 @@ layout: default
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
+                  <i class="fas fa-chevron-down"></i>
               </div>
               <div>
                 <textarea class="form-control" aria-label="message" name="message" placeholder="Message"></textarea>

@@ -204,31 +204,86 @@
 
     .section-header {
       padding-top: 4rem;
+      margin-left: -15px;
     }
 
-    .email-form > div {
-      // @include make-row();
+    form > div {
+      margin-bottom: 1.875rem;
+      @include make-row();
+
+      &:last-of-type {
+        justify-content: flex-end;
+      }
+
+      > div {
+        @include make-col(12);
+
+        &:first-of-type {
+          margin-bottom: 1.875rem;
+
+          @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+          }
+        }
+
+        @include media-breakpoint-up(md) {
+          @include make-col(6);
+
+          &:first-of-type {
+            padding-right: 15px;
+          }
+
+          &:last-of-type {
+            padding-left: 15px;
+          }
+        }
+      }
     }
 
-    input {
+    input, select, textarea {
       background-color: $red;
       border: 2px solid $white;
-      padding-bottom: 1.875rem;
-      // @include make-col-ready();
+      padding-top: 1rem;
+      padding-bottom: .625rem;
+    }
 
-      @include media-breakpoint-up(md) {
-        // @include make-col(6);
-      }
+    ::placeholder {
+      font-family: $font-family-urwdin-cond;
+      text-transform: uppercase;
+      color: $white;
+      font-size: 1.75rem;
+      line-height: 1.875rem;
+      letter-spacing: .5px;
+    }
 
-      &:placeholder-shown {
-        text-transform: uppercase;
-        color: $white!important;
-      }
+    select.custom-select {
+      @extend ::placeholder;
+      padding-top: 9px;
+      height: 50px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: transparent;
+    }
+
+    .fa-chevron-down {
+      position: absolute;
+      right: 2rem;
+      padding-top: 16px;
+      font-size: 20px;
     }
 
     button {
       @extend .btn-red;
+      display: block;
+      width: 100%;
+      margin-bottom: 3.5rem;
+      color: $red!important;
+      background-color: $white!important;
 
+      @include media-breakpoint-up(md) {
+        width: 350px;
+      }
     }
   }
 
