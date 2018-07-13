@@ -94,30 +94,32 @@ layout: default
         <section class="email-form">
           <div>
             <form name="contact" method="POST" netlify>
-              <p>
-                <input type="text" name="first-name" placeholder="First Name" />
-              </p>
-              <p>
-                <input type="text" name="last-name" placeholder="Last Name" />
-              </p>
-          <p>
-            <input type="phone" name="phone" placeholder="Phone" />
-          </p>
-          <p>
-            <input type="email" name="email" placeholder="Email" />
-          </p>
-          <p>
-            <select name="role[]" placeholder="Subject" multiple>
-              <option value="sport">Sport</option>
-              <option value="education">Education</option>
-            </select>
-          </p>
-          <p>
-            <textarea name="message" placeholder="Message"></textarea>
-          </p>
-          <p>
+              <div>
+                  <input class="form-control" aria-label="first name" type="text" name="first-name" placeholder="First Name" />
+              </div>
+              <div>
+                <input class="form-control" aria-label="last name" type="text" name="last-name" placeholder="Last Name" />
+              </div>
+              <div>
+              <input class="form-control" aria-label="phone" type="phone" name="phone" placeholder="Phone" />
+              </div>
+              <div>
+                <input class="form-control" aria-label="email" type="email" name="email" placeholder="Email" />
+              </div>
+              <div>
+                <select class="custom-select" name="role[]" aria-label="subject">
+                    <option selected>subject</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+              </div>
+              <div>
+                <textarea class="form-control" aria-label="message" name="message" placeholder="Message"></textarea>
+              </div>
+          <div>
             <button type="submit">Submit</button>
-          </p>
+          </div>
         </form>
       </div>
     </section>

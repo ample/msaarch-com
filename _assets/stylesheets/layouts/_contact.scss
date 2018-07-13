@@ -206,9 +206,29 @@
       padding-top: 4rem;
     }
 
+    .email-form > div {
+      // @include make-row();
+    }
+
     input {
       background-color: $red;
       border: 2px solid $white;
+      padding-bottom: 1.875rem;
+      // @include make-col-ready();
+
+      @include media-breakpoint-up(md) {
+        // @include make-col(6);
+      }
+
+      &:placeholder-shown {
+        text-transform: uppercase;
+        color: $white!important;
+      }
+    }
+
+    button {
+      @extend .btn-red;
+
     }
   }
 
