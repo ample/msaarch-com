@@ -1,0 +1,30 @@
+
+aside {
+  background-color: $red;
+  color: $white;
+  font-size: 1rem;
+  padding: 2rem 1.8rem;
+  font-family: $font-family-urwdin;
+  text-align: left;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  > h3 {
+    font-size: 1rem;
+    letter-spacing: .5px;
+    font-family: $font-family-urwdin-cond;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    text-transform: uppercase;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    color: $white;
+  }
+}
