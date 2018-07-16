@@ -1,6 +1,6 @@
 .section-header {
   text-transform: uppercase;
-  letter-spacing: .5px;
+  letter-spacing: $letter-spacing-base;
   font-size: 3rem;
   padding-top: $headings-padding-mobile;
   padding-bottom: 1.625rem;

@@ -101,13 +101,13 @@
     .section-header {
       font-size: 1.5rem;
       line-height: 1.5rem;
-      letter-spacing: .5px;
+      letter-spacing: $letter-spacing-base;
     }
 
     h2 {
       font-size: 1.5rem;
       line-height: 1.5rem;
-      letter-spacing: .5px;
+      letter-spacing: $letter-spacing-base;
       color: $black;
       font-family: $font-family-urwdin-cond;
       text-transform: uppercase;
@@ -132,6 +132,6 @@
   .section-header {
     font-size: 1.875rem;
     line-height: 1.875rem;
-    letter-spacing: .5px;
+    letter-spacing: $letter-spacing-base;
   }
 }

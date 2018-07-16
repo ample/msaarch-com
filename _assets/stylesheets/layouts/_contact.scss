@@ -77,7 +77,7 @@
         .section-header {
           font-size: 1.5rem;
           line-height: 1.5rem;
-          letter-spacing: .5px;
+          letter-spacing: $letter-spacing-base;
           padding-left: 0;
           margin-left: 0;
           padding-bottom: 0;
@@ -256,7 +256,7 @@
       color: $white;
       font-size: 1.75rem;
       line-height: 1.875rem;
-      letter-spacing: .5px;
+      letter-spacing: $letter-spacing-base;
     }
 
     select.custom-select {
@@ -325,7 +325,7 @@
       h3 {
         font-size: 1.75rem;
         line-height: 1.875rem;
-        letter-spacing: .5px;
+        letter-spacing: $letter-spacing-base;
         text-transform: uppercase;
       }
 
