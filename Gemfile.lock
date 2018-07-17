@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/crdschurch/jekyll-contentful.git
-  revision: 8c2a8168d5f460a7b2648cb1624356304245838e
+  revision: 6d9067ede72a0581ad9e2c083eddb1a63dccfe29
   branch: feature/associations
   specs:
     jekyll-contentful (1.0.0)

@@ -13,7 +13,8 @@ exclude:
 collections_dir: collections
 collections:
   case_studies:
-    output: false
+    output: true
+    permalink: /case-studies/:slug
   features:
     output: false
   markets:
@@ -27,67 +28,77 @@ collections:
     permalink: /:slug
   projects:
     output: false
+  text_objects:
+    output: false
 
 contentful:
-  content_types:
-    case_studies:
-      id: case_study
-      frontmatter:
-        entry_mappings:
-          title: title
-          slug: slug
-          image: image/url
-    features:
-      id: feature
-      body: body
-      frontmatter:
-        entry_mappings:
-          title: title
-          image: image/url
-          href: href
-    markets:
-      id: market
-      has_many:
-        projects: [ projects ]
-        case_studies: [ case_studies ]
-      frontmatter:
-        entry_mappings:
-          title: title
-          slug: slug
-    media_objects:
-      id: media_object
-      body: body
-      frontmatter:
-        entry_mappings:
-          title: title
-          image: image/url
-    pages:
-      id: page
-      body: body
-      has_many:
-        blocks: [ features, media_objects ]
-      frontmatter:
-        entry_mappings:
-          title: title
-          subtitle: subtitle
-          slug: slug
-          permalink: slug
-          image: image/url
-          image_caption: image/description
-          layout: layout
-    projects:
-      id: project
-      frontmatter:
-        entry_mappings:
-          title: title
-          slug: slug
-          image: image/url
+  case_studies:
+    id: case_study
+    body: body
+    has_many:
+      blocks: [ media_objects, text_objects ]
+    frontmatter:
+      title: title
+      subtitle: subtitle
+      slug: slug
+      image: image/url
+  features:
+    id: feature
+    body: body
+    frontmatter:
+      title: title
+      image: image/url
+      href: href
+  markets:
+    id: market
+    has_many:
+      projects: [ projects ]
+      case_studies: [ case_studies ]
+    frontmatter:
+      title: title
+      slug: slug
+  media_objects:
+    id: media_object
+    body: body
+    frontmatter:
+      title: title
+      css: css
+      image: image/url
+  text_objects:
+    id: text_object
+    body: body
+    frontmatter:
+      title: title
+      css: css
+  pages:
+    id: page
+    body: body
+    has_many:
+      blocks: [ features, media_objects ]
+    frontmatter:
+      title: title
+      subtitle: subtitle
+      slug: slug
+      permalink: slug
+      image: image/url
+      image_caption: image/description
+      layout: layout
+  projects:
+    id: project
+    frontmatter:
+      title: title
+      slug: slug
+      image: image/url
 
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+  - scope:
+      type: "case_studies"
+    values:
+      layout: case_study
 
 assets:
   source_maps: true # false on JEKYLL_ENV=production
