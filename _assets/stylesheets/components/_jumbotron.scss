@@ -16,19 +16,13 @@
 
 .header-text-bg {
   letter-spacing: $letter-spacing-base;
+  text-align: center;
+  margin-bottom: 3rem;
 
   & span {
     line-height: 1;
     background-color: $red;
     padding: 0 1rem .5rem;
-  }
-
-  &.header-text-l {
-    & span {
-      display: inline;
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-    }
   }
 }
 
