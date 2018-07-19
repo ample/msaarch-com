@@ -31,6 +31,8 @@ collections:
     permalink: /projects/:slug
   text_objects:
     output: false
+  text_objects:
+    output: false
 
 contentful:
   case_studies:
