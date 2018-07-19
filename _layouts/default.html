@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
    {% asset application.scss !integrity %}
 </head>
-<body class="tpl-{{ page.layout | slugify }}">
+<body class="tpl-{{ page.layout | slugify }} col-{{ page.collection }}">
   {% include header.html %}
   {{ content }}
   {% include footer.html %}
