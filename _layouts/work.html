@@ -15,7 +15,7 @@ layout: default
       {% for market in site.markets %}
       <div class="col-12 col-md-6 pb-3 mb-3">
         <section class="link-card">
-          <a href="{{ market.path }}">
+          <a href="{{ market.url }}">
             <div class="link-img link-img-2x">
               {% assign project = market.associations.projects | first %}
               <img class="img-fluid w-100 object-fit-cover" src="{{ project.image }}" alt="{{ market.title }}">
@@ -36,7 +36,7 @@ layout: default
           <h2 class="section-header">featured projects</h2>
         </div>
       </div>
-      {% assign blocks = page.associations.blocks | where:"content_type", "feature" %}
+      {% assign blocks = page.has_many.blocks | where:"content_type", "feature" %}
       {% include blocks.html collection=blocks css='row no-gutters' %}
     </div>
   </section>

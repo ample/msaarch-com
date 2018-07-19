@@ -1,0 +1,88 @@
+.tpl-case-study {
+  .block-media-objects,
+  .block-text-objects {
+    @include make-row();
+  }
+
+  .text-object,
+  .block-media-objects {
+    margin-bottom: 2rem;
+  }
+
+  .media-object {
+    @include make-col-ready();
+    @include media-breakpoint-up(sm) {
+      @include make-col(10);
+      @include make-col-offset(1);
+      &.left,
+      &.right {
+        @include make-col(5);
+      }
+      &.right {
+        @include make-col-offset(0);
+      }
+      &.wide {
+        @include make-col(12);
+        @include make-col-offset(0);
+        figcaption {
+          @include make-col(7);
+          margin-left: auto;
+        }
+      }
+    }
+
+    &.wide {
+      figcaption {
+        background: transparent;
+        margin-top: 1rem;
+        font-size: 1rem;
+        font-style: normal;
+        line-height: 1.5;
+        color: $gray-900;
+      }
+    }
+
+    .padded-header {
+      &, .header-text-bg {
+        text-align: left;
+      }
+      .header-text-bg {
+        margin-bottom: 0;
+      }
+      span {
+        display: inline;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+    }
+  }
+
+  .text-object {
+    @include make-col-ready();
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+      @include make-col-offset(3);
+      &.right {
+        @include make-col(7);
+        @include make-col-offset(5);
+      }
+    }
+    &.right {
+      text-align: right;
+    }
+  }
+
+  .media-object,
+  .text-object {
+    margin-top: 0;
+    padding-top: 0;
+    @include media-breakpoint-up(sm) {
+      padding-bottom: 2rem;
+    }
+  }
+
+  .header-text-bg {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
