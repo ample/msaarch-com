@@ -27,7 +27,8 @@ collections:
     output: true
     permalink: /:slug
   projects:
-    output: false
+    output: true
+    permalink: /projects/:slug
   text_objects:
     output: false
 
@@ -87,8 +88,14 @@ contentful:
       layout: layout
   projects:
     id: project
+    body: body
+    belongs_to:
+      - market
+    has_many:
+      blocks: [media_objects, text_objects]
     frontmatter:
       title: title
+      subtitle: subtitle
       slug: slug
       image: image/url
 
@@ -101,6 +108,10 @@ defaults:
       type: "case_studies"
     values:
       layout: case_study
+  - scope:
+      type: "projects"
+    values:
+      layout: project
 
 assets:
   source_maps: true # false on JEKYLL_ENV=production
