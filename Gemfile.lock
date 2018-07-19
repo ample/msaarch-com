@@ -1,6 +1,14 @@
 GIT
+  remote: https://github.com/ample/jekyll-placeholders.git
+  revision: 4043efaa8722ec86e147e9f2b2b08c68e7079ed8
+  specs:
+    jekyll-placeholders (0.0.1)
+      activesupport
+      jekyll
+
+GIT
   remote: https://github.com/crdschurch/jekyll-contentful.git
-  revision: 6d9067ede72a0581ad9e2c083eddb1a63dccfe29
+  revision: 479ba5883bf4723d6a0fcb5dd3e7e855708f50c6
   branch: feature/associations
   specs:
     jekyll-contentful (1.0.0)
@@ -156,6 +164,7 @@ DEPENDENCIES
   jekyll (~> 3.7.3)
   jekyll-assets
   jekyll-contentful (~> 1.0.0)!
+  jekyll-placeholders (~> 0.0.1)!
   pry
   rake
 

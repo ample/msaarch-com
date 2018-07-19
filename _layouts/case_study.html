@@ -11,7 +11,7 @@ layout: default
       <img src="{{ "/assets/svgs/case-studies-block-red-rect.svg" | absolute_url }}" alt="">
     </picture>
     <div class="row justify-content-end text-right pb-5">
-      {% assign block = page.associations.blocks | first %}
+      {% assign block = page.has_many.blocks | first %}
       {% include blocks/case_study/media_object.html block=block lead=true %}
       <div class="col-md-3 align-self-center mb-2">
         <aside class="mt-2">
@@ -21,6 +21,6 @@ layout: default
     </div>
   </article>
 
-  {% assign blocks = page.associations.blocks | shift %}
+  {% assign blocks = page.has_many.blocks | shift %}
   {% include blocks.html collection=blocks %}
 </main>

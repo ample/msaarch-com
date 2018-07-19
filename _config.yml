@@ -14,12 +14,12 @@ collections_dir: collections
 collections:
   case_studies:
     output: true
-    permalink: /case-studies/:slug
+    permalink: /markets/(:links_to/:markets/:0/:slug)/:slug
   features:
     output: false
   markets:
     output: true
-    permalink: /work/:slug
+    permalink: /markets/:slug
     layout: market
   media_objects:
     output: false
@@ -35,8 +35,10 @@ contentful:
   case_studies:
     id: case_study
     body: body
+    belongs_to:
+      - market
     has_many:
-      blocks: [ media_objects, text_objects ]
+      blocks: [ media_object, text_object ]
     frontmatter:
       title: title
       subtitle: subtitle

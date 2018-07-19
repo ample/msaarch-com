@@ -22,7 +22,7 @@ layout: default
 </header>
 <main class="container main-home {{ page.path | slugify }}">
 
-  {% assign blocks = page.associations.blocks | where:"content_type", "media_object" %}
+  {% assign blocks = page.has_many.blocks | where:"content_type", "media_object" %}
   {% include blocks.html collection=blocks %}
 
   <section class="home-featured-links">
@@ -30,7 +30,7 @@ layout: default
       <source media="(min-width: 576px)" srcset="{{ "/assets/svgs/home-blocks-rect.svg" }}">
       <img src="{{ "/assets/svgs/home-blocks-rect-m.svg" | absolute_url }}" alt="">
     </picture>
-    {% assign blocks = page.associations.blocks | where:"content_type", "feature" %}
+    {% assign blocks = page.has_many.blocks | where:"content_type", "feature" %}
     {% include blocks.html collection=blocks %}
   </section>
 </main>
