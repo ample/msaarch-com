@@ -28,7 +28,13 @@ collections:
     permalink: /:slug
   projects:
     output: false
+  posts:
+    output: false
+  tags:
+    output: false
   text_objects:
+    output: false
+  users:
     output: false
 
 contentful:
@@ -85,11 +91,37 @@ contentful:
       image: image/url
       image_caption: image/description
       layout: layout
+  posts:
+    id: post
+    body: body
+    belongs_to:
+      - user
+    has_many:
+      blocks: [ media_objects, text_objects ]
+      tags: [tags]
+    frontmatter:
+      title: title
+      slug: slug
+      location: location
+      pubished_at: pubished_at
+      slug: slug
   projects:
     id: project
     frontmatter:
       title: title
       slug: slug
+      image: image/url
+  tags:
+    id: tag
+    frontmatter:
+      title: title
+      slug: slug
+  users:
+    id: user
+    frontmatter:
+      full_name: full_name
+      slug: slug
+      title: title
       image: image/url
 
 defaults:
