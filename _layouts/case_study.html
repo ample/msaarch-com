@@ -4,6 +4,7 @@ layout: default
 
 {% include page-header.html %}
 
+{% if page.has_many.blocks.size > 0 %}
 <main class="container">
   <article class="position-relative overlap-header-30">
     <picture class="line-bg line-bg-lt-outside">
@@ -20,7 +21,7 @@ layout: default
       </div>
     </div>
   </article>
-
   {% assign blocks = page.has_many.blocks | shift %}
   {% include blocks.html collection=blocks %}
 </main>
+{% endif %}
