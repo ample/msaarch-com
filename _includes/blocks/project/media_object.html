@@ -1,0 +1,15 @@
+{% if include.lead %}
+  <div class="col-md-9 order-md-12">
+    <img class="img-fluid d-block mx-auto pb-4" src="{{ include.block.image }}" alt="{{ include.block.title }}">
+    <div class="col-md-10 offset-md-2">
+      {{ include.block.content | markdownify }}
+    </div>
+  </div>
+{% else %}
+  <div class="media-object {{ include.block.css }}">
+    <figure>
+      <img class="w-100" src="{{ include.block.image }}" alt="{{ include.block.title }}" />
+      <figcaption>{{ include.block.content | markdownify }}</figcaption>
+    </figure>
+  </div>
+{% endif %}

@@ -11,8 +11,19 @@ class CreateProjects < ContentfulMigrations::Migration
       uniqueness.unique = true
 
       content_type.fields.create(id: 'title', name: 'Title', type: 'Symbol', required: true)
+      content_type.fields.create(id: 'subtitle', name: 'Subtitle', type: 'Symbol')
       content_type.fields.create(id: 'slug', name: 'Slug', type: 'Symbol', required: true, validations: [uniqueness])
       content_type.fields.create(id: 'image', name: 'Image', type: 'Link', link_type: 'Asset', required: true)
+      content_type.fields.create(id: 'body', name: 'Body', type: 'Text')
+
+      of_type = Contentful::Management::Validation.new
+      of_type.link_content_type =  ['media_object', 'text_object']
+
+      items = Contentful::Management::Field.new
+      items.type = 'Link'
+      items.link_type = 'Entry'
+      items.validations = [of_type]
+      content_type.fields.create(id: 'blocks', name: 'Blocks', type: 'Array', items: items)
 
       content_type.save
       content_type.publish
