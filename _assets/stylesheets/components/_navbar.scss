@@ -120,3 +120,14 @@
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
+
+// Reduce logo size for screens < 350px
+.navbar-brand {
+  > img {
+    width: 100%;
+  }
+
+  @include media-breakpoint-down(xs) {
+    width: 70%;
+  }
+}
