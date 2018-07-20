@@ -12,12 +12,8 @@ layout: default
         <h2 class="section-header">case studies</h2>
       </div>
     </div>
-    <div class="row no-gutters">
-      {% assign blocks = page.has_many.case_studies %}
-      {% for block in blocks %}
-        {% include blocks/case_study_card.html collection=blocks css='col-12 col-md-6 pb-3 mb-3' %}
-      {% endfor %}
-    </div>
+    {% assign blocks = page.has_many.case_studies %}
+    {% include blocks.html collection=blocks css='row no-gutters' %}
   </article>
   {% endif %}
 
@@ -39,5 +35,18 @@ layout: default
       </div>
     </div>
   </section>
+  {% endif %}
+
+  {% if page.has_many.projects.size < 1 and page.has_many.case_studies.size < 1 %}
+  <article>
+    <div class="row pb-7">
+      <div class="col-12">
+        <h2 class="section-header">Information</h2>
+      </div>
+      <div class="col-12">
+        <p>More information about this market is coming soon!</p>
+      </div>
+    </div>
+  </article>
   {% endif %}
 </main>
