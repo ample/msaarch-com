@@ -1,11 +1,15 @@
-<nav class="navbar navbar-lg navbar-dark position-absolute-top">
-  <div class="container pt-3 pl-0">
+<nav id="navbar-container" class="navbar navbar-lg navbar-dark position-absolute-top">
+  <div class="container bg-navbar" >
     <a class="navbar-brand" href="/">
       <img src="{{ "/assets/svgs/msa-logo.svg" | absolute_url }}" alt="MSA architects logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
       aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <div id="nav-icon">
+        <span></span>
+        <span class="no-focus"></span>
+        <span></span>
+      </div>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
@@ -18,10 +22,10 @@
           <a class="nav-link" href="/work">Work</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="/contact">Contact</a>
         </li>
       </ul>
     </div>

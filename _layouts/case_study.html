@@ -4,8 +4,8 @@ layout: default
 
 {% include page-header.html %}
 
-{% if page.has_many.blocks.size > 0 %}
 <main class="container">
+  {% if page.has_many.blocks.size > 0 %}
   <article class="position-relative overlap-header-30">
     <picture class="line-bg line-bg-lt-outside">
       <source media="(min-width: 576px)" srcset="{{ "/assets/svgs/red-square.svg" }}">
@@ -23,5 +23,7 @@ layout: default
   </article>
   {% assign blocks = page.has_many.blocks | shift %}
   {% include blocks.html collection=blocks %}
+  {% endif %}
+
+  {{ content }}
 </main>
-{% endif %}

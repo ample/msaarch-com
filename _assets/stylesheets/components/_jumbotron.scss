@@ -19,6 +19,13 @@
   text-align: center;
   margin-bottom: 3rem;
 
+  .tpl-tags &,
+  .tpl-blog &,
+  .tpl-post & {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
   & span {
     line-height: 1;
     background-color: $red;
