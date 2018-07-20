@@ -52,12 +52,14 @@ contentful:
       subtitle: subtitle
       slug: slug
       image: image/url
+      image_caption: image/description
   features:
     id: feature
     body: body
     frontmatter:
       title: title
       image: image/url
+      image_caption: image/description
       href: href
   markets:
     id: market
@@ -106,6 +108,7 @@ contentful:
       location: location
       published_at: published_at
       image: image/url
+      image_caption: image/description
       slug: slug
       featured: featured
       author_name: author/full_name
@@ -119,6 +122,7 @@ contentful:
       title: title
       slug: slug
       image: image/url
+      image_caption: image/description
   tags:
     id: tag
     belongs_to:
@@ -126,6 +130,8 @@ contentful:
     frontmatter:
       title: title
       slug: slug
+      image: image/url
+      image_caption: image/description
   users:
     id: user
     frontmatter:
@@ -133,6 +139,7 @@ contentful:
       slug: slug
       title: title
       image: image/url
+      image_caption: image/description
 
 defaults:
   - scope:

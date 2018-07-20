@@ -13,6 +13,7 @@ class CreateTags < ContentfulMigrations::Migration
 
       content_type.fields.create(id: 'title', name: 'Title', type: 'Symbol', required: true, validations: [uniqueness])
       content_type.fields.create(id: 'slug', name: 'Slug', type: 'Symbol', required: true, validations: [uniqueness])
+      content_type.fields.create(id: 'image', name: 'Image', type: 'Link', link_type: 'Asset', required: true)
 
       content_type.save
       content_type.publish
