@@ -11,7 +11,7 @@
 {% endif %}
 
 <header class="jumbotron jumbotron-fluid{% if page.image_caption %} pb-0{% endif %}" style="background-image: url('{{ page.image | imgix | append: '?max-h=600&auto=format%2Ccompress&fit=crop&crop=entropy' }}');">
-  <div class="container text-uppercase text-white">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-10">
         <div class="padded-header">
@@ -29,7 +29,7 @@
     </div>
     {% if page.image_caption %}
     <div class="row">
-      <p class="header-info text-uppercase mt-md-3"><a href="#"></a>{{ page.image_caption }} > </a></p>
+      <p class="header-info mt-md-3"><a href="#"></a>{{ page.image_caption }} > </a></p>
     </div>
     {% endif %}
   </div>

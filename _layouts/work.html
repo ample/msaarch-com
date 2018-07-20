@@ -17,7 +17,7 @@ layout: default
         <section class="link-card">
           <a href="{{ market.url }}">
             <div class="link-img link-img-2x">
-              {% assign project = market.associations.projects | first %}
+              {% assign project = market.has_many.projects | first %}
               <img class="img-fluid w-100 object-fit-cover" src="{{ project.image }}" alt="{{ market.title }}">
               <div class="bg-gradient-light"></div>
               <h3 class="link-title title-overlap title-overlap-2x">{{ market.title }}</h3>

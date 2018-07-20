@@ -22,7 +22,6 @@ collections:
   markets:
     output: true
     permalink: /markets/:slug
-    layout: market
   media_objects:
     output: false
   pages:
@@ -78,6 +77,7 @@ contentful:
     frontmatter:
       title: title
       slug: slug
+      image: image/url
   media_objects:
     id: media_object
     body: body
@@ -161,6 +161,10 @@ defaults:
       path: ""
     values:
       layout: default
+  - scope:
+      type: "markets"
+    values:
+      layout: market
   - scope:
       type: "case_studies"
     values:

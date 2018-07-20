@@ -1,0 +1,13 @@
+<div class="col-6 col-md">
+    <section class="link-card">
+      <a href="{{ include.block.url }}">
+        <div class="link-img">
+          <img src="{{ include.block.image }}" alt="{{ include.block.title | replace:'\n','' }}">
+        </div>
+        <h3 class="link-title text-red">{{ include.block.title | replace:'\n','' }}</h3>
+      </a>
+      <div class="link-body">
+        <p>{{ include.block.subtitle }}</p>
+      </div>
+    </section>
+  </div>
