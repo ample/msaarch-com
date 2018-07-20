@@ -9,7 +9,7 @@ layout: case_study
     </div>
     {% assign projects = site.projects | sort: 'date' | reverse | slice: 0, 5 | exclude: page.title %}
     {% for project in projects %}
-    <div class="col-6 col-md">
+    <div class="col-6 col-md-3">
       <section class="link-card">
         <a href="#">
           <div class="link-img">
