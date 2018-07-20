@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+{% include page-header.html %}
+
+<main class="post container">
+  <div class="row">
+    <article class="overlap-header">
+      <div class="red-lines"></div>
+      <div class="post-content">
+        <div>
+          <div class="author-media-object link-card">
+            <div class="author-image">
+              <img src="{{ page.author_image }}" alt="image 1">
+            </div>
+            <div>
+              <p class="link-title">{{ page.author_name }}, {{ page.author_credentials }}</p>
+              <p class="link-body">{{ page.author_title }}</p>
+            </div>
+          </div>
+
+          {% assign blocks = page.has_many.blocks %}
+          {% include blocks.html collection=blocks %}
+        </div>
+      </div>
+    </article>
+
+    <div class="page-info">
+      <aside>
+        <h3>Location</h3>
+        {{ page.location }}
+
+        <h3>date</h3>
+        {{ page.published_at | date: '%B %d, %Y' }}
+
+        <h3>tags</h3>
+        {% for tag in page.has_many.tags %}
+        <a href="{{ tag.url }}">
+          <p>{{ tag.title }}</p>
+        </a>
+        {% endfor %}
+      </aside>
+    </div>
+  </div>
+
+  {% assign recent = site.posts | exclude: 'title', page.title | slice: 0, 5 %}
+  {% if recent.size > 0 %}
+  <section>
+    <div class="row no-gutters pb-7">
+      <div class="col-12">
+        <h2 class="section-header">More Design Thinking</h2>
+      </div>
+      {% for post in recent %}
+        {% include posts/post.html post=post %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</main>

@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+{% include page-header.html css='text-left' %}
+
+{% assign featured = site.posts | where: 'featured', true %}
+{% assign posts = site.posts | exclude: 'featured', true %}
+
+<main class="container">
+  <article>
+    <div class="row">
+      <div class="col">
+        <h2 class="section-header">featured</h2>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      {% for post in featured %}
+        {% include posts/featured.html post=post %}
+      {% endfor %}
+    </div>
+  </article>
+
+  <section>
+    <div class="pb-7">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-header">recent</h2>
+        </div>
+      </div>
+
+      {% for post in posts %}
+      {% assign mod = forloop.index0 | modulo: 4 %}
+      {% if mod == 0 %}<div class="row no-gutters">{% endif %}
+        {% include posts/post.html post=post %}
+        {% if mod == 3 %}</div>{% endif %}
+      {% endfor %}
+
+    </div>
+  </section>
+</main>
