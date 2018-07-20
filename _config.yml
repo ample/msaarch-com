@@ -14,7 +14,7 @@ collections_dir: collections
 collections:
   case_studies:
     output: true
-    permalink: /markets/(:links_to/:markets/:0/:slug)/:slug
+    permalink: /case-studies/:slug
   features:
     output: false
   markets:
@@ -27,7 +27,8 @@ collections:
     output: true
     permalink: /:slug
   projects:
-    output: false
+    output: true
+    permalink: /markets/(:links_to/:markets/:0/:slug)/:slug
   posts:
     output: true
     permalink: /design-thinking/:slug
@@ -115,8 +116,14 @@ contentful:
       author_title: author/title
   projects:
     id: project
+    body: body
+    belongs_to:
+      - market
+    has_many:
+      blocks: [media_objects, text_objects]
     frontmatter:
       title: title
+      subtitle: subtitle
       slug: slug
       image: image/url
   tags:
@@ -143,6 +150,10 @@ defaults:
       type: "case_studies"
     values:
       layout: case_study
+  - scope:
+      type: "projects"
+    values:
+      layout: project
   - scope:
       type: "posts"
     values:
