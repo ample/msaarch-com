@@ -16,7 +16,7 @@ class CreatePages < ContentfulMigrations::Migration
       content_type.fields.create(id: 'image', name: 'Image', type: 'Link', link_type: 'Asset', required: true)
 
       of_type = Contentful::Management::Validation.new
-      of_type.link_content_type =  ['feature', 'media_object']
+      of_type.link_content_type =  ['feature', 'media_object', 'text_object']
 
       items = Contentful::Management::Field.new
       items.type = 'Link'
@@ -25,7 +25,7 @@ class CreatePages < ContentfulMigrations::Migration
       content_type.fields.create(id: 'blocks', name: 'Blocks', type: 'Array', items: items)
 
       validation_in = Contentful::Management::Validation.new
-      validation_in.in = ['home', 'work', 'blog']
+      validation_in.in = ['home', 'work', 'blog', 'contact']
       content_type.fields.create(id: 'layout', name: 'Layout', type: 'Symbol', required: true, validations: [validation_in])
 
       content_type.save
