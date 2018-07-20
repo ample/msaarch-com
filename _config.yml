@@ -147,6 +147,10 @@ defaults:
       type: "posts"
     values:
       layout: post
+  - scope:
+      type: "tags"
+    values:
+      layout: tags
 
 assets:
   source_maps: true # false on JEKYLL_ENV=production
