@@ -12,6 +12,8 @@ exclude:
 
 collections_dir: collections
 collections:
+  careers:
+    output: false
   case_studies:
     output: true
     permalink: /markets/(:links_to/:markets/:0/:slug)/:slug
@@ -40,6 +42,12 @@ collections:
     output: false
 
 contentful:
+  careers:
+    id: career
+    body: body
+    frontmatter:
+      title: title
+      slug: slug
   case_studies:
     id: case_study
     body: body
@@ -84,7 +92,7 @@ contentful:
     id: page
     body: body
     has_many:
-      blocks: [ features, media_objects ]
+      blocks: [ features, media_objects, text_objects ]
     frontmatter:
       title: title
       subtitle: subtitle
