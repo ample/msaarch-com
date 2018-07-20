@@ -29,7 +29,15 @@ collections:
   projects:
     output: true
     permalink: /projects/:slug
+  posts:
+    output: true
+    permalink: /design-thinking/:slug
+  tags:
+    output: true
+    permalink: /design-thinking/tags/:slug
   text_objects:
+    output: false
+  users:
     output: false
 
 contentful:
@@ -86,6 +94,26 @@ contentful:
       image: image/url
       image_caption: image/description
       layout: layout
+  posts:
+    id: post
+    body: body
+    filename: "{{ published_at | date: '%Y-%m-%d' }}-{{ slug }}"
+    has_many:
+      blocks: [ media_objects, text_objects ]
+      tags: [ tags ]
+    frontmatter:
+      title: title
+      slug: slug
+      location: location
+      published_at: published_at
+      image: image/url
+      slug: slug
+      featured: featured
+      author_name: author/full_name
+      author_slug: author/slug
+      author_image: author/image/url
+      author_credentials: author/credentials
+      author_title: author/title
   projects:
     id: project
     body: body
@@ -97,6 +125,20 @@ contentful:
       title: title
       subtitle: subtitle
       slug: slug
+      image: image/url
+  tags:
+    id: tag
+    belongs_to:
+      - post
+    frontmatter:
+      title: title
+      slug: slug
+  users:
+    id: user
+    frontmatter:
+      full_name: full_name
+      slug: slug
+      title: title
       image: image/url
 
 defaults:
@@ -112,6 +154,10 @@ defaults:
       type: "projects"
     values:
       layout: project
+  - scope:
+      type: "posts"
+    values:
+      layout: post
 
 assets:
   source_maps: true # false on JEKYLL_ENV=production
