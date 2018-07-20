@@ -14,7 +14,7 @@ collections_dir: collections
 collections:
   case_studies:
     output: true
-    permalink: /markets/(:links_to/:markets/:0/:slug)/:slug
+    permalink: /case-studies/:slug
   features:
     output: false
   markets:
@@ -28,7 +28,7 @@ collections:
     permalink: /:slug
   projects:
     output: true
-    permalink: /projects/:slug
+    permalink: /markets/(:links_to/:markets/:0/:slug)/:slug
   posts:
     output: true
     permalink: /design-thinking/:slug
