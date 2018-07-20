@@ -2,8 +2,7 @@
 layout: default
 ---
 
-{% include page-header.html css='text-left' %}
-
+{% include page-header.html %}
 {% assign featured = site.posts | where: 'featured', true %}
 {% assign posts = site.posts | exclude: 'featured', true %}
 
