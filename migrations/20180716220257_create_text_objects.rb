@@ -18,7 +18,7 @@ class CreateTextObjects < ContentfulMigrations::Migration
 
   def down
     with_space do |space|
-      content_type = space.content_types.find('text')
+      content_type = space.content_types.find('text_object')
       content_type.unpublish
       content_type.destroy
     end
