@@ -32,7 +32,8 @@ collections:
     output: true
     permalink: /design-thinking/:slug
   tags:
-    output: false
+    output: true
+    permalink: /design-thinking/tags/:slug
   text_objects:
     output: false
   users:
@@ -96,11 +97,9 @@ contentful:
     id: post
     body: body
     filename: "{{ published_at | date: '%Y-%m-%d' }}-{{ slug }}"
-    belongs_to:
-      - user
     has_many:
       blocks: [ media_objects, text_objects ]
-      tags: [tags]
+      tags: [ tags ]
     frontmatter:
       title: title
       slug: slug
@@ -109,6 +108,11 @@ contentful:
       image: image/url
       slug: slug
       featured: featured
+      author_name: author/full_name
+      author_slug: author/slug
+      author_image: author/image/url
+      author_credentials: author/credentials
+      author_title: author/title
   projects:
     id: project
     frontmatter:
@@ -117,6 +121,8 @@ contentful:
       image: image/url
   tags:
     id: tag
+    belongs_to:
+      - post
     frontmatter:
       title: title
       slug: slug
@@ -137,6 +143,10 @@ defaults:
       type: "case_studies"
     values:
       layout: case_study
+  - scope:
+      type: "posts"
+    values:
+      layout: post
 
 assets:
   source_maps: true # false on JEKYLL_ENV=production

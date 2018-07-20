@@ -1,6 +1,7 @@
 module Jekyll
   module ExcludeFilter
     def exclude(arr, *args)
+      # binding.pry
       if args.is_a?(String)
         arr.reject{|obj| obj['title'] == title }
       else
