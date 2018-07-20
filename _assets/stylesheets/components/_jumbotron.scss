@@ -23,6 +23,8 @@
     line-height: 1;
     background-color: $red;
     padding: 0 1rem .5rem;
+    text-transform: uppercase;
+    color: $white;
   }
 }
 
@@ -50,6 +52,7 @@
   padding-left: 1rem;
   padding-top: 8rem;
   padding-bottom: 1rem;
+  text-transform: uppercase;
 
   @media (min-width: $screen-md) {
     padding-left: 0;
