@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% include page-header.html %}
+
+<main class="container">
+  {% if page.has_many.case_studies.size > 0 %}
+  <article>
+    <div class="row">
+      <div class="col">
+        <h2 class="section-header">case studies</h2>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      {% assign blocks = page.has_many.case_studies %}
+      {% for block in blocks %}
+        {% include blocks/case_study_card.html collection=blocks css='col-12 col-md-6 pb-3 mb-3' %}
+      {% endfor %}
+    </div>
+  </article>
+  {% endif %}
+
+  {% if page.has_many.projects.size > 0 %}
+  <section>
+    <div class="pb-7">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-header">featured projects</h2>
+        </div>
+      </div>
+      {% assign blocks = page.has_many.projects  %}
+      {% include blocks.html collection=blocks css='row no-gutters d-flex flex-wrap' %}
+
+      <div class="col-12 load-more">
+        <a href="#" class="button btn-outline-light btn-gray-light btn-block text-uppercase" data-role="load-more" data-paginate="{{ include.collection }}">
+          See More Projects
+        </a>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</main>
