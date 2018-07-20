@@ -13,7 +13,8 @@ class CreatePosts < ContentfulMigrations::Migration
       content_type.fields.create(id: 'title', name: 'Title', type: 'Symbol', required: true)
       content_type.fields.create(id: 'slug', name: 'Slug', type: 'Symbol', required: true, validations: [uniqueness])
       content_type.fields.create(id: 'location', name: 'Location', type: 'Symbol')
-      content_type.fields.create(id: 'pubished_at', name: 'Published At', type: 'Date')
+      content_type.fields.create(id: 'published_at', name: 'Published At', type: 'Date')
+      content_type.fields.create(id: 'image', name: 'Image', type: 'Link', link_type: 'Asset', required: true)
 
       validation = Contentful::Management::Validation.new
       validation.link_content_type =  ['user']
@@ -36,6 +37,8 @@ class CreatePosts < ContentfulMigrations::Migration
       items.link_type = 'Entry'
       items.validations = [of_type]
       content_type.fields.create(id: 'tags', name: 'Tags', type: 'Array', items: items)
+
+      content_type.fields.create(id: 'featured', name: 'Featured', type: 'Boolean')
       content_type.save
       content_type.publish
 

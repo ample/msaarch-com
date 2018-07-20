@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ample/jekyll-placeholders.git
-  revision: 4043efaa8722ec86e147e9f2b2b08c68e7079ed8
+  revision: 275f2369b49b4c785e225cd41c9de40e73292451
   specs:
     jekyll-placeholders (0.0.1)
       activesupport
@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/crdschurch/jekyll-contentful.git
-  revision: 479ba5883bf4723d6a0fcb5dd3e7e855708f50c6
+  revision: 80c275081dcb4d0cb86ec18eb3603aa00b9ce033
   branch: feature/associations
   specs:
     jekyll-contentful (1.0.0)

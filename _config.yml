@@ -29,7 +29,8 @@ collections:
   projects:
     output: false
   posts:
-    output: false
+    output: true
+    permalink: /design-thinking/:slug
   tags:
     output: false
   text_objects:
@@ -94,6 +95,7 @@ contentful:
   posts:
     id: post
     body: body
+    filename: "{{ published_at | date: '%Y-%m-%d' }}-{{ slug }}"
     belongs_to:
       - user
     has_many:
@@ -103,8 +105,10 @@ contentful:
       title: title
       slug: slug
       location: location
-      pubished_at: pubished_at
+      published_at: published_at
+      image: image/url
       slug: slug
+      featured: featured
   projects:
     id: project
     frontmatter:
