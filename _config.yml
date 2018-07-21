@@ -12,6 +12,8 @@ exclude:
 
 collections_dir: collections
 collections:
+  awards:
+    output: false
   careers:
     output: false
   case_studies:
@@ -42,6 +44,12 @@ collections:
     output: false
 
 contentful:
+  awards:
+    id: award
+    body: body
+    frontmatter:
+      title: title
+      date: date
   careers:
     id: career
     body: body
@@ -140,6 +148,7 @@ contentful:
       full_name: full_name
       slug: slug
       title: title
+      credentials: credentials
       image: image/url
 
 defaults:

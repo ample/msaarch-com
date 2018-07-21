@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+{% include page-header.html %}
+
+<main class="container about">
+  <nav class="button-nav">
+    <div class="button-col"><a href="#disciplines"><button class="btn btn-red btn-block">
+      disciplines
+    </button></a></div>
+    <div><a href="#team"><button class="btn btn-red btn-block">
+      team
+    </button></a></div>
+    <div><a href="#awards"><button class="btn btn-red btn-block">
+      awards
+    </button></a></div>
+  </nav>
+  <div id="disciplines">
+    <h2 class="section-header">disciplines</h2>
+    {% include blocks.html collection=page.has_many.blocks %}
+  </div>
+
+  {% if site.users.size > 0 %}
+  <article id="team">
+    <h2 class="section-header">team</h2>
+
+    <section class="team-cards">
+      {% for user in site.users %}
+      <div>
+        <section class="link-card">
+          <div class="link-img">
+            <img class="img-fluid w-100" src="{{ user.image }}" alt="{{ user.full_name }}">
+            <h3 class="link-title">{{ user.full_name }}, {{ user.credentials }}</h3>
+          </div>
+          <div class="link-body">
+            <p>{{ user.title }}</p>
+          </div>
+        </section>
+      </div>
+      {% endfor %}
+    </section>
+  </article>
+  {% endif %}
+
+  <article id="awards">
+    <h2 class="section-header">awards</h2>
+    <section class="awards-section">
+
+      {% assign awards_by_year = site.awards | group_by: 'date' | sort: 'name' | reverse %}
+      {% for group in awards_by_year %}
+        {% assign n = forloop.index0 | modulo: 2 %}
+        {% if n == 0 %}
+          {% assign dir = 'left' %}
+        {% else %}
+          {% assign dir = 'right' %}
+        {% endif %}
+        <div class="{{ dir }}">
+          <div class="award-header">
+            <img src="/assets/images/awards-blocks-{{ dir }}.jpg" alt="{{ award.title }}">
+            <p>{{ group.name | date: '%Y' }}</p>
+          </div>
+        </div>
+        <div class="awards-list">
+          {% for award in group.items %}
+          <div>
+            <h3>{{ award.title }}</h3>
+            {{ award.content | markdownify }}
+          </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+    </section>
+  </article>
+
+</main>
