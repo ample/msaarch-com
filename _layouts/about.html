@@ -30,7 +30,7 @@ layout: default
       <div>
         <section class="link-card">
           <div class="link-img">
-            <img class="img-fluid w-100" src="{{ user.image }}" alt="{{ user.full_name }}">
+            <img class="img-fluid w-100" src="{{ user.image | imgix }}" alt="{{ user.full_name }}">
             <h3 class="link-title">{{ user.full_name }}, {{ user.credentials }}</h3>
           </div>
           <div class="link-body">

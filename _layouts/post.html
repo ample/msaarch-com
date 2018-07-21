@@ -12,7 +12,7 @@ layout: default
         <div>
           <div class="author-media-object link-card">
             <div class="author-image">
-              <img src="{{ page.author_image }}" alt="image 1">
+              <img src="{{ page.author_image | imgix }}" alt="{{ page.author_title }}">
             </div>
             <div>
               <p class="link-title">{{ page.author_name }}, {{ page.author_credentials }}</p>

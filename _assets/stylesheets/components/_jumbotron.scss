@@ -17,13 +17,11 @@
 .header-text-bg {
   letter-spacing: $letter-spacing-base;
   text-align: center;
-  margin-bottom: 3rem;
 
   .tpl-tags &,
   .tpl-blog &,
   .tpl-post & {
     text-align: left;
-    margin-bottom: 0;
   }
 
   & span {

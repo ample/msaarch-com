@@ -2,24 +2,8 @@
 layout: default
 ---
 
-<header class="jumbotron jumbotron-fluid pb-0" style="background-image: url('{{ "/assets/images/banner.jpg" | absolute_url }}');">
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-10 col-md-6 col-lg-11 col-xl-12">
-        <div class="padded-header">
-          <h1 class="header-text-bg">
-            <span>
-              {{ page.title }}
-            </span>
-          </h1>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <p class="header-info tagline">{{ page.subtitle }}</p>
-    </div>
-  </div>
-</header>
+{% include page-header.html %}
+
 <main class="container main-home {{ page.path | slugify }}">
 
   {% assign blocks = page.has_many.blocks | where:"content_type", "media_object" %}

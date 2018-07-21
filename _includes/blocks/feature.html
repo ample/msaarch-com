@@ -2,7 +2,7 @@
   <section class="link-card">
     <a href="{{ include.block.url }}">
       <div class="link-img">
-        <img class="img-fluid w-100 object-fit-cover" src="{{ include.block.image }}" alt="{{ include.block.title }}">
+        <img class="img-fluid w-100 object-fit-cover" src="{{ include.block.image | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" alt="{{ include.block.title }}">
         <div class="bg-gradient"></div>
         <h3 class="link-title title-overlap title-overlap-4x">{{ include.block.title }}</h3>
       </div>
