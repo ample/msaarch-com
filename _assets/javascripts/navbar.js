@@ -1,7 +1,9 @@
 $(document).ready(function(){
   var navbar = document.getElementById('navbar-container');
-	$('#nav-icon').click(function(){
-    $(this).toggleClass('open');
-    $(navbar).toggleClass('navbar-open');
-	});
+  $('[data-role="navbar-toggle"]').click(function(){
+    $(navbar).toggleClass('navbar-open').promise().done(function(){
+      $(this).find('#nav-icon').toggleClass('open');
+      $('#navbarNav').toggleClass('collapse');
+    });
+  });
 });

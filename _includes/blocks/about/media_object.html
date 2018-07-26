@@ -1,0 +1,22 @@
+{% assign n = include.counter | modulo: 2 %}
+{% if n == 1 %}
+  {% assign klasses = 'home-content-left' %}
+{% else %}
+  {% assign klasses = 'home-content-right' %}
+{% endif %}
+
+
+<article class="{{ klasses }} media-object">
+  <div class="line-bg">
+    <img src="{{ "/assets/svgs/red-square.svg" }}" alt="red square">
+  </div>
+  <div class="media-object-content">
+    <div>
+      <img class="img-fluid" src="{{ include.block.image | imgix }}" alt="{{ include.block.title }}">
+    </div>
+    <div class="media-object-text">
+      <h2 class="section-header">{{ include.block.title }}</h2>
+      {{ include.block.content | markdownify }}
+    </div>
+  </div>
+</article>

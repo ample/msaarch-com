@@ -1,0 +1,11 @@
+<div class="col-12 col-md-6 case-study-card">
+  <section class="link-card">
+    <a href="{{ block.url }}">
+      <div class="link-img link-img-tall">
+        <img class="img-fluid w-100 object-fit-cover" src="{{ block.image | imgix }}" alt="{{ block.title }}">
+        <div class="bg-gradient-light"></div>
+        <h3 class="link-title title-overlap title-overlap-2x">{{ block.title | replace:'\n','' }} </h3>
+      </div>
+    </a>
+  </section>
+</div>
