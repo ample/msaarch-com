@@ -86,6 +86,7 @@ contentful:
       title: title
       slug: slug
       image: image/url
+      image_caption: image/description
   media_objects:
     id: media_object
     body: body
