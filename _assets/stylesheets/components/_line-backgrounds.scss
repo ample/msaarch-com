@@ -9,27 +9,13 @@
 }
 
 .line-bg-r {
-  top: -60px;
-  right: -20px;
-
-  @media (min-width: $screen-sm) {
-    top: -135px;
-    right: -60px;
-  }
-  @media (min-width: $screen-lg) {
-    top: -60px;
-    right: -30px;
-  }
+  top: -30px;
+  right: -30px;
 }
 
 .line-bg-l {
-  top: -72px;
+  top: -36px;
   left: -30px;
-  // max-width: 507px;
-
-  @media (min-width: $screen-sm) {
-    left: -33px;
-  }
 }
 
 .line-bg-c {
