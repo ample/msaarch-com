@@ -16,7 +16,7 @@ layout: default
       {% for post in page.belongs_to.posts %}
         {% assign n = forloop.index0 | modulo: 4 %}
         {% if n == 0 %}<div class="row no-gutters">{% endif %}
-        <div class="col-6 col-md">
+        <div class="col-6 col-md-3">
           <section class="link-card">
             <a href="{{ post.url }}">
               <div class="link-img">
