@@ -5,25 +5,5 @@ layout: default
 {% include page-header.html %}
 
 <main class="container">
-  {% if page.has_many.blocks.size > 0 %}
-  <article class="position-relative overlap-header-30">
-    <picture class="line-bg line-bg-lt-outside zindex-back">
-      <source media="(min-width: 576px)" srcset="{{ "/assets/svgs/red-square.svg" }}">
-      <img src="{{ "/assets/svgs/case-studies-block-red-rect.svg" | absolute_url }}" alt="">
-    </picture>
-    <div class="row justify-content-end text-right pb-5">
-      {% assign block = page.has_many.blocks | first %}
-      {% include blocks/case_study/media_object.html block=block lead=true %}
-      <div class="col-md-3 align-self-center mb-2">
-        <aside class="mt-2">
-          {{ page.content }}
-        </aside>
-      </div>
-    </div>
-  </article>
-  {% assign blocks = page.has_many.blocks | shift %}
-  {% include blocks.html collection=blocks %}
-  {% endif %}
-
-  {{ content }}
+  {% include detail-layout.html %}
 </main>

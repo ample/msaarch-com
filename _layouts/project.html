@@ -1,27 +1,33 @@
 ---
-layout: case_study
+layout: default
 ---
 
-<section>
-  <div class="row no-gutters pb-7">
-    <div class="col-12">
-      <h2 class="section-header">featured projects</h2>
-    </div>
-    {% assign projects = site.projects | sort: 'date' | reverse | slice: 0, 5 | exclude: page.title %}
-    {% for project in projects %}
-    <div class="col-6 col-md-3">
-      <section class="link-card">
-        <a href="#">
-          <div class="link-img">
-            <img class="img-fluid w-100" src="{{ project.image | imgix }}" alt="{{ project.title }}">
-            <h3 class="link-title text-red">{{ project.title }}</h3>
+{% include page-header.html %}
+
+<main class="container">
+  {% include detail-layout.html %}
+
+  <section>
+    <div class="row no-gutters pb-7">
+      <div class="col-12">
+        <h2 class="section-header">featured projects</h2>
+      </div>
+      {% assign projects = site.projects | sort: 'date' | reverse | slice: 0, 5 | exclude: page.title %}
+      {% for project in projects %}
+      <div class="col-6 col-md-3">
+        <section class="link-card">
+          <a href="#">
+            <div class="link-img">
+              <img class="img-fluid w-100" src="{{ project.image | imgix }}" alt="{{ project.title }}">
+              <h3 class="link-title text-red">{{ project.title }}</h3>
+            </div>
+          </a>
+          <div class="link-body">
+            {{ project.subtitle }}
           </div>
-        </a>
-        <div class="link-body">
-          {{ project.subtitle }}
-        </div>
-      </section>
+        </section>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
-</section>
+  </section>
+</main>
