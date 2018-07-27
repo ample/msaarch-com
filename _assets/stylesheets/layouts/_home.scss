@@ -1,55 +1,82 @@
-.main-home {
-  @media (max-width: $screen-sm) {
-    overflow: hidden;
-  }
-}
+.tpl-home {
 
-.media-object {
-  margin-top: 7rem;
-  @media (min-width: $screen-sm) {
-    margin-top: 5rem;
+  .main-home {
+    @include media-breakpoint-down(sm) {
+      overflow: hidden;
+    }
   }
-}
 
-.home-content-right {
-  .line-bg {
-    @extend .line-bg-r;
+  .media-object {
+    margin-top: 7rem;
+    @include media-breakpoint-up(sm) {
+      margin-top: 5rem;
+    }
   }
-  > .row {
-    @extend .justify-content-end;
-    > div {
-      text-align: right;
-      &:first-child {
-        @extend .order-sm-12;
+
+  .header-text-bg {
+    @include media-breakpoint-down(lg)  {
+      text-align: left;
+
+      span {
+        display: inline;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
       }
     }
   }
-}
 
-.home-content-left {
-  .line-bg {
-    @extend .line-bg-l;
-  }
-
-  > .row {
-    // @extend .bg-left;
-    > div {
-      text-align: left;
+  .home-content-right {
+    .line-bg {
+      @extend .line-bg-r;
+    }
+    > .row {
+      @extend .justify-content-end;
+      > div {
+        text-align: right;
+        &:first-child {
+          @extend .order-sm-12;
+        }
+      }
     }
   }
-}
 
-.home-featured-links {
-  position: relative;
-  margin-top: 6rem;
+  .home-content-left {
+    .line-bg {
+      @extend .line-bg-l;
 
-  @media (min-width: $screen-sm) {
-    margin-top: 8rem;
+      .red-lines {
+        height: 224px;
+        width: 217px;
+      }
+    }
+
+    > .row {
+      // @extend .bg-left;
+      > div {
+        text-align: left;
+      }
+    }
   }
 
-  .block-features {
-    @include make-row();
-    @extend .no-gutters;
-    @extend .pb-7;
+  .section-header {
+    line-height: 1;
+    padding-top: 1.0rem;
+    padding-bottom: .25rem;
+    padding-left: 0;
+  }
+
+  .home-featured-links {
+    position: relative;
+    margin-top: 6rem;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 8rem;
+    }
+
+    .block-features {
+      @include make-row();
+      @extend .no-gutters;
+      @extend .pb-7;
+    }
   }
 }

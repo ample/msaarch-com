@@ -10,10 +10,6 @@ layout: default
   {% include blocks.html collection=blocks %}
 
   <section class="home-featured-links">
-    <picture class="line-bg line-bg-c">
-      <source media="(min-width: 576px)" srcset="{{ "/assets/svgs/home-blocks-rect.svg" }}">
-      <img src="{{ "/assets/svgs/home-blocks-rect-m.svg" | absolute_url }}" alt="">
-    </picture>
     {% assign blocks = page.has_many.blocks | where:"content_type", "feature" %}
     {% include blocks.html collection=blocks %}
   </section>
