@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<!-- Sort order for Markets -->
+{% assign market_order = 'Sport Education Corporate Civic Transportation Lifestyle Religious Interiors Graphics' | split: ' ' %}
+
 {% include page-header.html %}
 
 <main class="container main-work">
@@ -12,18 +15,22 @@ layout: default
       </div>
     </div>
     <div class="row no-gutters">
-      {% for market in site.markets %}
-      <div class="col-12 col-md-6 pb-3 mb-3">
-        <section class="link-card">
-          <a href="{{ market.url }}">
-            <div class="link-img link-img-2x">
-              <img class="img-fluid w-100 object-fit-cover" src="{{ market.image | imgix: 'w=480&h=270&fit=crop&crop=entropy' }}" alt="{{ market.title }}">
-              <div class="bg-gradient-light"></div>
-              <h3 class="link-title title-overlap title-overlap-2x">{{ market.title }}</h3>
-            </div>
-          </a>
-        </section>
-      </div>
+      {% for order in market_order %}
+        {% for market in site.markets %}
+          {% if order == market.title %}
+          <div class="col-12 col-md-6 pb-3 mb-3">
+            <section class="link-card">
+              <a href="{{ market.url }}">
+                <div class="link-img link-img-2x">
+                  <img class="img-fluid w-100 object-fit-cover" src="{{ market.image | imgix: 'w=480&h=270&fit=crop&crop=entropy' }}" alt="{{ market.title }}">
+                  <div class="bg-gradient-light"></div>
+                  <h3 class="link-title title-overlap title-overlap-2x">{{ market.title }}</h3>
+                </div>
+              </a>
+            </section>
+          </div>
+          {% endif %}
+        {% endfor %}
       {% endfor %}
     </div>
   </article>
