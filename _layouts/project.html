@@ -7,13 +7,16 @@ layout: default
 <main class="container">
   {% include detail-layout.html %}
 
+  {% assign features = page.has_many.blocks | where:"content_type", "feature" %}
+  {% if features.size > 0 %}
   <section>
     <div class="row no-gutters pb-7">
       <div class="col-12">
         <h2 class="section-header">featured projects</h2>
       </div>
-      {% assign projects = site.projects | sort: 'date' | reverse | slice: 0, 5 | exclude: page.title %}
+      {% assign projects = features | reverse | slice: 0, 5 %}
       {% for project in projects %}
+
       <div class="col-6 col-md-3">
         <section class="link-card">
           <a href="#">
@@ -30,4 +33,5 @@ layout: default
       {% endfor %}
     </div>
   </section>
+  {% endif %}
 </main>
