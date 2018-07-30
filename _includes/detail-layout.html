@@ -15,6 +15,7 @@
     </div>
   </div>
 </article>
-{% assign blocks = page.has_many.blocks | shift %}
+
+{% assign blocks = page.has_many.blocks | where_exp:"item", "item.content_type != 'feature'" | shift %}
 {% include blocks.html collection=blocks %}
 {% endif %}
