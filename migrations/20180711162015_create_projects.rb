@@ -17,7 +17,7 @@ class CreateProjects < ContentfulMigrations::Migration
       content_type.fields.create(id: 'body', name: 'Body', type: 'Text')
 
       of_type = Contentful::Management::Validation.new
-      of_type.link_content_type =  ['media_object', 'text_object']
+      of_type.link_content_type =  ['feature', 'media_object', 'text_object']
 
       items = Contentful::Management::Field.new
       items.type = 'Link'

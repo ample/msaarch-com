@@ -72,6 +72,7 @@ contentful:
   features:
     id: feature
     body: body
+    filename: "{{ title }}-{{ id }}"
     frontmatter:
       title: title
       image: image/url
@@ -90,6 +91,7 @@ contentful:
   media_objects:
     id: media_object
     body: body
+    filename: "{{ title }}-{{ id }}"
     frontmatter:
       title: title
       css: css
@@ -97,6 +99,7 @@ contentful:
   text_objects:
     id: text_object
     body: body
+    filename: "{{ title }}-{{ id }}"
     frontmatter:
       title: title
       css: css
@@ -140,7 +143,7 @@ contentful:
     belongs_to:
       - market
     has_many:
-      blocks: [media_objects, text_objects]
+      blocks: [features, media_objects, text_objects]
     frontmatter:
       title: title
       subtitle: subtitle
