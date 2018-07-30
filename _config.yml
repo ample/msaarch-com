@@ -90,6 +90,7 @@ contentful:
   media_objects:
     id: media_object
     body: body
+    filename: "{{ id }}-{{ title }}"
     frontmatter:
       title: title
       css: css
@@ -97,6 +98,7 @@ contentful:
   text_objects:
     id: text_object
     body: body
+    filename: "{{ title }}-{{ id }}"
     frontmatter:
       title: title
       css: css
