@@ -72,6 +72,7 @@ contentful:
   features:
     id: feature
     body: body
+    filename: "{{ title }}-{{ id }}"
     frontmatter:
       title: title
       image: image/url
