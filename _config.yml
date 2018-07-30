@@ -142,7 +142,7 @@ contentful:
     belongs_to:
       - market
     has_many:
-      blocks: [media_objects, text_objects]
+      blocks: [features, media_objects, text_objects]
     frontmatter:
       title: title
       subtitle: subtitle
