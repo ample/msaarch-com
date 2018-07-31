@@ -5,16 +5,16 @@
   padding-top: $headings-padding-mobile;
   padding-bottom: 1.625rem;
 
-  @media (min-width: $screen-md) {
+  @include media-breakpoint-up(md) {
     padding-top: $headings-padding-desktop;
     padding-left: 1rem;
   }
 
   &.home-header {
-    @media (min-width: $screen-md) and (max-width: $screen-lg) {
+    @include media-breakpoint-up(md) {
       font-size: 3rem;
     }
-    @media (min-width: $screen-lg) {
+    @include media-breakpoint-up(lg) {
       font-size: 4rem;
     }
   }

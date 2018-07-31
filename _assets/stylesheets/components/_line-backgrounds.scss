@@ -22,7 +22,7 @@
   top: -73px;
   left: 36px;
 
-  @media (min-width: $screen-sm) {
+  @include media-breakpoint-up(sm) {
     top: -60px;
     left: 10vw;
 
@@ -36,7 +36,7 @@
   top: -60px;
   left: -30px;
 
-  @media (min-width: $screen-md) {
+  @include media-breakpoint-up(md) {
     left: 150px;
   }
 }

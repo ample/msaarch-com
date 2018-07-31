@@ -12,7 +12,7 @@
   margin-top: 10rem;
   margin-bottom: 0;
 
-  @media (min-width: $screen-md) {
+ @include media-breakpoint-up(md) {
     margin-top: 7rem;
     margin-bottom: 0;
   }
@@ -51,7 +51,7 @@
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 
-  @media (min-width: $screen-md) {
+ @include media-breakpoint-up(md) {
     font-size: 2.8rem;
   }
 }
@@ -66,13 +66,13 @@
   text-transform: uppercase;
   color: $white;
 
-  @media (min-width: $screen-md) {
+ @include media-breakpoint-up(md) {
     font-size: 2rem;
     padding-left: 0;
     padding-top: 8rem;
   }
 
-  @media (min-width: $screen-lg) {
+  @include media-breakpoint-up(lg)  {
     padding-top: 10rem;
   }
 }
@@ -80,11 +80,11 @@
 .tagline {
   font-size: 1.375rem;
 
-  @media (min-width: $screen-md) {
+ @include media-breakpoint-up(md) {
     font-size: 1.5rem;
   }
 
-  @media (min-width: $screen-lg) {
+  @include media-breakpoint-up(lg)  {
     font-size: 1.6rem;
   }
 }
@@ -93,7 +93,7 @@
 .overlap-header {
  top: 0;
 
-  @media (min-width: $screen-lg) {
+  @include media-breakpoint-up(lg)  {
     top: -90px;
   }
 }
