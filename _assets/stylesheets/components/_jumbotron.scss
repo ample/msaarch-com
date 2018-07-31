@@ -57,7 +57,7 @@
 }
 
 .header-info {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   letter-spacing: .3px;
   font-family: $font-family-urwdin-cond;
   padding-left: 1rem;
@@ -67,7 +67,6 @@
   color: $white;
 
  @include media-breakpoint-up(md) {
-    font-size: 2rem;
     padding-left: 0;
     padding-top: 8rem;
   }
