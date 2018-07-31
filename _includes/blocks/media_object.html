@@ -18,10 +18,10 @@
   </div>
   <div class="row">
     <div class="col-sm-6 col-lg-4">
-      <img class="img-fluid d-block mx-auto" src="{{ include.block.image | imgix }}" alt="{{ include.block.title }}">
+      <img class="img-fluid d-block mx-auto" src="{{ include.block.image | imgix: 'w=400&h=400&fit=crop&crop=entropy' }}" alt="{{ include.block.title }}">
     </div>
     <div class="col-sm-6 col-lg-8 align-self-center">
-      <h2 class="section-header home-header">{{ include.block.title }}</h2>
+      <h2 class="section-header">{{ include.block.title }}</h2>
       {{ include.block.content }}
     </div>
   </div>

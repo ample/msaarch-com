@@ -1,7 +1,7 @@
 .tpl-home {
 
   .main-home {
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(xs) {
       overflow: hidden;
     }
   }
@@ -27,7 +27,18 @@
 
   .home-content-right {
     .line-bg {
-      @extend .line-bg-r;
+      top: -30px;
+      right: -30px;
+
+      .red-lines {
+        height: 225px;
+        width: 250px;
+
+        @include media-breakpoint-up(lg) {
+          height: 277px;
+          width: 316px;
+        }
+      }
     }
     > .row {
       @extend .justify-content-end;
@@ -42,7 +53,8 @@
 
   .home-content-left {
     .line-bg {
-      @extend .line-bg-l;
+      top: -36px;
+      left: -30px;
 
       .red-lines {
         height: 224px;
@@ -61,8 +73,15 @@
   .section-header {
     line-height: 1;
     padding-top: 1.0rem;
-    padding-bottom: .25rem;
+    padding-bottom: .5rem;
     padding-left: 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 3rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+    }
   }
 
   .home-featured-links {
@@ -75,8 +94,17 @@
 
     .block-features {
       @include make-row();
-      @extend .no-gutters;
       @extend .pb-7;
+      @extend .no-gutters;
+      padding-left: 15px;
+      padding-right: 15px;
     }
+  }
+
+  .callout {
+    font-family: $tk-urwdin;
+    line-height: 1.8rem;
+    font-size: 1.625rem;
+    color: $black;
   }
 }
