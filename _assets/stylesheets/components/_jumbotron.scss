@@ -5,6 +5,7 @@
 
   h2.header-text-bg {
     font-size: 4.5rem;
+    line-height: 5rem;
   }
 }
 
@@ -46,6 +47,7 @@
   font-size: 2.25rem;
   text-transform: uppercase;
   color: $white;
+  font-family: $font-family-urwdin-cond;
 
   display: inline;
   box-decoration-break: clone;

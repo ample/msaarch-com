@@ -8,20 +8,6 @@
   width: 277px;
 }
 
-.line-bg-c {
-  top: -73px;
-  left: 36px;
-
-  @include media-breakpoint-up(sm) {
-    top: -60px;
-    left: 10vw;
-
-    & img {
-      max-width: 80%;
-    }
-  }
-}
-
 .line-bg-lt-outside {
   top: -60px;
   left: -30px;

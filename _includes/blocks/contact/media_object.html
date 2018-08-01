@@ -6,16 +6,16 @@
 {% endif %}
 
 <article class="{{ klasses }} media-object">
-    <div class="line-bg">
-      <div class="red-lines"></div>
+  <div class="line-bg">
+    <div class="red-lines"></div>
+  </div>
+  <div class="media-object-content">
+    <div>
+      <img class="img-fluid" src="{{ include.block.image | imgix }}" alt="{{ include.block.title }}">
     </div>
-    <div class="media-object-content">
-      <div>
-        <img class="img-fluid" src="{{ include.block.image | imgix }}" alt="{{ include.block.title }}">
-      </div>
-      <div>
-        <h2 class="section-header">{{ include.block.title }}</h2>
-        {{ include.block.content | markdownify }}
-      </div>
+    <div>
+      <h2 class="section-header">{{ include.block.title }}</h2>
+      {{ include.block.content | markdownify }}
     </div>
-  </article>
+  </div>
+</article>
