@@ -2,7 +2,7 @@
   <section class="link-card">
     <a href="{{ include.post.url }}">
       <div class="link-img">
-        <img class="img-fluid w-100" src="{{ include.post.image | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" alt="{{ include.post.title }}">
+        <img class="img-fluid w-100" ix-src="{{ include.post.image | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ include.post.title }}">
         <h3 class="link-title text-red">{{ include.post.title }}</h3>
       </div>
     </a>
