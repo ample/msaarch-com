@@ -8,35 +8,11 @@
   width: 277px;
 }
 
-.line-bg-r {
-  top: -30px;
-  right: -30px;
-}
-
-.line-bg-l {
-  top: -36px;
-  left: -30px;
-}
-
-.line-bg-c {
-  top: -73px;
-  left: 36px;
-
-  @media (min-width: $screen-sm) {
-    top: -60px;
-    left: 10vw;
-
-    & img {
-      max-width: 80%;
-    }
-  }
-}
-
 .line-bg-lt-outside {
   top: -60px;
   left: -30px;
 
-  @media (min-width: $screen-md) {
+  @include media-breakpoint-up(md) {
     left: 150px;
   }
 }

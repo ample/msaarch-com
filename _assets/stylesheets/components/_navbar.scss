@@ -19,7 +19,7 @@
 
   > .bg-navbar {
     background-color: $red;
-    padding: 2rem;
+    padding: 1rem;
     color: $white;
     z-index: 5;
     text-transform: uppercase;
@@ -33,10 +33,6 @@
       font-family: $font-family-urwdin-cond;
       font-size: 2rem;
       margin-bottom: .5rem;
-    }
-
-    .navbar-nav:first-child {
-      padding-top: 1rem;
     }
   }
 }
@@ -101,7 +97,7 @@
 }
 
 #nav-icon.open span:nth-child(1) {
-  top: 18px;
+  top: 7px;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
   -o-transform: rotate(135deg);
@@ -114,7 +110,7 @@
 }
 
 #nav-icon.open span:nth-child(3) {
-  top: 18px;
+  top: 7px;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
   -o-transform: rotate(-135deg);

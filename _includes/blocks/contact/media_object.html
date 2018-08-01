@@ -6,9 +6,9 @@
 {% endif %}
 
 <article class="{{ klasses }} media-object">
-    <div class="line-bg">
-      <div class="red-lines"></div>
-    </div>
+  <div class="line-bg">
+    <div class="red-lines"></div>
+  </div>
     <div class="media-object-content">
       <div>
         <img class="img-fluid" ix-src="{{ include.block.image | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
@@ -18,4 +18,5 @@
         {{ include.block.content | markdownify }}
       </div>
     </div>
-  </article>
+  </div>
+</article>
