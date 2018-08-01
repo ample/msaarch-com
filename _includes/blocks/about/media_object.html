@@ -8,11 +8,11 @@
 
 <article class="{{ klasses }} media-object">
   <div class="line-bg">
-    <img src="{{ "/assets/svgs/red-square.svg" }}" alt="red square">
+    <img ix-src="{{ "/assets/svgs/red-square.svg" }}" alt="red square">
   </div>
   <div class="media-object-content">
     <div>
-      <img class="img-fluid" src="{{ include.block.image | imgix }}" alt="{{ include.block.title }}">
+      <img class="img-fluid" ix-src="{{ include.block.image | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
     </div>
     <div class="media-object-text">
       <h2 class="section-header">{{ include.block.title }}</h2>

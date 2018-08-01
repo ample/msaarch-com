@@ -203,4 +203,11 @@ assets:
   - _assets/stylesheets
   - _assets/javascripts
 
+image_sizes:
+  cards_4x: "(min-width: 1200px) 278px, (min-width: 992px) 233px, (min-width: 768px) 173px, (min-width: 576px) 255px, 50vw"
+  cards_2x: "(min-width: 1200px) 555px, (min-width: 992px) 465px, (min-width: 768px) 345px, (min-width: 576px) 510px, 100vw"
+  blocks: "(min-width: 992px) 445px, (min-width: 768px) 345px, (min-width: 475px) 445px, 100vw"
+  awards_blocks: "100vw"
+  author_blocks: "(min-width: 768px) 254px, 173px"
+
 typekit_url: https://use.typekit.net/dow2fxa.css
