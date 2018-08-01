@@ -1,4 +1,4 @@
-.about {
+.tpl-about {
   padding-bottom: 4rem;
   overflow: hidden;
 
@@ -11,6 +11,10 @@
 
   h2 {
     padding-left: 0;
+  }
+
+  p.callout {
+    margin-bottom: 15px;
   }
 
   .button-nav {
@@ -96,9 +100,9 @@
         top: -30px;
         right: -30px;
 
-        img {
+        .red-lines {
+          width: 316px;
           height: 277px;
-          width: 302px;
         }
 
       }
@@ -115,8 +119,9 @@
             right: 350px;
           }
 
-          img {
-            width: 200px;
+          .red-lines {
+            width: 324px;
+            height: 168px;
 
             @include media-breakpoint-up(md) {
               height: 168px;
@@ -161,17 +166,21 @@
       }
 
       .line-bg {
-        top: -60px;
-        left: 4rem;
+        top: -31px;
+        left: 15px;
 
         @include media-breakpoint-up(md) {
           top: -86px;
           left: 189px;
         }
 
-        img {
+        .red-lines {
           height: 245px;
           width: 360px;
+          background-image: url('/assets/images/interior-design-blocks.jpg?fit=max&w=445&h=361');
+          background-size: contain;
+          background-repeat: no-repeat;
+          border: none;
 
           @include media-breakpoint-up(md) {
             height: 361px;
@@ -204,12 +213,10 @@
       }
     }
 
-    img {
-
-    }
-
     .link-title {
       color: $red;
+      padding-top: 15px;
+      margin-bottom: 7px;
     }
   }
 
