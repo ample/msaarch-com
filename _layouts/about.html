@@ -30,7 +30,7 @@ layout: default
       <div>
         <section class="link-card">
           <div class="link-img">
-            <img class="img-fluid w-100" src="{{ user.image | imgix }}" alt="{{ user.full_name }}">
+            <img class="img-fluid w-100" ix-src="{{ user.image | imgix }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ user.full_name }}">
             <h3 class="link-title">{{ user.full_name }}, {{ user.credentials }}</h3>
           </div>
           <div class="link-body">
@@ -57,7 +57,7 @@ layout: default
         {% endif %}
         <div class="{{ dir }}">
           <div class="award-header">
-            <img src="/assets/images/awards-blocks-{{ dir }}.jpg" alt="{{ award.title }}">
+            <img ix-src="/assets/images/awards-blocks-{{ dir }}.jpg" sizes="{{ site.image_sizes.awards_blocks }}" alt="{{ award.title }}">
             <p>{{ group.name | date: '%Y' }}</p>
           </div>
         </div>
