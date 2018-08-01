@@ -96,6 +96,7 @@ contentful:
       title: title
       css: css
       image: image/url
+      image_caption: image/description
   text_objects:
     id: text_object
     body: body
