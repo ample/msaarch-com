@@ -41,4 +41,22 @@
   border-radius: 0;
   padding-top: 1rem;
   padding-bottom: 1rem;
+
+  &:hover{
+    color: $red;
+    border: solid 2px $red;
+    background-color: $white;
+    text-decoration: none;
+  }
+}
+
+.btn-white {
+  @extend .btn-red;
+  color: $red;
+  background-color: $white;
+
+  &:hover {
+    background-color: #EEEEEE;
+    border: solid 1px #EEEEEE;
+  }
 }

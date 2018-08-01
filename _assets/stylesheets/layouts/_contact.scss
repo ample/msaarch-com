@@ -1,10 +1,18 @@
-.contact {
-  padding-bottom: 6rem;
-  overflow: hidden;
+.tpl-contact {
 
-  @include media-breakpoint-up(sm) {
-    overflow: visible;
+  main.contact {
+    padding-bottom: 6rem;
+    overflow: hidden;
+
+    @include media-breakpoint-up(sm) {
+      overflow: visible;
+    }
   }
+
+  .subheading {
+    display: none;
+  }
+
 
   h2 {
     padding-left: 0;
@@ -74,7 +82,6 @@
           @include media-breakpoint-up(md) {
             @include make-col(6);
             align-self: center;
-            padding-left: 15px;
             margin-left: auto;
           }
         }
@@ -99,6 +106,10 @@
           letter-spacing: 0;
           margin-bottom: .4rem;
         }
+
+        img {
+          width: 100%;
+        }
       }
     }
 
@@ -111,6 +122,10 @@
         @extend .justify-content-start;
         @include make-col-ready();
         width: auto;
+
+        img {
+          padding-right: 1rem;
+        }
       }
 
       .line-bg {
@@ -165,6 +180,10 @@
         @include make-col-ready();
         width: auto;
 
+        img {
+          padding-right: 1rem;
+        }
+
         > div {
           @include media-breakpoint-up(md) {
             order: 12;
@@ -204,6 +223,10 @@
     background-color: $red;
     color: $white;
     margin-top: 3rem;
+
+    .form-control {
+      color: $white;
+    }
 
     > div {
       @extend .container;
@@ -285,12 +308,9 @@
     }
 
     button {
-      @extend .btn-red;
       display: block;
       width: 100%;
       margin-bottom: 3.5rem;
-      color: $red!important;
-      background-color: $white!important;
 
       @include media-breakpoint-up(md) {
         width: 350px;

@@ -1,12 +1,16 @@
 .tpl-about {
-  padding-bottom: 4rem;
-  overflow: hidden;
 
-  @include media-breakpoint-up(sm) {
-    overflow: visible;
-  }
-  @include media-breakpoint-up(md) {
-    padding-bottom: 6rem;
+  .about {
+    padding-bottom: 4rem;
+    overflow: hidden;
+
+    @include media-breakpoint-up(sm) {
+      overflow: visible;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 6rem;
+    }
   }
 
   h2 {
@@ -20,6 +24,11 @@
   .button-nav {
     @include make-row();
     padding-top: 2rem;
+
+    a, a:hover {
+      color: inherit;
+      text-decoration: none;
+    }
 
     > div {
       @include make-col-ready();
