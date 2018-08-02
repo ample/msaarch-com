@@ -1,6 +1,6 @@
 {% if include.lead %}
   <div class="col-md-9 order-md-12">
-    <img class="img-fluid d-block mx-auto pb-4" ix-src="{% if include.block.image %}{{ include.block.image | imgix }}{% else %}{{ site.image | imgix: site.imgix }}{% endif %}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
+    <img class="img-fluid d-block mx-auto pb-4" ix-src="{% if include.block.image %}{{ include.block.image | imgix }}{% else %}{{ site.image }}{% endif %}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
     <div class="col-md-10 offset-md-2">
       {{ include.block.content | markdownify }}
     </div>
