@@ -56,9 +56,13 @@ layout: default
           {% assign dir = 'right' %}
         {% endif %}
         <div class="{{ dir }}">
+          <div class="line-bg">
+            <div class="red-lines"></div>
+          </div>
           <div class="award-header">
-            <img ix-src="/assets/images/awards-blocks-{{ dir }}.jpg" sizes="{{ site.image_sizes.awards_blocks }}" alt="{{ award.title }}">
-            <p>{{ group.name | date: '%Y' }}</p>
+            <div>
+              <p class="awards-text">{{ group.name | date: '%Y' }}</p>
+            </div>
           </div>
         </div>
         <div class="awards-list">
