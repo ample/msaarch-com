@@ -2,14 +2,14 @@
 layout: default
 ---
 
-{% include page-header.html subtitle=page.title title='design thinking' %}
+{% include page-header.html subtitle='thought leadership & community' title='design thinking' %}
 
 <main class="container">
   <section>
     <div class="pb-7">
       <div class="row">
         <div class="col-12">
-          <h2 class="section-header">recent</h2>
+          <h2 class="section-header">{{ page.title }}</h2>
         </div>
       </div>
 
@@ -20,7 +20,7 @@ layout: default
           <section class="link-card">
             <a href="{{ post.url }}">
               <div class="link-img">
-                <img class="img-fluid w-100" ix-src="{{ post.image | imgix }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ post.title }}">
+                <img class="img-fluid w-100" ix-src="{{ post.image | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ post.title }}">
                 <h3 class="link-title text-red">{{ post.title }}</h3>
               </div>
             </a>

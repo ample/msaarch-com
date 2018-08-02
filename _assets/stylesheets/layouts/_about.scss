@@ -107,7 +107,11 @@
 
       .line-bg {
         top: -30px;
-        right: -30px;
+        right: -15px;
+
+        @include media-breakpoint-up(md) {
+          right: -30px;
+        }
 
         .red-lines {
           width: 316px;
@@ -125,17 +129,12 @@
           @include media-breakpoint-up(md) {
             top: 62px;
             left: auto;
-            right: 350px;
+            right: 233px;
           }
 
           .red-lines {
             width: 324px;
             height: 168px;
-
-            @include media-breakpoint-up(md) {
-              height: 168px;
-              width: auto;
-            }
           }
         }
       }

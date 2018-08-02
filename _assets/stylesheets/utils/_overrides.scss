@@ -186,9 +186,9 @@ $colors: map-merge((
 // //
 // // Style anchor elements.
 
-// $link-color:                theme-color("primary") !default;
+$link-color:                $black; //OVERRIDE
 // $link-decoration:           none !default;
-// $link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-color:          $gray-600; //OVERRIDE
 // $link-hover-decoration:     underline !default;
 
 // // Paragraphs

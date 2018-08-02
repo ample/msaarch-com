@@ -1,4 +1,4 @@
-.post {
+.tpl-post {
 
   article {
     @include make-col-ready();
@@ -12,11 +12,13 @@
   .page-info {
     @include make-col-ready();
     order: 1;
-    padding-top: 3.5rem;
+    padding-top: 0;
+    padding-bottom: 3.75rem;
 
     @include media-breakpoint-up(md) {
       @include make-col(3);
       padding-top: 1.875rem;
+      padding-bottom: 0;
     }
   }
 
@@ -78,9 +80,9 @@
     .link-title{
       color: $red;
       margin-bottom: 0;
+      padding-bottom: 15px;
 
       @include media-breakpoint-up(md) {
-        margin-bottom: .25rem;
         text-align: right;
       }
     }
@@ -102,26 +104,12 @@
 
   .post-content {
 
-    .section-header {
-      font-size: 1.5rem;
-      line-height: 1.5rem;
+    h2, .section-header {
+      font-size: 1.875rem;
+      line-height: 1.875rem;
       letter-spacing: $letter-spacing-base;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      line-height: 1.5rem;
-      letter-spacing: $letter-spacing-base;
-      color: $black;
-      font-family: $font-family-urwdin-cond;
-      text-transform: uppercase;
-      padding-top: 1rem;
       padding-bottom: 1rem;
-    }
-
-    h3 {
-      @extend .callout;
-      color: $red;
+      text-transform: uppercase;
     }
 
     p {
