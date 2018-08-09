@@ -1,6 +1,6 @@
 <div class="col-6 col-md-3">
   <section class="link-card">
-    <a href="{{ include.block.url }}">
+    <a href="{{ include.block.href }}">
       <div class="link-img">
         <img class="img-fluid w-100 object-fit-cover" ix-src="{{ include.block.image | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ include.block.title }}">
         <div class="bg-gradient"></div>
