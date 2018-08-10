@@ -226,6 +226,7 @@
 
     .form-control {
       color: $white;
+      border-radius: 0;
     }
 
     > div {
@@ -241,10 +242,6 @@
       margin-bottom: 1.875rem;
       @include make-row();
       position: relative;
-
-      &:last-of-type {
-        justify-content: flex-end;
-      }
 
       > div {
         @include make-col(12);
@@ -268,10 +265,41 @@
             padding-left: 15px;
           }
         }
+
+        &.alert {
+          padding-right: 30px;
+          background-color: $black;
+          border-radius: 0;
+          margin-bottom: 3.5rem;
+          color: $white;
+          font-family: $font-family-urwdin;
+          font-size: 1rem;
+          line-height: 22px;
+          letter-spacing: 0;
+          padding-left: 12px;
+
+          span.red-box {
+            color: $white;
+            background-color: $red;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            text-align: center;
+            font-family: $font-family-urwdin-cond;
+            font-size: 1.75rem;
+          }
+        }
+
+        &.form-submit {
+          justify-content: flex-end;
+        }
+      }
+
+      .select {
+        @include make-col(12);
       }
     }
 
-    input, select, textarea {
+    input, select, textarea, .select-styled {
       background-color: $red;
       border: 2px solid $white;
       padding-top: 1rem;
@@ -287,7 +315,7 @@
       letter-spacing: $letter-spacing-base;
     }
 
-    select.custom-select {
+    select.custom-select, .select-styled {
       @extend ::placeholder;
       padding-top: 9px;
       height: 50px;
@@ -298,13 +326,45 @@
       position: relative;
     }
 
+    .select-styled {
+      width: 100%;
+      padding: 0.375rem 0.75rem;
+
+      & .selected {
+        text-transform: unset;
+      }
+    }
+
     .fa-chevron-down {
       position: absolute;
       right: 15px;
       padding-top: 16px;
       font-size: 20px;
+    }
 
+    .select-options {
+      z-index: 1;
+      background: $white;
+      width: 100%;
+      color: $black;
+      padding: 1.25rem 1rem;
+      position: absolute;
+      z-index: 1;
+      display: none;
 
+      li {
+        padding-bottom: 1.25rem;
+        cursor: pointer;
+        list-style: none;
+
+        &:last-of-type {
+          padding-bottom: 0;
+
+          &:hover {
+            color: $gray-600;
+          }
+        }
+      }
     }
 
     button {
