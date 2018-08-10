@@ -243,10 +243,6 @@
       @include make-row();
       position: relative;
 
-      &:last-of-type {
-        justify-content: flex-end;
-      }
-
       > div {
         @include make-col(12);
 
@@ -268,6 +264,33 @@
           &:last-of-type {
             padding-left: 15px;
           }
+        }
+
+        &.alert {
+          padding-right: 30px;
+          background-color: $black;
+          border-radius: 0;
+          margin-bottom: 3.5rem;
+          color: $white;
+          font-family: $font-family-urwdin;
+          font-size: 1rem;
+          line-height: 22px;
+          letter-spacing: 0;
+          padding-left: 12px;
+
+          span.red-box {
+            color: $white;
+            background-color: $red;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            text-align: center;
+            font-family: $font-family-urwdin-cond;
+            font-size: 1.75rem;
+          }
+        }
+
+        &.form-submit {
+          justify-content: flex-end;
         }
       }
 

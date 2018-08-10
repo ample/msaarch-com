@@ -25,45 +25,52 @@ layout: default
 
     </div>
   </div>
-    <article id="email" class="container-fluid contact-form">
-      <div>
-        <h2 class="section-header">Drop Us a Line</h2>
+<article id="email" class="container-fluid contact-form">
+  <div>
+    <h2 class="section-header">Drop Us a Line</h2>
 
-        <section class="email-form">
+    <section class="email-form">
+      <div>
+        <form name="contact" method="POST" netlify>
           <div>
-            <form name="contact" method="POST" netlify>
-              <div>
-                <div>
-                  <input class="form-control" type="text" aria-label="first name" name="first-name" placeholder="First Name" />
-                </div>
-                <div>
-                  <input class="form-control" type="text" aria-label="last name" name="last-name" placeholder="Last Name" />
-                </div>
-              </div>
-              <div>
-                <div>
-                  <input class="form-control" type="phone" aria-label="phone" name="phone" placeholder="Phone" />
-                </div>
-                <div>
-                  <input class="form-control" type="email" aria-label="email" name="email" placeholder="Email" />
-                </div>
-              </div>
-              <div>
-                <select class="custom-select" name="role[]" aria-label="subject">
-                    <option selected>subject</option>
-                    <option value="Lorem ipsum dolor sit amet">Lorem ipsum dolor sit amet</option>
-                    <option value="Adipiscing elit">Adipiscing elit</option>
-                    <option value="Sed do eiusmod tempor">Sed do eiusmod tempor</option>
-                    <option value="Incididunt ut labore et dolore magna aliqua">Incididunt ut labore et dolore magna aliqua</option>
-                    <option class="custom-option" value="Write your own">Write your own</option>
-                  </select>
-                  <i class="fas fa-chevron-down"></i>
-              </div>
-              <div>
-                <textarea rows="8" class="form-control" aria-label="message" name="message" placeholder="Message"></textarea>
-              </div>
+            <div>
+              <input class="form-control" type="text" aria-label="first name" name="first-name" placeholder="First Name" />
+            </div>
+            <div>
+              <input class="form-control" type="text" aria-label="last name" name="last-name" placeholder="Last Name" />
+            </div>
+          </div>
           <div>
-            <button class="btn-white" type="submit">Submit</button>
+            <div>
+              <input class="form-control" type="phone" aria-label="phone" name="phone" placeholder="Phone" />
+            </div>
+            <div>
+              <input class="form-control" type="email" aria-label="email" name="email" placeholder="Email" />
+            </div>
+          </div>
+          <div>
+            <select class="custom-select" name="role[]" aria-label="subject">
+                <option selected>subject</option>
+                <option value="Lorem ipsum dolor sit amet">Lorem ipsum dolor sit amet</option>
+                <option value="Adipiscing elit">Adipiscing elit</option>
+                <option value="Sed do eiusmod tempor">Sed do eiusmod tempor</option>
+                <option value="Incididunt ut labore et dolore magna aliqua">Incididunt ut labore et dolore magna aliqua</option>
+                <option class="custom-option" value="Write your own">Write your own</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+          </div>
+          <div>
+            <textarea rows="8" class="form-control" aria-label="message" name="message" placeholder="Message"></textarea>
+          </div>
+          <div class="row">
+            <div class="alert col-sm">
+              <span class="red-box">!</span>
+              Error message goes here.
+            </div>
+            <div class="form-submit col-sm">
+              <button class="btn-white" type="submit">Submit</button>
+            </div>
+
           </div>
         </form>
       </div>
