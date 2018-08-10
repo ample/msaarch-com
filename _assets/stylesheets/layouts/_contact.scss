@@ -243,6 +243,10 @@
       @include make-row();
       position: relative;
 
+      &:last-of-type {
+        justify-content: flex-end;
+      }
+
       > div {
         @include make-col(12);
 
@@ -267,16 +271,25 @@
         }
 
         &.alert {
+          @include make-col(12);
           padding-right: 30px;
           background-color: $black;
           border-radius: 0;
-          margin-bottom: 3.5rem;
+          border: none;
           color: $white;
           font-family: $font-family-urwdin;
           font-size: 1rem;
-          line-height: 22px;
           letter-spacing: 0;
           padding-left: 12px;
+
+          @include media-breakpoint-up(sm) {
+            @include make-col(6);
+            margin-bottom: 3.5rem;
+          }
+
+          @include media-breakpoint-up(lg) {
+            @include make-col(8);
+          }
 
           span.red-box {
             color: $white;
@@ -287,10 +300,24 @@
             font-family: $font-family-urwdin-cond;
             font-size: 1.75rem;
           }
+
+          span.message {
+            padding-left: .75rem;
+            vertical-align: super;
+          }
         }
 
         &.form-submit {
+          @include make-col(12);
           justify-content: flex-end;
+
+          @include media-breakpoint-up(sm) {
+            @include make-col(6);
+          }
+
+          @include media-breakpoint-up(lg) {
+            @include make-col(4);
+          }
         }
       }
 
@@ -372,8 +399,9 @@
       width: 100%;
       margin-bottom: 3.5rem;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         width: 350px;
+        margin-left: 15px;
       }
     }
   }

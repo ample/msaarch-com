@@ -45,4 +45,35 @@ $(document).ready(function(){
     });
 
   });
+
+  $("#contact-form").submit(function(e) {
+    e.preventDefault();
+    var $form = $(this);
+
+    $form.validate({
+      submitHandler: function(form) {
+        $('[data-role=email-alert]').hide();
+        $.post($form.attr("action"), $form.serialize()).then(function() {
+          $('[data-role=email-form]').hide();
+          $('[data-role=email-success]').show();
+        });
+      },
+
+      invalidHandler: function(event, validator){
+
+        var errors = validator.numberOfInvalids();
+        if (errors) {
+          var message = errors == 1
+          ? 'Please correct the error highlighted above'
+          : 'Please correct the errors highlighted above';
+          $('[data-role=email-message]').html(message);
+          $('[data-role=email-alert]').show();
+        } else {
+          $('[data-role=email-alert]').hide();
+        }
+      }
+    });
+
+  });
+
 });
