@@ -2,4 +2,5 @@
 //= require ./vendor/imgix.min
 //= require popper
 //= require bootstrap
-//= require navbar
+//= require ./components/contact
+//= require ./components/navbar

@@ -226,6 +226,7 @@
 
     .form-control {
       color: $white;
+      border-radius: 0;
     }
 
     > div {
@@ -269,9 +270,13 @@
           }
         }
       }
+
+      .select {
+        @include make-col(12);
+      }
     }
 
-    input, select, textarea {
+    input, select, textarea, .select-styled {
       background-color: $red;
       border: 2px solid $white;
       padding-top: 1rem;
@@ -287,7 +292,7 @@
       letter-spacing: $letter-spacing-base;
     }
 
-    select.custom-select {
+    select.custom-select, .select-styled {
       @extend ::placeholder;
       padding-top: 9px;
       height: 50px;
@@ -298,13 +303,45 @@
       position: relative;
     }
 
+    .select-styled {
+      width: 100%;
+      padding: 0.375rem 0.75rem;
+
+      & .selected {
+        text-transform: unset;
+      }
+    }
+
     .fa-chevron-down {
       position: absolute;
       right: 15px;
       padding-top: 16px;
       font-size: 20px;
+    }
 
+    .select-options {
+      z-index: 1;
+      background: $white;
+      width: 100%;
+      color: $black;
+      padding: 1.25rem 1rem;
+      position: absolute;
+      z-index: 1;
+      display: none;
 
+      li {
+        padding-bottom: 1.25rem;
+        cursor: pointer;
+        list-style: none;
+
+        &:last-of-type {
+          padding-bottom: 0;
+
+          &:hover {
+            color: $gray-600;
+          }
+        }
+      }
     }
 
     button {
