@@ -359,8 +359,10 @@
       width: 100%;
       padding: 0.375rem 0.75rem;
 
-      & .selected {
+      &.selected {
         text-transform: unset;
+        font-family: $font-family-urwdin;
+        font-size: 1rem;
       }
     }
 
@@ -393,6 +395,18 @@
             color: $gray-600;
           }
         }
+      }
+    }
+
+    .contrast {
+      line-height: 2;
+      padding-top: 10px;
+
+      &::placeholder {
+        text-transform: unset;
+        opacity: .5;
+        font-family: $font-family-urwdin;
+        font-size: 1rem;
       }
     }
 
