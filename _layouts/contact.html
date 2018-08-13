@@ -25,49 +25,66 @@ layout: default
 
     </div>
   </div>
-    <article id="email" class="container-fluid contact-form">
+  <article id="email" class="container-fluid contact-form">
+    <div data-role="email-success" class="email-success" style="display: none;">
       <div>
-        <h2 class="section-header">Drop Us a Line</h2>
-
-        <section class="email-form">
-          <div>
-            <form name="contact" method="POST" netlify>
-              <div>
-                <div>
-                  <input class="form-control" type="text" aria-label="first name" name="first-name" placeholder="First Name" />
-                </div>
-                <div>
-                  <input class="form-control" type="text" aria-label="last name" name="last-name" placeholder="Last Name" />
-                </div>
-              </div>
-              <div>
-                <div>
-                  <input class="form-control" type="phone" aria-label="phone" name="phone" placeholder="Phone" />
-                </div>
-                <div>
-                  <input class="form-control" type="email" aria-label="email" name="email" placeholder="Email" />
-                </div>
-              </div>
-              <div>
-                <select class="custom-select" name="role[]" aria-label="subject">
-                    <option selected>subject</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                  <i class="fas fa-chevron-down"></i>
-              </div>
-              <div>
-                <textarea class="form-control" aria-label="message" name="message" placeholder="Message"></textarea>
-              </div>
-          <div>
-            <button class="btn-white" type="submit">Submit</button>
-          </div>
-        </form>
+        <h2 class="section-header">Thank you</h2>
+        <p class="callout">Your message has been received.</p>
       </div>
-    </section>
-  </div>
-</article>
+    </div>
+
+    <div data-role="email-form">
+      <h2 class="section-header">Drop Us a Line</h2>
+      <section class="email-form">
+        <div>
+          <form id="contact-form" name="contact" method="POST" netlify novalidate>
+            <div>
+              <div>
+                <input class="form-control" type="text" aria-label="first name" name="first-name" placeholder="First Name" required />
+              </div>
+              <div>
+                <input class="form-control" type="text" aria-label="last name" name="last-name" placeholder="Last Name" required />
+              </div>
+            </div>
+            <div>
+              <div>
+                <input class="form-control" type="phone" aria-label="phone" name="phone" placeholder="Phone" required/>
+              </div>
+              <div>
+                <input class="form-control" type="email" aria-label="email" name="email" placeholder="Email" required/>
+              </div>
+            </div>
+            <div>
+              <select class="custom-select" name="role[]" aria-label="subject">
+                <option selected>subject</option>
+                <option value="Lorem ipsum dolor sit amet">Lorem ipsum dolor sit amet</option>
+                <option value="Adipiscing elit">Adipiscing elit</option>
+                <option value="Sed do eiusmod tempor">Sed do eiusmod tempor</option>
+                <option value="Incididunt ut labore et dolore magna aliqua">Incididunt ut labore et dolore magna aliqua</option>
+                <option class="custom-option" value="Write your own">Write your own</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div data-role="email-custom-subject" class="d-none">
+              <textarea rows="1" class="form-control contrast" aria-label="subject" name="custom-subject" placeholder="Enter subject here"></textarea>
+            </div>
+            <div>
+              <textarea rows="8" class="form-control" aria-label="message" name="message" placeholder="Message"></textarea>
+            </div>
+            <div>
+              <div data-role="email-alert" class="alert" style="display: none;">
+                <span class="red-box">!</span>
+                <span data-role=email-message class="message"></span>
+              </div>
+              <div class="form-submit">
+                <button class="btn-white" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </article>
 
   {% if site.careers.size > 0 %}
   <div class="container">

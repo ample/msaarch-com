@@ -10,7 +10,7 @@
 }
 
 .btn-gray-light {
-  border: solid 2px rgba($gray-600, 0.25);
+  border: 2px solid rgba($gray-600, 0.25);
   font-family: $font-family-urwdin-cond;
   font-size: 1rem;
   line-height: 1.4rem;
@@ -22,7 +22,7 @@
 
   &:hover{
     color: $red;
-    border: solid 2px rgba($gray-600, 0.5);
+    border: 2px solid rgba($gray-600, 0.5);
     background-color: transparent;
     text-decoration: none;
   }
@@ -57,6 +57,6 @@
 
   &:hover {
     background-color: #EEEEEE;
-    border: solid 1px #EEEEEE;
+    border: 1px solid #EEEEEE;
   }
 }
