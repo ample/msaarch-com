@@ -26,14 +26,17 @@ layout: default
     </div>
   </div>
   <article id="email" class="container-fluid contact-form">
-    <div>
-      <h2 class="section-header">Drop Us a Line</h2>
+    <div data-role="email-success" class="email-success" style="display: none;">
+      <div>
+        <h2 class="section-header">Thank you</h2>
+        <p class="callout">Your message has been received.</p>
+      </div>
+    </div>
 
+    <div data-role="email-form">
+      <h2 class="section-header">Drop Us a Line</h2>
       <section class="email-form">
-        <div data-role="email-success" class="d-none">
-          Thank you!
-        </div>
-        <div data-role="email-form">
+        <div>
           <form id="contact-form" name="contact" method="POST" netlify novalidate>
             <div>
               <div>

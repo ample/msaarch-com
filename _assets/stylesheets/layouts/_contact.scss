@@ -223,6 +223,8 @@
     background-color: $red;
     color: $white;
     margin-top: 3rem;
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
 
     .form-control {
       color: $white;
@@ -234,7 +236,7 @@
     }
 
     .section-header {
-      padding-top: 4rem;
+      padding-top: 1.25rem;
       margin-left: -15px;
     }
 
@@ -245,6 +247,7 @@
 
       &:last-of-type {
         justify-content: flex-end;
+        margin-bottom: 0;
       }
 
       > div {
@@ -284,7 +287,6 @@
 
           @include media-breakpoint-up(sm) {
             @include make-col(6);
-            margin-bottom: 3.5rem;
           }
 
           @include media-breakpoint-up(lg) {
@@ -397,11 +399,23 @@
     button {
       display: block;
       width: 100%;
-      margin-bottom: 3.5rem;
 
       @include media-breakpoint-up(xl) {
         width: 350px;
         margin-left: 15px;
+      }
+    }
+
+    .email-success{
+      padding-top: 20rem;
+      padding-bottom: 20rem;
+      border: 2px solid $white;
+      border-radius: 0;
+      text-align: center;
+
+      .section-header {
+        padding-bottom: 0;
+        padding-top: 0;
       }
     }
   }
