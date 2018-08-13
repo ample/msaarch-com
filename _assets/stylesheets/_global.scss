@@ -55,4 +55,9 @@ figcaption {
 
 p a {
   text-decoration: underline;
+
+  &:hover {
+    text-decoration: underline;
+    color: $gray-600;
+  }
 }

@@ -7,3 +7,11 @@ layout: default
 <main class="container">
   {% include detail-layout.html %}
 </main>
+
+<div class="container wayfind-links">
+  {% for market in page.links_to.markets %}
+  <a href="/markets/{{ market.slug }}" class="button-link">
+    <button class="btn-gray-light mx-3"> < Back to {{ market.title }}</button>
+  </a>
+  {% endfor %}
+</div>
