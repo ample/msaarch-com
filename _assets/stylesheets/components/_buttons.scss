@@ -19,6 +19,7 @@
   color: $red;
   padding-top: .5rem;
   padding-bottom: .5rem;
+  text-transform: uppercase;
 
   &:hover{
     color: $red;
@@ -58,5 +59,11 @@
   &:hover {
     background-color: #EEEEEE;
     border: 1px solid #EEEEEE;
+  }
+}
+
+.button-link {
+  &:link, &:visited, &:hover, &:active {
+    text-decoration: none;
   }
 }
