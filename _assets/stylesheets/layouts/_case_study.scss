@@ -7,7 +7,7 @@
 
   .text-object,
   .block-media-objects {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .media-object {
@@ -147,12 +147,36 @@
     height: auto;
     max-height: 600px;
     padding-bottom: 1.75rem;
+    object-fit: cover;
   }
 
-  .wayfind-links {
+  #cs-wayfind-links {
     text-align: center;
     margin-top: 0;
-    padding-top: 2em;
-    padding-bottom: 6rem;
+    padding-top: 1.875rem;
+    padding-bottom: 3.75rem;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 2rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  #project-wayfind-links{
+    @extend #cs-wayfind-links;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 2rem;
+    }
+  }
+
+  .btn-gray-light {
+    margin: 1.5rem 1rem;
+
+    @include media-breakpoint-up(md) {
+      margin: 0 1rem;
+    }
   }
 }
