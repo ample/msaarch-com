@@ -5,6 +5,21 @@ layout: default
 {% include page-header.html %}
 
 <main class="container">
+
+
+  {% if page.description.size > 0 %}
+  <div class="line-bg">
+    <div class="red-lines"></div>
+  </div>
+  <section class="lead-content">
+    <div>
+      <div>
+        {{ page.content }}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
   {% if page.has_many.case_studies.size > 0 %}
   <article>
     <div class="row">
