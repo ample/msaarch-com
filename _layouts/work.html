@@ -9,15 +9,18 @@ layout: default
 
 <main class="container main-work">
 
-  <!-- {% if page.description %} -->
-  <section class="description">
-      <div class="row">
-        <div class="col">
-          {{ page.description }}
+    {% if page.content.size > 1 %}
+    <div class="line-bg">
+      <div class="red-lines"></div>
+    </div>
+    <section class="lead-content">
+      <div>
+        <div>
+          {{ page.content }}
         </div>
       </div>
     </section>
-  <!-- {% endif %} -->
+    {% endif %}
 
   <article>
     <div class="row">

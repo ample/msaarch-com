@@ -81,7 +81,7 @@ contentful:
       href: href
   markets:
     id: market
-    body: description
+    body: body
     has_many:
       projects: [ projects ]
       case_studies: [ case_studies ]
@@ -90,7 +90,6 @@ contentful:
       slug: slug
       image: image/url
       image_caption: image/description
-      description: description
   media_objects:
     id: media_object
     body: body

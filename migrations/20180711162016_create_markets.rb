@@ -13,7 +13,7 @@ class CreateMarkets < ContentfulMigrations::Migration
       content_type.fields.create(id: 'title', name: 'Title', type: 'Symbol', required: true)
       content_type.fields.create(id: 'slug', name: 'Slug', type: 'Symbol', required: true, validations: [uniqueness])
       content_type.fields.create(id: 'image', name: 'Image', type: 'Link', link_type: 'Asset', required: true)
-      content_type.fields.create(id: 'description', name: 'Description', type: 'Text')
+      content_type.fields.create(id: 'body', name: 'Body', type: 'Text')
 
       of_type = Contentful::Management::Validation.new
       of_type.link_content_type =  ['project']

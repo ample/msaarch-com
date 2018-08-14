@@ -24,6 +24,8 @@ class CreatePages < ContentfulMigrations::Migration
       items.validations = [of_type]
       content_type.fields.create(id: 'blocks', name: 'Blocks', type: 'Array', items: items)
 
+      content_type.fields.create(id: 'body', name: 'Body', type: 'Text')
+
       validation_in = Contentful::Management::Validation.new
       validation_in.in = ['home', 'work', 'blog', 'contact']
       content_type.fields.create(id: 'layout', name: 'Layout', type: 'Symbol', required: true, validations: [validation_in])
