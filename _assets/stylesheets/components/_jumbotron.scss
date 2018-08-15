@@ -108,7 +108,15 @@
 .overlap-header {
  top: 0;
 
+  @include media-breakpoint-up(md)  {
+    top: -28px;
+  }
+
   @include media-breakpoint-up(lg)  {
+    top: -60px;
+  }
+
+  @include media-breakpoint-up(xl)  {
     top: -90px;
   }
 }

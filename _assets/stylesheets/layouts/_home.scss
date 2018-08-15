@@ -7,9 +7,14 @@
   }
 
   .media-object {
-    margin-top: 7rem;
+    margin-top: 6rem;
+
     @include media-breakpoint-up(sm) {
       margin-top: 1rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
     }
   }
 
@@ -86,10 +91,10 @@
 
   .home-featured-links {
     position: relative;
-    margin-top: 6rem;
+    margin-top: 5rem;
 
     @include media-breakpoint-up(sm) {
-      margin-top: 8rem;
+      margin-top: 7rem;
     }
 
     .block-features {
