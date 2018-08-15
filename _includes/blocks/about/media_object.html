@@ -12,7 +12,7 @@
   </div>
   <div class="media-object-content">
     <div>
-      <img class="img-fluid" ix-src="{{ include.block.image | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
+      <img class="img-fluid" ix-src="{{ include.block.image | imgix: 'w=1.250&h=1&fit=crop' }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
     </div>
     <div class="media-object-text">
       <h2 class="section-header">{{ include.block.title }}</h2>
