@@ -18,13 +18,8 @@
 }
 
 .padded-header {
-  margin-top: 10rem;
-  margin-bottom: 0;
-
- @include media-breakpoint-up(md) {
-    margin-top: 7rem;
-    margin-bottom: 0;
-  }
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 }
 
 .header-text-bg {
