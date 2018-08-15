@@ -15,6 +15,27 @@
   }
 }
 
+.navbar {
+  > .container {
+    display: block;
+
+    @include media-breakpoint-up(sm) {
+      display: flex;
+    }
+
+    .navbar-toggler {
+      position: absolute;
+      top: 24px;
+      right: 0;
+
+      @include media-breakpoint-up(sm) {
+        position: relative;
+        top: 0;
+      }
+    }
+  }
+}
+
 .navbar-open{
 
   > .bg-navbar {
