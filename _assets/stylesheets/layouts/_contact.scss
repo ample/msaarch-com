@@ -133,6 +133,8 @@
         top: auto;
         left: -2rem;
         bottom: -2rem;
+        bottom: 7.5rem;
+
 
         @include media-breakpoint-up(md) {
           left: -2rem;
@@ -143,7 +145,15 @@
           width: 158px;
           height: 181px;
 
+          @include media-breakpoint-up(sm) {
+            width: 250px;
+          }
+
           @include media-breakpoint-up(md) {
+            width: 348px;
+          }
+
+          @include media-breakpoint-up(lg) {
             width: 381px;
           }
         }
