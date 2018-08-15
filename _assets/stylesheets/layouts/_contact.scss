@@ -141,7 +141,7 @@
           bottom: -2rem;
         }
 
-        .red-lines {
+        .key-lines {
           width: 158px;
           height: 181px;
 
@@ -171,7 +171,7 @@
             left: -32px;
           }
 
-          .red-lines {
+          .key-lines {
             width: 185px;
 
             @include media-breakpoint-up(md) {
@@ -218,7 +218,7 @@
         bottom: auto;
 
 
-        .red-lines {
+        .key-lines {
           width: 175px;
           height: 187px;
 

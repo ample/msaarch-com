@@ -9,7 +9,7 @@
   .media-object {
     margin-top: 7rem;
     @include media-breakpoint-up(sm) {
-      margin-top: 5rem;
+      margin-top: 1rem;
     }
   }
 
@@ -30,7 +30,7 @@
       top: -30px;
       right: -30px;
 
-      .red-lines {
+      .key-lines {
         height: 225px;
         width: 250px;
 
@@ -56,7 +56,7 @@
       top: -36px;
       left: -30px;
 
-      .red-lines {
+      .key-lines {
         height: 224px;
         width: 217px;
       }
