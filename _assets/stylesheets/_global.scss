@@ -38,9 +38,15 @@ a .link-img {
 }
 
 .callout {
- font-family: $font-family-ltc-bodoni-175;
- line-height: 1.8rem;
- font-size: 2rem;
+  font-family: $font-family-ltc-bodoni-175;
+  letter-spacing: 0;
+  font-size: 1.625rem;
+  line-height: 2rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
 }
 
 figcaption {

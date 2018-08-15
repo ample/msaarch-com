@@ -455,12 +455,8 @@
 
     .callout {
       color: $red;
-      line-height: 2.25rem;
-
-      @include media-breakpoint-up(md) {
-        font-size: 2rem;
-      }
     }
+
     .careers-list {
       @include make-row();
 

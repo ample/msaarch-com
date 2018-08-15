@@ -56,17 +56,10 @@
   }
 
   h1 {
-    font-family: $font-family-ltc-bodoni-175;
-    font-size: 1.625rem;
-    line-height: 2rem;
+    @extend .callout;
     color: $red;
     text-align: center;
     padding-bottom: 1rem;
-
-    @include media-breakpoint-up(md) {
-      font-size: 2rem;
-      line-height: 2.25rem;
-    }
   }
 
   .line-bg {

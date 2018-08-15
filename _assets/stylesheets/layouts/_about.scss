@@ -260,15 +260,7 @@
 
     .callout {
       color: $red;
-      font-size: 1.4rem;
-      line-height: 1.625rem;
-      letter-spacing: 0;
       margin-bottom: 2px;
-
-      @include media-breakpoint-up(md) {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-      }
     }
 
     p {
