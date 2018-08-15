@@ -25,6 +25,24 @@ footer {
       color: rgba($white, .8);
     }
   }
+
+  .footer-buttons {
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    > div:last-of-type {
+      margin-top: 1rem;
+
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .copyright {

@@ -68,6 +68,12 @@
   flex-grow: 0;
   align-items: flex-start;
   justify-content: flex-start;
+
+  .nav-item:first-of-type {
+    > .nav-link {
+      margin-top: .5rem;
+    }
+  }
 }
 
 /* Mobile Nav Icon */
@@ -140,6 +146,8 @@
 
 // Reduce logo size for screens < 350px
 .navbar-brand {
+  max-width: 230px;
+
   > img {
     width: 100%;
   }
