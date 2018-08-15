@@ -79,8 +79,8 @@
 
     .link-title{
       color: $red;
-      margin-bottom: 0;
-      padding-bottom: 15px;
+      padding-bottom: 0;
+      margin-bottom: .5rem;
 
       @include media-breakpoint-up(md) {
         text-align: right;

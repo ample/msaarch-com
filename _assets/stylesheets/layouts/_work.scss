@@ -97,8 +97,11 @@
   }
 
   .link-card {
+    .link-title {
+      margin-bottom: 0;
+    }
     .link-body {
-      padding-top: 7px;
+      padding-top: .5rem;
     }
   }
 }
