@@ -77,10 +77,11 @@
         }
 
         &:last-child {
+          margin-bottom: 2rem;
           margin-left: 50%;
 
           @include media-breakpoint-up(md) {
-            @include make-col(6);
+            margin-bottom: 0;
             align-self: center;
             margin-left: auto;
           }
@@ -129,28 +130,27 @@
       }
 
       .line-bg {
-        top: 32px;
-        bottom: auto;
+        top: auto;
         left: -2rem;
+        bottom: -2rem;
 
         @include media-breakpoint-up(md) {
-          top: auto;
-          left: -32px;
-          bottom: -32px;
+          left: -2rem;
+          bottom: -2rem;
         }
 
         .red-lines {
-          width: 185px;
+          width: 158px;
           height: 181px;
 
           @include media-breakpoint-up(md) {
-            width: 351px;
+            width: 381px;
           }
-
         }
       }
 
       &:last-of-type {
+
         .line-bg {
           top: -30px;
           left: -2rem;
@@ -192,6 +192,7 @@
           &:last-child {
             margin-left: 0;
             max-width: 50%;
+
             @include media-breakpoint-up(md) {
               margin-left: inherit;
               margin-right: 15px;
@@ -208,11 +209,12 @@
 
 
         .red-lines {
-          width: 185px;
+          width: 175px;
           height: 187px;
 
           @include media-breakpoint-up(md) {
-            width: 287px;
+            width: 190px;
+            height: 172px;
           }
         }
       }

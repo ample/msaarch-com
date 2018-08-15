@@ -1,24 +1,23 @@
 {% assign n = include.counter | modulo: 2 %}
 {% if n == 1 %}
-  {% assign klasses = 'home-content-left' %}
-{% else %}
   {% assign klasses = 'home-content-right' %}
+{% else %}
+  {% assign klasses = 'home-content-left' %}
 {% endif %}
 
 <article class="{{ klasses }} media-object">
   <div class="line-bg">
     <div class="red-lines"></div>
   </div>
-    <div class="media-object-content">
-      <div>
-        <a href="{{ include.block.image_caption }}" target="_blank">
-          <img class="img-fluid" ix-src="{{ include.block.image | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
-        </a>
-      </div>
-      <div>
-        <h2 class="section-header">{{ include.block.title }}</h2>
-        {{ include.block.content | markdownify }}
-      </div>
+  <div class="media-object-content">
+    <div>
+      <a href="{{ include.block.image_caption }}" target="_blank">
+        <img class="img-fluid" ix-src="{{ include.block.image | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
+      </a>
+    </div>
+    <div>
+      <h2 class="section-header">{{ include.block.title }}</h2>
+      {{ include.block.content | markdownify }}
     </div>
   </div>
 </article>
