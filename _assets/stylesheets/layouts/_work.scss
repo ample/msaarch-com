@@ -74,11 +74,10 @@
     }
 
     .key-lines {
-      height: 158px;
+      height: 75px;
       width: 143px;
 
       @include media-breakpoint-up(lg) {
-        height: 254px;
         width: 349px;
       }
     }
