@@ -42,6 +42,8 @@ a .link-img {
   letter-spacing: 0;
   font-size: 1.625rem;
   line-height: 2rem;
+  font-style: italic;
+  font-weight: 400;
 
   @include media-breakpoint-up(md) {
     font-size: 2rem;
