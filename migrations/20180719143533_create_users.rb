@@ -11,7 +11,8 @@ class CreateUsers < ContentfulMigrations::Migration
       uniqueness = Contentful::Management::Validation.new
       uniqueness.unique = true
 
-      content_type.fields.create(id: 'full_name', name: 'Full Name', type: 'Symbol', required: true)
+      content_type.fields.create(id: 'first_name', name: 'First Name', type: 'Symbol', required: true)
+      content_type.fields.create(id: 'last_name', name: 'Last Name', type: 'Symbol', required: true)
       content_type.fields.create(id: 'slug', name: 'Slug', type: 'Symbol', required: true, validations: [uniqueness])
       content_type.fields.create(id: 'credentials', name: 'Credentials', type: 'Symbol', required: true)
       content_type.fields.create(id: 'title', name: 'Title', type: 'Symbol', required: true)
