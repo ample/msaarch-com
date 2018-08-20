@@ -49,21 +49,8 @@ layout: default
 
       {% assign awards_by_year = site.awards | group_by: 'date' | sort: 'name' | reverse %}
       {% for group in awards_by_year %}
-        {% assign n = forloop.index0 | modulo: 2 %}
-        {% if n == 0 %}
-          {% assign dir = 'left' %}
-        {% else %}
-          {% assign dir = 'right' %}
-        {% endif %}
-        <div class="{{ dir }}">
-          <div class="line-bg">
-            <div class="key-lines"></div>
-          </div>
-          <div class="award-header">
-            <div>
-              <p class="awards-text">{{ group.name }}</p>
-            </div>
-          </div>
+        <div>
+          <p class="awards-header">{{ group.name }}</p>
         </div>
         <div class="awards-list">
           {% for award in group.items %}

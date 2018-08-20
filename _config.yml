@@ -165,7 +165,8 @@ contentful:
   users:
     id: user
     frontmatter:
-      full_name: full_name
+      first_name: first_name
+      last_name: last_name
       slug: slug
       title: title
       credentials: credentials
