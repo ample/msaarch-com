@@ -11,6 +11,7 @@ footer {
     img {
       @include media-breakpoint-up(md) {
         width: 100%;
+        max-width: 230px;
       }
     }
   }
@@ -33,6 +34,8 @@ footer {
       display: flex;
       flex-wrap: wrap;
       margin-top: 0;
+      padding-right: 0;
+      padding-left: 0;
     }
 
     > div:last-of-type {
