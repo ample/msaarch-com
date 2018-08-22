@@ -11,6 +11,9 @@ exclude:
   - Rakefile
   - Gemfile*
 
+include:
+  - _redirects
+
 collections_dir: collections
 collections:
   awards:
