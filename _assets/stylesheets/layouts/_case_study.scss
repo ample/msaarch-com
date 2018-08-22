@@ -135,16 +135,22 @@
 
     @include media-breakpoint-up(md) {
       width: 550px;
-      height: 443px;
+      height: 400px;
     }
   }
 
   .intro-image {
     width: 100%;
     height: auto;
-    max-height: 600px;
+    min-height: 400px;
+    max-height: 550px;
     padding-bottom: 1.75rem;
     object-fit: cover;
+  }
+
+  .project-highlight {
+    top: 130px;
+    margin-bottom: 0.5rem;
   }
 
   #cs-wayfind-links {

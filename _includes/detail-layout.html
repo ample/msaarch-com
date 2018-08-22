@@ -7,7 +7,7 @@
   <div class="row justify-content-end text-right pb-5">
     {% assign block = page.has_many.blocks | first %}
     {% include blocks/case_study/media_object.html block=block lead=true %}
-    <div class="col-md-3 align-self-center mb-2">
+    <div class="col-md-3 project-highlight">
       <aside class="mt-2">
         {{ page.content }}
       </aside>
