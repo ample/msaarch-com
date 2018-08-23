@@ -8,10 +8,10 @@ GIT
 
 GIT
   remote: https://github.com/crdschurch/jekyll-contentful.git
-  revision: 80c275081dcb4d0cb86ec18eb3603aa00b9ce033
-  branch: feature/associations
+  revision: 52bc24b2675cdab5199928993e8784b5cd6b6408
+  tag: 0.1.0
   specs:
-    jekyll-contentful (1.0.0)
+    jekyll-contentful (0.1.0)
       activesupport
       contentful (>= 2.6.0)
       dotenv
@@ -20,7 +20,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -36,7 +36,7 @@ GEM
     coderay (1.1.2)
     colorator (1.1.0)
     concurrent-ruby (1.0.5)
-    contentful (2.8.0)
+    contentful (2.8.1)
       http (> 0.8, < 3.0)
       multi_json (~> 1)
     contentful-management (1.10.1)
@@ -124,16 +124,16 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     rack (2.0.5)
     rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    rouge (3.1.1)
+    rouge (3.2.1)
     ruby_dep (1.5.0)
     safe_yaml (1.0.4)
-    sass (3.5.6)
+    sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -163,10 +163,10 @@ DEPENDENCIES
   font-awesome-sass (~> 5.0.1)
   jekyll (~> 3.7.3)
   jekyll-assets
-  jekyll-contentful (~> 1.0.0)!
+  jekyll-contentful (~> 0.1.0)!
   jekyll-placeholders (~> 0.0.1)!
   pry
   rake
 
 BUNDLED WITH
-   1.16.2
+   1.16.3

@@ -31,7 +31,7 @@ layout: default
   </article>
   {% endif %}
 
-  {% if page.has_many.projects.size > 0 %}
+  {% if page.pages.projects.size > 0 %}
   <section>
     <div class="pb-7">
       <div class="row">
@@ -39,14 +39,9 @@ layout: default
           <h2 class="section-header">featured projects</h2>
         </div>
       </div>
-      {% assign blocks = page.has_many.projects  %}
+      {% assign blocks = page.pages.projects  %}
       {% include blocks.html collection=blocks css='row no-gutters d-flex flex-wrap' %}
-
-      <!-- <div class="col-12 load-more">
-        <a href="#" class="button btn-outline-light btn-gray-light btn-block" data-role="load-more" data-paginate="{{ include.collection }}">
-          See More Projects
-        </a>
-      </div> -->
+      {% include pagination.html total=page.pages.total_pages urls=page.pages.urls remote=true %}
     </div>
   </section>
   {% endif %}
