@@ -85,6 +85,12 @@
       @include media-breakpoint-up(md) {
         text-align: right;
       }
+
+      > span {
+        color: $black;
+        font-family: $font-family-urwdin;
+        font-size: 1rem;
+      }
     }
 
     .link-body {

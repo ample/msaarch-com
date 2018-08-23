@@ -15,7 +15,7 @@ layout: default
               <img class="w-100" ix-src="{{ page.author_image | imgix }}" sizes="{{ site.image_sizes.author_blocks }}" alt="{{ page.author_title }}">
             </div>
             <div>
-              <p class="link-title">{{ page.author_name }}, {{ page.author_credentials }}</p>
+              <p class="link-title">{{ page.author_first_name }} {{ page.author_last_name }}, <span>{{ page.author_credentials }}</span></p>
               <p class="link-body">{{ page.author_title }}</p>
             </div>
           </div>

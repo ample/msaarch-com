@@ -138,7 +138,8 @@ contentful:
       image_caption: image/description
       slug: slug
       featured: featured
-      author_name: author/full_name
+      author_first_name: author/first_name
+      author_last_name: author/last_name
       author_slug: author/slug
       author_image: author/image/url
       author_credentials: author/credentials
@@ -210,10 +211,16 @@ assets:
   - _assets/stylesheets
   - _assets/javascripts
 
+# social links
+linkedin_username: msa-architects
+twitter_username: msaarch
+facebook_username: MSAarchitects
+instagram_username: msa_arch_ohio
+
 image_sizes:
   cards_4x: "(min-width: 1200px) 278px, (min-width: 992px) 233px, (min-width: 768px) 173px, (min-width: 576px) 255px, 50vw"
   cards_2x: "(min-width: 1200px) 555px, (min-width: 992px) 465px, (min-width: 768px) 345px, (min-width: 576px) 510px, 100vw"
-  blocks: "(min-width: 992px) 445px, (min-width: 768px) 345px, (min-width: 475px) 445px, 100vw"
+  blocks: "(min-width: 992px) 950px, (min-width: 768px) 700px, (min-width: 575px) 445px, 100vw"
   awards_blocks: "100vw"
   author_blocks: "(min-width: 768px) 254px, 173px"
 
