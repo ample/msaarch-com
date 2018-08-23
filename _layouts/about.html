@@ -27,17 +27,7 @@ layout: default
 
     <section class="team-cards">
       {% for user in site.users %}
-      <div>
-        <section class="link-card">
-          <div class="link-img">
-            <img class="img-fluid w-100" ix-src="{{ user.image | imgix }}?w=4&h=3&fit=crop" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ user.full_name }}">
-            <h3 class="link-title">{{ user.first_name }} {{ user.last_name }}{% if user.credentials%}, {% endif %}{{ user.credentials }}</h3>
-          </div>
-          <div class="link-body">
-            <p>{{ user.title }}</p>
-          </div>
-        </section>
-      </div>
+        {% include user-card.html %}
       {% endfor %}
     </section>
   </article>
