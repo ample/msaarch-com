@@ -45,7 +45,9 @@ layout: default
         <div class="awards-list">
           {% for award in group.items %}
           <div>
-            <h3>{{ award.title }}</h3>
+            {% if award.link %}<a href="{{ award.link}}">{% endif %}
+              <h3>{{ award.title }}</h3>
+            {% if award.link %}</a>{% endif %}
             {{ award.content | markdownify }}
           </div>
           {% endfor %}

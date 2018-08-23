@@ -8,6 +8,7 @@ class CreateAwards < ContentfulMigrations::Migration
         id: 'award'
       )
       content_type.fields.create(id: 'title', name: 'Title', type: 'Symbol', required: true)
+      content_type.fields.create(id: 'award_link', name: 'Award Link', type: 'Symbol')
       content_type.fields.create(id: 'body', name: 'Body', type: 'Text', required: true)
       content_type.fields.create(id: 'date', name: 'Date', type: 'Date', required: true)
       content_type.save
