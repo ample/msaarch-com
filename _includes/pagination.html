@@ -1,0 +1,22 @@
+{% if include.remote %}
+<div class="row">
+  <div class="col-12 load-more hide">
+    <a href="#" class="button btn-outline-light btn-gray-light btn-block" data-role="load-more" data-paginate="{{ include.collection }}">
+      See More Projects
+    </a>
+  </div>
+</div>
+{% endif %}
+
+<nav>
+  <ul class="pagination">
+    {% for url in include.urls %}
+      {% if page.url == url %}
+        {% assign klass = ' active' %}
+      {% else %}
+        {% assign klass = '' %}
+      {% endif %}
+      <li class="page-item{{ klass }}"><a class="page-link" href="{{ url }}">{{ forloop.index }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -5,3 +5,4 @@
 //= require bootstrap
 //= require ./components/contact
 //= require ./components/navbar
+//= require ./components/projects

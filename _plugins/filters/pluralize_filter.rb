@@ -1,6 +1,8 @@
+require 'active_support/all'
+
 module Jekyll
   module Pluralize
-    include ActiveSupport::Inflector
+    include ::ActiveSupport::Inflector
 
     def pluralize(str)
       str.pluralize
