@@ -53,6 +53,7 @@ contentful:
     body: body
     frontmatter:
       title: title
+      link: award_link
       date: date
   careers:
     id: career
