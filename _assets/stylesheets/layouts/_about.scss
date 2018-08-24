@@ -262,13 +262,14 @@
       }
     }
 
-    .callout {
-      color: $red;
-      margin-bottom: 2px;
-    }
-
     p {
       line-height: 1.4rem;
+    }
+
+    .callout {
+      @extend .callout;
+      color: $red;
+      margin-bottom: .5rem;
     }
   }
 
