@@ -10,7 +10,7 @@
   {% assign subtitle = page.subtitle %}
 {% endif %}
 
-<header class="jumbotron jumbotron-fluid{% if page.image_caption %} pb-0{% endif %}" style="background-image: url('{{ page.image | imgix: 'max-h=900&fit=fill' }}');">
+<header class="jumbotron jumbotron-fluid" style="background-image: url('{{ page.image | imgix: 'max-h=900&fit=fill' }}');">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-10">
