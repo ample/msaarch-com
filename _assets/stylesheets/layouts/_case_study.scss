@@ -149,8 +149,10 @@
   }
 
   .project-highlight {
-    top: 130px;
-    margin-bottom: 0.5rem;
+    @include media-breakpoint-up(md) {
+      top: 130px;
+      margin-bottom: 0.5rem;
+    }
   }
 
   #cs-wayfind-links {

@@ -78,6 +78,10 @@
           @include make-col(6);
         }
       }
+
+      img {
+        max-width: 445px;
+      }
     }
 
     &.home-content-right {
@@ -258,13 +262,14 @@
       }
     }
 
-    .callout {
-      color: $red;
-      margin-bottom: 2px;
-    }
-
     p {
       line-height: 1.4rem;
+    }
+
+    .callout {
+      @extend .callout;
+      color: $red;
+      margin-bottom: .5rem;
     }
   }
 
@@ -289,7 +294,7 @@
 
     .link-title {
       color: $red;
-      padding-top: 1rem;
+      padding-top: .8rem;
       margin-bottom: 0;
       padding-bottom: 0;
 
@@ -298,6 +303,11 @@
         font-family: $font-family-urwdin;
         font-size: 1rem;
       }
+    }
+
+    .link-body {
+      padding-top: 0;
+      padding-bottom: 1.5rem;
     }
   }
 
