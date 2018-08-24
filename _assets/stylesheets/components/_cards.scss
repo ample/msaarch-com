@@ -30,12 +30,14 @@
     font-size: 1.2rem;
     letter-spacing: 1px;
     padding-left: .5rem;
+    padding-right: .5rem;
     padding-top: 1rem;
     font-family: $font-family-urwdin-cond;
     margin-bottom: 0;
 
     @include media-breakpoint-up(md) {
       padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 
