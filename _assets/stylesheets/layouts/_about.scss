@@ -78,6 +78,10 @@
           @include make-col(6);
         }
       }
+
+      img {
+        max-width: 445px;
+      }
     }
 
     &.home-content-right {
