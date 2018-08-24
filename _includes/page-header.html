@@ -27,10 +27,10 @@
         </div>
       </div>
     </div>
-    {% if page.image_caption %}
-    <div class="row">
-      <h1 class="header-info mt-md-3">{{ page.image_caption }}</h1>
-    </div>
+    {% if page.slug == "index" %}
+      <div class="row">
+        <h1 class="header-info mt-md-3"><a href="/work">Architecture</a> | <a href="/markets/interiors/">Interiors</a> | <a href="/markets/graphics/">Graphics</a></h1>
+      </div>
     {% endif %}
   </div>
 </header>

@@ -30,8 +30,20 @@
     }
   }
 
+  .jumbotron {
+    padding-bottom: 0;
+  }
+
   .padded-header {
     margin-bottom: 0;
+  }
+
+  .header-info {
+    z-index: 5;
+
+    a {
+      color: $white;
+    }
   }
 
   .home-content-right {
