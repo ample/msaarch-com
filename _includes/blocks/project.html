@@ -2,7 +2,7 @@
     <section class="link-card">
       <a href="{{ include.block.url }}">
         <div class="link-img link-img-tall">
-          <img class="img-fluid w-100 object-fit-cover" ix-src="{{ include.block.image | imgix }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ include.block.title | replace:'\n','' }}">
+          <img class="img-fluid w-100 object-fit-cover" ix-src="{{ thumbnail_image | imgix }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ include.block.title | replace:'\n','' }}">
         </div>
         <h3 class="link-title text-red">{{ include.block.title | replace:'\n','' }} {{ include.block.subtitle }}</h3>
       </a>
