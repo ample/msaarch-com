@@ -13,7 +13,7 @@ class CreateCaseStudies < ContentfulMigrations::Migration
       content_type.fields.create(id: 'title', name: 'Title', type: 'Symbol', required: true)
       content_type.fields.create(id: 'subtitle', name: 'Subtitle', type: 'Symbol')
       content_type.fields.create(id: 'slug', name: 'Slug', type: 'Symbol', required: true, validations: [uniqueness])
-      content_type.fields.create(id: 'image', name: 'Image', type: 'Link', link_type: 'Asset', required: true)
+      content_type.fields.create(id: 'image', name: 'Header Background Image', type: 'Link', link_type: 'Asset', required: true)
       content_type.fields.create(id: 'thumbnail', name: 'Thumbnail Image', type: 'Link', link_type: 'Asset', required: true)
       content_type.fields.create(id: 'body', name: 'Body', type: 'Text')
 
