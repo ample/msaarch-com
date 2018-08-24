@@ -6,9 +6,9 @@
         <h3 class="link-title text-red">{{ include.post.title }}</h3>
       </div>
     </a>
-    {% if include.post.author_name %}
+    {% if include.post.author_first_name or include.post.author_last_name %}
     <div class="link-body">
-      <p>by {{ include.post.author_name }}</p>
+      <p>by {{ include.post.author_first_name }} {{ include.post.author_last_name }}</p>
     </div>
     {% endif %}
   </section>
