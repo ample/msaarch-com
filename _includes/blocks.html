@@ -9,6 +9,14 @@
   {% if site.scoped_includes[page.layout] contains block.content_type %}
     {% include blocks/{{page.layout}}/{{block.content_type}}.html block=block counter=i %}
   {% else %}
+    {% if block.thumbnail %}
+      {% assign thumbnail_image = block.thumbnail %}
+    {% elsif block.image %}
+      {% assign thumbnail_image = block.image %}
+    {% else %}
+      {% assign thumbnail_image = site.image %}
+    {% endif %}
+
     {% include blocks/{{block.content_type}}.html block=block counter=i %}
   {% endif %}
   {% assign i = i | plus: 1 %}
