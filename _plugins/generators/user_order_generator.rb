@@ -20,6 +20,10 @@ module Jekyll
           page.data['others'] << user
         end
       end
+
+      page.data['principals'] = page.data['principals'].sort_by { |last| last.data['last_name']}
+      page.data['associates'] = page.data['associates'].sort_by { |last| last.data['last_name']}
+      page.data['others'] = page.data['others'].sort_by { |last| last.data['last_name']}
     end
   end
 end
