@@ -26,7 +26,13 @@ layout: default
     <h2 class="section-header">team</h2>
 
     <section class="team-cards">
-      {% for user in site.users %}
+      {% for user in page.principals %}
+        {% include user-card.html %}
+      {% endfor %}
+      {% for user in page.associates %}
+        {% include user-card.html %}
+      {% endfor %}
+      {% for user in page.others %}
         {% include user-card.html %}
       {% endfor %}
     </section>
