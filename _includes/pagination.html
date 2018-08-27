@@ -1,4 +1,4 @@
-{% if include.remote %}
+{% if include.remote and include.total > 1 %}
 <div class="row">
   <div class="col-12 load-more hide">
     <a href="#" class="button btn-outline-light btn-gray-light btn-block" data-role="load-more" data-paginate="{{ include.collection }}">
