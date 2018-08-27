@@ -11,6 +11,10 @@ public/system/**/*
 public/stylesheets/all.css
 public/javascripts/all.js
 public/index.html
+.envrc
+collections
+.jekyll-cache
+_site
 
 # Ignore application configuration
 /config/application.yml
