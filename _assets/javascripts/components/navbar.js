@@ -4,6 +4,7 @@ $(document).ready(function(){
     $(navbar).toggleClass('navbar-open').promise().done(function(){
       $(this).find('#nav-icon').toggleClass('open');
       $('#navbarNav').toggleClass('collapse');
+      $('body').toggleClass('active');
     });
   });
 });

@@ -1,3 +1,7 @@
+body.active {
+  overflow: hidden;
+}
+
 #navbar-container {
   padding-top: 1rem;
   align-items: flex-start;
@@ -25,8 +29,9 @@
 
     .navbar-toggler {
       position: absolute;
-      top: 24px;
-      right: 0;
+      top: 32px;
+      right: 32px;
+      padding: 0.25rem 1rem;
 
       @include media-breakpoint-up(sm) {
         position: relative;
@@ -36,11 +41,14 @@
   }
 }
 
+.bg-navbar {
+  padding: 1rem 2rem;
+}
+
 .navbar-open{
 
   > .bg-navbar {
     background-color: $red;
-    padding: 1rem 2rem;
     color: $white;
     z-index: 5;
     text-transform: uppercase;
@@ -49,6 +57,7 @@
     height: 100%;
     width: 100%;
     align-self: self-start;
+    padding: 26px 3rem 2rem;
 
     .nav-link {
       font-family: $font-family-urwdin-cond;
