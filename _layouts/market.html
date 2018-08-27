@@ -40,7 +40,7 @@ layout: default
         </div>
       </div>
       {% assign blocks = page.pages.projects  %}
-      {% include blocks.html collection=blocks css='row no-gutters d-flex flex-wrap' %}
+      {% include blocks.html collection=blocks css='row no-gutters' %}
       {% include pagination.html total=page.pages.total_pages urls=page.pages.urls remote=true %}
     </div>
   </section>
