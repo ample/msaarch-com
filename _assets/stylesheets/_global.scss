@@ -19,10 +19,20 @@ h2 {
   color: $red;
 }
 
-.object-fit-cover {
+.object-fit-top{
+  width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: 50% 0;
+}
+
+.object-fit-center {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .load-more {
