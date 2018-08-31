@@ -1,5 +1,7 @@
-body.active {
-  overflow: hidden;
+@include media-breakpoint-down(sm) {
+  body.active {
+    overflow: hidden;
+  }
 }
 
 #navbar-container {
@@ -168,5 +170,14 @@ body.active {
 
   @include media-breakpoint-down(xs) {
     width: 70%;
+  }
+}
+
+//Styles for Edge
+.navbar-nav {
+  padding-left: 0;
+
+  li {
+    list-style: none;
   }
 }
