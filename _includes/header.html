@@ -11,7 +11,8 @@
       </div>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <!-- Inline list-style: none is a workaround for an IE/Edge bug -->
+      <ul class="navbar-nav" style="list-style:none;list-style-position:inside;list-style-image:none;">
         <li class="nav-item">
           <a class="nav-link" href="/work">Work
           {% if page.url == '/work' %}
