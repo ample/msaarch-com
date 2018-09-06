@@ -6,6 +6,18 @@
   h2.header-text-bg {
     font-size: 4.5rem;
     line-height: 5rem;
+
+    &.responsive-text {
+      font-size: 2.75rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 3.25rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: 4.5rem;
+      }
+    }
   }
 
   .col-10 {
