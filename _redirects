@@ -1,11 +1,11 @@
-http://msa-sport.com /markets/sport 301
-http://www.msa-sport.com /markets/sport 301
-http://msa-sport.net /markets/sport 301
-http://www.msa-sport.net /markets/sport 301
-http://msa-sport.org /markets/sport 301
-http://www.msa-sport.org /markets/sport 301
-http://msasport.com /markets/sport 301
-http://www.msasport.com /markets/sport 301
+http://msa-sport.com /markets/sport
+http://www.msa-sport.com /markets/sport
+http://msa-sport.net /markets/sport
+http://www.msa-sport.net /markets/sport
+http://msa-sport.org /markets/sport
+http://www.msa-sport.org /markets/sport
+http://msasport.com /markets/sport
+http://www.msasport.com /markets/sport
 /markets /work
 /about/news/archive /about#team
 /about/news/msa-wins-outstanding-award /about#awards
@@ -118,7 +118,7 @@ http://www.msasport.com /markets/sport 301
 /portfolio/msa-environmental-graphics/university-of-cincinnati-sheakley-athletics-complex-graphics-and-environmental-design /markets/sport/university-of-cincinnati-sheakley-athletics-center
 /portfolio/msa-environmental-graphics/cincinnati-reds-fan-zone-master-plan /markets/sport/reds-fanzone
 /portfolio/msa-environmental-graphics/xavier-university-strength-and-conditioning-center /markets/sport/xavier-university-strength-conditioning-center
-/portfolio/msa-environmental-graphics/tank-covington-transit-center markets/graphics/tank-covington-transit-center-graphics
+/portfolio/msa-environmental-graphics/tank-covington-transit-center /markets/graphics/tank-covington-transit-center-graphics
 /portfolio/msa-environmental-graphics /markets/graphics
 /portfolio/msa-environmental-graphics/* /markets/graphics
 /portfolio/msa-lifestyle/abigail-street /markets/interiors/abigail-street
