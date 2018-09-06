@@ -8,8 +8,9 @@
   <meta name="keywords" content="Architects, architecture, design, Michael Schuster, Associates, Cincinnati, Columbus, Ohio, Orlando, Florida, Master planning, Wayfinding, Sport, Education, Corporate, Civic, Transportation, Lifestyle, Religious, Interiors, Graphics">
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape | replace:'\n','' }} | {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="{% if page.content.size > 5 %}{{ page.content | strip_html | truncate: 300 }}{% else %}MSA Design works in 7 core markets including sports, education, corporate, civic, transportation, lifestyle, religious, interiors, and graphics{% endif %}" />
-  <meta property="og:image" content="{% if page.image %}{{ page.image }}{% elsif page.thumbnail %}{{ page.thumbnail }}{% else %}{{ site.image }}{% endif %}" />
+  <meta property="og:url" content="https://www.msaarch.com/" />
+  <meta property="og:description" content="{% if page.content.size > 5 %}{{ page.content | strip_html | truncate: 300 }}{% else %}MSA Design works in 9 core markets including sports, education, corporate, civic, transportation, lifestyle, religious, interiors, and graphics{% endif %}" />
+  <meta property="og:image" content="https:{% if page.thumbnail %}{{ page.thumbnail }}{% else %}{{ site.image }}{% endif %}" />
    {% asset application.scss !integrity %}
 
   <!-- Favicons -->

@@ -225,10 +225,10 @@ assets:
   - _assets/javascripts
 
 # social links
-linkedin_username: msa-architects
-twitter_username: msaarch
-facebook_username: MSAarchitects
-instagram_username: msa_arch_ohio
+linkedin_username: msa-design
+twitter_username: msa_design_ohio
+facebook_username: MSA.Design.Ohio
+instagram_username: msa_design_ohio
 
 image_sizes:
   cards_4x: "(min-width: 1200px) 278px, (min-width: 992px) 233px, (min-width: 768px) 173px, (min-width: 576px) 255px, 50vw"
