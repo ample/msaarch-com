@@ -20,11 +20,11 @@
   padding-top: .5rem;
   padding-bottom: .5rem;
   text-transform: uppercase;
+  background-color: transparent;
 
   &:hover{
     color: $red;
     border: 2px solid rgba($gray-600, 0.5);
-    background-color: transparent;
     text-decoration: none;
   }
 }

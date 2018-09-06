@@ -177,8 +177,14 @@
     }
   }
 
-  .btn-gray-light {
+  .btn-gray-link {
     margin: 1.5rem 1rem;
+    border: 0;
+
+    &:hover {
+      color: $gray-600;
+      border: 0;
+    }
 
     @include media-breakpoint-up(md) {
       margin: 0 1rem;
