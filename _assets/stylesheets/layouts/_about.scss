@@ -79,8 +79,10 @@
         }
       }
 
-      img {
-        max-width: 445px;
+      @include media-breakpoint-up(lg) {
+        img {
+          max-width: 445px;
+        }
       }
     }
 
@@ -119,7 +121,7 @@
         right: -30px;
 
         @include media-breakpoint-up(md) {
-          left: 135px;
+          left: 45px;
         }
         @include media-breakpoint-up(lg) {
           left: 160px;
@@ -202,6 +204,10 @@
           padding-left: 15px;
           order: 1;
 
+          ol, ul, li {
+            list-style-position: inside;
+          }
+
           @include media-breakpoint-up(sm) {
             padding-right: 1rem;
           }
@@ -221,6 +227,10 @@
         top: -35px;
         left: auto;
         right: -15px;
+
+        @include media-breakpoint-up(md) {
+          right: -130px;
+        }
 
         @include media-breakpoint-up(xl) {
           left: auto;

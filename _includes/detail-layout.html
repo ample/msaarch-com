@@ -4,7 +4,7 @@
     <div class="key-lines"></div>
   </div>
 
-  <div class="row justify-content-end text-right pb-5">
+  <div class="row first-block">
     {% assign block = page.has_many.blocks | first %}
     {% include blocks/case_study/media_object.html block=block lead=true %}
     <div class="col-md-3 project-highlight">

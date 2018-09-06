@@ -148,6 +148,16 @@
     object-fit: cover;
   }
 
+  .first-block {
+    text-align: right;
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+
+    ol, ul, li {
+      list-style-position: inside;
+    }
+  }
+
   .project-highlight {
     @include media-breakpoint-up(md) {
       top: 130px;
