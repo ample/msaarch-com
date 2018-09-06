@@ -1,6 +1,9 @@
-@include media-breakpoint-down(sm) {
-  body.active {
-    overflow: hidden;
+body.active {
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+    overflow-y: visible;
+    overflow-x: hidden;
   }
 }
 
