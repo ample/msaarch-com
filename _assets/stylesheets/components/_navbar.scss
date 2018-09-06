@@ -45,7 +45,11 @@
 }
 
 .bg-navbar {
-  padding: 1rem 2rem;
+  padding: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    padding: 1rem 1.5rem;
+  }
 }
 
 .navbar-open{
@@ -60,10 +64,10 @@
     height: 100%;
     width: 100%;
     align-self: self-start;
-    padding: 23px 3rem 2rem;
+    padding: 25px 2rem 2rem;
 
     @include media-breakpoint-up(sm) {
-      padding: 2rem 2.5rem 2rem 24px;
+      padding: 2rem 1.5rem 2rem 1.5rem;
     }
 
     .nav-link {

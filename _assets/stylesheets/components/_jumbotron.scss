@@ -91,7 +91,7 @@
   color: $white;
 
  @include media-breakpoint-up(md) {
-    padding-left: 2rem; //to keep text aligned with logo
+    padding-left: 1rem;
     padding-top: 8rem;
   }
 
