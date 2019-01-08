@@ -241,6 +241,7 @@
     .form-control {
       color: $white;
       border-radius: 0;
+      line-height: 2;
     }
 
     > div {
@@ -354,6 +355,7 @@
       font-size: 1.75rem;
       line-height: 1.875rem;
       letter-spacing: $letter-spacing-base;
+      vertical-align: middle;
     }
 
     select.custom-select, .select-styled {
