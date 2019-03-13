@@ -12,7 +12,9 @@ layout: default
         <div>
           <div class="author-media-object link-card">
             <div class="author-image">
-              <img class="w-100" ix-src="{{ page.author_image | imgix }}" sizes="{{ site.image_sizes.author_blocks }}" alt="{{ page.author_title }}">
+              {% if page.author_image %}
+                <img class="w-100" ix-src="{{ page.author_image | imgix }}" sizes="{{ site.image_sizes.author_blocks }}" alt="{{ page.author_title }}">
+              {% endif %}
             </div>
             <div>
               <p class="link-title">{{ page.author_first_name }} {{ page.author_last_name }}, <span>{{ page.author_credentials }}</span></p>
