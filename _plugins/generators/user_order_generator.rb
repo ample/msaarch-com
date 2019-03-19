@@ -10,7 +10,7 @@ module Jekyll
       page.data['associates'] = []
       page.data['others'] = []
 
-      site.collections['users'].docs.map do |user|
+      site.collections['users'].docs.reject{|u| u.data['inactive'] == 'true' }.map do |user|
         title = user.data['title'].downcase
         if title.include?('principal')
           page.data['principals'] << user

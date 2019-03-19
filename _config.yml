@@ -189,6 +189,7 @@ contentful:
       credentials: credentials
       image: image/url
       image_caption: image/description
+      inactive: inactive
 
 defaults:
   - scope:
