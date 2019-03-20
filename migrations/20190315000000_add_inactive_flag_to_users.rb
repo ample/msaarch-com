@@ -21,5 +21,4 @@ class AddInactiveFlagToUsers < ContentfulMigrations::Migration
       content_type.fields.destroy('inactive')
     end
   end
-
 end
