@@ -227,9 +227,9 @@ assets:
 
 # social links
 linkedin_username: msa-design
-twitter_username: msa_design_ohio
-facebook_username: MSA.Design.Ohio
-instagram_username: msa_design_ohio
+twitter_username: msa__design
+facebook_username: MSADesign2019
+instagram_username: msa__design
 
 image_sizes:
   cards_4x: "(min-width: 1200px) 278px, (min-width: 992px) 233px, (min-width: 768px) 173px, (min-width: 576px) 255px, 50vw"
