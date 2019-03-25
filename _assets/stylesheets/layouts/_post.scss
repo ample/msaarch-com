@@ -1,5 +1,4 @@
 .tpl-post {
-
   article {
     @include make-col-ready();
 
@@ -77,10 +76,10 @@
       }
     }
 
-    .link-title{
+    .link-title {
       color: $red;
       padding: 0;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
 
       @include media-breakpoint-up(md) {
         text-align: right;
@@ -109,8 +108,8 @@
   }
 
   .post-content {
-
-    h2, .section-header {
+    h2,
+    .section-header {
       font-size: 1.875rem;
       line-height: 1.875rem;
       letter-spacing: $letter-spacing-base;
@@ -131,5 +130,23 @@
     font-size: 1.875rem;
     line-height: 1.875rem;
     letter-spacing: $letter-spacing-base;
+  }
+
+  .block-text-objects img {
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+    p.clear {
+      clear: both;
+    }
+    p.wrap {
+      float: left;
+      margin: 0 2em 2em 0;
+      &.right {
+        margin: 0 0 2em 2em;
+        float: right;
+      }
+    }
   }
 }
