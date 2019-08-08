@@ -126,6 +126,7 @@ contentful:
     body: body
     has_many:
       blocks: [ features, media_objects, text_objects ]
+      carousel_images: [ carousel_images ]
     frontmatter:
       title: title
       subtitle: subtitle
@@ -190,6 +191,10 @@ contentful:
       image: image/url
       image_caption: image/description
       inactive: inactive
+  carousel_images:
+    id: carousel_image
+    belongs_to:
+      - page
 
 defaults:
   - scope:

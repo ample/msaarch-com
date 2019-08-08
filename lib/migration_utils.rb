@@ -8,6 +8,12 @@ module MigrationUtils
     validation
   end
 
+  def require_mime_type(*types)
+    validation = Contentful::Management::Validation.new
+    validation.link_mimetype_group = types.collect(&:to_s)
+    validation
+  end
+
   def apply_editor(space, field, editor, type=nil)
     with_editor_interfaces do |editor_interfaces|
       editor_interface = editor_interfaces.default(space.id, type || content_type_id)
