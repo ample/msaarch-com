@@ -8,7 +8,7 @@ body.active {
 }
 
 #navbar-container {
-  padding-top: 1rem;
+  padding-top: 0;
   align-items: flex-start;
   justify-content: flex-start;
 
@@ -120,7 +120,7 @@ body.active {
   position: absolute;
   height: 3px;
   width: 100%;
-  background: $white;
+  background: $black;
   border-radius: 9px;
   opacity: 1;
   left: 0;
