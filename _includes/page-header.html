@@ -10,7 +10,12 @@
   {% assign subtitle = page.subtitle %}
 {% endif %}
 
-<header class="jumbotron jumbotron-fluid" style="background-image: url('{{ page.image | imgix: 'max-h=900&fit=fill' }}');">
+<header class="jumbotron jumbotron-fluid" style="background-image: url('{{ page.image.url | imgix: 'max-h=900&fit=fill' }}');">
+  <div class="header-carousel">
+    {% for carousel_image in page.carousel_images %}
+    <div style="background-image: url('{{ carousel_image.url | imgix: 'max-h=900&fit=fill' }}');"></div>
+    {% endfor %}
+  </div>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-10">
