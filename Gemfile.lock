@@ -6,8 +6,10 @@ GIT
       activesupport
       jekyll
 
-PATH
-  remote: /Users/wph/sites/ample/jekyll-contentful
+GIT
+  remote: https://github.com/crdschurch/jekyll-contentful.git
+  revision: 8ccca874d44f325dfca42dda431667e0a503a16e
+  branch: has-many-assets
   specs:
     jekyll-contentful (1.4.0)
       activesupport
