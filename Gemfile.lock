@@ -6,10 +6,8 @@ GIT
       activesupport
       jekyll
 
-GIT
-  remote: https://github.com/crdschurch/jekyll-contentful.git
-  revision: e9350ce375147a6b6f044fcbbec039989c4d87de
-  tag: 1.4.0
+PATH
+  remote: /Users/wph/sites/ample/jekyll-contentful
   specs:
     jekyll-contentful (1.4.0)
       activesupport
@@ -207,7 +205,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.0.1)
   jekyll (~> 3.7.3)
   jekyll-assets
-  jekyll-contentful (~> 1.4.0)!
+  jekyll-contentful!
   jekyll-placeholders (~> 0.0.1)!
   pry
   rake

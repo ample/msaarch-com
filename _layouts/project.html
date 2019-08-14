@@ -15,7 +15,7 @@ layout: default
     {% endfor %}
   </div>
 
-  {% assign features = page.has_many.blocks | where:"content_type", "feature" %}
+  {% assign features = page.blocks | where:"content_type", "feature" %}
   {% if features.size > 0 %}
   <section>
     <div class="pb-7">

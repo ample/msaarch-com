@@ -1,8 +1,8 @@
 <div class="media-object {{ include.block.css }}">
   <figure>
-    <img class="w-100" ix-src="{{ include.block.image | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}" />
-    {% if include.block.content.size > 1 %}
-    <figcaption>{{ include.block.content }}</figcaption>
+    <img class="w-100" ix-src="{{ include.block.image.url | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}" />
+    {% if include.block.body.size > 1 %}
+    <figcaption>{{ include.block.body }}</figcaption>
     {% endif %}
   </figure>
 </div>

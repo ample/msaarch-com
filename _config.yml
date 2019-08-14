@@ -49,6 +49,7 @@ collections:
   posts:
     output: true
     permalink: /design-thinking/:slug
+    filename: "{{ published_at | date: '%Y-%m-%d' }}-{{ slug }}"
   tags:
     output: true
     permalink: /design-thinking/tags/:slug
