@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.msaarch.com{{ page.url }}" />
   <meta property="og:description" content="{% if page.content.size > 5 %}{{ page.content | strip_html | truncate: 300 }}{% else %}MSA Design works in 9 core markets including sports, education, corporate, civic, transportation, lifestyle, religious, interiors, and graphics{% endif %}" />
-  <meta property="og:image" content="https:{% if page.image %}{{ page.image }}{% elsif page.thumbnail %}{{ page.thumbnail }}{% else %}{{ site.image }}{% endif %}" />
+  <meta property="og:image" content="https:{% if page.image %}{{ page.image.url }}{% elsif page.thumbnail %}{{ page.thumbnail.url }}{% else %}{{ site.image }}{% endif %}" />
    {% asset application.scss !integrity %}
 
   <!-- Favicons -->

@@ -10,9 +10,9 @@
     {% include blocks/{{page.layout}}/{{block.content_type}}.html block=block counter=i %}
   {% else %}
     {% if block.thumbnail %}
-      {% assign thumbnail_image = block.thumbnail %}
+      {% assign thumbnail_image = block.thumbnail.url %}
     {% elsif block.image %}
-      {% assign thumbnail_image = block.image %}
+      {% assign thumbnail_image = block.image.url %}
     {% else %}
       {% assign thumbnail_image = site.image %}
     {% endif %}

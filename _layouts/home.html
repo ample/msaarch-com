@@ -6,11 +6,11 @@ layout: default
 
 <main class="container main-home {{ page.path | slugify }}">
 
-  {% assign blocks = page.has_many.blocks | where:"content_type", "media_object" %}
+  {% assign blocks = page.blocks | where:"content_type", "media_object" %}
   {% include blocks.html collection=blocks %}
 
   <section class="home-featured-links">
-    {% assign blocks = page.has_many.blocks | where:"content_type", "feature" %}
+    {% assign blocks = page.blocks | where:"content_type", "feature" %}
     {% include blocks.html collection=blocks %}
   </section>
 </main>
