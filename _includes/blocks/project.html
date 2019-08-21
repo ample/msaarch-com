@@ -1,10 +1,10 @@
 <div class="col-6 col-md-3">
-    <section class="link-card">
-      <a href="{{ include.block.url }}">
-        <div class="link-img link-img-tall">
-          <img class="object-fit-center" ix-src="{{ thumbnail_image | imgix }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ include.block.title | replace:'\n','' }}">
-        </div>
-        <h3 class="link-title text-red">{{ include.block.title | replace:'\n','' }} {{ include.block.subtitle }}</h3>
-      </a>
-    </section>
-  </div>
+  <section class="link-card">
+    <a href="{{ include.block.url }}">
+      <div class="link-img link-img-tall">
+        <img class="object-fit-center" ix-src="{{ thumbnail_image | imgix }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ include.block.title | replace:'\n','' }}">
+      </div>
+      <h3 class="link-title text-red">{{ include.block.title | replace:'\n','' }} {{ include.block.subtitle }}</h3>
+    </a>
+  </section>
+</div>

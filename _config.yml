@@ -45,7 +45,7 @@ collections:
     permalink: /:slug
   projects:
     output: true
-    permalink: /markets/(:links_to/:markets/:0/:slug)/:slug
+    permalink: /markets/(:market/:slug)/:slug
   posts:
     output: true
     permalink: /design-thinking/:slug
@@ -95,7 +95,7 @@ contentful:
       image: image/url
       image_caption: image/description
       href: href
-  markets:
+  market:
     id: market
     body: body
     has_many:
@@ -158,11 +158,11 @@ contentful:
       author_image: author/image/url
       author_credentials: author/credentials
       author_title: author/title
-  projects:
+  project:
     id: project
     body: body
     belongs_to:
-      - market
+      market: projects
     has_many:
       blocks: [features, media_objects, text_objects]
     frontmatter:
@@ -172,6 +172,8 @@ contentful:
       image: image/url
       image_caption: image/description
       thumbnail: thumbnail/url
+      market: market/slug
+      url: 'sandwich'
   tags:
     id: tag
     belongs_to:
