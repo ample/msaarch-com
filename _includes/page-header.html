@@ -18,18 +18,16 @@
   </div>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-10">
-        <div class="padded-header">
-          <h2 class="header-text-bg {% if title[0] contains 'ransportation' %}responsive-text{% endif %}">
-            {% for str in title %}
-              {% if forloop.index0 > 0 %}<br>{% endif %}
-              <span>{{ str }}</span>
-            {% endfor %}
-          </h2>
-          {% if subtitle %}
-          <span class="subheading">{{ subtitle }}</span>
-          {% endif %}
-        </div>
+      <div class="col-10 padded-header">
+        <h2 class="header-text-bg {% if title[0] contains 'ransportation' %}responsive-text{% endif %}">
+          {% for str in title %}
+            {% if forloop.index0 > 0 %}<br>{% endif %}
+            <span>{{ str }}</span>
+          {% endfor %}
+        </h2>
+        {% if subtitle %}
+        <span class="subheading">{{ subtitle }}</span>
+        {% endif %}
       </div>
     </div>
     {% if page.slug == "index" %}
