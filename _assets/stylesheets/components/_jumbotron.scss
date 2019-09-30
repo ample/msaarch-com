@@ -2,6 +2,7 @@
   margin-bottom: 0;
   background-position: center top;
   background-size: cover;
+  position: relative;
 
   h2.header-text-bg {
     font-size: 4.5rem;
@@ -25,6 +26,21 @@
 
     @include media-breakpoint-up(md) {
       padding-left: 15px;
+    }
+  }
+
+  .header-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    div {
+      width: 100%;
+      height: 100%;
+      background-position: center top;
+      background-size: cover;
     }
   }
 }
@@ -80,10 +96,10 @@
 }
 
 .header-info {
-  font-size: 1.875rem;
+  font-size: 1.3rem;
   letter-spacing: .3px;
   font-family: $font-family-urwdin-cond;
-  padding-top: 8rem;
+  padding-top: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
   padding-left: 2rem;
@@ -93,6 +109,8 @@
  @include media-breakpoint-up(md) {
     padding-left: 1rem;
     padding-top: 8rem;
+    font-size: 1.875rem;
+
   }
 
   @include media-breakpoint-up(lg)  {

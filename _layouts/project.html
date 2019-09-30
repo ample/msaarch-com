@@ -15,7 +15,7 @@ layout: default
     {% endfor %}
   </div>
 
-  {% assign features = page.has_many.blocks | where:"content_type", "feature" %}
+  {% assign features = page.blocks | where:"content_type", "feature" %}
   {% if features.size > 0 %}
   <section>
     <div class="pb-7">
@@ -33,7 +33,7 @@ layout: default
           <section class="link-card">
             <a href="{{ project.href }}">
               <div class="link-img">
-                <img class="object-fit-top" ix-src="{{ project.image | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ project.title }}">
+                <img class="object-fit-top" ix-src="{{ project.image.url | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ project.title }}">
                 <h3 class="link-title text-red">{{ project.title }} {{ project.subtitle | strip_html }}</h3>
               </div>
             </a>

@@ -1,16 +1,16 @@
 {% if include.lead %}
   <div class="col-md-9 order-md-12">
-    <img class="img-fluid d-block mx-auto pb-4" ix-src="{% if include.block.image %}{{ include.block.image | imgix }}{% else %}{{ site.image }}{% endif %}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
+    <img class="img-fluid d-block mx-auto pb-4" ix-src="{% if include.block.image %}{{ include.block.image.url | imgix }}{% else %}{{ site.image }}{% endif %}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
     <div class="col-md-10 offset-md-2">
-      {{ include.block.content | markdownify }}
+      {{ include.block.body | markdownify }}
     </div>
   </div>
 {% else %}
   <div class="media-object {{ include.block.css }}">
     <figure>
-      <img class="w-100" ix-src="{{ include.block.image | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}" />
-      {% if include.block.content.size > 1 %}
-      <figcaption>{{ include.block.content | markdownify }}</figcaption>
+      <img class="w-100" ix-src="{{ include.block.image.url | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}" />
+      {% if include.block.body.size > 1 %}
+      <figcaption>{{ include.block.body | markdownify }}</figcaption>
       {% endif %}
     </figure>
   </div>

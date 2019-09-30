@@ -5,7 +5,7 @@
   </div>
 
   <div class="row first-block">
-    {% assign block = page.has_many.blocks | first %}
+    {% assign block = page.blocks | first %}
     {% include blocks/case_study/media_object.html block=block lead=true %}
     <div class="col-md-3 project-highlight">
       <aside class="mt-2">
@@ -15,6 +15,6 @@
   </div>
 </article>
 
-{% assign blocks = page.has_many.blocks | where_exp:"item", "item.content_type != 'feature'" | shift %}
+{% assign blocks = page.blocks | where_exp:"item", "item.content_type != 'feature'" | shift %}
 {% include blocks.html collection=blocks %}
 {% endif %}

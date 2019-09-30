@@ -2,7 +2,7 @@
   <section class="link-card">
     <a href="{{ include.post.url }}">
       <div class="link-img link-img-2x link-img-tall">
-        <img class="object-fit-top" ix-src="{{ include.post.image | imgix: 'w=480&h=270&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ include.post.title }}">
+        <img class="object-fit-top" ix-src="{{ include.post.image.url | imgix: 'w=480&h=270&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ include.post.title }}">
         <div class="bg-gradient-light"></div>
         <h3 class="link-title title-overlap title-overlap-2x">{{ include.post.title }}</h3>
       </div>

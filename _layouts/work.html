@@ -37,7 +37,7 @@ layout: default
               <section class="link-card">
                 <a href="{{ market.url }}">
                   <div class="link-img link-img-2x">
-                    <img class="object-fit-top" ix-src="{{ market.image | imgix: 'w=480&h=270&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ market.title }}">
+                    <img class="object-fit-top" ix-src="{{ market.image.url | imgix: 'w=480&h=270&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ market.title }}">
                     <div class="bg-gradient-light"></div>
                     <h3 class="link-title title-overlap title-overlap-2x">{{ market.title }}</h3>
                   </div>
@@ -58,7 +58,7 @@ layout: default
           <h2 class="section-header">featured projects</h2>
         </div>
       </div>
-      {% assign blocks = page.has_many.blocks | where:"content_type", "feature" %}
+      {% assign blocks = page.blocks | where:"content_type", "feature" %}
       {% include blocks.html collection=blocks css='row no-gutters' %}
     </div>
   </section>

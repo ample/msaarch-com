@@ -19,19 +19,19 @@ layout: default
   </section>
   {% endif %}
 
-  {% if page.has_many.case_studies.size > 0 %}
+  {% if page.case_studies.size > 0 %}
   <article>
     <div class="row">
       <div class="col">
         <h2 class="section-header">case studies</h2>
       </div>
     </div>
-    {% assign blocks = page.has_many.case_studies %}
+    {% assign blocks = page.case_studies %}
     {% include blocks.html collection=blocks css='row no-gutters' %}
   </article>
   {% endif %}
 
-  {% if page.pages.projects.size > 0 %}
+  {% if page.projects.size > 0 %}
   <section>
     <div class="pb-7">
       <div class="row">
@@ -39,14 +39,14 @@ layout: default
           <h2 class="section-header">featured projects</h2>
         </div>
       </div>
-      {% assign blocks = page.pages.projects  %}
+      {% assign blocks = page.projects  %}
       {% include blocks.html collection=blocks css='row no-gutters' %}
-      {% include pagination.html total=page.pages.total_pages urls=page.pages.urls remote=true %}
+      {% include pagination.html total=page.projects.total_pages urls=page.projects.urls remote=true %}
     </div>
   </section>
   {% endif %}
 
-  {% if page.has_many.projects.size < 1 and page.has_many.case_studies.size < 1 %}
+  {% if page.projects.size < 1 and page.case_studies.size < 1 %}
   <article>
     <div class="row pb-7">
       <div class="col-12">

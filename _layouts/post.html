@@ -12,17 +12,17 @@ layout: default
         <div>
           <div class="author-media-object link-card">
             <div class="author-image">
-              {% if page.author_image %}
-                <img class="w-100" ix-src="{{ page.author_image | imgix }}" sizes="{{ site.image_sizes.author_blocks }}" alt="{{ page.author_title }}">
+              {% if page.author.image %}
+                <img class="w-100" ix-src="{{ page.author.image.url | imgix }}" sizes="{{ site.image_sizes.author_blocks }}" alt="{{ page.author_title }}">
               {% endif %}
             </div>
             <div>
-              <p class="link-title">{{ page.author_first_name }} {{ page.author_last_name }}, <span>{{ page.author_credentials }}</span></p>
-              <p class="link-body">{{ page.author_title }}</p>
+              <p class="link-title">{{ page.author.first_name }} {{ page.author.last_name }}, <span>{{ page.author.credentials }}</span></p>
+              <p class="link-body">{{ page.author.title }}</p>
             </div>
           </div>
 
-          {% assign blocks = page.has_many.blocks %}
+          {% assign blocks = page.blocks %}
           {% include blocks.html collection=blocks %}
         </div>
       </div>
@@ -37,7 +37,7 @@ layout: default
         {{ page.published_at | date: '%B %d, %Y' }}
 
         <h3>tags</h3>
-        {% for tag in page.has_many.tags %}
+        {% for tag in page.tags %}
         <a href="{{ tag.url }}">
           <p>{{ tag.title }}</p>
         </a>

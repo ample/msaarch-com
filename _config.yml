@@ -45,10 +45,11 @@ collections:
     permalink: /:slug
   projects:
     output: true
-    permalink: /markets/(:links_to/:markets/:0/:slug)/:slug
+    permalink: /markets/(:market/:slug)/:slug
   posts:
     output: true
     permalink: /design-thinking/:slug
+    filename: "{{ published_at | date: '%Y-%m-%d' }}-{{ slug }}"
   tags:
     output: true
     permalink: /design-thinking/tags/:slug
@@ -94,7 +95,7 @@ contentful:
       image: image/url
       image_caption: image/description
       href: href
-  markets:
+  market:
     id: market
     body: body
     has_many:
@@ -126,6 +127,7 @@ contentful:
     body: body
     has_many:
       blocks: [ features, media_objects, text_objects ]
+      carousel_images: carousel_images
     frontmatter:
       title: title
       subtitle: subtitle
@@ -156,11 +158,11 @@ contentful:
       author_image: author/image/url
       author_credentials: author/credentials
       author_title: author/title
-  projects:
+  project:
     id: project
     body: body
     belongs_to:
-      - market
+      market: projects
     has_many:
       blocks: [features, media_objects, text_objects]
     frontmatter:
@@ -170,6 +172,8 @@ contentful:
       image: image/url
       image_caption: image/description
       thumbnail: thumbnail/url
+      market: market/slug
+      url: 'sandwich'
   tags:
     id: tag
     belongs_to:
@@ -190,6 +194,10 @@ contentful:
       image: image/url
       image_caption: image/description
       inactive: inactive
+  carousel_images:
+    id: carousel_image
+    belongs_to:
+      - page
 
 defaults:
   - scope:
@@ -220,7 +228,7 @@ defaults:
 assets:
   source_maps: true # false on JEKYLL_ENV=production
   destination: "/assets"
-  compression: true
+  compression: false
   sources:
   - _assets/stylesheets
   - _assets/javascripts
