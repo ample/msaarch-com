@@ -9,8 +9,7 @@ module Jekyll
         market.data['projects'].each do |project|
           url = [
             '',
-            'markets',
-            market.data['slug'],
+            'projects',
             project['slug'],
           ].join('/') rescue nil
           project['url'] = url
