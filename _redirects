@@ -191,3 +191,4 @@ http://www.msasport.com /markets/sport
 /portfolio/msa-transportation/tank-express /markets/transportation/tank-covington-transit-center
 /portfolio/msa-transportation /markets/transportation
 /portfolio/msa-transportation/* /markets/transportation
+/markets/:market_slug/:slug /projects/:slug

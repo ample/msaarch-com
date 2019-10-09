@@ -45,7 +45,7 @@ collections:
     permalink: /:slug
   projects:
     output: true
-    permalink: /markets/(:market/:slug)/:slug
+    permalink: /projects/:slug
   posts:
     output: true
     permalink: /design-thinking/:slug
