@@ -1,6 +1,6 @@
 <div class="col-12 col-md-6 case-study-card">
   <section class="link-card">
-    <a href="{{ block.url }}">
+    <a href="/case-studies/{{ block.slug }}">
       <div class="link-img link-img-tall">
         <img class="object-fit-center" ix-src="{{ thumbnail_image | imgix: 'w=3.5&h=1&fit=crop'  }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ block.title }}">
         <div class="bg-gradient-light"></div>
