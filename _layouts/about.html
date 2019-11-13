@@ -6,15 +6,27 @@ layout: default
 
 <main class="container about">
   <nav class="button-nav">
-    <div class="button-col"><a href="#disciplines"><button class="btn btn-red btn-block">
-      disciplines
-    </button></a></div>
-    <div><a href="#team"><button class="btn btn-red btn-block">
-      team
-    </button></a></div>
-    <div><a href="#awards"><button class="btn btn-red btn-block">
-      awards
-    </button></a></div>
+    <div class="button-col">
+      <a href="#disciplines"
+        ><button class="btn btn-red btn-block">
+          disciplines
+        </button></a
+      >
+    </div>
+    <div>
+      <a href="#team"
+        ><button class="btn btn-red btn-block">
+          team
+        </button></a
+      >
+    </div>
+    <div>
+      <a href="#awards"
+        ><button class="btn btn-red btn-block">
+          awards
+        </button></a
+      >
+    </div>
   </nav>
   <div id="disciplines">
     <h2 class="section-header pb-0">disciplines</h2>
@@ -26,15 +38,10 @@ layout: default
     <h2 class="section-header">team</h2>
 
     <section class="team-cards">
-      {% for user in page.principals %}
-        {% include user-card.html %}
-      {% endfor %}
-      {% for user in page.associates %}
-        {% include user-card.html %}
-      {% endfor %}
-      {% for user in page.others %}
-        {% include user-card.html %}
-      {% endfor %}
+      {% for user in page.principals %} {% include user-card.html %} {% endfor
+      %} {% for user in page.associates %} {% include user-card.html %} {%
+      endfor %} {% for user in page.others %} {% include user-card.html %} {%
+      endfor %}
     </section>
   </article>
   {% endif %}
@@ -42,25 +49,23 @@ layout: default
   <article id="awards">
     <h2 class="section-header">awards</h2>
     <section class="awards-section">
-
-      {% assign awards_by_year = site.awards | group_by: 'date' | sort: 'name' | reverse %}
-      {% for group in awards_by_year %}
+      {% assign awards_by_year = site.awards | group_by: 'date' | sort: 'name' |
+      reverse %} {% for group in awards_by_year %}
+      <div>
+        <p class="awards-header">{{ group.name }}</p>
+      </div>
+      <div class="awards-list">
+        {% for award in group.items %}
         <div>
-          <p class="awards-header">{{ group.name }}</p>
+          {% if award.award_link %}<a href="{{ award.award_link}}"
+            >{% endif %}
+            <h3>{{ award.title }}</h3>
+            {% if award.award_link %}</a
+          >{% endif %} {{ award.content | markdownify }}
         </div>
-        <div class="awards-list">
-          {% for award in group.items %}
-          <div>
-            {% if award.link %}<a href="{{ award.link}}">{% endif %}
-              <h3>{{ award.title }}</h3>
-            {% if award.link %}</a>{% endif %}
-            {{ award.content | markdownify }}
-          </div>
-          {% endfor %}
-        </div>
+        {% endfor %}
+      </div>
       {% endfor %}
-
     </section>
   </article>
-
 </main>
