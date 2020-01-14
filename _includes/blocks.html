@@ -20,5 +20,6 @@
     {% include blocks/{{block.content_type}}.html block=block counter=i %}
   {% endif %}
   {% assign i = i | plus: 1 %}
-{% endfor %}</div>
+  {% if forloop.last == true %}</div>{% endif %}
+{% endfor %}
 

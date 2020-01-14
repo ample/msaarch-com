@@ -84,24 +84,23 @@ layout: default
       </section>
     </div>
   </article>
-
-  {% if site.careers.size > 0 %}
   <div class="container">
     <article id="careers">
       <section class="careers-section">
         {% assign blocks = page.has_many.blocks | where: "content_type", "text_object" %}
         {% include blocks.html collection=blocks %}
-        <div class="careers-list">
-          {% for career in site.careers %}
-          <div>
-            <h3>{{ career.title }}</h3>
-            {{ career.content }}
+
+        {% if site.careers.size > 0 %}
+          <div class="careers-list">
+            {% for career in site.careers %}
+            <div>
+              <h3>{{ career.title }}</h3>
+              {{ career.content }}
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
-        </div>
+        {% endif %}
       </section>
     </article>
   </div>
-  {% endif %}
-
 </main>

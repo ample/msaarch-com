@@ -461,6 +461,7 @@
 
     .careers-list {
       @include make-row();
+      margin-top: 1em;
 
       > div {
         @include make-col-ready();
