@@ -8,7 +8,7 @@ layout: default
   {% include detail-layout.html %}
 
   <div class="container" id="project-wayfind-links">
-    {% for market in page.links_to.markets %}
+    {% for market in page.markets %}
     <a href="/markets/{{ market.slug }}" class="button-link">
       <button class="btn-gray-light btn-gray-link"> < Back to {{ market.title }}</button>
     </a>

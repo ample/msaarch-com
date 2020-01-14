@@ -13,8 +13,18 @@ module Jekyll
             project['slug'],
           ].join('/') rescue nil
           project['url'] = url
+
+          if _project = site.collections['projects'].docs.detect{|p| p.data['slug'] === project['slug']}
+            if _project.data['markets'].present?
+              _project.data['markets'].push(market)
+            else
+              _project.data['markets'] = [market]
+            end
+          end
         end
       end
+
     end
+
   end
 end
