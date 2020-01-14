@@ -13,7 +13,7 @@ layout: default
         </div>
       </div>
 
-      {% for post in page.belongs_to.posts %}
+      {% for post in page.posts %}
         {% assign n = forloop.index0 | modulo: 4 %}
         {% if n == 0 %}<div class="row no-gutters">{% endif %}
         <div class="col-6 col-md-3">

@@ -30,18 +30,22 @@ layout: default
 
     <div class="page-info">
       <aside>
-        <h3>Location</h3>
-        {{ page.location }}
+        {% if page.location %}
+          <h3>Location</h3>
+          {{ page.location }}
+        {% endif %}
 
         <h3>date</h3>
         {{ page.published_at | date: '%B %d, %Y' }}
 
-        <h3>tags</h3>
-        {% for tag in page.tags %}
-        <a href="{{ tag.url }}">
-          <p>{{ tag.title }}</p>
-        </a>
-        {% endfor %}
+        {% if page.tags.size > 0 %}
+          <h3>tags</h3>
+          {% for tag in page.tags %}
+          <a href="/design-thinking/tags/{{ tag.slug }}">
+            <p>{{ tag.title }}</p>
+          </a>
+          {% endfor %}
+        {% endif %}
       </aside>
     </div>
   </div>
