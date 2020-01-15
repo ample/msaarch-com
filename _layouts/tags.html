@@ -13,14 +13,14 @@ layout: default
         </div>
       </div>
 
-      {% for post in page.belongs_to.posts %}
+      {% for post in page.posts %}
         {% assign n = forloop.index0 | modulo: 4 %}
         {% if n == 0 %}<div class="row no-gutters">{% endif %}
         <div class="col-6 col-md-3">
           <section class="link-card">
             <a href="{{ post.url }}">
               <div class="link-img">
-                <img class="img-fluid w-100" ix-src="{{ post.image | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ post.title }}">
+                <img class="img-fluid w-100" ix-src="{{ post.image.url | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ post.title }}">
                 <h3 class="link-title text-red">{{ post.title }}</h3>
               </div>
             </a>
