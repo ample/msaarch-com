@@ -9,8 +9,8 @@ gem 'font-awesome-sass',   '~> 5.0.1'
 gem 'activesupport'
 
 group :jekyll_plugins do
-  gem 'jekyll-contentful', git: 'https://github.com/crdschurch/jekyll-contentful.git', branch: 'has-many-assets'
-  gem 'jekyll-placeholders', '~> 0.0.1', git: 'https://github.com/ample/jekyll-placeholders.git'
+  gem 'jekyll-contentful', git: 'https://github.com/ample/jekyll-contentful.git', branch: 'has-many-assets'
+  gem 'jekyll-placeholders', git: 'https://github.com/ample/jekyll-placeholders.git', tag: '0.0.1'
   gem 'jekyll-assets'
 end
 
