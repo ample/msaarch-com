@@ -1,13 +1,5 @@
 GIT
-  remote: https://github.com/ample/jekyll-placeholders.git
-  revision: 503eef68d21b020b8d611025ab7029c80e569186
-  specs:
-    jekyll-placeholders (0.0.1)
-      activesupport
-      jekyll
-
-GIT
-  remote: https://github.com/crdschurch/jekyll-contentful.git
+  remote: https://github.com/ample/jekyll-contentful.git
   revision: 8ccca874d44f325dfca42dda431667e0a503a16e
   branch: has-many-assets
   specs:
@@ -16,6 +8,15 @@ GIT
       contentful (>= 2.6.0)
       contentful-management (~> 2.6)
       dotenv
+      jekyll
+
+GIT
+  remote: https://github.com/ample/jekyll-placeholders.git
+  revision: 503eef68d21b020b8d611025ab7029c80e569186
+  tag: 0.0.1
+  specs:
+    jekyll-placeholders (0.0.1)
+      activesupport
       jekyll
 
 GEM
@@ -51,7 +52,7 @@ GEM
     coderay (1.1.2)
     colorator (1.1.0)
     concurrent-ruby (1.1.5)
-    contentful (2.13.2)
+    contentful (2.15.2)
       http (> 0.8, < 5.0)
       multi_json (~> 1)
     contentful-management (2.10.0)
@@ -208,7 +209,7 @@ DEPENDENCIES
   jekyll (~> 3.7.3)
   jekyll-assets
   jekyll-contentful!
-  jekyll-placeholders (~> 0.0.1)!
+  jekyll-placeholders!
   pry
   rake
 
