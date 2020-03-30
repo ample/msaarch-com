@@ -50,7 +50,7 @@ layout: default
     </div>
   </div>
 
-  {% assign recent = site.posts | exclude: 'title', page.title | slice: 0, 5 %}
+  {% assign recent = site.posts | exclude: 'title', page.title | slice: 0, 4 %}
   {% if recent.size > 0 %}
   <section>
     <div class="row no-gutters pb-7">
