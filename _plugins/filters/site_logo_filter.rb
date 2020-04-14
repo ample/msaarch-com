@@ -1,7 +1,7 @@
 module Jekyll
   module SiteLogoFilter
     def site_logo(page)
-      sports?(page) ? '/assets/images/msa-sport-logo.png' : '/assets/svgs/msa-logo.svg'
+      sports?(page) ? '/assets/svgs/msa-sport-logo.svg' : '/assets/svgs/msa-logo.svg'
     end
 
     def sports?(page)
