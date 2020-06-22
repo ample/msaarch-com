@@ -10,11 +10,13 @@
     <div class="key-lines"></div>
   </div>
   <div class="media-object-content">
+    {% if include.block.image.url %}
     <div>
       <a href="{{ include.block.image_caption }}" target="_blank">
         <img class="img-fluid" ix-src="{{ include.block.image.url | imgix }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
       </a>
     </div>
+    {% endif %}
     <div>
       <h2 class="section-header">{{ include.block.title }}</h2>
       {{ include.block.body | markdownify }}
