@@ -87,7 +87,7 @@ layout: default
   <div class="container">
     <article id="careers">
       <section class="careers-section">
-        {% assign blocks = page.has_many.blocks | where: "content_type", "text_object" %}
+        {% assign blocks = page.blocks | where: "content_type", "text_object" %}
         {% include blocks.html collection=blocks %}
 
         {% if site.careers.size > 0 %}
