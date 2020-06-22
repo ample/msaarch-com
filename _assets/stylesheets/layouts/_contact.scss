@@ -13,9 +13,26 @@
     display: none;
   }
 
-
   h2 {
     padding-left: 0;
+  }
+
+  .block-media-objects {
+    @extend .row;
+    width: 100%;
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      letter-spacing: $letter-spacing-base;
+      padding-top: 2.5rem
+    }
+    .col-sm {
+      font-size: 1rem;
+      line-height: 1rem;
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 
   .button-nav {

@@ -20,8 +20,12 @@ layout: default
     <div id="locations">
       <h2 class="section-header">locations</h2>
 
-      {% assign blocks = page.blocks | where: "content_type", "media_object" %}
-      {% include blocks.html collection=blocks %}
+      <div class="container">
+        <div class="row">
+          {% assign blocks = page.blocks | where: "content_type", "media_object" %}
+          {% include blocks.html collection=blocks %}
+        </div>
+      </div>
 
     </div>
   </div>
