@@ -165,7 +165,7 @@
   font-family: $font-family-urwdin-cond;
   font-size: 1.875rem;
   text-transform: uppercase;
-  width:100%;
+  width: 100%;
 
   h2  {
     font-size: 2rem;
@@ -184,40 +184,40 @@
 // animation 
 
 .word-carousel {
-    color: $black;
-    display: inline-block;
-    left: 1rem; 
-    min-width: 350px;
-    position: relative;
-    text-align: left;
-    top: 3rem; 
+  color: $black;
+  display: inline-block;
+  left: 1rem; 
+  min-width: 350px;
+  position: relative;
+  text-align: left;
+  top: 3rem; 
 }
 
 .word-carousel span {
-    animation: rotateWord 18s linear infinite 0s;
-    opacity: 0;    
-    position: absolute; 
-    top: -0px; 
+  animation: rotateWord 18s linear infinite 0s;
+  opacity: 0;    
+  position: absolute; 
+  top: -0px; 
 }
 
 .word-carousel span:nth-child(2) { 
-    animation-delay: 3s; 
+  animation-delay: 3s; 
 }
 
 .word-carousel span:nth-child(3) { 
-    animation-delay: 6s; 
+  animation-delay: 6s; 
 }
 
 .word-carousel span:nth-child(4) { 
-    animation-delay: 9s; 
+  animation-delay: 9s; 
 }
 
 .word-carousel span:nth-child(5) { 
-    animation-delay: 12s; 
+  animation-delay: 12s; 
 }
 
 .word-carousel span:nth-child(6) { 
-    animation-delay: 15s; 
+  animation-delay: 15s; 
 }
 
 @keyframes rotateWord {
