@@ -163,12 +163,14 @@
   color: $white;
   display: flex;
   font-family: $font-family-urwdin-cond;
-  font-size: 1.875rem;
+  margin: 0 10rem; 
   text-transform: uppercase;
+  text-align: center; 
   width: 100%;
 
-  h2  {
-    font-size: 2rem;
+  h1  {
+    display: inline-block;
+    font-size: 4.5rem;
     margin: 0 auto;
     text-align: left;
   }
@@ -194,10 +196,14 @@
 }
 
 .word-carousel span {
-  animation: rotateWord 18s linear infinite 0s;
-  opacity: 0;    
+  animation: rotateWord 18s linear infinite;
+  display: inline-block; 
+  font-size: 4.5rem;
+  opacity: 0;
+  overflow: hidden; 
   position: absolute; 
-  top: -0px; 
+  top: -30px; 
+  width: 1500px; 
 }
 
 .word-carousel span:nth-child(2) { 
@@ -222,10 +228,11 @@
 
 @keyframes rotateWord {
   0%   { opacity: 0; }
-  2%   { opacity: 0; transform: translateY(-30px); }
-  5%   { opacity: 1; transform: translateY(0px);}
-  17%  { opacity: 1; transform: translateY(0px); }
-  20%  { opacity: 0; transform: translateY(30px); }
+  2%   { opacity: 0; }
+  5%   { opacity: 1; }
+  17%  { opacity: 1; }
+  20%  { opacity: 0; }
   80%  { opacity: 0; }
   100% { opacity: 0; }
 }
+
