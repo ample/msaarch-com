@@ -363,6 +363,8 @@
 .overlay {
   background-color: $red;
   bottom: 0;
+  display: flex; 
+  flex-direction: column;
   height: 277.5px;
   left: 0;
   opacity: 0;
@@ -385,24 +387,10 @@
   color: white;
   padding-left: 25px;
   padding-right: 25px;
-  padding-top: 70%;
+  margin-top: auto;
 
   @media (max-width: 770px) { 
     padding-top: 20%;
-  }
-}
-
-.link-card:hover {
-  .link-title > span {
-    display: none;
-  }
-
-  .link-body {
-    display: none;
-  }
-
-  .comma {
-    display: none;
   }
 }
 
