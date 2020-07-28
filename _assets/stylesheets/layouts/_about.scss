@@ -359,3 +359,43 @@
     }
   }
 }
+
+.overlay {
+  background-color: $red;
+  bottom: 0;
+  display: flex; 
+  flex-direction: column;
+  height: 277.5px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .5s ease;
+  width: 100%;
+
+  @media (max-width: 770px) { 
+    height: 172.5px;
+  }
+}
+
+.overlay:hover {
+  opacity: .85;
+}
+
+.job-title {
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: auto;
+
+  @media (max-width: 770px) { 
+    padding-top: 20%;
+  }
+}
+
+.link-card {
+  .link-img { 
+    cursor: pointer; 
+  }
+}
