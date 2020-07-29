@@ -182,7 +182,7 @@
       position: relative; 
       right: 8rem; 
       font-size: 1rem;
-      top: -1.25rem;
+      top: -3rem;
     }
   }
 
@@ -204,6 +204,10 @@
   position: relative;
   text-align: left;
   top: 3.125rem; 
+  
+  @media (max-width: 768px) {
+    top: 1.5rem;
+  }
 }
 
 .word-carousel span {
