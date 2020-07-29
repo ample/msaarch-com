@@ -168,6 +168,10 @@
   text-align: center; 
   width: 100%;
 
+  @media (max-width: 768px) {
+    margin: -4rem 10rem; 
+  }
+
   h1  {
     display: inline-block;
     font-size: 4.5rem;
