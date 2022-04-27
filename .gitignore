@@ -4,3 +4,5 @@ _site
 .jekyll-cache
 .envrc
 collections
+# Local Netlify folder
+.netlify
