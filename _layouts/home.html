@@ -8,21 +8,7 @@ layout: default
 
   {% assign blocks = page.blocks | where:"content_type", "media_object" %}
   {% include blocks.html collection=blocks %}
-  <div class="row" style="overflow: hidden">
-    <div class="wrapper">
-      <div class="spinny-wrapper">
-        <h1 class="bg-red header-info mt-md-3">We are</h1>
-          <span class="word-carousel"> 
-            <span>Passionate.</span> 
-            <span>Disruptors.</span>
-            <span>Relentless.</span>
-            <span>Seeking Possibilities.</span>
-            <span>Authentic.</span>
-            <span>Community Builders.</span>
-          </span>
-      </div>  
-    </div>
-  </div>
+  
   <section class="home-featured-links">
     {% assign blocks = page.blocks | where:"content_type", "feature" %}
     {% include blocks.html collection=blocks %}
