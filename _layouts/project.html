@@ -33,7 +33,7 @@ layout: default
           <section class="link-card">
             <a href="{{ project.href }}">
               <div class="link-img">
-                <img class="object-fit-top" src="{{ project.image.url | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" srcset="{{ project.image.url | imgix_srcset: 'h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ project.title }}">
+                <img class="object-fit-top" src="{{ project.image.url | imgix: 'w=275&h=210&fit=crop&crop=entropy' }}" srcset="{{ project.image.url | imgix_srcset: 'w=275&h=210&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ project.title }}">
                 <h3 class="link-title text-red">{{ project.title }} {{ project.subtitle | strip_html }}</h3>
               </div>
             </a>

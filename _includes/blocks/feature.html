@@ -2,7 +2,7 @@
   <section class="link-card">
     <a href="{{ include.block.href }}">
       <div class="link-img">
-        <img class="object-fit-top" src="{{ include.block.image.url | imgix: 'w=400&h=300&fit=crop&crop=entropy' }}" srcset="{{ include.block.image.url | imgix_srcset: 'h=300&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ include.block.title }}">
+        <img class="object-fit-top" src="{{ include.block.image.url | imgix: 'w=275&h=210&fit=crop&crop=entropy' }}" srcset="{{ include.block.image.url | imgix_srcset: 'w=275&h=210&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ include.block.title }}">
         <div class="bg-gradient"></div>
         <h3 class="link-title title-overlap title-overlap-4x">{{ include.block.title }}</h3>
       </div>

@@ -18,7 +18,7 @@
   </div>
   <div class="row">
     <div class="col-sm-6 col-lg-4">
-      <img class="img-fluid d-block mx-auto" src="{{ include.block.image.url | imgix: 'w=400&h=400&fit=crop' }}" srcset="{{ include.block.image.url | imgix_srcset: 'h=400&fit=crop' }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
+      <img class="img-fluid d-block mx-auto" src="{{ include.block.image.url | imgix: 'w=350&h=350&fit=crop' }}" srcset="{{ include.block.image.url | imgix_srcset: 'w=350&h=350&fit=crop' }}" sizes="{{ site.image_sizes.blocks }}" alt="{{ include.block.title }}">
     </div>
     <div class="col-sm-6 col-lg-8 col-xl-6 align-self-center">
       <h2 class="section-header">{{ include.block.title }}</h2>
