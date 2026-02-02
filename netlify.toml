@@ -1,5 +1,11 @@
 [build]
   command = '''
-    bundle exec jekyll contentful &&
+    export PATH="/opt/buildhome/.asdf/plugins/ruby/shims:$PATH"
+    asdf install ruby 2.7.2 || true
+
+    rm -rf .bundle/ .jekyll-cache/ vendor/bundle/ && \
+    bundle install --path vendor/bundle && \
+    bundle clean --force && \
+    bundle exec jekyll contentful && \
     bundle exec jekyll build
   '''
