@@ -2,7 +2,7 @@
   <section class="link-card">
     <a href="/case-studies/{{ block.slug }}">
       <div class="link-img link-img-tall">
-        <img class="object-fit-center" ix-src="{{ thumbnail_image | imgix: 'w=3.5&h=1&fit=crop'  }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ block.title }}">
+        <img class="object-fit-center" src="{{ thumbnail_image | imgix: 'w=3.5&h=1&fit=crop'  }}" srcset="{{ thumbnail_image | imgix_srcset: 'h=1&fit=crop' }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ block.title }}">
         <div class="bg-gradient-light"></div>
         <h3 class="link-title title-overlap title-overlap-2x">{{ block.title | replace:'\n','' }} </h3>
       </div>

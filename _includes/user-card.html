@@ -1,7 +1,7 @@
 <div>
   <section class="link-card">
     <div class="link-img">
-      <img class="img-fluid w-100" ix-src="{{ user.image.url | imgix }}?w=4&h=4&fit=crop" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ user.first_name }} {{ user.last_name }}">
+      <img class="img-fluid w-100" src="{{ user.image.url | imgix: 'w=4&h=4&fit=crop' }}" srcset="{{ user.image.url | imgix_srcset: 'h=4&fit=crop' }}" sizes="{{ site.image_sizes.cards_4x }}" alt="{{ user.first_name }} {{ user.last_name }}">
         <div class="overlay">
           <div class="job-title"> 
             <span> {{ user.credentials }} </span>

@@ -7,6 +7,15 @@ module Jekyll
     rescue
       url
     end
+
+    def imgix_srcset(url, ix_params=nil)
+      widths = [320, 640, 960, 1280, 1920, 2560]
+      srcset = widths.map do |w|
+        imgix_url = imgix(url, "w=#{w}#{"&#{ix_params}" unless ix_params.nil?}")
+        "#{imgix_url} #{w}w"
+      end.join(', ')
+      srcset
+    end
   end
 end
 

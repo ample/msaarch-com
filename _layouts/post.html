@@ -13,7 +13,7 @@ layout: default
           <div class="author-media-object link-card">
             <div class="author-image">
               {% if page.author.image %}
-                <img class="w-100" ix-src="{{ page.author.image.url | imgix }}" sizes="{{ site.image_sizes.author_blocks }}" alt="{{ page.author_title }}">
+                <img class="w-100" src="{{ page.author.image.url | imgix }}" srcset="{{ page.author.image.url | imgix_srcset }}" sizes="{{ site.image_sizes.author_blocks }}" alt="{{ page.author_title }}">
               {% endif %}
             </div>
             <div>

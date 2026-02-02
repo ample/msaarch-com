@@ -37,7 +37,7 @@ layout: default
               <section class="link-card">
                 <a href="{{ market.url }}">
                   <div class="link-img link-img-2x">
-                    <img class="object-fit-top" ix-src="{{ market.image.url | imgix: 'w=480&h=270&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ market.title }}">
+                    <img class="object-fit-top" src="{{ market.image.url | imgix: 'w=480&h=270&fit=crop&crop=entropy' }}" srcset="{{ market.image.url | imgix_srcset: 'h=270&fit=crop&crop=entropy' }}" sizes="{{ site.image_sizes.cards_2x }}" alt="{{ market.title }}">
                     <div class="bg-gradient-light"></div>
                     <h3 class="link-title title-overlap title-overlap-2x">{{ market.title }}</h3>
                   </div>
