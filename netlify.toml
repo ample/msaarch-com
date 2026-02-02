@@ -1,7 +1,7 @@
 [build]
   command = '''
-    export PATH="/opt/buildhome/.asdf/plugins/ruby/shims:$PATH"
-    asdf install ruby 2.7.2 || true
+    ruby -v
+    bundle env
 
     rm -rf .bundle/ .jekyll-cache/ vendor/bundle/ && \
     bundle install --path vendor/bundle && \
